@@ -1,14 +1,16 @@
-require('dotenv').config({silent: true});
+require('dotenv').config({ silent: true })
 
-const webpack = require('webpack');
-const path = require('path');
-const pkg = require(__dirname + '/package.json');
-
-const IS_PRODUCTION = process.env.NODE_ENV === 'production';
-
+const webpack = require('webpack')
+const path = require('path')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const pkg = require(__dirname + '/package.json')
+const loaders = require('./webpack/loaders')
+const plugins = require('./webpack/plugins')
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const siteJs = ['./scripts/site.js']
 
-const config = {
+module.exports = {
+  mode: process.env.NODE_ENV,
   devtool: IS_PRODUCTION ? false : 'source-map',
   entry: {
     'scripts/site-bundle': siteJs
@@ -17,36 +19,28 @@ const config = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js'
   },
+  optimization: {
+    minimizer: [new UglifyJsPlugin({
+      uglifyOptions: {
+        beautify: !IS_PRODUCTION,
+        compress: IS_PRODUCTION ? {
+          drop_console: true, // eslint-disable-line camelcase
+          warnings: false
+        } : false,
+        mangle: IS_PRODUCTION ? {
+            reserved: ['_'] // don't mangle lodash
+        } : false
+      }
+    })]
+  },
   plugins: [
-    new webpack.optimize.DedupePlugin(),
-
-    new webpack.DefinePlugin({
-      '__DEBUG__': JSON.stringify(!IS_PRODUCTION)
-    }),
-
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: !IS_PRODUCTION,
-      compress: IS_PRODUCTION ? {
-        drop_console: true, // eslint-disable-line camelcase
-        warnings: false
-      } : false,
-      mangle: IS_PRODUCTION ? {
-          except: ['_'] // don't mangle lodash
-      } : false
-    })
+    plugins.MiniCssExtractPlugin,
+    plugins.DebugPlugin,
   ],
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader', // 'babel-loader' is also a valid name to reference
-        query: {
-          presets: ['env']
-        }
-      }
+    rules: [
+      loaders.JSLoader,
+      loaders.CSSLoader,
     ]
   }
 }
-
-module.exports = config;

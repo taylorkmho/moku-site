@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1">
-
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
@@ -19,7 +18,7 @@
             {.end}
           </a>
         </h1>
-        
+
         {.section siteTagLine}
           <p>{@}</p>
         {.end}
@@ -40,6 +39,6 @@
     <script type="text/javascript" src="/scripts/site-bundle.js"></script>
 
     {squarespace-footers}
-    
+
   </body>
-</html> 
+</html>

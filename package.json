@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "build": "squarespace assemble && webpack --display-modules",
+    "build": "NODE_ENV=production squarespace assemble && NODE_ENV=production webpack --display-modules",
     "watch": "squarespace assemble --watch & webpack --watch --hide-modules",
     "server": "squarespace runserver",
     "authserver": "squarespace runserver --auth",
@@ -20,14 +20,28 @@
     "url": "ssh://git@github.com:squarespace/base-template-npm.git"
   },
   "dependencies": {
-    "@squarespace/core": "^1.1.0"
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@squarespace/core": "^1.1.0",
+    "@squarespace/server": "^1.1.2",
+    "autoprefixer": "^9.1.5",
+    "cssnano": "^4.1.0",
+    "postcss-import": "^12.0.0",
+    "postcss-preset-env": "^6.0.5"
   },
   "devDependencies": {
     "@squarespace/toolbelt": "^0.8.8",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^8.0.2",
     "babel-preset-env": "^1.6.1",
+    "css-loader": "^1.0.0",
     "dotenv": "^2.0.0",
-    "webpack": "^3.10.0"
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.23.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1"
   }
 }

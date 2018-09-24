@@ -5,7 +5,9 @@
 //
 // http://github.com/squarespace/squarespace-core
 
-const core = require('@squarespace/core');
+const core = require('@squarespace/core')
+
+import '../styles/site.css'
 
 window.addEventListener('DOMContentLoaded', function() {
 
