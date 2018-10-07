@@ -53,6 +53,8 @@
     "style-loader": "^0.23.0",
     "stylelint": "^9.6.0",
     "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.3.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1"

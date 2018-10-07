@@ -1,7 +1,7 @@
 <nav data-content-field="navigation-primary-nav">
   {.repeated section items}
       {.folder?}
-        <a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+        <a href="{collection.fullUrl}">Site {collection.navigationTitle}</a>
 
         <span>
           {.repeated section items}
@@ -17,7 +17,7 @@
             {.end}
           {.end}
         </span>
-          
+
       {.or}
 
         {.section collection}
@@ -31,6 +31,6 @@
         {.end}
 
       {.end}
-      
+
   {.end}
 </nav>
