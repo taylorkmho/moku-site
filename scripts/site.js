@@ -1,4 +1,3 @@
-
 // Use the sqs-core module to access core Squarespace
 // functionality, like Lifecycle and ImageLoader. For
 // full documentation, go to:
@@ -10,13 +9,11 @@ const core = require('@squarespace/core')
 import '../styles/site.css'
 
 window.addEventListener('DOMContentLoaded', function() {
-
-  const images = document.querySelectorAll('img[data-src]');
+  const images = document.querySelectorAll('img[data-src]')
 
   for (let i = 0; i < images.length; i++) {
     core.ImageLoader.load(images[i], {
-      load: true
-    });
+      load: true,
+    })
   }
-
-});
+})
