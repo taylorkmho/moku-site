@@ -10,13 +10,9 @@
     <header class="header">
       {.section website}
         <div class="branding">
-          <a href="/" data-content-field="site-title">
-            <img src="/assets/mokuola-honua-logo.png" alt="{siteTitle}" />
+          <a class="branding__link" href="/" data-content-field="site-title">
+            <img class="branding__image" src="/assets/mokuola-honua-logo.png" alt="{siteTitle}" />
           </a>
-
-          {.section siteTagLine}
-            <p>{@}</p>
-          {.end}
         </div>
       {.end}
 
