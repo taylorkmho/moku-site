@@ -1,0 +1,18 @@
+.essay {
+  @mixin layout-container;
+  display: grid;
+  grid-gap: 0 50px;
+  grid-template-columns: 2fr 1fr;
+
+  &__title {
+    color: var(--c-black);
+    font: 600 35px var(--f-serif);
+    margin-top: 0;
+  }
+
+  &__aside {
+    align-self: flex-start;
+    display: grid;
+    grid-gap: var(--d-padding) 0;
+  }
+}

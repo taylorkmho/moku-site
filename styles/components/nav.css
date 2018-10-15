@@ -1,4 +1,5 @@
 .nav {
+  @mixin grid-column-vertical-center;
   align-items: center;
   display: grid;
   grid-area: nav;
@@ -6,13 +7,7 @@
   grid-gap: 0 40px;
   justify-content: flex-end;
 
-  @mixin grid-column-vertical-center;
-
   &__link {
-    color: var(--c-nav-link);
-
-    &:hover {
-      color: color(var(--c-nav-link) lightness(10%));
-    }
+    @mixin link var(--c-nav-link);
   }
 }

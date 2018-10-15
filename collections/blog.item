@@ -2,22 +2,38 @@
 
   <!--WRAPPER-->
 
-  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+  <main class="main essay">
+    <article id="post-{id}" class="essay__article {@|item-classes}" data-item-id="{id}">
 
-    <!--POST TILE-->
+      <!--POST TILE-->
 
-    <h1 class="title" data-content-field="title">
-      {.passthrough?}
-        <a href="{sourceUrl}" target="_blank">9999{title}</a>
-      {.or}
-        <a href="{fullUrl}">fff{title}</a>
-      {.end}
-    </h1>
+      <h1 class="essay__title" data-content-field="title">{title}</h1>
 
-    <!--MAIN CONTENT-->
+      <!--MAIN CONTENT-->
 
-    {body}
+      <div class="general">
+        {body}
+      </div>
 
-  </article>
+    </article>
+    <aside class="essay__aside">
+      <div class="links">
+        <h3 class="links__subheader">On the Topic of</h3>
+        <h2 class="links__title">Lifestyle Through Language</h2>
+        <ol class="links__list">
+          <li class="links__item"><a class="links__link" href="#">Indigenous Legends and Teaching</a></li>
+          <li class="links__item"><a class="links__link" href="#">Discussions of Indiginous Literatures</a></li>
+        </ol>
+      </div>
+
+      <div class="links">
+        <h3 class="links__subheader">More Essays</h3>
+        <ol class="links__list">
+          <li class="links__item"><a class="links__link" href="#">Worldviews: Indiginous Knowledge and Oral Tradition</a></li>
+          <li class="links__item"><a class="links__link" href="#">Indigenous Language and Health</a></li>
+        </ol>
+      </div>
+    </aside>
+  </main>
 
 {.end}

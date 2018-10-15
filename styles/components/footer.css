@@ -3,18 +3,16 @@
   color: #fff;
 
   &__container {
+    @mixin layout-container;
     display: grid;
     grid-gap: 0 var(--d-padding);
     grid-template-areas: 'footer__logo-container footer__credits';
     min-height: var(--d-footer-height);
-
-    @mixin layout-container;
   }
 
   &__logo-container {
-    grid-area: footer__logo-container;
-
     @mixin grid-column-vertical-center;
+    grid-area: footer__logo-container;
   }
 
   &__logo {
@@ -25,9 +23,8 @@
   }
 
   &__credits {
+    @mixin grid-column-vertical-center;
     grid-area: footer__credits;
     justify-content: flex-end;
-
-    @mixin grid-column-vertical-center;
   }
 }

@@ -1,5 +1,4 @@
 .branding {
-  grid-area: branding;
-
   @mixin grid-column-vertical-center;
+  grid-area: branding;
 }
