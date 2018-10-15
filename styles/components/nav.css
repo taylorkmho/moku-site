@@ -1,10 +1,12 @@
 .nav {
-  grid-area: nav;
-  display: grid;
   align-items: center;
-  justify-content: flex-end;
+  display: grid;
+  grid-area: nav;
   grid-auto-flow: column dense;
   grid-gap: 0 40px;
+  justify-content: flex-end;
+
+  @mixin grid-column-vertical-center;
 
   &__link {
     color: var(--c-nav-link);

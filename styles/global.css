@@ -4,10 +4,16 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
   color: var(--c-gray);
   font-family: var(--f-sans);
-  background: #fff;
 }
 
 a {

@@ -1,0 +1,10 @@
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__logo-container">
+      <img class="footer__logo" src="/assets/mokuola-honua-logo-horizontal-inverse.png" alt="Mokuola Honua" />
+    </div>
+    <div class="footer__credits">
+      Copyright &copy;2018 Mokuola Honua | All Rights Reserved
+    </div>
+  </div>
+</footer>

@@ -26,6 +26,14 @@
     "selector-list-comma-space-before": "never",
     "selector-list-comma-newline-after": "always",
     "selector-max-id": 0,
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+    "at-rule-empty-line-before": ["always", {
+      "ignoreAtRules": ["import"]
+    }],
+    "order/properties-alphabetical-order": true,
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ]
   }
 }

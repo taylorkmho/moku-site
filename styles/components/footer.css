@@ -1,0 +1,33 @@
+.footer {
+  background: var(--c-footer-bg);
+  color: #fff;
+
+  &__container {
+    display: grid;
+    grid-gap: 0 var(--d-padding);
+    grid-template-areas: 'footer__logo-container footer__credits';
+    min-height: var(--d-footer-height);
+
+    @mixin layout-container;
+  }
+
+  &__logo-container {
+    grid-area: footer__logo-container;
+
+    @mixin grid-column-vertical-center;
+  }
+
+  &__logo {
+    display: block;
+    height: 127px;
+    object-fit: contain;
+    width: 327px;
+  }
+
+  &__credits {
+    grid-area: footer__credits;
+    justify-content: flex-end;
+
+    @mixin grid-column-vertical-center;
+  }
+}

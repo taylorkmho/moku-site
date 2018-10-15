@@ -3,7 +3,10 @@
   --c-default: #414042;
   --c-gray: #414042;
   --c-light-gray: #7c7c7c;
+  --c-black: #050505;
+  --c-blue: #1f6d7d;
   --c-nav-link: #050505;
+  --c-footer-bg: #1f6d7d;
 
   /* Fonts */
   --f-sans: 'Noto Sans', Helvetica, Arial, sans-serif;
@@ -12,4 +15,6 @@
   /* Dimensions */
   --d-max-layout-width: 1180px;
   --d-header-height: 150px;
+  --d-footer-height: 160px;
+  --d-padding: 30px;
 }
