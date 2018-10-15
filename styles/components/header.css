@@ -1,0 +1,8 @@
+.header {
+  display: grid;
+  grid-template-areas: 'branding nav';
+  grid-gap: 0 30px;
+  height: var(--d-header-height);
+
+  @mixin layout-container;
+}

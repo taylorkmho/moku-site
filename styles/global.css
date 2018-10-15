@@ -1,0 +1,15 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--c-gray);
+  font-family: var(--f-sans);
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}

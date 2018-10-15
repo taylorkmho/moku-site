@@ -1,0 +1,16 @@
+.nav {
+  grid-area: nav;
+  display: grid;
+  align-items: center;
+  justify-content: flex-end;
+  grid-auto-flow: column dense;
+  grid-gap: 0 40px;
+
+  &__link {
+    color: var(--c-nav-link);
+
+    &:hover {
+      color: color(var(--c-nav-link) lightness(10%));
+    }
+  }
+}

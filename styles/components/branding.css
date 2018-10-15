@@ -1,0 +1,6 @@
+.branding {
+  grid-area: branding;
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column dense;
+}

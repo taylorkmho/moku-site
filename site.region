@@ -7,22 +7,21 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
-    <header>
+    <header class="header">
       {.section website}
-        <h1>
+        <div class="branding">
           <a href="/" data-content-field="site-title">
             {.section logoImageUrl}
-             <img src="{logoImageUrl}?format=original" alt="{siteTitle}" />
+              <img src="{@}?format=original" alt="{siteTitle}" />
             {.or}
               {siteTitle}
             {.end}
           </a>
-        </h1>
 
-        {.section siteTagLine}
-          <p>{@}</p>
-        {.end}
-
+          {.section siteTagLine}
+            <p>{@}</p>
+          {.end}
+        </div>
       {.end}
 
       <squarespace:navigation navigationId="primary-nav" template="navigation" />
@@ -33,7 +32,7 @@
     </main>
 
     <footer>
-      <squarespace:block-field id="footer-blocks" columns="12" />
+      <squarespace:block-field id="footer-blocks" />
     </footer>
 
     <script type="text/javascript" src="/scripts/site-bundle.js"></script>
