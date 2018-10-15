@@ -1,9 +1,10 @@
 .general {
   p {
+    font-size: 17px;
     line-height: 1.6;
-  }
-}
 
-.intro {
-  font-size: 23px;
+    &:first-child {
+      font-size: 23px;
+    }
+  }
 }

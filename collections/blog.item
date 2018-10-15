@@ -3,6 +3,7 @@
   <!--WRAPPER-->
 
   <main class="main essay">
+    <img class="essay__banner" src="{assetUrl}" alt="{title}" />
     <article id="post-{id}" class="essay__article {@|item-classes}" data-item-id="{id}">
 
       <!--POST TILE-->

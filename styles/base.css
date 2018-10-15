@@ -18,3 +18,5 @@
   --d-footer-height: 160px;
   --d-padding: 30px;
 }
+
+@custom-media --medium (min-width: 800px);
