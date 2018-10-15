@@ -11,11 +11,7 @@
       {.section website}
         <div class="branding">
           <a href="/" data-content-field="site-title">
-            {.section logoImageUrl}
-              <img src="{@}?format=original" alt="{siteTitle}" />
-            {.or}
-              {siteTitle}
-            {.end}
+            <img src="/assets/mokuola-honua-logo.png" alt="{siteTitle}" />
           </a>
 
           {.section siteTagLine}
