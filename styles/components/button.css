@@ -8,6 +8,12 @@
   padding: 17px 34px;
   text-transform: uppercase;
 
+  &--solid {
+    background: var(--c-teal);
+    color: #fff;
+    text-align: center;
+  }
+
   &--icon {
     background-position: 17px center;
     background-repeat: no-repeat;

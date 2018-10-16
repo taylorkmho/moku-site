@@ -1,0 +1,22 @@
+.categories {
+  &__title {
+    color: var(--c-black);
+    font: 600 18px var(--f-sans);
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 5px 0;
+  }
+
+  &__link {
+    color: var(--c-gray);
+    line-height: 1.4;
+  }
+}
