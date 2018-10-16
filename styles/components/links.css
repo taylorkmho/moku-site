@@ -14,6 +14,10 @@
 
   &__link {
     @mixin link var(--c-nav-link);
+
+    &:hover {
+      color: var(--c-teal);
+    }
   }
 
   &__list {
