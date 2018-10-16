@@ -1,0 +1,10 @@
+    <footer>
+      {@|apply footer.block}
+    </footer>
+
+    <script type="text/javascript" src="/scripts/site-bundle.js"></script>
+
+    {squarespace-footers}
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.button {
+  appearance: none;
+  background: transparent;
+  border: solid 2px var(--c-teal);
+  border-radius: 6px;
+  color: var(--c-black);
+  font: 600 12px var(--f-sans);
+  padding: 17px 34px;
+  text-transform: uppercase;
+
+  &--icon {
+    background-position: 17px center;
+    background-repeat: no-repeat;
+    padding-left: 57px;
+  }
+
+  &--play {
+    background-image: url('/assets/icon-play.png');
+  }
+}

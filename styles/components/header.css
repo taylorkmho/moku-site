@@ -4,4 +4,6 @@
   grid-gap: 0 30px;
   grid-template-areas: 'branding nav';
   height: var(--d-header-height);
+  position: relative;
+  z-index: 1;
 }

@@ -1,35 +1,3 @@
-<!doctype html>
-<html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="initial-scale=1">
-    {squarespace-headers}
-  </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-
-    <header class="header">
-      {.section website}
-        <div class="branding">
-          <a class="branding__link" href="/" data-content-field="site-title">
-            <img class="branding__image" src="/assets/mokuola-honua-logo.png" alt="{siteTitle}" />
-          </a>
-        </div>
-      {.end}
-
-      <squarespace:navigation navigationId="primary-nav" template="navigation" />
-    </header>
-
-    <main data-content-field="main-content">
-      {squarespace.main-content}
-    </main>
-
-    <footer>
-      {@|apply footer.block}
-    </footer>
-
-    <script type="text/javascript" src="/scripts/site-bundle.js"></script>
-
-    {squarespace-footers}
-
-  </body>
-</html>
+<main class="layout-container" data-content-field="main-content">
+  {squarespace.main-content}
+</main>
