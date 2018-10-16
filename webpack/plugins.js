@@ -5,7 +5,7 @@ const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
   // Options similar to the same options in webpackOptions.output
   // both options are optional
-  filename: '[name].css',
+  filename: '/styles/bundle.css',
   chunkFilename: '[id].css',
 })
 

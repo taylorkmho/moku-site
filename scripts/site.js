@@ -6,7 +6,7 @@
 
 const core = require('@squarespace/core')
 
-import '../styles/site.css'
+import '../styles/styles.css'
 
 window.addEventListener('DOMContentLoaded', function() {
   const images = document.querySelectorAll('img[data-src]')
