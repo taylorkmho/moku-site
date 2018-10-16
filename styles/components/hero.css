@@ -1,7 +1,7 @@
 .hero {
   display: grid;
   grid-template-areas: 'hero';
-  margin-top: calc(var(--d-header-height) * -1);
+  margin-top: var(--d-header-height-neg);
 
   &__image {
     display: block;

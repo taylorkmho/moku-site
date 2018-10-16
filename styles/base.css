@@ -17,6 +17,7 @@
   /* Dimensions */
   --d-max-layout-width: 1180px;
   --d-header-height: 150px;
+  --d-header-height-neg: -150px;
   --d-footer-height: 160px;
   --d-padding: 30px;
   --d-hero-max-height: 720px;
