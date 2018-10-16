@@ -1,0 +1,15 @@
+<section class="hero">
+  {.section collection}
+    {.section mainImage}
+      <img class="hero__image" src="{assetUrl}" alt="Mokuola Honua Hero" />
+    {.end}
+  {.end}
+  <div class="layout-container hero__content-container">
+    <div class="hero__content">
+      <p class="subheader">Mokuola Honua: Global Center for Indigenous Language Excellence
+  </p>
+      <p class="hero__title">Indigenous Language for Donec Sed Odio</p>
+      <button class="button button--icon button--play" href="#">Watch the Video</button>
+    </div>
+  </div>
+</section>
