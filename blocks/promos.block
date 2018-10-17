@@ -1,0 +1,36 @@
+<section class="layout-container promos">
+  <h2 class="section-header">Get Involved</h2>
+  <article href="https://www.google.com" class="promo">
+    <a href="#">
+      <div class="promo__media-container">
+        <img
+          src="https://picsum.photos/300/200"
+          alt=""
+        />
+      </div>
+    </a>
+    <p class="promo__title"><a href="#">Promo Link</a></p>
+  </article>
+  <article href="https://www.google.com" class="promo">
+    <a href="#">
+      <div class="promo__media-container">
+        <img
+          src="https://picsum.photos/300/200"
+          alt=""
+        />
+      </div>
+    </a>
+    <p class="promo__title"><a href="#">Promo Link</a></p>
+  </article>
+  <article href="https://www.google.com" class="promo">
+    <a href="#">
+      <div class="promo__media-container">
+        <img
+          src="https://picsum.photos/300/200"
+          alt=""
+        />
+      </div>
+    </a>
+    <p class="promo__title"><a href="#">Promo Link</a></p>
+  </article>
+</section>

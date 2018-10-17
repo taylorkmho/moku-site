@@ -1,0 +1,57 @@
+<div class="featured-resources">
+  <div class="layout-container featured-resources__container">
+    <aside class="featured-resources__aside">
+      <p class="featured-resources__title">Resources</p>
+      <p class="featured-resources__description">Mokuola Honua provides resources, advocacy, and praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+      <a href="#" class="button button--solid">View All Resources</a>
+      <div class="categories">
+        <p class="categories__title">Categories</p>
+        <ul class="categories__list">
+          <li class="categories__item"><a class="categories__link" href="#">Lorem Ipsum</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Dolor Amet</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Consectetuer</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Donec Odio</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Suspendisse</a></li>
+        </ul>
+      </div>
+    </aside>
+    <div class="featured-resources__collection">
+      <article href="#" class="featured-resource">
+        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
+        <p class="featured-resource__category">Category</p>
+        <p class="featured-resource__title">Title</p>
+        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+      </article>
+      <article href="#" class="featured-resource">
+        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
+        <p class="featured-resource__category">Category</p>
+        <p class="featured-resource__title">Title</p>
+        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+      </article>
+      <article href="#" class="featured-resource">
+        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
+        <p class="featured-resource__category">Category</p>
+        <p class="featured-resource__title">Title</p>
+        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+      </article>
+      <article href="#" class="featured-resource">
+        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
+        <p class="featured-resource__category">Category</p>
+        <p class="featured-resource__title">Title</p>
+        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+      </article>
+      <article href="#" class="featured-resource">
+        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
+        <p class="featured-resource__category">Category</p>
+        <p class="featured-resource__title">Title</p>
+        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+      </article>
+      <article href="#" class="featured-resource">
+        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
+        <p class="featured-resource__category">Category</p>
+        <p class="featured-resource__title">Title</p>
+        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+      </article>
+    </div>
+  </div>
+</div>

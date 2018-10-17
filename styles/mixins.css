@@ -17,3 +17,20 @@
     color: color-mod($color lightness(10%));
   }
 }
+
+@define-mixin responsive-media $ratio {
+  height: 0;
+  padding-bottom: $ratio;
+  position: relative;
+
+  img,
+  video {
+    display: block;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

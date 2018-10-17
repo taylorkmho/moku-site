@@ -1,0 +1,30 @@
+.promos {
+  display: grid;
+  grid-gap: 0 var(--d-padding);
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.promo {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-gap: 25px 0;
+  justify-content: stretch;
+
+  &__media-container {
+    @mixin responsive-media 70%;
+  }
+
+  &__title {
+    border-bottom: solid 2px var(--c-teal);
+    font: normal 29px var(--f-serif);
+    justify-self: center;
+    margin: 0;
+    padding-bottom: 10px;
+
+    a {
+      color: inherit;
+    }
+  }
+}
