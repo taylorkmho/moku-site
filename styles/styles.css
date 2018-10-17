@@ -1,6 +1,7 @@
 @import 'base.css';
 @import 'mixins.css';
 @import 'global.css';
+@import 'layouts/about.css';
 @import 'components/blog.css';
 @import 'components/branding.css';
 @import 'components/button.css';
@@ -17,3 +18,4 @@
 @import 'components/nav.css';
 @import 'components/page-title.css';
 @import 'components/promos.css';
+@import 'components/rule.css';

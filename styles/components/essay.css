@@ -4,12 +4,6 @@
   grid-gap: 0 50px;
   grid-template-columns: 2fr 1fr;
 
-  &__title {
-    color: var(--c-black);
-    font: 600 35px var(--f-serif);
-    margin-top: 0;
-  }
-
   &__banner {
     display: block;
     grid-column: 1 / 3;

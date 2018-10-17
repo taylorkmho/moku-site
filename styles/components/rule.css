@@ -1,0 +1,12 @@
+.rule {
+  display: block;
+
+  &--section {
+    background: var(--c-light-gray);
+    border: 0;
+    display: block;
+    height: 4px;
+    margin: 100px auto;
+    width: 40px;
+  }
+}

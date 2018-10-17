@@ -8,7 +8,7 @@
 
       <!--POST TILE-->
 
-      <h1 class="essay__title" data-content-field="title">{title}</h1>
+      <h1 class="heading" data-content-field="title">{title}</h1>
 
       <!--MAIN CONTENT-->
 
@@ -19,7 +19,7 @@
     </article>
     <aside class="essay__aside">
       <div class="links">
-        <h3 class="links__subheader">On the Topic of</h3>
+        <h3 class="links__subheading">On the Topic of</h3>
         <h2 class="links__title">Lifestyle Through Language</h2>
         <ol class="links__list">
           <li class="links__item"><a class="links__link" href="#">Indigenous Legends and Teaching</a></li>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="links">
-        <h3 class="links__subheader">More Essays</h3>
+        <h3 class="links__subheading">More Essays</h3>
         <ol class="links__list">
           <li class="links__item"><a class="links__link" href="#">Worldviews: Indiginous Knowledge and Oral Tradition</a></li>
           <li class="links__item"><a class="links__link" href="#">Indigenous Language and Health</a></li>

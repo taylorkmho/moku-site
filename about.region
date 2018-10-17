@@ -1,0 +1,57 @@
+<h1 class="section-heading">About</h1>
+
+<section class="layout-container layout--about">
+  <aside class="layout--about__aside">
+    <img src="https://picsum.photos/300/200" alt="" />
+    <p>Mokuola Honua, <i>The Global Center for Indigenous Language Excellence (GCILE),</i> is bringing back prominence for indigenous perspective in modern contexts through language.</p>
+  </aside>
+  <div class="layout--about__main">
+    <div>
+      <h4 class="subheading">Our Purpose</h4>
+      <h3 class="heading">Reestablish prominence for indigenous perspective</h3>
+      <p>The GCILE&rsquor;s mission is to reestablish the prominence of our indigenous perspectives in modern contexts, both in our homelands and globally; doing so from a strong foundation of fluency in our mother tongues.</p>
+    </div>
+
+    <div>
+      <h4 class="subheading">Where We are</h4>
+      <h3 class="heading">A gathering place for all (Hilo, Hawaii)</h3>
+      <p>The GCILE&rsquor;s mission is to reestablish the prominence of our indigenous perspectives in modern contexts, both in our homelands and globally; doing so from a strong foundation of fluency in our mother tongues.</p>
+    </div>
+
+    <div>
+      <h4 class="subheading">How we Think</h4>
+      <h3 class="heading">Both leading and following, as older siblings nurturing younger siblings</h3>
+      <p><img src="https://picsum.photos/300/200" class="float--right" alt="" />The Center&rsquor;s collaborations will bring together those from indigenous communities that have achieved considerable progress in revitalizing and normalizing languages and perspectives, but will pay particular attention to budding community initiatives as well.</p>
+
+      <p>Our intent is to perpetuate a traditional understanding of alaka&OpenCurlyQuote;i a hahai, leading and following, and kaikaina a kaikua&OpenCurlyQuote;ana, older siblings nurturing younger siblings. We all have the ability and responsibility to lead and follow at the appropriate times, in a manner that promotes efficacious learning and growth.</p>
+
+      <p>Our collective work will not only lead to research and cross-development of new knowledge and an identified set of best practices for success in promoting our indigenous perspectives, but will focus on ensuring the duplicability of these best practices by the broadest range of indigenous communities possible.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule rule--section" />
+
+<div class="layout-container">
+  <h2 class="section-heading">He aha ka mana&OpenCurlyQuote;o o ko&OpenCurlyQuote;u inoa?</h2>
+  <h2 class="section-subheading">What&rsquor;s the meaning of our name?</h2>
+</div>
+
+<section class="layout-container layout--about">
+  <aside class="layout--about__aside">
+    <img class="layout--about__image layout--about__image--centered" src="/assets/mokuola-honua-logo-vertical.png" alt="" />
+  </aside>
+  <div class="layout--about__main">
+    <div>
+      <h3 class="heading">Island of life/healing</h3>
+
+      <p>Mokuola Honua Global Center for Indigenous Language Excellence is named for the small island in Hilo Bay called Mokuola. Literally island of life/healing, Mokuola is a traditional healing site for Native Hawaiians.</p>
+
+      <p>Mokuola is traditionally said to be a piece of neighboring Maui Island that was dislodged by the hook of the cultural hero Maui. This happened as part of a process by which M&amacr;ui was seeking to bring the Hawaiian Islands completely together. The Center is envisioned as providing a venue to bring the Indigenous World together to seek life and healing for &ndash; and through &ndash; indigenous languages.</p>
+
+      <p>In striving to bring the world&rsquor;s indigenous peoples together in Hilo, the Center does not seek to homogenize indigenous peoples into a single approach or philosophy. The story of Maui and Mokuola shows that a more appropriate goal is closer relationships while maintaining distinctiveness. The addition of the word Honua after Mokuola represents the world and also a safe and protected space.</p>
+
+      <p>The full name Mokuola Honua represents the aspirations of the host Hawaiian language college to offer its small but embracing home as a safe place of healing and life for the world&rsquor;s indigenous peoples.</p>
+    </div>
+  </div>
+</section>
