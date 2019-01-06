@@ -44,6 +44,11 @@
   text-transform: uppercase;
 }
 
+.title {
+  font: 600 29px var(--f-serif);
+  margin: 0;
+}
+
 .intro {
   font-size: 23px;
   margin: 60px auto;

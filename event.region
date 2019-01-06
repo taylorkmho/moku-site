@@ -8,6 +8,18 @@
   <a href="#"><p class="video-block__cta">Watch the Introduction</p></a>
 </div>
 
+<div class="layout-container event-item-header">
+  <div class="event-item-header__cta">
+    <p class="title">Looking back at the conference</p>
+    <a href="#" class="button button--play">Watch the Talks</a>
+  </div>
+  <div class="event-item-header__summary">
+    <p class="subheading">January 24-26, 2016</p>
+    <h1 class="title">Hale‘ōlelo, University of Hawai‘i at Hilo</h1>
+    <p>Magna irure velit eiusmod dolore proident quis sunt enim. Voluptate aute anim sit enim nostrud.</p>
+  </div>
+</div>
+
 <div class="layout-container layout-container--slim">
   <section class="content">
     <p class="large">Given that the success of this global Center will fundamentally be dependent on its ability to impact stakeholders around the globe, the driving goal of the symposium was to provide a context to start collaborating.</p>

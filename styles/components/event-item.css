@@ -1,0 +1,31 @@
+.event-item {
+  &-header {
+    display: grid;
+    grid-gap: 0 50px;
+    grid-template-columns: 4.5fr 5.5fr;
+
+    && {
+      margin: 25px auto 100px;
+    }
+
+    &__cta {
+      background: var(--c-footer-cta-bg);
+      display: grid;
+      grid-gap: var(--d-padding) 0;
+      justify-items: flex-start;
+      padding: 40px 100px;
+
+      &.title {
+        margin: 0;
+      }
+    }
+
+    &__summary {
+      align-content: center;
+      align-items: top;
+      align-items: center;
+      display: grid;
+      justify-items: flex-start;
+    }
+  }
+}
