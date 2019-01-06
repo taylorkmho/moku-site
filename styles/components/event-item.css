@@ -22,7 +22,6 @@
 
     &__summary {
       align-content: center;
-      align-items: top;
       align-items: center;
       display: grid;
       justify-items: flex-start;
