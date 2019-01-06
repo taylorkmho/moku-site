@@ -44,6 +44,13 @@
   text-transform: uppercase;
 }
 
+.intro {
+  font-size: 23px;
+  margin: 60px auto;
+  max-width: 975px;
+  text-align: center;
+}
+
 img {
   &.float {
     &--right {

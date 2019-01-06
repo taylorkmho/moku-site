@@ -1,0 +1,34 @@
+.footer-cta {
+  background: var(--c-footer-cta-bg);
+  margin-top: 60px;
+  padding: 85px var(--d-padding);
+
+  &__layout-container {
+    align-content: center;
+    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 15px 60px;
+    grid-template-areas: 'icon title button' 'icon description button';
+  }
+
+  &__icon {
+    grid-area: icon;
+  }
+
+  &__title {
+    font: 600 36px var(--f-serif);
+    grid-area: title;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: 18px;
+    grid-area: description;
+    margin: 0;
+  }
+
+  &__button {
+    grid-area: button;
+  }
+}

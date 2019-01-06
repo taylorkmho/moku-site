@@ -12,6 +12,7 @@
     "authserver": "squarespace runserver --auth",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "start:auth": "squarespace setup && (npm run watch & npm run authserver)",
+    "start:deploy": "cd build && git init && git add . && git commit -m 'Updated site' && git push --force https://mokuola-honua.squarespace.com/template.git master && cd .. && squarespace setup && (npm run watch & npm run authserver)",
     "deploy": "cd build && git init && git add . && git commit -m 'Updated site' && git push --force https://mokuola-honua.squarespace.com/template.git master",
     "build:deploy": "npm run build && npm run deploy",
     "lint": "eslint .",

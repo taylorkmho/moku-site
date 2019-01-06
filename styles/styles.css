@@ -7,8 +7,10 @@
 @import 'components/button.css';
 @import 'components/categories.css';
 @import 'components/essay.css';
+@import 'components/events.css';
 @import 'components/featured-resources.css';
 @import 'components/footer.css';
+@import 'components/footer-cta.css';
 @import 'components/general.css';
 @import 'components/header.css';
 @import 'components/hero.css';
