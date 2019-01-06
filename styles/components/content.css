@@ -1,0 +1,21 @@
+.content {
+  margin-bottom: 85px;
+
+  h3 {
+    font: 600 30px var(--f-serif);
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    @mixin clear-list;
+    display: grid;
+    grid-gap: 1rem 0;
+
+    li {
+      @mixin fancy-bullet;
+    }
+  }
+}

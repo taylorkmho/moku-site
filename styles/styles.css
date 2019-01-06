@@ -6,6 +6,8 @@
 @import 'components/branding.css';
 @import 'components/button.css';
 @import 'components/categories.css';
+@import 'components/columns.css';
+@import 'components/content.css';
 @import 'components/essay.css';
 @import 'components/events.css';
 @import 'components/featured-resources.css';
@@ -18,6 +20,8 @@
 @import 'components/links.css';
 @import 'components/mission.css';
 @import 'components/nav.css';
+@import 'components/options.css';
 @import 'components/page-title.css';
 @import 'components/promos.css';
 @import 'components/rule.css';
+@import 'components/visitation-map.css';

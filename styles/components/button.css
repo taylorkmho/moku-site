@@ -1,10 +1,11 @@
 .button {
   appearance: none;
-  background: transparent;
+  background-color: transparent;
   border: solid 2px var(--c-teal);
   border-radius: 6px;
   color: var(--c-black);
   font: 600 12px var(--f-sans);
+  letter-spacing: .05rem;
   padding: 17px 34px;
   text-transform: uppercase;
 
@@ -21,6 +22,7 @@
   }
 
   &--play {
-    background-image: url('/assets/icon-play.png');
+    background: transparent url('/assets/icon-play.png') 20px 50% no-repeat;
+    padding-left: 62px;
   }
 }

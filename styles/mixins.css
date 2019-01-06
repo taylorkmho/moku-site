@@ -18,6 +18,17 @@
   }
 }
 
+@define-mixin clear-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+@define-mixin fancy-bullet {
+  background: url('/assets/bullet.png') left 2px no-repeat;
+  line-height: 1.4;
+  padding-left: 32px;
+}
+
 @define-mixin responsive-media $ratio {
   height: 0;
   padding-bottom: $ratio;

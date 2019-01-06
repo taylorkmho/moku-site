@@ -1,3 +1,7 @@
 .layout-container {
   @mixin layout-container;
+
+  &--slim {
+    max-width: var(--d-max-layout-width--slim);
+  }
 }

@@ -1,0 +1,5 @@
+.visitation-map {
+  background: url('/assets/bg-wave.png') center;
+  height: calc(100vw / 72 * 35);
+  width: 100vw;
+}

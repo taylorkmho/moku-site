@@ -28,8 +28,6 @@
   }
 
   &__item {
-    background: url('/assets/bullet.png') left 2px no-repeat;
-    line-height: 1.4;
-    padding-left: 32px;
+    @mixin fancy-bullet;
   }
 }

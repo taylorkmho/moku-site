@@ -1,0 +1,44 @@
+<h1 class="section-heading">Visitation Program</h1>
+
+<p class="intro">Dolore eiusmod officia veniam enim non eiusmod occaecat amet et nisi amet pariatur. Culpa anim veniam occaecat culpa est.</p>
+
+<div class="options">
+  <button href="/" class="button button--play">Watch the Video</button>
+  <a href="/" class="button button--solid">Request a Visit</a>
+</div>
+
+<section class="visitation-map">
+  <p>Map Here</p>
+</section>
+
+<div class="layout-container">
+  <p class="intro">As the Hawaiian langauge movement has grown since inception in the mid-1980s, it has become a viable model for other language revitalization and normalization initiatives nationally and internationally that have a strong focus on native langauge medium or immersion schools and education programs as a foundational component.</p>
+</div>
+
+<div class="layout-container layout-container--slim">
+  <section class="content">
+    <div class="cols">
+      <div>
+        <h3>Visit the Ku‘ikahi</h3>
+        <p>Our consortium, or Ku‘ikahi oh schools through Hawai‘i have hosted numerous groups looking to observe and learn about the Hawaiian program as a means to further their own efforts. We facilitate visitation at:</p>
+        <ul>
+          <li>’Aha Pūnana Leo</li>
+          <li>Nāwahīokalani‘ōpu‘u</li>
+          <li>Ka Haka ‘Ula o Ke‘elikōlani Hawaiian Language College</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Matching the language profile</h3>
+        <p>While Hawai‘i’s program may not be the best model for all, diverse partners that have benefitted from visiting one of our Ku‘ikahi members. Particularly those whose native language profile is similar to the Hawaiian experience:</p>
+        <ul>
+          <li>Written language</li>
+          <li>Access to native speakers</li>
+          <li>Repository of native language writings</li>
+          <li>Immersion school approach</li>
+        </ul>
+      </div>
+    </div>
+    <h3>More being planned</h3>
+    <p>There upcoming events, hosted by Mokuola Hohua or other the Ku‘ikahi partners, may also be the perfect opportunity to experience some of the Hawaiian Language movement’s programming.</p>
+  </section>
+</div>
