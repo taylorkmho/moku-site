@@ -1,0 +1,8 @@
+<div class="footer-cta">
+  <div class="layout-container footer-cta__layout-container">
+    <img class="footer-cta__icon" src="/assets/icon-contact.png" alt="Contact" />
+    <p class="footer-cta__title">It’d be great to stay in touch</p>
+    <p class="footer-cta__description">Subscribe to our newsletter to stay up to date with the latest event sand news around indigenous langauge.</p>
+    <a href="/subscribe" class="button button--solid footer-cta__button">Sign up for our newsletter</a>
+  </div>
+</div>
