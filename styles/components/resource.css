@@ -1,3 +1,48 @@
+.resources {
+  display: grid;
+  grid-gap: 60px var(--d-padding);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.resource {
+  text-align: center;
+  display: grid;
+  grid-gap: var(--d-padding) 0;
+  justify-content: center;
+  justify-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  &__responsive-media {
+    @mixin responsive-media 64.29%;
+    width: 100%;
+  }
+
+  &__title {
+    font: normal 28px var(--f-serif);
+    margin: 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  ul {
+    @mixin clear-list;
+    display: grid;
+    grid-gap: 15px 0;
+
+    li {
+      @mixin fancy-bullet;
+      text-align: left;
+    }
+  }
+}
+
 .resource-article {
   @mixin layout-container;
   margin-bottom: 100px;

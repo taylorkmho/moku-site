@@ -1,1 +1,80 @@
-<P>List resources here</p>
+<h1 class="section-heading">Resources</h1>
+<section class="layout-container">
+  <p class="intro">Et qui anim Lorem culpa reprehenderit. Dolor ullamco adipisicing officia proident sint adipisicing. Culpa culpa reprehenderit voluptate ea quis consequat in sit mollit velit ea ut.</p>
+  <h2 class="collection-list-heading">Topics</h2>
+  <div class="resources">
+    <article class="resource">
+      <div class="resource__responsive-media">
+        <a href="#"><img src="https://picsum.photos/280/180" alt="" /></a>
+      </div>
+      <p class="resource__title"><a href="#">Working with Government</a></p>
+      <p class="resource__description">One of the best cases for integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo.</p>
+      <ul>
+        <li>Introduction to Indigenous Truth and Resilience</li>
+        <li>Ecological Interactions: Intro to Indigenous and Western Sciences</li>
+        <li>Research and Ethics in Indigenous Language Studies</li>
+      </ul>
+    </article>
+    <article class="resource">
+      <div class="resource__responsive-media">
+        <img src="https://picsum.photos/280/180" alt="" />
+      </div>
+      <p class="resource__title"><a href="#">Working with Government</a></p>
+      <p class="resource__description">One of the best cases for integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo.</p>
+      <ul>
+        <li>Introduction to Indigenous Truth and Resilience</li>
+        <li>Ecological Interactions: Intro to Indigenous and Western Sciences</li>
+        <li>Research and Ethics in Indigenous Language Studies</li>
+      </ul>
+    </article>
+    <article class="resource">
+      <div class="resource__responsive-media">
+        <img src="https://picsum.photos/280/180" alt="" />
+      </div>
+      <p class="resource__title"><a href="#">Working with Government</a></p>
+      <p class="resource__description">One of the best cases for integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo.</p>
+      <ul>
+        <li>Introduction to Indigenous Truth and Resilience</li>
+        <li>Ecological Interactions: Intro to Indigenous and Western Sciences</li>
+        <li>Research and Ethics in Indigenous Language Studies</li>
+      </ul>
+    </article>
+    <article class="resource">
+      <div class="resource__responsive-media">
+        <img src="https://picsum.photos/280/180" alt="" />
+      </div>
+      <p class="resource__title"><a href="#">Working with Government</a></p>
+      <p class="resource__description">One of the best cases for integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo.</p>
+      <ul>
+        <li>Introduction to Indigenous Truth and Resilience</li>
+        <li>Ecological Interactions: Intro to Indigenous and Western Sciences</li>
+        <li>Research and Ethics in Indigenous Language Studies</li>
+      </ul>
+    </article>
+    <article class="resource">
+      <div class="resource__responsive-media">
+        <img src="https://picsum.photos/280/180" alt="" />
+      </div>
+      <p class="resource__title"><a href="#">Working with Government</a></p>
+      <p class="resource__description">One of the best cases for integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo.</p>      <ul>
+        <li>Introduction to Indigenous Truth and Resilience</li>
+        <li>Ecological Interactions: Intro to Indigenous and Western Sciences</li>
+        <li>Research and Ethics in Indigenous Language Studies</li>
+      </ul>
+    </article>
+    <article class="resource">
+      <div class="resource__responsive-media">
+        <img src="https://picsum.photos/280/180" alt="" />
+      </div>
+      <p class="resource__title"><a href="#">Working with Government</a></p>
+      <p class="resource__description">One of the best cases for integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo.</p>
+      <ul>
+        <li>Introduction to Indigenous Truth and Resilience</li>
+        <li>Ecological Interactions: Intro to Indigenous and Western Sciences</li>
+        <li>Research and Ethics in Indigenous Language Studies</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+{@|apply footer-cta.block}
