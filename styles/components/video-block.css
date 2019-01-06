@@ -1,0 +1,53 @@
+.video-block {
+  align-content: center;
+  align-items: center;
+  background-color: var(--c-blue);
+  display: grid;
+  grid-auto-columns: var(--d-max-layout-width--slim);
+  height: calc(100vw / 16 * 9);
+  justify-content: center;
+  justify-items: center;
+  position: relative;
+  text-align: center;
+  width: 100vw;
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    color: #fff;
+    font-family: var(--f-serif);
+    font-size: 48px;
+    margin-bottom: 85px;
+    margin-top: 0;
+
+    &::last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    opacity: .25;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &__play {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  &__cta {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+  }
+}

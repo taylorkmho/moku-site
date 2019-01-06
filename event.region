@@ -1,0 +1,38 @@
+<h1 class="section-heading">Mokuola Honua Symposium 2016</h1>
+<h2 class="section-subheading">An international collaborative event</h2>
+
+<div class="video-block">
+  <img class="video-block__image" src="https://picsum.photos/1280/720" alt="" />
+  <p class="video-block__title">&ldquo;Bringing indigenous people together from around the globe&rdquo;</p>
+  <a href="#"><img class="video-block__play" src="/assets/icon-play-large.png" alt="Play" /></a>
+  <a href="#"><p class="video-block__cta">Watch the Introduction</p></a>
+</div>
+
+<div class="layout-container layout-container--slim">
+  <section class="content">
+    <p class="large">Given that the success of this global Center will fundamentally be dependent on its ability to impact stakeholders around the globe, the driving goal of the symposium was to provide a context to start collaborating.</p>
+    <p>The symposium was an opportunity to introduce this collective to the intent of the Center and then to engage participants in sharing and discourse to help solidify what would be most beneficial to stakeholders as we began solidifying the priorities and strategic directions for the Center.</p>
+    <div class="cols">
+      <div>
+        <h3>Relationship building</h3>
+        <p>Created relationships – personal and professional – between representatives of indigenous communities across the globe, as well as individuals from initiatives and organizations who support indigenous communities that share a common commitment to the work of the Center.</p>
+      </div>
+      <div>
+        <h3>Giving a voice to indigenous language progress</h3>
+        <p>Gave 5 indigenous communities (Māori, Sápmi, Gaelic speakers in Scotland, Inuit of Greenland, Hawai‘i) – who have achieved a relatively substantial amount of progress in reestablishing their languages and perspectives to places of relative prominence in their homelands – a chance to share their work to date.</p>
+      </div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Language applied to policy, language and media</h3>
+        <p>Engaged representatives from these and other indigenous communities to dialogue, cross-community, on specific sectors of society where language is being practically applied and impacting the perspective driving that sector; namely policy, education and media.</p>
+      </div>
+      <div>
+        <h3>Identifying our common denominators of success</h3>
+        <p>The overarching goal was to enlist attendees to start identifying the common denominators of success that are duplicable globally in the ongoing work to strengthen indigenous perspectives through indigenous languages.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+{@|apply footer-cta.block}
