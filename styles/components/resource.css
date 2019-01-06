@@ -1,7 +1,9 @@
-.essay {
+.resource-article {
   @mixin layout-container;
+  margin-bottom: 100px;
   display: grid;
-  grid-gap: 0 50px;
+  grid-gap: var(--d-padding) 50px;
+  grid-template-columns: auto auto minmax(auto, 380px);
   grid-template-areas:  "banner banner banner"
                         "breadcrumbs breadcrumbs ."
                         "title title ."
@@ -10,6 +12,10 @@
 
   &__title {
     grid-area: title;
+  }
+
+  &__article {
+    grid-area: article;
   }
 
   &__share {
@@ -23,7 +29,7 @@
   &__banner {
     display: block;
     grid-area: banner;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     object-fit: cover;
     width: 100%;
   }

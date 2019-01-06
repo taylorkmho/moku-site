@@ -1,8 +1,10 @@
 :root {
   /* Colors */
   --c-default: #414042;
+  --c-cyan: #3ac8c1;
   --c-gray: #414042;
   --c-medium-gray: #7c7c7c;
+  --c-medium-light-gray: #909090;
   --c-light-gray: #adaeae;
   --c-off-white: #f4f4f5;
   --c-black: #050505;

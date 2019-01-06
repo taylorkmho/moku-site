@@ -3,8 +3,13 @@
     font-size: 17px;
     line-height: 1.6;
 
-    &:first-child {
+    &:first-of-type {
       font-size: 23px;
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }

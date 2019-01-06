@@ -1,0 +1,19 @@
+.breadcrumbs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 0 20px;
+  justify-content: flex-start;
+}
+
+.breadcrumb {
+  &:not(:last-of-type) {
+    &::after {
+      content: "•";
+      padding-left: 20px;
+    }
+  }
+
+  &__link {
+    color: var(--c-medium-light-gray);
+  }
+}

@@ -4,6 +4,7 @@
 @import 'layouts/about.css';
 @import 'components/blog.css';
 @import 'components/branding.css';
+@import 'components/breadcrumbs.css';
 @import 'components/button.css';
 @import 'components/categories.css';
 @import 'components/columns.css';
@@ -24,6 +25,8 @@
 @import 'components/options.css';
 @import 'components/page-title.css';
 @import 'components/promos.css';
+@import 'components/resource.css';
 @import 'components/rule.css';
+@import 'components/share.css';
 @import 'components/video-block.css';
 @import 'components/visitation-map.css';
