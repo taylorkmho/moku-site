@@ -1,11 +1,15 @@
 <h1 class="section-heading">Mokuola Honua Symposium 2016</h1>
 <h2 class="section-subheading">An international collaborative event</h2>
 
-<div class="video-block">
-  <img class="video-block__image" src="https://picsum.photos/1280/720" alt="" />
-  <p class="video-block__title">&ldquo;Bringing indigenous people together from around the globe&rdquo;</p>
-  <a href="#"><img class="video-block__play" src="/assets/icon-play-large.png" alt="Play" /></a>
-  <a href="#"><p class="video-block__cta">Watch the Introduction</p></a>
+<div class="layout-container">
+  <div class="video-block">
+    <div class="video-block__responsive-media">
+      <img class="video-block__image" src="https://picsum.photos/1280/720" alt="" />
+    </div>
+    <p class="video-block__title">&ldquo;Bringing indigenous people together from around the globe&rdquo;</p>
+    <a href="#"><img class="video-block__play" src="/assets/icon-play-large.png" alt="Play" /></a>
+    <a href="#"><p class="video-block__cta">Watch the Introduction</p></a>
+  </div>
 </div>
 
 <div class="layout-container event-item-header">

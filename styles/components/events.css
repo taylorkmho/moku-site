@@ -13,11 +13,9 @@
   color: #fff;
   display: grid;
   grid-gap: 10px 0;
-  height: 450px;
   justify-content: flex-start;
   padding: 50px 45px;
   position: relative;
-  width: 780px;
 
   * {
     position: relative;
@@ -40,6 +38,7 @@
   &__image {
     height: 100%;
     left: 0;
+    object-fit: cover;
     opacity: .25;
     pointer-events: none;
     position: absolute;
