@@ -50,16 +50,14 @@
   align-items: flex-start;
   display: grid;
   grid-gap: 0 30px;
-  grid-template-areas: 'image category'
-    'image title'
-    'image excerpt';
+  grid-template-areas: 'image copy';
 
   &__image {
     border: solid 2px #fff;
     display: block;
     grid-area: image;
-    height: 120px;
-    width: 120px;
+    height: 80px;
+    width: 80px;
   }
 
   &__category {
