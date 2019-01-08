@@ -11,7 +11,13 @@
       {.section website}
         <div class="branding">
           <a class="branding__link" href="/" data-content-field="site-title">
-            <img class="branding__image" src="/assets/mokuola-honua-logo.png" alt="{siteTitle}" />
+            <!-- TODO USE CONDITIONAL
+              {.if logoImageUrl}
+                <img class="branding__image" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
+              {.or}
+              {.end}
+            -->
+              <img class="branding__image" src="/assets/mokuola-honua-logo.svg" alt="{siteTitle}" />
           </a>
         </div>
       {.end}
