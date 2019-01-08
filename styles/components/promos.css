@@ -11,6 +11,7 @@
   grid-auto-flow: row dense;
   grid-gap: 25px 0;
   justify-content: stretch;
+  text-align: center;
 
   &__media-container {
     @mixin responsive-media 70%;

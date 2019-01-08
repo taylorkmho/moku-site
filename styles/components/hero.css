@@ -27,7 +27,7 @@
   }
 
   &__title {
-    font: 600 58px var(--f-serif);
+    font: 400 58px var(--f-serif);
     line-height: 1.2;
     margin: 20px 0;
   }

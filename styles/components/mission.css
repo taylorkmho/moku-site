@@ -1,7 +1,9 @@
 .mission {
   background: url('/assets/world-map-bg.jpg');
+  background-size: cover;
+  background-position: center center;
   color: #fff;
-  font: 600 38px var(--f-serif);
+  font: 400 36px var(--f-serif);
   line-height: 1.4;
   padding: 120px 0;
   text-align: center;
