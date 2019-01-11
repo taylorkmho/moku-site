@@ -2,55 +2,69 @@
   <div class="layout-container featured-resources__container">
     <aside class="featured-resources__aside">
       <p class="featured-resources__title">Resources</p>
-      <p class="featured-resources__description">Mokuola Honua provides resources, advocacy, and praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+      <p class="featured-resources__description">Research and multi-media resources highlighting successful language revitalization and normalization initiatives from Hawai'i and around the world.</p>
       <a href="#" class="button button--solid">View All Resources</a>
       <div class="categories">
         <p class="categories__title">Categories</p>
         <ul class="categories__list">
-          <li class="categories__item"><a class="categories__link" href="#">Lorem Ipsum</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Dolor Amet</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Consectetuer</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Donec Odio</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Suspendisse</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Policy</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Movement</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Immersion: Curriculum</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Immersion: T. Education</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Immersion: H. Education</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Immersion: Parent</a></li>
+          <li class="categories__item"><a class="categories__link" href="#">Immersion: Elder</a></li>
         </ul>
       </div>
     </aside>
     <div class="featured-resources__collection">
       <article href="#" class="featured-resource">
-        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
-        <p class="featured-resource__category">Category</p>
-        <p class="featured-resource__title">Title</p>
-        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+        <img class="featured-resource__image" src="/assets/fpo-dream.jpg" alt="" />
+        <section class="featured-resource__copy">
+          <h4 class="featured-resource__category">Movement</h4>
+          <h2 class="featured-resource__title">Mai Loko Mai o ka ʻIʻini: Proceeding From a Dream</h2>
+          <p class="featured-resource__excerpt">An essay that focuses on the development and delivery of Hawaiian-medium education through the NGO ʻAha Pūnana Leo and the Ka Haka ʻUla o Keʻelikōlani...</p>
+        </section>
       </article>
       <article href="#" class="featured-resource">
-        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
-        <p class="featured-resource__category">Category</p>
-        <p class="featured-resource__title">Title</p>
-        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+        <img class="featured-resource__image" src="/assets/fpo-youth.jpg" alt="" />
+        <section class="featured-resource__copy">
+          <h4 class="featured-resource__category">MOVEMENT</h4>
+          <h2 class="featured-resource__title">Indigenous Youth Bilingualism from a Hawaiian Activist Perspective</h2>
+          <p class="featured-resource__excerpt">Hawai‘i’s massive language shift began a century ago. In the late 1800s, everyone spoke Hawaiian. Then Hawaiian medium schools were banned...</p>
+        </section>
       </article>
       <article href="#" class="featured-resource">
-        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
-        <p class="featured-resource__category">Category</p>
-        <p class="featured-resource__title">Title</p>
-        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+        <img class="featured-resource__image" src="/assets/fpo-hakalama.jpg" alt="" />
+        <section class="featured-resource__copy">
+          <h4 class="featured-resource__category">Immersion: Curriculum</h4>
+          <h2 class="featured-resource__title">The Hakalama: the ʻAha Pūnana Leo's Syllabic Hawaiian Reading Program</h2>
+          <p class="featured-resource__excerpt">Hawaiian is the first indigenous language recognized as official in a state of the United States. It is also a highly endangered language and the object of...</p>
+        </section>
       </article>
       <article href="#" class="featured-resource">
-        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
-        <p class="featured-resource__category">Category</p>
-        <p class="featured-resource__title">Title</p>
-        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+        <img class="featured-resource__image" src="/assets/thumbnail-placeholder.png" alt="" />
+        <section class="featured-resource__copy">
+          <h4 class="featured-resource__category">Policy</h4>
+          <h2 class="featured-resource__title">Language Suppression, Revitalization, and Native Hawaiian Identity</h2>
+          <p class="featured-resource__excerpt">Having been the target of colonialist suppression for over a century and a half, the Hawaiian language has experienced a period of revitalization that began with...</p>
+        </section>
       </article>
       <article href="#" class="featured-resource">
-        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
-        <p class="featured-resource__category">Category</p>
-        <p class="featured-resource__title">Title</p>
-        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+        <img class="featured-resource__image" src="/assets/fpo-alaska.jpg" alt="" />
+        <section class="featured-resource__copy">
+          <h4 class="featured-resource__category">Policy</h4>
+          <h2 class="featured-resource__title">How the loss of Native American languages affects our understanding of the natural world</h2>
+          <p class="featured-resource__excerpt">Alaska has a “linguistic emergency,” according to the Alaskan Gov. Bill Walker. A report warned earlier this year that all of the state’s 20 Native American...</p>
+        </section>
       </article>
       <article href="#" class="featured-resource">
-        <img class="featured-resource__image" src="https://picsum.photos/100/100" alt="" />
-        <p class="featured-resource__category">Category</p>
-        <p class="featured-resource__title">Title</p>
-        <p class="featured-resource__excerpt">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci<p>
+        <img class="featured-resource__image" src="/assets/thumbnail-placeholder.png" alt="" />
+        <section class="featured-resource__copy">
+          <h4 class="featured-resource__category">Policy</h4>
+          <h2 class="featured-resource__title">The Sociopolitical Context of Establishing Hawaiian-medium Education</h2>
+          <p class="featured-resource__excerpt">Hawai‘i’s massive language shift began a century ago. In the late 1800s, everyone spoke Hawaiian. Then Hawaiian medium schools were banned, such that...</p>
+        </section>
       </article>
     </div>
   </div>
