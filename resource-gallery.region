@@ -11,9 +11,9 @@
           <div class="swiper-slide"><img src="https://picsum.photos/722/480" alt="" /></div>
       </div>
       <div class="swiper-navigation">
-        <div class="swiper-button-prev"><span>&lt;</span>Previous</div>
+        <div class="swiper-button-prev"><span>&lsaquo;</span>Previous</div>
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-next">Next<span>&gt;</span></div>
+        <div class="swiper-button-next">Next<span>&rsaquo;</span></div>
       </div>
   </div>
 </div>
