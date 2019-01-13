@@ -27,6 +27,7 @@
   --d-footer-height: 160px;
   --d-padding: 30px;
   --d-hero-max-height: 720px;
+  --d-bullet-padding-start: 32px;
 }
 
 @custom-media --medium (min-width: 800px);

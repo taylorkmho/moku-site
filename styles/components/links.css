@@ -25,9 +25,22 @@
     grid-gap: 20px 0;
     list-style: none;
     padding-left: 10px;
+
+    &--horizontal {
+      grid-auto-flow: column;
+      grid-gap: 15px;
+      grid-template-areas: repeat(auto-fit, minmax(auto, 286px));
+      justify-content: flex-start;
+      padding-left: 0;
+    }
   }
 
   &__item {
     @mixin fancy-bullet;
+
+    .links__list--horizontal & {
+      margin-top: var(--d-padding);
+      width: calc(100% - var(--d-bullet-padding-start));
+    }
   }
 }

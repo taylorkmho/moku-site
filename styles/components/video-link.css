@@ -1,0 +1,26 @@
+.video-link {
+  align-content: flex-start;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 'thumbnail thumbnail' 'title timestamp';
+  justify-content: space-between;
+
+  &__title {
+    color: var(--c-black);
+    font-size: 14px;
+    font-weight: bold;
+    grid-area: title;
+    margin: 0;
+  }
+
+  &__thumbnail-container {
+    @mixin responsive-media 56.25%;
+    grid-area: thumbnail;
+  }
+
+  &__timestamp {
+    color: var(--c-medium-light-gray);
+    font-size: 14px;
+    grid-area: timestamp;
+  }
+}
