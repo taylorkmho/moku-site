@@ -8,12 +8,20 @@
 .breadcrumb {
   &:not(:last-of-type) {
     &::after {
-      content: "•";
+      content: '•';
       padding-left: 20px;
+
+      .feature & {
+        color: #fff;
+      }
     }
   }
 
   &__link {
     color: var(--c-medium-light-gray);
+
+    .feature & {
+      color: #fff;
+    }
   }
 }

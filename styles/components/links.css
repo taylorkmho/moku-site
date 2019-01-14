@@ -3,6 +3,10 @@
     font: normal 32px var(--f-serif);
     margin-bottom: 10px;
     margin-top: 0;
+
+    .feature & {
+      color: #fff;
+    }
   }
 
   &__subheading {
@@ -10,10 +14,18 @@
     margin-bottom: 10px;
     margin-top: 0;
     text-transform: uppercase;
+
+    .feature & {
+      color: #fff;
+    }
   }
 
   &__link {
     @mixin link var(--c-nav-link);
+
+    .feature & {
+      color: #fff;
+    }
 
     &:hover {
       color: var(--c-teal);
