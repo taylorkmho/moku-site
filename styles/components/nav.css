@@ -4,8 +4,13 @@
   display: grid;
   grid-area: nav;
   grid-auto-flow: column dense;
-  grid-gap: 0 40px;
-  justify-content: flex-end;
+  justify-content: center;
+  grid-gap: 0 30px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    grid-gap: 0 40px;
+  }
 
   &__link {
     @mixin link var(--c-nav-link);

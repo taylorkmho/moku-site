@@ -2,4 +2,11 @@
   @mixin grid-column-vertical-center;
   display: flex;
   grid-area: branding;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
 }

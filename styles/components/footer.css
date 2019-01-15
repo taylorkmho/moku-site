@@ -1,13 +1,17 @@
 .footer {
   background: var(--c-footer-bg);
   color: #fff;
+  padding-bottom: var(--d-padding);
 
   &__container {
     @mixin layout-container;
-    display: grid;
-    grid-gap: 0 var(--d-padding);
-    grid-template-areas: 'footer__logo-container footer__credits';
-    min-height: var(--d-footer-height);
+
+    @media (min-width: 760px) {
+      display: grid;
+      grid-gap: 0 var(--d-padding);
+      grid-template-areas: 'footer__logo-container footer__credits';
+      min-height: var(--d-footer-height);
+    }
   }
 
   &__logo-container {
