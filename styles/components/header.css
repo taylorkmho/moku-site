@@ -1,6 +1,6 @@
 .header {
   @mixin layout-container;
-  margin: 20px 0 var(--d-padding);
+  padding: 20px var(--d-padding) var(--d-padding);
 
   @media (min-width: 760px) {
     display: grid;

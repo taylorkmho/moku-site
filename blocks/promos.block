@@ -1,36 +1,38 @@
 <section class="layout-container promos">
   <h2 class="section-heading">Engage With Us</h2>
-  <article href="https://www.google.com" class="promo">
-    <a href="#">
-      <div class="promo__media-container">
-        <img
-          src="/assets/fpo-map.jpg"
-          alt=""
-        />
-      </div>
-    </a>
-    <p class="promo__title"><a href="#">Learn About Indigenous Languages Near You</a></p>
-  </article>
-  <article href="https://www.google.com" class="promo">
-    <a href="#">
-      <div class="promo__media-container">
-        <img
-          src="/assets/fpo-sitevisit.jpg"
-          alt=""
-        />
-      </div>
-    </a>
-    <p class="promo__title"><a href="#">Visit Our Program</a></p>
-  </article>
-  <article href="https://www.google.com" class="promo">
-    <a href="#">
-      <div class="promo__media-container">
-        <img
-          src="/assets/fpo-talks.jpg"
-          alt=""
-        />
-      </div>
-    </a>
-    <p class="promo__title"><a href="#">Watch Talks From the 2016 Symposium</a></p>
-  </article>
+  <div class="promos__container">
+    <article href="https://www.google.com" class="promo">
+      <a href="#">
+        <div class="promo__media-container">
+          <img
+            src="/assets/fpo-map.jpg"
+            alt=""
+          />
+        </div>
+      </a>
+      <p class="promo__title"><a href="#">Learn About Indigenous Languages Near You</a></p>
+    </article>
+    <article href="https://www.google.com" class="promo">
+      <a href="#">
+        <div class="promo__media-container">
+          <img
+            src="/assets/fpo-sitevisit.jpg"
+            alt=""
+          />
+        </div>
+      </a>
+      <p class="promo__title"><a href="#">Visit Our Program</a></p>
+    </article>
+    <article href="https://www.google.com" class="promo">
+      <a href="#">
+        <div class="promo__media-container">
+          <img
+            src="/assets/fpo-talks.jpg"
+            alt=""
+          />
+        </div>
+      </a>
+      <p class="promo__title"><a href="#">Watch Talks From the 2016 Symposium</a></p>
+    </article>
+  </div>
 </section>

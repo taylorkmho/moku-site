@@ -5,30 +5,41 @@
 
   &__container {
     @mixin layout-container;
+    display: grid;
+    justify-content: center;
 
     @media (min-width: 760px) {
-      display: grid;
       grid-gap: 0 var(--d-padding);
       grid-template-areas: 'footer__logo-container footer__credits';
+      justify-content: space-between;
       min-height: var(--d-footer-height);
     }
   }
 
   &__logo-container {
-    @mixin grid-column-vertical-center;
-    grid-area: footer__logo-container;
+    @media (min-width: 760px) {
+      @mixin grid-column-vertical-center;
+      grid-area: footer__logo-container;
+    }
   }
 
   &__logo {
     display: block;
-    height: 127px;
+    margin: var(--d-padding) auto;
+    max-width: calc(100% - 60px);
     object-fit: contain;
     width: 327px;
+
+    @media (min-width: 760px) {
+      margin: initial;
+    }
   }
 
   &__credits {
-    @mixin grid-column-vertical-center;
-    grid-area: footer__credits;
-    justify-content: flex-end;
+    @media (min-width: 760px) {
+      @mixin grid-column-vertical-center;
+      grid-area: footer__credits;
+      justify-content: flex-end;
+    }
   }
 }
