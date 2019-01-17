@@ -1,19 +1,27 @@
 .featured-resources {
   background: var(--c-off-white);
-  padding: 130px 0;
+  padding: var(--d-padding) 0;
+
+  @media (min-width: 768px) {
+    padding: 130px 0;
+  }
 
   &__container {
-    align-items: flex-start;
-    display: grid;
-    grid-gap: 0 60px;
-    grid-template-areas: 'frs-aside frs-collection';
-    grid-template-columns: 4fr 11fr;
+    @media (min-width: 768px) {
+      align-items: flex-start;
+      display: grid;
+      grid-gap: 0 60px;
+      grid-template-areas: 'frs-aside frs-collection';
+      grid-template-columns: 4fr 11fr;
+    }
   }
 
   &__aside {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
+    @media (min-width: 768px) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -31,9 +39,13 @@
 
   &__collection {
     display: grid;
-    grid-area: frs-collection;
-    grid-gap: 80px 60px;
-    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--d-padding) 0;
+
+    @media (min-width: 768px) {
+      grid-area: frs-collection;
+      grid-gap: 80px 60px;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .button {
@@ -47,16 +59,32 @@
 }
 
 .featured-resource {
-  align-items: flex-start;
   display: grid;
-  grid-gap: 0 30px;
-  grid-template-areas: 'image copy';
+  grid-gap: 0 20px;
+  grid-template-areas: 'image category' 'image title' 'excerpt excerpt';
+  grid-template-columns: 100px 1fr;
+  justify-content: flex-start;
+  justify-items: flex-start;
+
+  @media (min-width: 768px) {
+    align-content: flex-start;
+    align-items: flex-start;
+    grid-gap: 0 30px;
+    grid-template-areas: 'image category' 'image title' 'image excerpt';
+  }
 
   &__image {
     border: solid 2px #fff;
     display: block;
-    height: 80px;
-    width: 80px;
+    grid-area: image;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      height: 80px;
+      width: 80px;
+    }
   }
 
   &__copy {
@@ -66,6 +94,7 @@
   &__category {
     color: var(--c-medium-gray);
     font: 600 14px var(--f-sans);
+    grid-area: category;
     letter-spacing: .5px;
     margin: 0 0 5px;
     text-transform: uppercase;
@@ -73,6 +102,7 @@
 
   &__title {
     font: 500 22px var(--f-serif);
+    grid-area: title;
     line-height: 1.25;
     margin: 0 0 10px;
   }
@@ -80,7 +110,12 @@
   &__excerpt {
     color: var(--c-gray);
     font: 500 14px var(--f-sans);
+    grid-area: excerpt;
     line-height: 1.5;
-    margin: 0;
+    margin: 10px 0 0;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
   }
 }

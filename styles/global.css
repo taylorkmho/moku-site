@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 12px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
 html,
 body {
   margin: 0;

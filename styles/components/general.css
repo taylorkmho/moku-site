@@ -25,9 +25,14 @@
 }
 
 .section-heading {
-  font: 500 58px var(--f-serif);
-  margin: 0 0 60px;
+  font: 500 40px var(--f-serif);
+  margin: 0 0 var(--d-padding);
   text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 58px;
+    margin: 0 0 60px;
+  }
 
   .promos & {
     grid-column: 1 / 4;

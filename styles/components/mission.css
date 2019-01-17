@@ -1,7 +1,7 @@
 .mission {
   background: url('/assets/world-map-bg.jpg');
-  background-size: cover;
   background-position: center center;
+  background-size: cover;
   color: #fff;
   font: 400 36px var(--f-serif);
   line-height: 1.4;
@@ -14,8 +14,13 @@
     justify-content: center;
 
     && {
-      padding-left: 110px;
-      padding-right: 110px;
+      padding-left: var(--d-padding);
+      padding-right: var(--d-padding);
+
+      @media (min-width: 768px) {
+        padding-left: 110px;
+        padding-right: 110px;
+      }
     }
   }
 

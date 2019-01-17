@@ -7,6 +7,7 @@ module.exports = {
     'postcss-nested': {},
     'postcss-font-magician': {},
     'postcss-custom-media': {},
+    'postcss-pxtorem': {},
     cssnano: {},
     autoprefixer: {},
   },
