@@ -1,19 +1,32 @@
 .event-item {
   &-header {
     display: grid;
-    grid-gap: 0 50px;
-    grid-template-columns: 4.5fr 5.5fr;
+    grid-gap: var(--d-padding) 0;
+
+    @media (min-width: 768px) {
+      grid-gap: 0 50px;
+      grid-template-columns: 5.5fr 4.5fr;
+    }
 
     && {
-      margin: 25px auto 100px;
+      margin: 25px auto;
+
+      @media (min-width: 768px) {
+        margin: 25px auto 100px;
+      }
     }
 
     &__cta {
       background: var(--c-footer-cta-bg);
       display: grid;
       grid-gap: var(--d-padding) 0;
-      justify-items: flex-start;
-      padding: 40px 100px;
+      justify-items: center;
+      padding: var(--d-padding);
+
+      @media (min-width: 768px) {
+        justify-items: flex-start;
+        padding: var(--d-padding) 100px;
+      }
 
       &.title {
         margin: 0;

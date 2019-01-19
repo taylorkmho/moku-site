@@ -1,14 +1,19 @@
 .video-block {
-  align-content: center;
-  align-items: center;
   background-color: var(--c-blue);
   display: grid;
-  grid-auto-columns: var(--d-max-layout-width--slim);
-  height: calc(100vw / 16 * 9);
   justify-content: center;
   justify-items: center;
+  overflow: hidden;
+  padding: 15px;
   position: relative;
   text-align: center;
+
+  @media (min-width: 768px) {
+    align-content: center;
+    align-items: center;
+    grid-auto-columns: var(--d-max-layout-width--slim);
+    height: calc(100vw / 16 * 9);
+  }
 
   * {
     position: relative;
@@ -18,9 +23,15 @@
   &__title {
     color: #fff;
     font-family: var(--f-serif);
-    font-size: 48px;
-    margin-bottom: 85px;
+    font-size: 22px;
+    margin-bottom: var(--d-padding);
     margin-top: 0;
+    max-width: calc(100vw - 60px);
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      margin-bottom: 85px;
+    }
 
     &::last-child {
       margin-bottom: 0;
