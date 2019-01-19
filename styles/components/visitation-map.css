@@ -1,5 +1,11 @@
 .visitation-map {
-  background: url('/assets/bg-wave.png') center;
+  /* background: url('/assets/bg-wave.png') center;
   height: calc(100vw / 72 * 35);
-  width: 100vw;
+  width: 100vw; */
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+  }
 }

@@ -10,7 +10,7 @@
 </div>
 
 <section class="visitation-map">
-  <p>Map Here</p>
+  <img class="visitation-map__image" src="/assets/visitation-program-map.png" alt="Map" />
 </section>
 
 <div class="layout-container">
