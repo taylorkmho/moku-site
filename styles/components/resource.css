@@ -1,7 +1,10 @@
 .resources {
   display: grid;
-  grid-gap: 60px var(--d-padding);
-  grid-template-columns: repeat(3, 1fr);
+
+  @media (min-width: 768px) {
+    grid-gap: 60px var(--d-padding);
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .resource {
