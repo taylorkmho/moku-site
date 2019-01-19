@@ -1,15 +1,26 @@
 .footer-cta {
   background: var(--c-footer-cta-bg);
   margin-top: 60px;
-  padding: 85px var(--d-padding);
+  padding: 50px var(--d-padding);
+
+  @media (min-width: 960px) {
+    padding: 85px var(--d-padding);
+  }
 
   &__layout-container {
-    align-content: center;
     align-items: center;
     display: grid;
-    grid-auto-flow: column;
-    grid-gap: 15px 60px;
-    grid-template-areas: 'icon title button' 'icon description button';
+    grid-gap: 15px;
+    grid-template-areas: 'icon title' 'description description' 'button button';
+    grid-template-columns: 70px 1fr;
+
+    @media (min-width: 960px) {
+      align-content: center;
+      align-items: center;
+      grid-auto-flow: column;
+      grid-gap: 15px 60px;
+      grid-template-areas: 'icon title button' 'icon description button';
+    }
   }
 
   &__icon {

@@ -3,19 +3,31 @@
   <p class="intro">Et qui anim Lorem culpa reprehenderit. Dolor ullamco adipisicing officia proident sint adipisicing. Culpa culpa reprehenderit voluptate ea quis consequat in sit mollit velit ea ut.</p>
   <div class="event-blocks">
     <a href="/event" class="event-block">
-      <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
-      <p class="event-block__preheader">January 24-26</p>
-      <p class="event-block__title">Mokuola Honua Symposium 2016</p>
+      <div class="event-block__image-container">
+        <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
+      </div>
+      <div class="event-block__copy">
+        <p class="event-block__preheader">January 24-26</p>
+        <p class="event-block__title">Mokuola Honua Symposium 2016</p>
+      </div>
     </a>
     <a href="/event" class="event-block">
-      <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
-      <p class="event-block__preheader">January 24-26</p>
-      <p class="event-block__title">Mokuola Honua Symposium 2016</p>
+      <div class="event-block__image-container">
+        <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
+      </div>
+      <div class="event-block__copy">
+        <p class="event-block__preheader">January 24-26</p>
+        <p class="event-block__title">Mokuola Honua Symposium 2016</p>
+      </div>
     </a>
     <a href="/event" class="event-block">
-      <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
-      <p class="event-block__preheader">January 24-26</p>
-      <p class="event-block__title">Mokuola Honua Symposium 2016</p>
+      <div class="event-block__image-container">
+        <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
+      </div>
+      <div class="event-block__copy">
+        <p class="event-block__preheader">January 24-26</p>
+        <p class="event-block__title">Mokuola Honua Symposium 2016</p>
+      </div>
     </a>
   </div>
 </section>

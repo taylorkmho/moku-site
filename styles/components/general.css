@@ -87,9 +87,13 @@
 
 .intro {
   font-size: 23px;
-  margin: 60px auto;
+  margin: var(--d-padding) auto;
   max-width: 975px;
   text-align: center;
+
+  @media (min-width: 768px) {
+    margin: 60px auto;
+  }
 }
 
 img {
