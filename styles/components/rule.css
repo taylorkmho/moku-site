@@ -6,7 +6,11 @@
     border: 0;
     display: block;
     height: 4px;
-    margin: 100px auto;
+    margin: var(--d-padding) auto;
     width: 40px;
+
+    @media (min-width: 768px) {
+      margin: 100px auto;
+    }
   }
 }

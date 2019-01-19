@@ -39,7 +39,12 @@
   }
 
   + .section-subheading {
-    margin-top: -60px;
+    margin-bottom: 15px;
+    margin-top: -15px;
+
+    @media (min-width: 768px) {
+      margin-top: -60px;
+    }
   }
 }
 
@@ -98,9 +103,14 @@
 
 img {
   &.float {
+    display: block;
+    margin: 15px 0;
+
     &--right {
-      float: right;
-      margin: 0 0 10px 10px;
+      @media (min-width: 768px) {
+        float: right;
+        margin: 0 0 10px 10px;
+      }
     }
   }
 }
