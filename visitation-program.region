@@ -1,6 +1,8 @@
 <h1 class="section-heading">Visitation Program</h1>
 
-<p class="intro">Dolore eiusmod officia veniam enim non eiusmod occaecat amet et nisi amet pariatur. Culpa anim veniam occaecat culpa est.</p>
+<div class="layout-container">
+  <p class="intro">Dolore eiusmod officia veniam enim non eiusmod occaecat amet et nisi amet pariatur. Culpa anim veniam occaecat culpa est.</p>
+</div>
 
 <div class="options">
   <button href="/" class="button button--play">Watch the Video</button>
