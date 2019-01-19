@@ -66,13 +66,22 @@
   }
 
   .feature & {
-    grid-template-areas: 'preheader .'
-      'title .'
-      'breadcrumbs .'
-      'map map'
-      'article aside';
-    grid-template-columns: auto minmax(auto, 380px);
+    grid-template-areas: 'preheader'
+      'title'
+      'breadcrumbs'
+      'map'
+      'article'
+      'aside';
     padding-top: 40px;
+
+    @media (min-width: 768px) {
+      grid-template-areas: 'preheader .'
+        'title .'
+        'breadcrumbs .'
+        'map map'
+        'article aside';
+      grid-template-columns: auto minmax(auto, 380px);
+    }
   }
 
   &__title {
@@ -176,17 +185,7 @@
   }
 
   &__map {
-    align-items: center;
-    bottom: 0;
-    display: flex;
     grid-area: map;
-    height: auto;
-    left: 0px;
-    margin-left: calc(((100vw - 100%) / 2) * -1);
-
-    /* width: 100vw;
-    margin-left: calc(((100vw - 100%) / 2) * -1); */
-    width: 100vw;
   }
 
   &__video-area {

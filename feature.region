@@ -7,7 +7,9 @@
     <p class="preheading">Map of</p>
     <h1 class="heading resource-article__title" data-content-field="title">Indigenous Languages Around the World</h1>
     <div class="resource-article__map feature__map">
-      <img src="/assets/feature-map.png" alt="" />
+      <div class="feature__map-container">
+        <img src="/assets/feature-map.png" alt="" />
+      </div>
     </div>
     <article id="post-{id}" class="resource-article__article {@|item-classes} general" data-item-id="{id}">
       <p>Given that the success of this global Center will fundamentally be dependent on its ability to impact stakeholders around the globe, the driving goal of the symposium was to provide a context to start collaborating.</p>
