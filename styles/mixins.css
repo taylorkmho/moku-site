@@ -25,8 +25,14 @@
 
 @define-mixin fancy-bullet {
   background: url('/assets/bullet.png') left 2px no-repeat;
+  background-size: 12px;
   line-height: 1.4;
-  padding-left: var(--d-bullet-padding-start);
+  padding-left: 20px;
+
+  @media (--medium) {
+    background-size: 16px;
+    padding-left: var(--d-bullet-padding-start);
+  }
 }
 
 @define-mixin responsive-media $ratio {

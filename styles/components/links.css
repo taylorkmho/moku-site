@@ -39,11 +39,15 @@
     padding-left: 10px;
 
     &--horizontal {
-      grid-auto-flow: column;
-      grid-gap: 15px;
-      grid-template-areas: repeat(auto-fit, minmax(auto, 286px));
-      justify-content: flex-start;
+      grid-gap: 0;
       padding-left: 0;
+
+      @media (--medium) {
+        grid-auto-flow: column;
+        grid-gap: 15px;
+        grid-template-areas: repeat(auto-fit, minmax(auto, 286px));
+        justify-content: flex-start;
+      }
     }
   }
 
@@ -51,8 +55,12 @@
     @mixin fancy-bullet;
 
     .links__list--horizontal & {
-      margin-top: var(--d-padding);
-      width: calc(100% - var(--d-bullet-padding-start));
+      margin-top: 10px;
+
+      @media (--medium) {
+        margin-top: var(--d-padding);
+        width: calc(100% - var(--d-bullet-padding-start));
+      }
     }
   }
 }
