@@ -51,6 +51,7 @@
     "mini-css-extract-plugin": "^0.5.0",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-custom-media": "^7.0.6",
+    "postcss-extend-rule": "^2.0.0",
     "postcss-font-magician": "^2.2.1",
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.0",
