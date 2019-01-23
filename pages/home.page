@@ -8,6 +8,11 @@
   </div>
 </section>
 
-{@|apply mission.block}
+<section class="mission">
+  <div class="layout-container mission__content">
+    <squarespace:block-field id="home-mission" label="Mission" columns="1" lock-layout="true" />
+  </div>
+</section>
+
 {@|apply featured-resources.block}
 {@|apply promos.block}
