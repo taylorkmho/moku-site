@@ -6,6 +6,8 @@
 
 const core = require('@squarespace/core')
 
+import { ConvertLinksToModal } from './components/convert-links-to-modal'
+
 import '../styles/styles.css'
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -17,3 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
     })
   }
 })
+
+const convertLinksToModal = new ConvertLinksToModal(
+  '.js-convert-links-to-modal'
+)
