@@ -1,4 +1,5 @@
 .hero {
+  background-color: var(--c-very-light-gray);
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
@@ -40,15 +41,20 @@
 
   &__content {
     width: 75%;
-  }
 
-  &__title {
-    font: 400 32px var(--f-serif);
-    line-height: 1.2;
-    margin: 20px 0;
+    h1 {
+      @extend .title;
+      @extend .title--splash;
+    }
 
-    @media (min-width: 960px) {
-      font-size: 58px;
+    h2, h3 {
+      @extend .subheading;
+    }
+
+    a {
+      @extend .button;
+      @extend .button--icon;
+      @extend .button--play;
     }
   }
 }

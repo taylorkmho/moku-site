@@ -88,6 +88,17 @@
 .title {
   font: 600 29px var(--f-serif);
   margin: 0;
+
+  &--splash {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 20px 0;
+
+    @media (min-width: 960px) {
+      font-size: 58px;
+    }
+  }
 }
 
 .intro {

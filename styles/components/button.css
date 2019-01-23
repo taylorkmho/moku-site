@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   appearance: none;
   background-color: transparent;
   border: solid 2px var(--c-teal);

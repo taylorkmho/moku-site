@@ -8,6 +8,7 @@ module.exports = {
     'postcss-font-magician': {},
     'postcss-custom-media': {},
     'postcss-pxtorem': {},
+    'postcss-extend-rule': {},
     cssnano: {},
     autoprefixer: {},
   },
