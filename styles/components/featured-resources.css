@@ -24,17 +24,20 @@
     }
   }
 
-  &__title {
-    color: var(--c-gray);
-    font: 500 36px var(--f-serif);
-    grid-area: frs-title;
-    margin: 0;
-  }
-
-  &__desciption {
-    color: var(--c-gray);
-    font: normal 15px var(--f-sans);
-    grid-area: frs-description;
+  &__description {
+    h1, h2, h3 {
+      color: var(--c-gray);
+      font: 500 36px var(--f-serif);
+      margin: 0;
+    }
+    p {
+      color: var(--c-gray);
+      font: normal 15px var(--f-sans);
+    }
+    a {
+      @extend .button;
+      @extend .button--solid;
+    }
   }
 
   &__collection {
