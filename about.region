@@ -1,4 +1,6 @@
-<h1 class="section-heading">About</h1>
+<div class="section-heading">
+  <h1>About</h1>
+</div>
 
 <section class="layout-container layout--about">
   <aside class="layout--about__aside">
