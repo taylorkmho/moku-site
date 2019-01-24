@@ -29,15 +29,18 @@
     @mixin responsive-media 70%;
   }
 
-  &__title {
-    border-bottom: solid 2px var(--c-teal);
-    font: normal 29px var(--f-serif);
+  a {
+    border-bottom: 2px solid var(--c-teal);
+    font: normal 24px var(--f-serif);
+    line-height: 175%;
     justify-self: center;
     margin: 0;
-    padding-bottom: 10px;
-
-    a {
-      color: inherit;
+    padding-bottom: 5px;
+    color: inherit;
+    transition: color 150ms ease-in, border 150ms ease-in;
+    &:hover {
+      color: var(--c-teal);
+      border-bottom: 2px solid var(--c-off-white);
     }
   }
 }

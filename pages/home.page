@@ -14,7 +14,7 @@
   </div>
 </section>
 
-<div class="featured-resources">
+<section class="featured-resources">
   <div class="layout-container featured-resources__container">
     <aside class="featured-resources__aside">
       <div class="featured-resources__description">
@@ -72,6 +72,21 @@
       </article>
     </section>
   </div>
-</div>
+</section>
 
-{@|apply promos.block}
+<section class="layout-container promos">
+  <div class="section-heading">
+    <squarespace:block-field id="home-promos-title" label="Title" columns="1" />
+  </div>
+  <div class="promos__container">
+    <article class="promo">
+      <squarespace:block-field id="home-promo-1" label="Column 1" columns="1" />
+    </article>
+    <article class="promo">
+      <squarespace:block-field id="home-promo-2" label="Column 2" columns="1" />
+    </article>
+    <article class="promo">
+      <squarespace:block-field id="home-promo-3" label="Column 3" columns="1" />
+    </article>
+  </div>
+</section>

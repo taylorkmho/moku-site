@@ -33,8 +33,9 @@
 <hr class="rule rule--section" />
 
 <div class="layout-container">
-  <h2 class="section-heading">He aha ka mana&OpenCurlyQuote;o o ko&OpenCurlyQuote;u inoa?</h2>
-  <h2 class="section-subheading">What&rsquor;s the meaning of our name?</h2>
+  <div class="section-heading">
+    <squarespace:block-field id="about-promos" label="Title" columns="1" />
+  </div>
 </div>
 
 <section class="layout-container layout--about">
