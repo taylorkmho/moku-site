@@ -29,7 +29,7 @@
     @mixin responsive-media 70%;
   }
 
-  a {
+  p a {
     border-bottom: 2px solid var(--c-teal);
     font: normal 24px var(--f-serif);
     line-height: 175%;
@@ -37,10 +37,19 @@
     margin: 0;
     padding-bottom: 5px;
     color: inherit;
-    transition: color 150ms ease-in, border 150ms ease-in;
+    transition: border 100ms ease-in;
     &:hover {
-      color: var(--c-teal);
       border-bottom: 2px solid var(--c-off-white);
+    }
+  }
+
+  .sqs-block {
+    &:hover {
+      & + .sqs-block {
+        p a {
+          border-bottom: 2px solid var(--c-off-white);
+        }
+      }
     }
   }
 }
