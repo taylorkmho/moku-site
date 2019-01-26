@@ -26,11 +26,19 @@
       padding: 0 30px 0 20px;
     }
 
+    &--secondary {
+      img {
+        max-width: 240px;
+        justify-self: center;
+      }
+    }
+
     img {
       display: block;
       width: 100%;
     }
 
+    em,
     i {
       color: var(--c-light-gray);
       display: block;
@@ -48,13 +56,12 @@
     @media (min-width: 768px) {
       grid-gap: 60px 0;
     }
-  }
 
-  &__image {
-    max-width: 240px;
-
-    &--centered {
-      justify-self: center;
+    h1, h2 {
+      @extend .heading;
+    }
+    h3 {
+      @extend .subheading;
     }
   }
 }
