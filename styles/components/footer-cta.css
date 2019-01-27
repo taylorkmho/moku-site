@@ -1,25 +1,26 @@
 .footer-cta {
   background: var(--c-footer-cta-bg);
-  margin-top: 60px;
-  padding: 50px var(--d-padding);
+  padding: calc(var(--d-padding) * 2) var(--d-padding);
 
   @media (min-width: 960px) {
     padding: 85px var(--d-padding);
   }
 
   &__layout-container {
-    align-items: center;
+    padding: 0;
+    align-items: top;
     display: grid;
-    grid-gap: 15px;
-    grid-template-areas: 'icon title' 'description description' 'button button';
-    grid-template-columns: 70px 1fr;
+    grid-gap: 5px 10px;
+    grid-template-areas: 'icon copy' 'description description' 'button button';
+    grid-template-columns: 30px 1fr;
 
     @media (min-width: 960px) {
+      grid-template-columns: 70px 1fr;
       align-content: center;
       align-items: center;
       grid-auto-flow: column;
       grid-gap: 15px 60px;
-      grid-template-areas: 'icon title button' 'icon description button';
+      grid-template-areas: 'icon copy button';
     }
   }
 
@@ -27,19 +28,22 @@
     grid-area: icon;
   }
 
-  &__title {
-    font: 600 36px var(--f-serif);
-    grid-area: title;
-    margin: 0;
-  }
+  &__copy {
+    grid-area: copy;
 
-  &__description {
-    font-size: 18px;
-    grid-area: description;
-    margin: 0;
+    h1, h2, h3 {
+      font: 600 24px var(--f-serif);
+      margin: 0;
+      @media (--large) {
+        font-size: 36px;
+      }
+    }
   }
 
   &__button {
     grid-area: button;
+    a {
+      @extend .button;
+    }
   }
 }

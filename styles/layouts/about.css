@@ -2,15 +2,15 @@
   display: grid;
   grid-gap: var(--d-padding) 0;
 
-  @media (min-width: 768px) {
-    grid-gap: 0 20px;
+  @media (--medium) {
+    grid-gap: 0 var(--d-space-unit);
     grid-template-columns: 2fr 3fr;
   }
 
   && {
     margin-bottom: 50px;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       margin-bottom: 100px;
     }
   }
@@ -21,7 +21,7 @@
     font: 500 36px var(--f-sans);
     grid-gap: var(--d-padding);
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       grid-gap: 100px 0;
       padding: 0 30px 0 20px;
     }
@@ -53,7 +53,7 @@
     display: grid;
     grid-gap: var(--d-padding) 0;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       grid-gap: 60px 0;
     }
 

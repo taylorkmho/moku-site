@@ -21,4 +21,8 @@
   &--slim {
     max-width: var(--d-max-layout-width--slim);
   }
+
+  &--inset {
+    padding: 0;
+  }
 }

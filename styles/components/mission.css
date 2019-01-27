@@ -17,7 +17,7 @@
       padding-left: var(--d-padding);
       padding-right: var(--d-padding);
 
-      @media (min-width: 768px) {
+      @media (--medium) {
         padding-left: 110px;
         padding-right: 110px;
       }

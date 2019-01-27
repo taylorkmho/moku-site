@@ -27,9 +27,12 @@
   --d-header-height-neg-mobile: -170px;
   --d-header-height-neg: -150px;
   --d-footer-height: 160px;
+  --d-space-unit: 20px;
   --d-padding: 30px;
   --d-hero-max-height: 720px;
   --d-bullet-padding-start: 32px;
 }
 
-@custom-media --medium (min-width: 800px);
+@custom-media --small (min-width: 480px);
+@custom-media --medium (min-width: 768px);
+@custom-media --large (min-width: 960px);
