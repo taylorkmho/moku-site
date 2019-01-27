@@ -2,6 +2,10 @@
   <h1>{collection.title}</h1>
 </div>
 
+<div class="layout-container layout-container--intro">
+  <squarespace:block-field id="about-intro" label="Introduction" columns="1" />
+</div>
+
 <section class="layout-container layout--about">
   <aside class="layout--about__aside">
     <squarespace:block-field id="about-aside" label="Aside content" columns="1" lock-layout="true" />

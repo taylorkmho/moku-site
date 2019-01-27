@@ -1,6 +1,23 @@
 .layout-container {
   @mixin layout-container;
 
+  &--intro {
+    margin: var(--d-padding) auto;
+    max-width: 975px;
+
+    @media (min-width: 768px) {
+      margin: 60px auto;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      font-size: 1.5rem;
+      font-size: 23px;
+    }
+  }
+
   &--slim {
     max-width: var(--d-max-layout-width--slim);
   }
