@@ -53,8 +53,6 @@
 
     a {
       @extend .button;
-      @extend .button--icon;
-      @extend .button--play;
     }
   }
 }
