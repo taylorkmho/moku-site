@@ -10,7 +10,7 @@ const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const siteJs = ['./scripts/site.js']
 
 module.exports = {
-  mode: process.env.NODE_ENV,
+  mode: process.env.NODE_ENV || 'development',
   devtool: IS_PRODUCTION ? false : 'source-map',
   entry: {
     'scripts/site-bundle': siteJs,
@@ -39,8 +39,17 @@ module.exports = {
       }),
     ],
   },
-  plugins: [plugins.MiniCssExtractPlugin, plugins.DebugPlugin],
+  plugins: [
+    plugins.VuePlugin,
+    plugins.MiniCssExtractPlugin,
+    plugins.DebugPlugin,
+  ],
   module: {
-    rules: [loaders.JSLoader, loaders.CSSLoader],
+    rules: [loaders.JSLoader, loaders.VueLoader, loaders.CSSLoader],
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
   },
 }

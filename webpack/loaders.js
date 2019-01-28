@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const plugins = require('./plugins')
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 const JSLoader = {
@@ -31,9 +30,15 @@ const CSSLoader = {
   ],
 }
 
+const VueLoader = {
+  test: /\.vue$/,
+  use: 'vue-loader',
+}
+
 // TODO: look into optimize-css-assets-webpack-plugin
 
 module.exports = {
   JSLoader,
   CSSLoader,
+  VueLoader,
 }

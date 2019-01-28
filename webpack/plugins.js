@@ -1,5 +1,6 @@
 const { DefinePlugin } = require('webpack')
 const _MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
 const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
@@ -13,7 +14,10 @@ const DebugPlugin = new DefinePlugin({
   __DEBUG__: JSON.stringify(!IS_PRODUCTION),
 })
 
+const VuePlugin = new VueLoaderPlugin()
+
 module.exports = {
   DebugPlugin,
   MiniCssExtractPlugin,
+  VuePlugin,
 }
