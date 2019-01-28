@@ -39,6 +39,7 @@
 
   }
 
+  &[data-type="video"],
   &[href*="youtube"],
   &[href*="vimeo"] {
     @extend .button--video;
