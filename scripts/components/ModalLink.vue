@@ -1,18 +1,33 @@
 <template>
   <div class="modal-link">
-    <button class="button" v-html="label" v-bind:data-action="action" v-on:click.prevent="openModal"></button>
-    <ModalLinkModal v-bind:is-modal-open="isModalOpen">
-      😘 MODAL BOIZ
-    </ModalLinkModal>
+    <button
+      class="button"
+      v-html="label"
+      :data-action="action"
+      @click.prevent="openModal"
+    />
+    <ModalLinkWrapper
+      v-if="isModalOpen"
+      :is-modal-open="isModalOpen"
+      @close-modal="onCloseModal"
+    >
+      <ModalLinkWindow
+        :is-modal-open="isModalOpen"
+        :propAction="action"
+        :propHref="href"
+      />
+    </ModalLinkWrapper>
   </div>
 </template>
 
 <script>
-  import ModalLinkModal from './ModalLinkModal.vue'
+  import ModalLinkWrapper from './ModalLinkWrapper.vue'
+  import ModalLinkWindow from './ModalLinkWindow.vue'
 
   export default {
     components: {
-      ModalLinkModal
+      ModalLinkWrapper,
+      ModalLinkWindow
     },
     props: {
       propInnerHTML: String,
@@ -30,8 +45,13 @@
     methods: {
       openModal: function() {
         if (!this.isModalOpen) {
-          console.log(`✨✨✨`)
           this.isModalOpen = true
+        }
+      },
+      onCloseModal: function() {
+        console.log('🤞🤞🤞')
+        if (this.isModalOpen) {
+          this.isModalOpen = false
         }
       }
     }

@@ -31,6 +31,7 @@
   --d-padding: 30px;
   --d-hero-max-height: 720px;
   --d-bullet-padding-start: 32px;
+  --d-border-radius: 4px;
 }
 
 @custom-media --small (min-width: 480px);

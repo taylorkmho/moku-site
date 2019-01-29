@@ -12,6 +12,7 @@
   text-transform: uppercase;
   text-align: center;
   transition: all 100ms ease-out;
+  cursor: pointer;
 
   @media (--medium) {
     font: 600 12px var(--f-sans);

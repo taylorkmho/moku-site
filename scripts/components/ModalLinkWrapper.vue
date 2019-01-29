@@ -1,5 +1,9 @@
 <template>
-  <div :class="{ 'modal': true, 'modal--open': isOpen }" :style="styleObject">
+  <div
+    :class="{ 'modal-wrapper': true, 'modal-wrapper--open': isOpen }"
+    :style="styleObject"
+    v-on:click="onCloseModal"
+  >
     <slot>Loading</slot>
   </div>
 </template>
@@ -29,6 +33,10 @@
       this.setPosition()
     },
     methods: {
+      onCloseModal: function() {
+        console.log('should close')
+        this.$emit('close-modal')
+      },
       setPosition: function() {
         const boundingClientRect = this.$el.getBoundingClientRect()
         this.$set(this.styleObject, 'top', `-${boundingClientRect.y}px`)
@@ -39,7 +47,7 @@
 </script>
 
 <style scoped>
-  .modal {
+  .modal-wrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -48,8 +56,26 @@
     background-color: rgba(0,0,0,0.75);
     z-index: 100;
     display: none;
+    padding-left: var(--d-padding);
+    padding-right: var(--d-padding);
   }
-  .modal--open {
-    display: block;
+  @media (--small) {
+    .modal-wrapper {
+      padding-left: calc(var(--d-padding) * 2);
+      padding-right: calc(var(--d-padding) * 2);
+    }
+  }
+
+  @media (--large) {
+    .modal-wrapper {
+      padding-left: calc(var(--d-padding) * 4);
+      padding-right: calc(var(--d-padding) * 4);
+    }
+  }
+
+  .modal-wrapper--open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

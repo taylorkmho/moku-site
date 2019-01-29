@@ -1,11 +1,12 @@
 import Vue from 'vue'
-import ModalLink from './ModalLink.vue'
+import ModalLink from './components/ModalLink.vue'
+
 import {
   getModalAction,
   isModalHash,
   isVideoHref,
   stripString,
-} from '../helpers'
+} from './helpers'
 
 export class modalSetUp {
   constructor() {
