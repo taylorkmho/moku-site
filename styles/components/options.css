@@ -8,10 +8,15 @@
 
   a {
     @extend .button;
+  }
+
+  a,
+  .modal-link {
     width: 100%;
     margin-bottom: var(--d-space-unit);
 
     @media (--medium) {
+      margin-bottom: 0;
       margin-right: var(--d-padding);
       width: auto;
 

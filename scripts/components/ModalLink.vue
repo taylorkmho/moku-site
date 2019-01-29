@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <a href="#" v-html="label" v-bind:data-action="action" v-on:click.prevent="openModal"></a>
+  <div class="modal-link">
+    <button class="button" v-html="label" v-bind:data-action="action" v-on:click.prevent="openModal"></button>
     <ModalLinkModal v-bind:is-modal-open="isModalOpen">
       😘 MODAL BOIZ
     </ModalLinkModal>
@@ -37,3 +37,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .modal-link {
+    display: inline-block;
+  }
+</styled>
