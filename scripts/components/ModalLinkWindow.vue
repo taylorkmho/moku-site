@@ -1,8 +1,7 @@
 <template>
-  <div class="modal-window">
+  <div :class="{ 'modal-window': true, 'modal-window--animated-in': animatedIn }">
     <ModalLinkWindowVideo
-      v-if="action === 'video' && isOpen"
-      :isModalOpen="isOpen"
+      v-if="action === 'video'"
       :propHref="href"
     />
     <h1 v-if="action === 'request-a-visit'">rav</h1>
@@ -17,17 +16,23 @@
     components: {
       ModalLinkWindowVideo
     },
-    props: ['isModalOpen', 'propAction', 'propHref'],
+    props: ['propAction', 'propHref'],
     data() {
       return {
         action: this.propAction,
+        animatedIn: false,
         href: this.propHref,
       }
     },
-    computed: {
-      isOpen: function() {
-        return this.isModalOpen
-      }
+    mounted() {
+      this.onAnimateIn()
+    },
+    methods: {
+      onAnimateIn: function() {
+        setTimeout(() => {
+          this.animatedIn = true
+        }, 10)
+      },
     }
   }
 </script>
@@ -35,5 +40,13 @@
 <style scoped>
   .modal-window {
     width: 100%;
+    z-index: 110;
+    transform: translateY(3rem);
+    opacity: 0;
+    transition: all 300ms ease-out 150ms;
+    &--animated-in {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 </style>

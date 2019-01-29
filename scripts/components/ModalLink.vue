@@ -8,11 +8,9 @@
     />
     <ModalLinkWrapper
       v-if="isModalOpen"
-      :is-modal-open="isModalOpen"
       @close-modal="onCloseModal"
     >
       <ModalLinkWindow
-        :is-modal-open="isModalOpen"
         :propAction="action"
         :propHref="href"
       />
@@ -47,12 +45,14 @@
         if (!this.isModalOpen) {
           this.isModalOpen = true
         }
+        document.body.style.overflow = 'hidden'
       },
       onCloseModal: function() {
         console.log('🤞🤞🤞')
         if (this.isModalOpen) {
           this.isModalOpen = false
         }
+        document.body.style.overflow = ''
       }
     }
   }

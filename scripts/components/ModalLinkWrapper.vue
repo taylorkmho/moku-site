@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{ 'modal-wrapper': true, 'modal-wrapper--open': isOpen }"
+    :class="{ 'modal-wrapper': true, 'modal-wrapper--animated-in': animatedIn }"
     :style="styleObject"
     @click="onCloseModal"
   >
@@ -10,29 +10,23 @@
 
 <script>
   export default {
-    props: ['isModalOpen'],
-    props: {
-      isModalOpen: {
-        validator: function(value) {
-          return typeof(value.isModalOpen === "boolean")
-        }
-      },
-    },
     data() {
       return {
+        animatedIn: false,
         label: '',
         styleObject: {},
       }
     },
-    computed: {
-      isOpen: function() {
-        return this.isModalOpen
-      },
-    },
     mounted() {
       this.setPosition()
+      this.onAnimateIn()
     },
     methods: {
+      onAnimateIn: function() {
+        setTimeout(() => {
+          this.animatedIn = true
+        }, 10)
+      },
       onCloseModal: function() {
         this.$emit('close-modal')
       },
@@ -48,19 +42,31 @@
 <style scoped>
   .modal-wrapper {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.75);
     z-index: 100;
-    display: none;
     padding-left: var(--d-padding);
     padding-right: var(--d-padding);
-    &--open {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: rgba(255, 255, 255, 0.8);
+      opacity: 0;
+      transition: opacity 300ms ease-out;
+    }
+
+    &--animated-in:after {
+      opacity: 1;
     }
 
     @media (--small) {

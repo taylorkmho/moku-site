@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-video" v-if="isOpen">
+  <div class="modal-video">
     <div class="modal-video__container">
       <iframe
         :src="source"
@@ -23,15 +23,8 @@
         type: String,
         required: true,
       },
-      isModalOpen: {
-        type: Boolean,
-        required: true,
-      }
     },
     computed: {
-      isOpen: function() {
-        return this.isModalOpen
-      },
       source: function() {
         let source
         const isVimeo = this.propHref.match(/https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/)
@@ -53,6 +46,7 @@
   .modal-video {
     border-radius: var(--d-border-radius);
     background: #000;
+    overflow: hidden;
   }
   .modal-video__container {
     position: relative;
