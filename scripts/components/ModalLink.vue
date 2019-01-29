@@ -48,7 +48,6 @@
         document.body.style.overflow = 'hidden'
       },
       onCloseModal: function() {
-        console.log('🤞🤞🤞')
         if (this.isModalOpen) {
           this.isModalOpen = false
         }

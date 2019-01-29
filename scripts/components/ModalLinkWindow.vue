@@ -4,17 +4,21 @@
       v-if="action === 'video'"
       :propHref="href"
     />
-    <h1 v-if="action === 'request-a-visit'">rav</h1>
+    <ModalLinkWindowRequest
+      v-if="action === 'request-a-visit'"
+    />
   </div>
 </template>
 
 <script>
   import ModalLinkWindowVideo from './ModalLinkWindowVideo.vue'
+  import ModalLinkWindowRequest from './ModalLinkWindowRequest.vue'
 
   export default {
     name: 'ModalLinkWindow',
     components: {
-      ModalLinkWindowVideo
+      ModalLinkWindowVideo,
+      ModalLinkWindowRequest
     },
     props: ['propAction', 'propHref'],
     data() {
