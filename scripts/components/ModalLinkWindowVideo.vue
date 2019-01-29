@@ -2,7 +2,7 @@
   <div class="modal-video" v-if="isOpen">
     <div class="modal-video__container">
       <iframe
-        src="https://player.vimeo.com/video/218597363?color=64c3bf&byline=0&autoplay=1&muted=0"
+        :src="source"
         class="modal-video__video-player"
         frameborder="0"
         webkitallowfullscreen
@@ -18,16 +18,33 @@
 <script>
   export default {
     name: 'ModalLinkWindowVideo',
-    props: ['source', 'isModalOpen'],
-    data() {
-      return {
-        source: this.source
+    props: {
+      propHref: {
+        type: String,
+        required: true,
+      },
+      isModalOpen: {
+        type: Boolean,
+        required: true,
       }
     },
     computed: {
       isOpen: function() {
         return this.isModalOpen
       },
+      source: function() {
+        let source
+        const isVimeo = this.propHref.match(/https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/)
+        const isYoutube = this.propHref.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
+
+        if (isVimeo) {
+          source = `https://player.vimeo.com/video/${isVimeo[2]}?color=64c3bf&byline=0&autoplay=1&muted=0`
+        } else if (isYoutube) {
+          source = `https://www.youtube.com/embed/${isYoutube[1]}?autoplay=1&modestbranding=1`
+        }
+
+        return source
+      }
     }
   }
 </script>

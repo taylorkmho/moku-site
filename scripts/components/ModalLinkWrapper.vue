@@ -2,7 +2,7 @@
   <div
     :class="{ 'modal-wrapper': true, 'modal-wrapper--open': isOpen }"
     :style="styleObject"
-    v-on:click="onCloseModal"
+    @click="onCloseModal"
   >
     <slot>Loading</slot>
   </div>
@@ -34,7 +34,6 @@
     },
     methods: {
       onCloseModal: function() {
-        console.log('should close')
         this.$emit('close-modal')
       },
       setPosition: function() {
@@ -58,24 +57,20 @@
     display: none;
     padding-left: var(--d-padding);
     padding-right: var(--d-padding);
-  }
-  @media (--small) {
-    .modal-wrapper {
+    &--open {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (--small) {
       padding-left: calc(var(--d-padding) * 2);
       padding-right: calc(var(--d-padding) * 2);
     }
-  }
 
-  @media (--large) {
-    .modal-wrapper {
+    @media (--large) {
       padding-left: calc(var(--d-padding) * 4);
       padding-right: calc(var(--d-padding) * 4);
     }
-  }
-
-  .modal-wrapper--open {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 </style>

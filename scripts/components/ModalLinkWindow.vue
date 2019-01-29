@@ -3,7 +3,7 @@
     <ModalLinkWindowVideo
       v-if="action === 'video' && isOpen"
       :isModalOpen="isOpen"
-      :source="source"
+      :propHref="href"
     />
     <h1 v-if="action === 'request-a-visit'">rav</h1>
   </div>
@@ -21,7 +21,7 @@
     data() {
       return {
         action: this.propAction,
-        source: this.propHref,
+        href: this.propHref,
       }
     },
     computed: {
