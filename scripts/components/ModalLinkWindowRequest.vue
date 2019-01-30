@@ -6,14 +6,43 @@
       <p>There are just a fiew bits of information we'd need to get from you first. Once you get it over, we'll work to respond as soon as possible!</p>
     </aside>
     <section class="modal-request-a-visit__primary">
-      iframe content
+      <div
+        class="modal-request-a-visit__form"
+        data-url="https://mokuolahonua.typeform.com/to/KAQguS"
+        data-transparency="100"
+        data-hide-headers=true
+        data-hide-footer=true
+      >
+      </div>
     </section>
   </div>
 </template>
 
 <script>
+  import * as typeformEmbed from '@typeform/embed'
+
   export default {
-    name: 'ModalLinkWindowRequest'
+    name: 'ModalLinkWindowRequest',
+    data: function() {
+      return {
+        typeformId: 'typef_orm',
+        url: 'https://mokuolahonua.typeform.com/to/KAQguS',
+        typeformOptions: {
+          hideHeaders: true,
+          hideFooter: true,
+          opacity: 0,
+          onSubmit: this.onSubmit
+        }
+      }
+    },
+    mounted: function() {
+      typeformEmbed.makeWidget(this.$root.$el.querySelector('.modal-request-a-visit__form'), this.url, this.typeformOptions)
+    },
+    methods: {
+      onSubmit: function() {
+        console.log('😪 onsubmitzksi')
+      }
+    }
   }
 </script>
 
@@ -47,7 +76,11 @@
     }
     &__primary {
       grid-template: primary;
-      background: #abda55;
+      background: var(--c-off-white);
+    }
+    &__form {
+      height: 100%;
+      width: 100%;
     }
   }
 </style>
