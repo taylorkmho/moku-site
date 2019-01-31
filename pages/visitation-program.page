@@ -11,7 +11,11 @@
 </div>
 
 <section class="visitation-map">
-  <img class="visitation-map__image" src="/assets/visitation-program-map.png" alt="Map" />
+  <div class="visitation-map__container layout-container layout-container--slim">
+    <div id="map">
+      <!-- <img class="visitation-map__image" src="/assets/visitation-program-map.png" alt="Map" /> -->
+    </div>
+  </div>
 </section>
 
 <div class="layout-container layout-container--slim">
