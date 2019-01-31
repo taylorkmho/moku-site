@@ -6,14 +6,7 @@
       <p>There are just a fiew bits of information we'd need to get from you first. Once you get it over, we'll work to respond as soon as possible!</p>
     </aside>
     <section class="modal-request-a-visit__primary">
-      <div
-        class="modal-request-a-visit__form"
-        data-url="https://mokuolahonua.typeform.com/to/KAQguS"
-        data-transparency="100"
-        data-hide-headers=true
-        data-hide-footer=true
-      >
-      </div>
+      <div class="modal-request-a-visit__form"></div>
     </section>
   </div>
 </template>
