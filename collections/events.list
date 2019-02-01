@@ -4,6 +4,9 @@
 
 <section class="layout-container">
   <p class="intro">Et qui anim Lorem culpa reprehenderit. Dolor ullamco adipisicing officia proident sint adipisicing. Culpa culpa reprehenderit voluptate ea quis consequat in sit mollit velit ea ut.</p>
+</section>
+
+<section class="layout-container layout-container--slim">
   <div class="event-blocks">
     <a href="/event" class="event-block">
       <div class="event-block__image-container">

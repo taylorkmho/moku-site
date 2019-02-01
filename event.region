@@ -7,14 +7,17 @@
   </div>
 </div>
 
-<div class="layout-container">
-  <div class="video-block">
-    <div class="video-block__responsive-media">
-      <img class="video-block__image" src="https://picsum.photos/1280/720" alt="" />
+<div class="video-header">
+  <div class="layout-container layout-container--inset">
+    <div class="video-block">
+      <div class="video-block__container">
+        <h3 class="video-block__title">&ldquo;Bringing indigenous people together from around the globe&rdquo;</h3>
+        <a href="#">
+          <img class="video-block__play" src="/assets/icon-play.svg" alt="Play" />
+          <p class="video-block__cta">Watch the Introduction</p>
+        </a>
+      </div>
     </div>
-    <p class="video-block__title">&ldquo;Bringing indigenous people together from around the globe&rdquo;</p>
-    <a href="#"><img class="video-block__play" src="/assets/icon-play-large.png" alt="Play" /></a>
-    <a href="#"><p class="video-block__cta">Watch the Introduction</p></a>
   </div>
 </div>
 
