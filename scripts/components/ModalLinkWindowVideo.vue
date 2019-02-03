@@ -19,16 +19,19 @@
   export default {
     name: 'ModalLinkWindowVideo',
     props: {
-      propHref: {
+      href: {
         type: String,
         required: true,
       },
+      faded: {
+        type: Boolean,
+      }
     },
     computed: {
       source: function() {
         let source
-        const isVimeo = this.propHref.match(/https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/)
-        const isYoutube = this.propHref.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
+        const isVimeo = this.href.match(/https:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/)
+        const isYoutube = this.href.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
 
         if (isVimeo) {
           source = `https://player.vimeo.com/video/${isVimeo[2]}?color=64c3bf&byline=0&autoplay=1&muted=0`

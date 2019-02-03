@@ -37,7 +37,14 @@
     padding-left: calc(var(--d-padding) * 2);
     background: transparent url('/assets/icon-play.png') 20px 50% no-repeat;
     color: inherit;
+  }
 
+  &--hollow {
+    background: transparent;
+    color: inherit;
+    &:hover {
+      background: transparent;
+    }
   }
 
   &[data-action="video"],

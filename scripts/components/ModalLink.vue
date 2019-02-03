@@ -7,49 +7,44 @@
       @click.prevent="openModal"
     />
     <ModalLinkWrapper
-      v-if="isModalOpen"
+      v-if="isModalVisible"
       @close-modal="onCloseModal"
-    >
-      <ModalLinkWindow
-        :propAction="action"
-        :propHref="href"
-      />
-    </ModalLinkWrapper>
+      :action="action"
+      :href="href"
+      :warnOnClose="warnOnClose"
+    />
   </div>
 </template>
 
 <script>
   import ModalLinkWrapper from './ModalLinkWrapper.vue'
-  import ModalLinkWindow from './ModalLinkWindow.vue'
 
   export default {
     components: {
       ModalLinkWrapper,
-      ModalLinkWindow
     },
     props: {
-      propInnerHTML: String,
-      propAction: String,
-      propHref: String,
+      innerHTML: String,
+      action: String,
+      href: String,
+      warnOnClose: Boolean,
     },
     data() {
       return {
-        label: this.propInnerHTML || undefined,
-        action: this.propAction || undefined,
-        href: this.propHref || undefined,
-        isModalOpen: false,
+        label: this.innerHTML,
+        isModalVisible: false,
       }
     },
     methods: {
       openModal: function() {
-        if (!this.isModalOpen) {
-          this.isModalOpen = true
+        if (!this.isModalVisible) {
+          this.isModalVisible = true
         }
         document.body.style.overflow = 'hidden'
       },
       onCloseModal: function() {
-        if (this.isModalOpen) {
-          this.isModalOpen = false
+        if (this.isModalVisible) {
+          this.isModalVisible = false
         }
         document.body.style.overflow = ''
       }

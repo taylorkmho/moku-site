@@ -1,18 +1,54 @@
 <template>
   <div
-    :class="{ 'modal-wrapper': true, 'modal-wrapper--animated-in': animatedIn }"
+    :class="{
+      'modal-wrapper': true,
+      'modal-wrapper--animated-in': animatedIn,
+    }"
     :style="styleObject"
-    @click="onCloseModal"
   >
-    <slot>Loading</slot>
+    <div
+      class="modal-wrapper__backdrop"
+      @click="onHandleClose"
+    ></div>
+    <ModalLinkWindowWarning
+      v-if="isWarningVisible"
+      @close-modal="onHandleClose({force: true})"
+      @close-warning="onHideWarning()"
+    />
+    <div
+      :class="{
+        'modal-wrapper__window': true,
+        'modal-wrapper__window--animated-in': animatedIn,
+      }"
+    >
+      <ModalLinkWindowVideo
+        v-if="action === 'video'"
+        :href="href"
+      />
+      <ModalLinkWindowRequest
+        v-if="action === 'request-a-visit'"
+        :faded="isWarningVisible"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+  import ModalLinkWindowVideo from './ModalLinkWindowVideo.vue'
+  import ModalLinkWindowRequest from './ModalLinkWindowRequest.vue'
+  import ModalLinkWindowWarning from './ModalLinkWindowWarning.vue'
+
   export default {
+    components: {
+      ModalLinkWindowVideo,
+      ModalLinkWindowRequest,
+      ModalLinkWindowWarning
+    },
+    props: ['action', 'href', 'warnOnClose'],
     data() {
       return {
         animatedIn: false,
+        isWarningVisible: false,
         label: '',
         styleObject: {},
       }
@@ -27,14 +63,24 @@
           this.animatedIn = true
         }, 10)
       },
-      onCloseModal: function() {
-        this.$emit('close-modal')
+      onHandleClose: function(options) {
+        if (this.warnOnClose && !options.force) {
+          this.onShowWarning()
+        } else {
+          this.$emit('close-modal')
+        }
       },
       setPosition: function() {
         const boundingClientRect = this.$el.getBoundingClientRect()
         this.$set(this.styleObject, 'top', `-${boundingClientRect.y}px`)
         this.$set(this.styleObject, 'left', `-${boundingClientRect.x}px`)
-      }
+      },
+      onShowWarning: function() {
+        this.isWarningVisible = true
+      },
+      onHideWarning: function() {
+        this.isWarningVisible = false
+      },
     }
   }
 </script>
@@ -52,20 +98,21 @@
     z-index: 100;
     padding-left: var(--d-padding);
     padding-right: var(--d-padding);
-    &:after {
-      content: "";
+
+    &__backdrop {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      z-index: 100;
       display: block;
-      background-color: rgba(0, 0, 0, 0.75);
+      background-color: var(--c-modal-bg);
       opacity: 0;
       transition: opacity 300ms ease-out;
     }
 
-    &--animated-in:after {
+    &--animated-in &__backdrop {
       opacity: 1;
     }
 
@@ -77,6 +124,23 @@
     @media (--large) {
       padding-left: calc(var(--d-padding) * 4);
       padding-right: calc(var(--d-padding) * 4);
+    }
+
+    &__window {
+      position: relative;
+      width: 100%;
+      z-index: 110;
+      transform: translateY(3rem);
+      opacity: 0;
+      transition: all 300ms ease-out 150ms;
+      pointer-events: none;
+      > * {
+        pointer-events: initial;
+      }
+      &--animated-in {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 </style>

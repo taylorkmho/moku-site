@@ -1,5 +1,10 @@
 <template>
-  <div class="modal-request-a-visit">
+  <div
+    :class="{
+      'modal-request-a-visit': true,
+      'modal-request-a-visit--faded': faded,
+    }"
+  >
     <aside class="modal-request-a-visit__aside">
       <h1 class="modal-request-a-visit__heading">Visitation Program <em>Request From</em></h1>
       <p>E komo mai! We'd be glad to have you.</p>
@@ -16,6 +21,11 @@
 
   export default {
     name: 'ModalLinkWindowRequest',
+    props: {
+      faded: {
+        type: Boolean,
+      },
+    },
     data: function() {
       return {
         typeformId: 'typef_orm',
@@ -41,6 +51,7 @@
 
 <style scoped>
   .modal-request-a-visit {
+    position: relative;
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
@@ -52,11 +63,24 @@
     border-radius: var(--d-border-radius);
     background: #fff;
     overflow: hidden;
+
+    &--faded:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--c-off-white);
+      opacity: 0.8;
+    }
+
     &__aside {
       grid-template: aside;
       text-align: left;
       padding: calc(var(--d-padding) * 3) var(--d-padding) var(--d-padding);
     }
+
     &__heading {
       color: var(--c-black);
       font: 500 28px var(--f-serif);
@@ -67,10 +91,12 @@
         font-style: inherit;
       }
     }
+
     &__primary {
       grid-template: primary;
       background: var(--c-off-white);
     }
+
     &__form {
       height: 100%;
       width: 100%;

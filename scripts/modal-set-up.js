@@ -35,9 +35,10 @@ export class modalSetUp {
         render: function(createElement) {
           return createElement(ModalLink, {
             props: {
-              propInnerHTML: this.$el.innerHTML,
-              propAction: modalLink.action || undefined,
-              propHref: modalLink.href || undefined,
+              innerHTML: this.$el.innerHTML,
+              action: modalLink.action,
+              href: modalLink.href,
+              warnOnClose: modalLink.action === 'request-a-visit',
             },
           })
         },
