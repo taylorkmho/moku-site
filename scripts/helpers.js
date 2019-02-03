@@ -11,7 +11,7 @@ export function getVideoSource(str) {
 }
 
 const MODAL_HASH = 'modal'
-export function isModalHash(str) {
+export function containsModalHash(str) {
   const re = new RegExp(`(#${MODAL_HASH})`)
   return re.test(str)
 }

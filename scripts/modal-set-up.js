@@ -3,7 +3,7 @@ import ModalLink from './components/ModalLink.vue'
 
 import {
   getModalAction,
-  isModalHash,
+  containsModalHash,
   isVideoHref,
   stripString,
 } from './helpers'
@@ -12,7 +12,8 @@ export class modalSetUp {
   constructor() {
     this.modalLinks = Array.prototype.slice
       .call(document.querySelectorAll('a'))
-      .filter(link => isModalHash(link.href))
+      .filter(link => containsModalHash(link.href))
+      // .filter(link => link.target !== '_blank') TODO
       .map(link => {
         const obj = {}
         obj.href = isVideoHref(link.href)
