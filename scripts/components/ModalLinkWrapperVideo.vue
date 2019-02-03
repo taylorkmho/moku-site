@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    name: 'ModalLinkWindowVideo',
+    name: 'ModalLinkWrapperVideo',
     props: {
       href: {
         type: String,

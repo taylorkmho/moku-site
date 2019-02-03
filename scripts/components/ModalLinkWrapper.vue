@@ -10,7 +10,7 @@
       class="modal-wrapper__backdrop"
       @click="onHandleClose"
     ></div>
-    <ModalLinkWindowWarning
+    <ModalLinkWrapperWarning
       v-if="isWarningVisible"
       @close-modal="onHandleClose({force: true})"
       @close-warning="onHideWarning()"
@@ -21,11 +21,11 @@
         'modal-wrapper__window--animated-in': animatedIn,
       }"
     >
-      <ModalLinkWindowVideo
+      <ModalLinkWrapperVideo
         v-if="action === 'video'"
         :href="href"
       />
-      <ModalLinkWindowRequest
+      <ModalLinkWrapperRequest
         v-if="action === 'request-a-visit'"
         :faded="isWarningVisible"
       />
@@ -34,15 +34,15 @@
 </template>
 
 <script>
-  import ModalLinkWindowVideo from './ModalLinkWindowVideo.vue'
-  import ModalLinkWindowRequest from './ModalLinkWindowRequest.vue'
-  import ModalLinkWindowWarning from './ModalLinkWindowWarning.vue'
+  import ModalLinkWrapperVideo from './ModalLinkWrapperVideo.vue'
+  import ModalLinkWrapperRequest from './ModalLinkWrapperRequest.vue'
+  import ModalLinkWrapperWarning from './ModalLinkWrapperWarning.vue'
 
   export default {
     components: {
-      ModalLinkWindowVideo,
-      ModalLinkWindowRequest,
-      ModalLinkWindowWarning
+      ModalLinkWrapperVideo,
+      ModalLinkWrapperRequest,
+      ModalLinkWrapperWarning
     },
     props: ['action', 'href', 'warnOnClose'],
     data() {

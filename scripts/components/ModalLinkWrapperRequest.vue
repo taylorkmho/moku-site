@@ -20,7 +20,7 @@
   import * as typeformEmbed from '@typeform/embed'
 
   export default {
-    name: 'ModalLinkWindowRequest',
+    name: 'ModalLinkWrapperRequest',
     props: {
       faded: {
         type: Boolean,

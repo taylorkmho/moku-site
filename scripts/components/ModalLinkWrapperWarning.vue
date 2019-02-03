@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: 'ModalLinkWindowWarning',
+    name: 'ModalLinkWrapperWarning',
     methods: {
       onCloseModal: function() {
         this.$emit('close-modal')
