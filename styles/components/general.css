@@ -4,7 +4,7 @@
     line-height: 1.6;
 
     &:first-of-type {
-      font-size: 23px;
+      font-size: 22px;
       margin-top: 0;
     }
 
@@ -31,9 +31,14 @@
     font: 500 40px var(--f-serif);
     margin: 0 0 var(--d-padding);
 
-    @media (min-width: 768px) {
+    @media (--small) {
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+
+    @media (--large) {
       font-size: 58px;
-      margin: 0 0 60px;
+      margin-bottom: 60px;
     }
 
     + h2,
@@ -55,6 +60,35 @@
 
   .promos & {
     grid-column: 1 / 4;
+  }
+
+  &--no-padding {
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.section-subheading {
+  text-align: center;
+  color: var(--c-medium-gray);
+
+  h1, h2, h3, p {
+    font: 500 24px var(--f-sans);
+    margin: 0 0 var(--d-padding);
+
+    @media (min-width: 768px) {
+      font-size: 36px;
+      margin: 0 0 60px;
+    }
+  }
+
+  .section-heading ~ & {
+    margin-top: calc(var(--d-space-unit) / 2);
+
+    @media (--medium) {
+      margin-top: var(--d-space-unit);
+    }
   }
 }
 
@@ -89,7 +123,7 @@
 }
 
 .title {
-  font: 600 29px var(--f-serif);
+  font: 600 28px var(--f-serif);
   margin: 0;
 
   &--splash {
@@ -105,7 +139,7 @@
 }
 
 .intro {
-  font-size: 23px;
+  font-size: 22px;
   margin: var(--d-padding) auto;
   max-width: 975px;
   text-align: center;

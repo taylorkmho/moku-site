@@ -1,14 +1,24 @@
 .content {
   margin: 60px 0;
 
+  &--margin-top-none {
+    margin-top: 0;
+  }
+
   p {
-    &.large {
-      font-size: 23px;
+    &.large,
+    &:first-child {
+      font-size: 22px;
     }
   }
 
+  h1, h2, h3 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+  }
+
   h3 {
-    font: normal 29px var(--f-serif);
+    font: normal 28px var(--f-serif);
 
     &:first-of-type {
       margin-top: 0;
@@ -22,6 +32,13 @@
 
     li {
       @mixin fancy-bullet;
+    }
+  }
+
+  li > p {
+    &.large,
+    &:first-child {
+      font-size: 16px;
     }
   }
 }

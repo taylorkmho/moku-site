@@ -1,0 +1,45 @@
+<div class="layout-container">
+  <div class="section-heading section-heading--no-padding">
+    <h1>{item.title}</h1>
+  </div>
+  <div class="section-subheading">
+    {item.excerpt}
+  </div>
+</div>
+
+<div class="video-header">
+  <div class="layout-container layout-container--inset">
+    <div class="video-block">
+      <div class="video-block__container">
+        {.if item.customContent.videoQuote}
+          <h3 class="video-block__title">&ldquo;{item.customContent.videoQuote}&rdquo;</h3>
+        {.end}
+        {.if item.customContent.video}
+          <a href="{item.customContent.video}">
+            <img class="video-block__play" src="/assets/icon-play.svg" alt="Play" />
+            <p class="video-block__cta">Watch the Introduction</p>
+          </a>
+        {.end}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="layout-container event-item-header">
+  <div class="event-item-header__cta">
+    {item.customContent.callout.html}
+  </div>
+  <div class="event-item-header__summary">
+    {.if item.customContent.date}<h3 class="subheading">{item.customContent.date}</h3>{.end}
+    {.if item.customContent.location}<h2 class="title">{item.customContent.location}</h2>{.end}
+    {.if item.customContent.locationDescription}<p>{item.customContent.locationDescription}</p>{.end}
+  </div>
+</div>
+
+<div class="layout-container layout-container--slim">
+  <section class="content content--margin-top-none">
+    {item.body}
+  </section>
+</div>
+
+{@|apply footer-cta.block}

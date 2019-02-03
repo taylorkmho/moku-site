@@ -34,7 +34,7 @@
     z-index: 120;
     white-space: normal;
     padding: var(--d-padding);
-    box-shadow: 0 0 30px -15px var(--c-black);
+    box-shadow: var(--d-box-shadow);
     &__message {
       text-align: left;
       & > *:first-child {

@@ -33,8 +33,11 @@
   --d-hero-max-height: 720px;
   --d-bullet-padding-start: 32px;
   --d-border-radius: 8px;
+  --d-box-shadow: 0 0 30px -15px var(--c-black);
 }
 
 @custom-media --small (min-width: 480px);
+@custom-media --medium-max (max-width: 767px);
 @custom-media --medium (min-width: 768px);
 @custom-media --large (min-width: 960px);
+@custom-media --x-large (min-width: 1260px);

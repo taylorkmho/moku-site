@@ -14,7 +14,7 @@
     h2,
     h3 {
       font-size: 1.5rem;
-      font-size: 23px;
+      font-size: 22px;
     }
   }
 
@@ -24,5 +24,10 @@
 
   &--inset {
     padding: 0;
+
+    @media (--x-large) {
+      padding-left: var(--d-padding);
+      padding-right: var(--d-padding);
+    }
   }
 }

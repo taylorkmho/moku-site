@@ -1,0 +1,26 @@
+<div class="section-heading">
+  <h1>Events</h1>
+</div>
+
+<section class="layout-container">
+  <p class="intro">Et qui anim Lorem culpa reprehenderit. Dolor ullamco adipisicing officia proident sint adipisicing. Culpa culpa reprehenderit voluptate ea quis consequat in sit mollit velit ea ut.</p>
+</section>
+
+<section class="layout-container layout-container--slim">
+  <div class="event-blocks">
+    <!-- {items} -->
+    {.repeated section items}
+      <a href="/events/{urlId}" class="event-block">
+        <div class="event-block__image-container">
+          <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
+        </div>
+        <div class="event-block__copy">
+          <p class="event-block__preheader">{customContent.date}</p>
+          <p class="event-block__title">{title}</p>
+        </div>
+      </a>
+    {.end}
+  </div>
+</section>
+
+{@|apply footer-cta.block}
