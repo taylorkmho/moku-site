@@ -1,28 +1,22 @@
 import Vue from 'vue'
 import ModalLink from './components/ModalLink.vue'
-
-import {
-  getModalAction,
-  containsModalHash,
-  isVideoHref,
-  stripString,
-} from './helpers'
+import { isTypeformHref, isVideoHref, stripString } from './helpers'
 
 export class modalSetUp {
   constructor() {
     this.modalLinks = Array.prototype.slice
       .call(document.querySelectorAll('a'))
-      .filter(link => containsModalHash(link.href))
-      // .filter(link => link.target !== '_blank') TODO
+      .filter(link => link.target !== '_blank')
+      .filter(link => isVideoHref(link.href) || isTypeformHref(link.href))
       .map(link => {
         const obj = {}
-        obj.href = isVideoHref(link.href)
-          ? stripString(link.href, '#modal')
-          : undefined
-        obj.action = isVideoHref(link.href)
-          ? 'video'
-          : getModalAction(link.href)
+        obj.href = link.href
         obj.el = link
+        if (isVideoHref(link.href)) {
+          obj.action = 'video'
+        } else if (isTypeformHref(link.href)) {
+          obj.action = 'request-a-visit'
+        }
         return obj
       })
 
