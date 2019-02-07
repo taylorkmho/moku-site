@@ -1,0 +1,63 @@
+<main class="main resource-article resource-article--video">
+  <div class="resource-article__video-area">
+    <div class="resource-article__video">
+      <iframe src="https://www.youtube.com/embed/Xh10JEVgO_g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="breadcrumbs resource-article__breadcrumbs">
+    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Lifestyle Through Language</a></span>
+    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Essay</a></span>
+  </div>
+  <h1 class="heading resource-article__title" data-content-field="title">{title}</h1>
+  <article id="post-{id}" class="resource-article__article {@|item-classes} general" data-item-id="{id}">
+    {body}
+  </article>
+  <div class="resource-article__share shares">
+    <a href="#" class="share"><img src="/assets/icon-facebook.svg" alt="Share on Facebook" /></a>
+    <a href="#" class="share"><img src="/assets/icon-linked-in.svg" alt="Share on Linked In" /></a>
+    <a href="#" class="share"><img src="/assets/icon-email.svg" alt="Email this article" /></a>
+  </div>
+  <p class="resource-article__video-next">Up next: <a href="#">Opening Remarks by Dre. Myrna Kay Cunningham Kain</a></p>
+  <div class="resource-article__video-links">
+    <div class="video-link">
+      <a class="video-link__thumbnail-container" href="#">
+        <img class="video-link__thumbnail" src="/assets/fpo-thumb-kain.jpg" alt="" />
+      </a>
+      <a class="video-link__title" href="#">Opening Remarks by Dre. Myrna Kay Cunningham Kain</a>
+      <span class="video-link__timestamp">31:37</span>
+    </div>
+    <div class="video-link">
+      <a class="video-link__thumbnail-container" href="#">
+        <img class="video-link__thumbnail" src="/assets/fpo-thumb-hawaii-policy.jpg" alt="" />
+      </a>
+      <a class="video-link__title" href="#">Hawaiian Language in Policy</a>
+      <span class="video-link__timestamp">30:35</span>
+    </div>
+    <div class="video-link">
+      <a class="video-link__thumbnail-container" href="#">
+        <img class="video-link__thumbnail" src="/assets/fpo-thumb-panel.jpg" alt="" />
+      </a>
+      <a class="video-link__title" href="#">Panel: Indigeous Language Learning</a>
+      <span class="video-link__timestamp">3:35</span>
+    </div>
+    <div class="video-link">
+      <a class="video-link__thumbnail-container" href="#">
+        <img class="video-link__thumbnail" src="/assets/fpo-thumb-maori-policy.jpg" alt="" />
+      </a>
+      <a class="video-link__title" href="#">Maori Language Policy</a>
+      <span class="video-link__timestamp">30:35</span>
+    </div>
+  </div>
+  <aside class="resource-article__aside">
+    <div class="links">
+      <h3 class="links__subheading">On the Topic of</h3>
+      <h2 class="links__title">Lifestyle Through Language</h2>
+      <ol class="links__list links__list--horizontal">
+        <li class="links__item"><a class="links__link" href="#">Indigenous Legends and Teaching</a></li>
+        <li class="links__item"><a class="links__link" href="#">Discussions of Indiginous Literatures</a></li>
+        <li class="links__item"><a class="links__link" href="#">Indigenous Legends and Teaching</a></li>
+        <li class="links__item"><a class="links__link" href="#">Discussions of Indiginous Literatures</a></li>
+      </ol>
+    </div>
+  </aside>
+</main>
