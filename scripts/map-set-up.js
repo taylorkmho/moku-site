@@ -3,7 +3,11 @@ import VisitationMap from './components/VisitationMap.vue'
 
 export class mapSetUp {
   constructor() {
-    this.map = document.querySelector('#map')
+    this.map = document.querySelector('#map') || undefined
+
+    if (this.map === undefined) {
+      return
+    }
 
     this.initVue()
   }

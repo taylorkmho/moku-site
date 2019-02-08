@@ -1,6 +1,4 @@
 .visitation-map {
   background: url('/assets/bg-wave.png') center;
-  &__container {
-    padding: calc(2 * var(--d-padding)) var(--d-padding);
-  }
+  height: 580px;
 }

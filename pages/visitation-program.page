@@ -11,11 +11,8 @@
 </div>
 
 <section class="visitation-map">
-  <div class="visitation-map__container layout-container layout-container--slim">
-    <div id="map">
-      <!-- TODO <img class="visitation-map__image" src="/assets/visitation-program-map.png" alt="Map" /> -->
-    </div>
-  </div>
+  <div id="map"></div>
+  <!-- TODO <img class="visitation-map__image" src="/assets/visitation-program-map.png" alt="Map" /> -->
 </section>
 
 <div class="layout-container layout-container--slim">
