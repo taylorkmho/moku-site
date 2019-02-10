@@ -20,17 +20,15 @@
         {
           container: 'visitation-map-app',
           style: 'mapbox://styles/taylorkmho/cjru9t9jm0ax51fukh6xqpe2d',
-          center: [-155, 18],
-          bearing: 20,
-          pitch: 50,
-          maxZoom: 13,
-          minZoom: 5,
-          zoom: 6.25,
-          clickTolerance: 10
+          center: [-160.500, 21.900],
+          pitch: 0,
+          zoom: 9,
+          minZoom: 6,
+          maxZoom: 18,
+          interactive: false,
         }
       );
 
-      this.mapboxMap.addControl(new mapboxgl.NavigationControl());
       this.mapboxMap.scrollZoom.disable();
 
       this.mapboxMap.on('load', () => {
@@ -75,17 +73,20 @@
         }
 
         this.mapboxMap.flyTo({
-          center: [-157.2057315, 20.3432828],
-          bearing: 0,
-          pitch: 10,
-          speed: 0.0625,
+          center: [-155.040, 19.650],
+          pitch: 30,
+          speed: 0.5,
+          zoom: 11.75,
         })
 
-        // this.addMarker('/assets/map-marker.png', 'map-marker', [-155.095, 19.715], 0.5)
-        this.addMarker('/assets/map-marker.png', '600-imiloa', [-155.066, 19.693], 0.75)
-        this.addMarker('/assets/map-marker.png', '16-120-opukahaia', [-155.036, 19.642], 0.725)
-        this.addMarker('/assets/map-marker.png', '133-nowelo', [-155.099, 19.706], 0.75)
-        this.addMarker('/assets/map-kuikahi-label.png', 'map-label', [-154.637, 20.143], 0.33)
+        this.addMarker('/assets/map-marker.png', '16-120-opukahaia', [-155.0312562, 19.6056909], 0.4)
+        this.addMarker('/assets/map-marker.png', '600-imiloa', [-155.090866, 19.7011223], 0.25)
+        this.addMarker('/assets/map-marker.png', '133-nowelo', [-155.0848757, 19.7003206], 0.25)
+
+        this.mapboxMap.once('moveend', () => {
+          this.mapboxMap.addControl(new mapboxgl.NavigationControl({showCompass: false}));
+          this.mapboxMap.dragPan.enable();
+        })
       }
     }
   }
