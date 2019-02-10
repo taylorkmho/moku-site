@@ -30,7 +30,7 @@
   </section>
 </div>
 
-<div class="footer-cta">
+<div class="layout-container footer-cta">
   <div class="layout-container layout-container--inset footer-cta__layout-container">
     <div class="footer-cta__icon">
       <squarespace:block-field id="visitation-program-footer-icon" label="Icon" columns="1" />

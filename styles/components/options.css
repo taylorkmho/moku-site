@@ -3,7 +3,7 @@
   margin-bottom: var(--d-padding);
 
   @media (--small) {
-    margin-bottom: calc(2 * var(--d-padding));
+    margin-bottom: var(--d-padding-large);
   }
 
   a {
@@ -13,7 +13,7 @@
   a,
   .modal-link {
     width: 100%;
-    margin-bottom: var(--d-space-unit);
+    margin-bottom: var(--d-space);
 
     @media (--medium) {
       margin-bottom: 0;

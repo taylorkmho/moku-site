@@ -15,21 +15,23 @@
 @import 'components/events.css';
 @import 'components/feature.css';
 @import 'components/featured-resources.css';
-@import 'components/footer.css';
-@import 'components/footer-cta.css';
 @import 'components/general.css';
 @import 'components/header.css';
+@import 'components/page-title.css';
 @import 'components/hero.css';
 @import 'components/layout-container.css';
 @import 'components/links.css';
-@import 'components/mission.css';
 @import 'components/nav.css';
-@import 'components/options.css';
-@import 'components/page-title.css';
-@import 'components/promos.css';
-@import 'components/resource.css';
-@import 'components/rule.css';
+@import 'components/footer.css';
+@import 'components/footer-cta.css';
+
 @import 'components/share.css';
 @import 'components/video.css';
+@import 'components/rule.css';
+
+@import 'components/mission.css';
+@import 'components/options.css';
+@import 'components/promos.css';
+@import 'components/resource.css';
 @import 'components/video-link.css';
 @import 'components/visitation-map.css';

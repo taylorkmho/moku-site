@@ -23,7 +23,7 @@
     border: 1px solid var(--c-very-light-gray);
 
     @media (--medium) {
-      padding: var(--d-space-unit) var(--d-padding);
+      padding: var(--d-space) var(--d-padding);
     }
 
     strong:first-child {

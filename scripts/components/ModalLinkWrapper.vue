@@ -117,13 +117,13 @@
     }
 
     @media (--small) {
-      padding-left: calc(var(--d-padding) * 2);
-      padding-right: calc(var(--d-padding) * 2);
+      padding-left: var(--d-padding-large);
+      padding-right: var(--d-padding-large);
     }
 
     @media (--large) {
-      padding-left: calc(var(--d-padding) * 4);
-      padding-right: calc(var(--d-padding) * 4);
+      padding-left: var(--d-padding-xlarge);
+      padding-right: var(--d-padding-xlarge);
     }
 
     &__window {

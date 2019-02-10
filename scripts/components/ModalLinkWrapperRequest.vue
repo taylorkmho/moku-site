@@ -78,7 +78,7 @@
     &__aside {
       grid-template: aside;
       text-align: left;
-      padding: calc(var(--d-padding) * 3) var(--d-padding) var(--d-padding);
+      padding: var(--d-padding-large) var(--d-padding) var(--d-padding);
     }
 
     &__heading {
@@ -87,7 +87,7 @@
       margin-bottom: 0;
       margin-top: 0;
       em {
-        color: var(--c-medium-gray);
+        color: var(--c-teal);
         font-style: inherit;
       }
     }

@@ -3,7 +3,7 @@
   grid-gap: var(--d-padding) 0;
 
   @media (--medium) {
-    grid-gap: 0 var(--d-space-unit);
+    grid-gap: 0 var(--d-space);
     grid-template-columns: 2fr 3fr;
   }
 

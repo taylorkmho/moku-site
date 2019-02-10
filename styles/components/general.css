@@ -84,10 +84,10 @@
   }
 
   .section-heading ~ & {
-    margin-top: calc(var(--d-space-unit) / 2);
+    margin-top: var(--d-space-small);
 
     @media (--medium) {
-      margin-top: var(--d-space-unit);
+      margin-top: var(--d-space);
     }
   }
 }

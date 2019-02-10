@@ -28,12 +28,26 @@
   --d-header-height-neg-mobile: -170px;
   --d-header-height-neg: -150px;
   --d-footer-height: 160px;
-  --d-space-unit: 20px;
-  --d-padding: 30px;
   --d-hero-max-height: 720px;
   --d-bullet-padding-start: 32px;
-  --d-border-radius: 8px;
+
+  --d-space-base: 20px;
+  --d-space: var(--d-space-base);
+  --d-space-small: calc(var(--d-space-base) / 2);
+  --d-space-large: calc(var(--d-space-base) * 2);
+
+  --d-padding-base: 30px;
+  --d-padding: var(--d-padding-base);
+  --d-padding-small: calc(var(--d-padding-base) / 2);
+  --d-padding-large: calc(var(--d-padding-base) * 2);
+  --d-padding-xlarge: calc(var(--d-padding-base) * 4);
+
+  /* Styles */
   --d-box-shadow: 0 0 30px -15px var(--c-black);
+  --d-border-radius-base: 8px;
+  --d-border-radius: var(--d-border-radius-base);
+  --d-border-radius-small: calc(var(--d-border-radius-base) / 2);
+  --d-border-radius-large: calc(var(--d-border-radius-base) * 2);
 }
 
 @custom-media --small (min-width: 480px);

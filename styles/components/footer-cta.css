@@ -1,9 +1,10 @@
 .footer-cta {
   background: var(--c-footer-cta-bg);
-  padding: calc(var(--d-padding) * 2) var(--d-padding);
-
-  @media (min-width: 960px) {
-    padding: 85px var(--d-padding);
+  padding: var(--d-padding-large) var(--d-padding);
+  @media (--large) {
+    padding: var(--d-padding) var(--d-padding-large);
+    margin-bottom: var(--d-padding);
+    border-radius: var(--d-border-radius-large);
   }
 
   &__layout-container {

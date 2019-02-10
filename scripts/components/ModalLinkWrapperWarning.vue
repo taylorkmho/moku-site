@@ -41,15 +41,15 @@
         margin-top: 0;
       }
       & > *:last-child {
-        margin-bottom: var(--d-space-unit);
+        margin-bottom: var(--d-space);
       }
     }
     &__actions {
       display: flex;
       justify-content: flex-end;
-      margin-top: var(--d-space-unit);
+      margin-top: var(--d-space);
       > * {
-        margin-right: var(--d-space-unit);
+        margin-right: var(--d-space);
         &:last-of-type {
           margin-right: 0;
         }
