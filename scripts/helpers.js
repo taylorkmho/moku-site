@@ -18,3 +18,7 @@ export function getVideoSource(str) {
 export function stripString(string, strip) {
   return string.replace(strip, '')
 }
+
+export function setDefaults(options, defaults) {
+  return Object.assign({}, defaults, options)
+}
