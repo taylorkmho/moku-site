@@ -53,10 +53,7 @@
           },
           coordinates: [-155.095, 19.715],
           description: 'no desc',
-          zoomRange: {
-            min: 0,
-            max: 24
-          }
+          zoomRange: [0, 24]
         }
 
         options = setDefaults(options, defaults)
@@ -80,16 +77,11 @@
           "layout": {
             "icon-image": options.icon.image,
             "icon-size": options.icon.size
-          }
+          },
+          "minzoom": options.zoomRange[0],
+          "maxzoom": options.zoomRange[1]
         });
 
-        this.mapboxMap.setLayerZoomRange(options.id, options.zoomRange.min, options.zoomRange.max)
-
-
-          // title: 'Nāwahīokalaniʻōpuʻu',
-          // subtitle: 'Hawaiian medium education',
-          // description: '16-120 ʻŌpūkahaʻia Street, Keaʻau',
-          // logo: '/assets/logo-nawahi.svg',
         const popup = new mapboxgl.Popup({
             offset: 50 * options.icon.size,
             className: 'visitation-map-app__popup'
@@ -104,18 +96,23 @@
 
         const popupClickEl = document.createElement('div');
         popupClickEl.classList.add('visitation-map-app__marker');
-        popupClickEl.style.transform = `scale(${options.icon.size})`
 
-        new mapboxgl.Marker(popupClickEl)
+        const marker = new mapboxgl.Marker(popupClickEl)
           .setLngLat(options.coordinates)
           .setPopup(popup)
           .addTo(this.mapboxMap);
 
         this.mapboxMap.on('zoomend', () => {
-          // TODO check if should remove marker
-          console.log(this.mapboxMap.getZoom())
+          const zoomLevel = this.mapboxMap.getZoom()
+          const isOutOfRange = zoomLevel < options.zoomRange[0] || zoomLevel > options.zoomRange[1]
+          console.log(zoomLevel)
 
-          // options.zoomRange.min, options.zoomRange.max
+          if (isOutOfRange) {
+            marker.remove();
+          } else {
+            marker.addTo(this.mapboxMap)
+          }
+
         })
       },
 
@@ -139,7 +136,8 @@
           logo: '/assets/logo-nawahi.svg',
           id: '16-120-opukahaia',
           coordinates: [-155.0312562, 19.6056909],
-          icon: { image: 'default-marker', size: 0.4 }
+          icon: { image: 'default-marker', size: 0.4 },
+          zoomRange: [9, 24],
         })
 
         // TODO add punanaleo
@@ -151,6 +149,7 @@
           logo: '/assets/logo-imiloa.svg',
           id: '600-imiloa',
           coordinates: [-155.090866, 19.7011223],
+          zoomRange: [11.5, 24],
         })
 
         this.addPlace({
@@ -160,6 +159,7 @@
           logo: '/assets/logo-kahaka.svg',
           id: '133-nowelo',
           coordinates: [-155.0848757, 19.7003206],
+          zoomRange: [11.5, 24],
         })
 
         this.mapboxMap.once('moveend', () => {
