@@ -14,6 +14,7 @@
   background: var(--c-blue);
   color: #fff;
   position: relative;
+  border-radius: var(--d-border-radius);
 
   * {
     position: relative;
