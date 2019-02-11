@@ -14,7 +14,7 @@
     data() {
       return {
         DEFAULT_ZOOM: 11.75,
-        DEFAULT_COORDS: [-155.040, 19.650]
+        DEFAULT_COORDS: [-155.040, 19.650],
       }
     },
     mounted() {
@@ -22,21 +22,20 @@
         {
           container: 'visitation-map-app',
           style: 'mapbox://styles/taylorkmho/cjru9t9jm0ax51fukh6xqpe2d',
-          center: [-160.500, 21.900],
+          center: [-157.595, 20.831],
           pitch: 0,
-          zoom: 9,
+          zoom: 6,
           minZoom: 4,
           maxZoom: 18,
           interactive: false,
         }
       );
-
       this.addMarkerImage(this.mapboxMap, 'default-marker', '/assets/map-marker.png')
-
       this.mapboxMap.scrollZoom.disable();
 
       this.mapboxMap.on('load', () => {
-        this.showMap()
+        this.initMap()
+        this.setupMarkers()
       })
     },
     methods: {
@@ -136,20 +135,24 @@
           }
         })
       },
-
-      showMap: function() {
+      initMap: function() {
         if (this.mapboxMap._container.classList.contains('visitation-map-app--not-loaded')) {
           this.mapboxMap._container.classList.remove('visitation-map-app--not-loaded');
         }
-
-        this.mapboxMap.flyTo({
-          center: this.DEFAULT_COORDS,
-          pitch: 30,
-          speed: 0.5,
-          fadeDuration: 200,
-          zoom: this.DEFAULT_ZOOM,
+        setTimeout(()=>{
+          this.mapboxMap.flyTo({
+            center: this.DEFAULT_COORDS,
+            pitch: 30,
+            speed: 0.3,
+            zoom: this.DEFAULT_ZOOM,
+          })
+        }, 300)
+        this.mapboxMap.once('moveend', () => {
+          this.mapboxMap.addControl(new mapboxgl.NavigationControl({showCompass: false}));
+          this.mapboxMap.dragPan.enable();
         })
-
+      },
+      setupMarkers: function() {
         this.addMarker({
           id: 'hilo',
           title: 'Hilo',
@@ -211,11 +214,6 @@
           logo: '/assets/logo-kahaka.svg',
           coordinates: [-155.0848757, 19.7003206],
           zoomRange: [11.5, 24],
-        })
-
-        this.mapboxMap.once('moveend', () => {
-          this.mapboxMap.addControl(new mapboxgl.NavigationControl({showCompass: false}));
-          this.mapboxMap.dragPan.enable();
         })
       }
     }
