@@ -1,7 +1,10 @@
 .visitation-map {
   position: relative;
-  background: url('/assets/bg-wave.png') center;
-  height: 640px;
+  background: var(--c-black);
+  height: 320px;
+  @media (--medium) {
+    height: 640px;
+  }
   &:after {
     content: "";
     display: block;

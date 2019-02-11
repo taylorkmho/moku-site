@@ -143,7 +143,7 @@
           this.mapboxMap.flyTo({
             center: this.DEFAULT_COORDS,
             pitch: 30,
-            speed: 0.3,
+            speed: 0.5,
             zoom: this.DEFAULT_ZOOM,
           })
         }, 300)
