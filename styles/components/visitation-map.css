@@ -1,6 +1,6 @@
 .visitation-map {
   position: relative;
-  background: var(--c-black);
+  background: var(--c-blue);
   height: 320px;
   @media (--medium) {
     height: 640px;
