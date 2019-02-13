@@ -1,0 +1,9 @@
+.infeature-notification {
+  padding: var(--d-padding-small) var(--d-padding);
+  border-radius: var(--d-border-radius);
+  &--light {
+    border: 2px solid #fff;
+    background-color: rgba(255,255,255,0.33);
+    color: #fff;
+  }
+}

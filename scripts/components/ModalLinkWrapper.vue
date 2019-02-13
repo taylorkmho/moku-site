@@ -95,7 +95,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 100;
+    z-index: 900;
     padding-left: var(--d-padding);
     padding-right: var(--d-padding);
 
@@ -105,7 +105,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 100;
+      z-index: 910;
       display: block;
       background-color: var(--c-modal-bg);
       opacity: 0;
@@ -129,7 +129,7 @@
     &__window {
       position: relative;
       width: 100%;
-      z-index: 110;
+      z-index: 910;
       transform: translateY(3rem);
       opacity: 0;
       transition: all 300ms ease-out 150ms;

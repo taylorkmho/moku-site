@@ -1,5 +1,24 @@
 <template>
-  <div id="visitation-map-app" class="visitation-map-app visitation-map-app--not-loaded"></div>
+  <div class="visitation-map-app-container">
+    <div
+      id="visitation-map-app"
+      :class="{
+        'visitation-map-app': true,
+        'visitation-map-app--not-loaded': !hasLoaded,
+      }"
+    >
+    </div>
+    <div
+      :class="{
+        'visitation-map-app-container__notification': true,
+        'visitation-map-app-container__notification--hidden': !showNotification,
+        'infeature-notification': true,
+        'infeature-notification--light': true,
+      }"
+    >
+      Tap Hilo to get started
+    </div>
+  </div>
 </template>
 
 <script>
@@ -15,6 +34,8 @@
       return {
         DEFAULT_ZOOM: 11.75,
         DEFAULT_COORDS: [-155.040, 19.650],
+        hasLoaded: false,
+        showNotification: false,
       }
     },
     mounted() {
@@ -22,20 +43,22 @@
         {
           container: 'visitation-map-app',
           style: 'mapbox://styles/taylorkmho/cjru9t9jm0ax51fukh6xqpe2d',
-          center: [-157.595, 20.831],
+          center: [-157.618, 20.458],
           pitch: 0,
-          zoom: 6,
+          zoom: 6.5,
           minZoom: 4,
           maxZoom: 18,
-          interactive: false,
         }
       );
       this.addMarkerImage(this.mapboxMap, 'default-marker', '/assets/map-marker.png')
-      this.mapboxMap.scrollZoom.disable();
 
       this.mapboxMap.on('load', () => {
         this.initMap()
         this.setupMarkers()
+      })
+
+      this.mapboxMap.once('moveend', () => {
+        this.showNotification = false
       })
     },
     methods: {
@@ -121,36 +144,32 @@
 
         const marker = new mapboxgl.Marker(markerClickListener)
           .setLngLat(options.coordinates)
-          .setPopup(popup) // can be set to null
+          .setPopup(popup)
           .addTo(this.mapboxMap);
+
+        const zoomLevel = this.mapboxMap.getZoom()
+        const isOutOfRange = zoomLevel < options.zoomRange[0] || zoomLevel > options.zoomRange[1]
+        if (isOutOfRange) {
+          marker.remove();
+        } else {
+          marker.addTo(this.mapboxMap)
+        }
 
         this.mapboxMap.on('zoomend', () => {
           const zoomLevel = this.mapboxMap.getZoom()
           const isOutOfRange = zoomLevel < options.zoomRange[0] || zoomLevel > options.zoomRange[1]
-
           if (isOutOfRange) {
             marker.remove();
           } else {
-            marker.addTo(this.mapboxMap)
+            marker.addTo(this.mapboxMap);
           }
         })
       },
       initMap: function() {
-        if (this.mapboxMap._container.classList.contains('visitation-map-app--not-loaded')) {
-          this.mapboxMap._container.classList.remove('visitation-map-app--not-loaded');
-        }
-        setTimeout(()=>{
-          this.mapboxMap.flyTo({
-            center: this.DEFAULT_COORDS,
-            pitch: 30,
-            speed: 0.5,
-            zoom: this.DEFAULT_ZOOM,
-          })
-        }, 300)
-        this.mapboxMap.once('moveend', () => {
-          this.mapboxMap.addControl(new mapboxgl.NavigationControl({showCompass: false}));
-          this.mapboxMap.dragPan.enable();
-        })
+        this.hasLoaded = true;
+        this.showNotification = true;
+        this.mapboxMap.scrollZoom.disable();
+        this.mapboxMap.addControl(new mapboxgl.NavigationControl({showCompass: false}));
       },
       setupMarkers: function() {
         this.addMarker({
@@ -158,7 +177,7 @@
           title: 'Hilo',
           coordinates: [-155.0608837, 19.668792],
           icon: { image: 'default-marker', size: 0.65 },
-          zoomTo: 11,
+          zoomTo: 10,
           zoomToCoordinates: this.DEFAULT_COORDS,
           zoomRange: [0, 9],
         })
@@ -169,7 +188,7 @@
           coordinates: [-155.0940677, 19.707875],
           icon: { image: 'default-marker', size: 0.5 },
           zoomTo: this.DEFAULT_ZOOM,
-          zoomToCoordinates: [-155.0931949, 19.6637184],
+          zoomToCoordinates: [-155.0538754, 19.6534761],
           zoomRange: [9, 11.5],
         })
 
@@ -179,7 +198,7 @@
           coordinates: [-155.0312562, 19.6056909],
           icon: { image: 'default-marker', size: 0.5 },
           zoomTo: this.DEFAULT_ZOOM,
-          zoomToCoordinates: [-155.0383607, 19.632712],
+          zoomToCoordinates: [-155.0538754, 19.6534761],
           zoomRange: [9, 11.5],
         })
 
@@ -193,8 +212,6 @@
           icon: { image: 'default-marker', size: 0.4 },
           zoomRange: [11.5, 24],
         })
-
-        // TODO add punanaleo
 
         this.addMarker({
           id: '600-imiloa',
@@ -221,9 +238,27 @@
 </script>
 
 <style>
+  .visitation-map-app-container,
   .visitation-map-app,
   .mapboxgl-map {
     height: 100%;
+  }
+
+  .visitation-map-app-container {
+    position: relative;
+    &__notification {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 230;
+      transform: translateX(-50%);
+      margin-bottom: var(--d-space);
+      transition: all 150ms ease-out 300ms;
+      &--hidden {
+        opacity: 0;
+        transform: translate3d(-50%, 1rem, 0);
+      }
+    }
   }
 
   .visitation-map-app {

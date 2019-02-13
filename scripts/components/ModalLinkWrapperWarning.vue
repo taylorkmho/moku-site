@@ -31,7 +31,7 @@
     border-radius: var(--d-border-radius);
     background: #fff;
     color: var(--c-black);
-    z-index: 120;
+    z-index: 920;
     white-space: normal;
     padding: var(--d-padding);
     box-shadow: var(--d-box-shadow);
