@@ -3,32 +3,35 @@
     <h1>{item.title}</h1>
   </div>
   <div class="section-subheading">
-    {item.excerpt}
+    <h2>{item.customContent.subheading}</h2>
   </div>
 </div>
 
-<div class="video-header">
+<div class="asset-header">
   <div class="layout-container layout-container--inset">
-    <div class="video-block">
-      <div class="video-block__container">
+    <div class="asset" data-inline-player>
+      <div class="asset__container">
         {.if item.customContent.videoQuote}
-          <h3 class="video-block__title">&ldquo;{item.customContent.videoQuote}&rdquo;</h3>
+          <h3 class="asset__quote">&ldquo;{item.customContent.videoQuote}&rdquo;</h3>
         {.end}
         {.if item.customContent.video}
-          <a href="{item.customContent.video}">
-            <img class="video-block__play" src="/assets/icon-play.svg" alt="Play" />
-            <p class="video-block__cta">Watch the Introduction</p>
+          <a href="{item.customContent.video}" class="play-button" data-player="inline" target="_blank">
+            <img class="play-button__icon" src="/assets/icon-play.svg" alt="Play" />
+            <p class="play-button__cta">Watch the Video</p>
           </a>
         {.end}
       </div>
+      <div class="asset__bg" style="background-image: url({item.assetUrl});"></div>
     </div>
   </div>
 </div>
 
 <div class="layout-container event-item-header">
-  <div class="event-item-header__cta">
-    {item.customContent.callout.html}
-  </div>
+  {.if item.customContent.callout.html}
+    <div class="event-item-header__cta">
+      {item.customContent.callout.html}
+    </div>
+  {.end}
   <div class="event-item-header__summary">
     {.if item.customContent.date}<h3 class="subheading">{item.customContent.date}</h3>{.end}
     {.if item.customContent.location}<h2 class="title">{item.customContent.location}</h2>{.end}

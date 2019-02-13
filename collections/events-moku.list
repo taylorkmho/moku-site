@@ -8,12 +8,9 @@
 
 <section class="layout-container layout-container--slim">
   <div class="event-blocks">
-    <!-- {items} -->
     {.repeated section items}
       <a href="/events/{urlId}" class="event-block">
-        <div class="event-block__image-container">
-          <img class="event-block__image" src="https://picsum.photos/390/230" alt="" />
-        </div>
+        <figure class="event-block__image-container" style="background-image: url({assetUrl});"></figure>
         <div class="event-block__copy">
           <p class="event-block__preheader">{customContent.date}</p>
           <p class="event-block__title">{title}</p>

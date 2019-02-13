@@ -7,6 +7,7 @@ export class modalSetUp {
     this.modalLinks = Array.prototype.slice
       .call(document.querySelectorAll('a'))
       .filter(link => link.target !== '_blank')
+      .filter(link => link.dataset.player !== 'inline')
       .filter(link => isVideoHref(link.href) || isTypeformHref(link.href))
       .map(link => {
         const obj = {}

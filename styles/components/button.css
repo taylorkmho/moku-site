@@ -54,3 +54,51 @@
   }
 
 }
+
+.play-button {
+  background: transparent;
+  border: 0;
+  border-radius: var(--d-border-radius);
+  outline: none;
+  padding: var(--d-padding-small);
+  cursor: pointer;
+
+  @media (--medium) {
+    padding: var(--d-padding);
+  }
+
+  & > * {
+    transform: translateY(0px);
+    transition: transform 150ms ease-out;
+  }
+  &:hover > * {
+    transform: translateY(-2px);
+  }
+  &:active > * {
+    transform: translateY(2px);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px var(--c-teal--alt);
+  }
+
+  &__icon {
+    width: 15px;
+    margin-bottom: 1.5vw;
+
+    @media (--small) {
+      width: 30px;
+    }
+
+    @media (--large) {
+      width: 50px;
+    }
+  }
+
+  &__cta {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
