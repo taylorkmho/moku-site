@@ -47,6 +47,7 @@
   --d-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.125);
   --d-box-shadow-small: 0 5px 10px -5px rgba(0, 0, 0, 0.0625);
   --d-box-shadow-large: 0 15px 30px -15px rgba(0, 0, 0, 0.25);
+  --d-box-shadow-angled-up: 0 0 30px -15px rgba(0, 0, 0, 0.5);
   --d-border-radius-base: 8px;
   --d-border-radius: var(--d-border-radius-base);
   --d-border-radius-small: calc(var(--d-border-radius-base) / 2);

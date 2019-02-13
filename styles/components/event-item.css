@@ -16,9 +16,10 @@
   }
 
   &__cta {
-    background: var(--c-footer-cta-bg);
+    background-color: var(--c-footer-cta-bg);
+    background-image: url('/assets/bg-pattern.png');
+    background-position: top left;
     border-radius: var(--d-border-radius);
-    box-shadow: var(--d-box-shadow);
     padding: var(--d-padding);
     border: 1px solid var(--c-very-light-gray);
 

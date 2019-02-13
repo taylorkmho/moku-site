@@ -1,5 +1,8 @@
 .featured-resources {
-  background: var(--c-off-white);
+  background-color: var(--c-off-white);
+  background-image: url('/assets/bg-pattern.png');
+  background-repeat: no-repeat;
+  background-position: top left;
   padding: var(--d-padding) 0;
 
   @media (min-width: 768px) {

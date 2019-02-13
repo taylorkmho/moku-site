@@ -2,7 +2,7 @@
   <div class="modal-link">
     <button
       class="button"
-      v-html="label"
+      v-html="innerHTML"
       :data-action="action"
       @click.prevent="openModal"
     />
@@ -31,7 +31,6 @@
     },
     data() {
       return {
-        label: this.innerHTML,
         isModalVisible: false,
       }
     },

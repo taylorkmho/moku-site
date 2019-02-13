@@ -28,6 +28,21 @@ a {
   text-decoration: none;
 }
 
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="select"] {
+  border: 1px solid var(--c-medium-light-gray);
+  font-size: 14px;
+  padding: var(--d-space-small);
+  border-radius: var(--d-border-radius-small);
+  &:focus {
+    border: 1px solid var(--c-teal);
+    box-shadow: 0 0 4px 0 var(--c-teal);
+    outline: none;
+  }
+}
+
 #css-filters {
   display: none;
 }
