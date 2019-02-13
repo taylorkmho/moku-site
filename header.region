@@ -5,6 +5,25 @@
     <meta name="viewport" content="initial-scale=1">
     {squarespace-headers}
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <svg id="css-filters">
+      <filter id="teal" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+        <feColorMatrix type="matrix" result="grayscale"
+          values="1 0 0 0 0
+            1 0 0 0 0
+            1 0 0 0 0
+            0 0 0 1 0">
+        </feColorMatrix>
+        <feColorMatrix
+          color-interpolation-filters="sRGB"
+          in="A"
+          type="matrix"
+          values="0.0117 0.0000 0.0000 0.11 0
+                  0.0000 0.6431 0.0000 0.12 0
+                  0.0000 0.0000 0.6235 0.13 0
+                  0.0000 0.0000 0.0000 1 0 ">
+        </feColorMatrix>
+      </filter>
+    </svg>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
