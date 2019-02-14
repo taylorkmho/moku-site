@@ -1,25 +1,32 @@
-{.section collection}
-  {.repeated section categories}
-    <h2>Posts in Category: {@}</h2>
-    <squarespace:query collection="resources" category="{@}" limit="99">
-      {.repeated section items}
-        {.equal? @index 1}
-          First Item! Has the title {title}
-        {.end}
-      {.end}
-      {.repeated section items}
-        <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
-          <h1 class="title" data-content-field="title">
+<div class="section-heading">
+  <h1>{collection.title}</h1>
+</div>
+
+<div class="layout-container layout-container--intro">
+  <squarespace:block-field id="resources-intro" label="Introduction" columns="1" />
+</div>
+
+<section class="layout-container">
+  <div class="resources" data-vue-container="resources" data-url="{collection.fullUrl}">
+    <article class="resource">
+      <ul>
+        {.repeated section items}
+          <li>
             {.passthrough?}
-              <a href="{sourceUrl}" target="_blank">{title}</a>
+              <a id="post-{id}" data-item-id="{id}" href="{sourceUrl}" target="_blank">
+                {title}
+              </a>
             {.or}
-              <a href="{fullUrl}">{title}</a>
+              <a id="post-{id}" data-item-id="{id}" href="{fullUrl}">
+                {title}
+              </a>
             {.end}
-          </h1>
-        </article>
-      {.or}
-        No posts yet.
-      {.end}
-    </squarespace:query>
-  {.end}
-{.end}
+          </li>
+        {.or}
+          No content
+        {.end}
+    </article>
+  </div>
+</section>
+
+{@|apply footer-cta.block}
