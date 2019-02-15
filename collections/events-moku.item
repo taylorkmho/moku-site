@@ -15,7 +15,7 @@
           <h3 class="asset__quote">&ldquo;{item.customContent.videoQuote}&rdquo;</h3>
         {.end}
         {.if item.customContent.video}
-          <a href="{item.customContent.video}" class="play-button" data-player="inline" target="_blank">
+          <a href="{item.customContent.video}" class="play-button" data-vue-player="inline" target="_blank">
             <img class="play-button__icon" src="/assets/icon-play.svg" alt="Play" />
             <p class="play-button__cta">Watch the Video</p>
           </a>

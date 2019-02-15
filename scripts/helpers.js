@@ -3,6 +3,11 @@ export function isValidEmail(str) {
   return re.test(str)
 }
 
+export function isValidImage(str) {
+  const re = /\.(gif|jpg|jpeg|tiff|png)$/i
+  return re.test(str)
+}
+
 export function isMailchimpLink(str) {
   const re = new RegExp(`(eepurl)`)
   return re.test(str)
@@ -31,4 +36,10 @@ export function stripString(string, strip) {
 
 export function setDefaults(options, defaults) {
   return Object.assign({}, defaults, options)
+}
+
+export function getYoutubeId(str) {
+  const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
+  const match = str.match(regExp)
+  return match && match[7].length == 11 ? match[7] : false
 }

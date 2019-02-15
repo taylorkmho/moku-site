@@ -6,7 +6,7 @@ export class inlineVideoSetUp {
   constructor() {
     this.inlinePlayers = Array.prototype.slice
       .call(document.querySelectorAll('a'))
-      .filter(link => link.dataset.player === 'inline')
+      .filter(link => link.dataset.vuePlayer === 'inline')
       .filter(link => isVideoHref(link.href))
 
     this.initVue()

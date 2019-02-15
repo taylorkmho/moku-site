@@ -1,12 +1,18 @@
 <main class="main resource-article resource-article--video">
-  <div class="resource-article__video-area">
+  <div class="resource-article__asset-area">
     <div class="resource-article__video">
-      <iframe src="https://www.youtube.com/embed/Xh10JEVgO_g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {.if item.customContent.video}
+        <a href="{item.customContent.video}" class="play-button" data-vue-player="inline" target="_blank">
+          <img class="play-button__icon" src="/assets/icon-play.svg" alt="Play" />
+          <p class="play-button__cta">Watch the Video</p>
+        </a>
+      {.end}
     </div>
+    <figure class="resource-article__thumbnail" style="background-image: url({item.assetUrl});" data-vue-smart-thumbnail data-default-thumbnail="{item.assetUrl}" data-href="{item.customContent.video}"></figure>
   </div>
   <div class="breadcrumbs resource-article__breadcrumbs">
-    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Lifestyle Through Language</a></span>
-    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Essay</a></span>
+    <span class="breadcrumb"><a class="breadcrumb__link" href="#">{item.customContent.category1}</a></span>
+    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Video</a></span>
   </div>
   <h1 class="heading resource-article__title" data-content-field="title">{title}</h1>
   <article id="post-{id}" class="resource-article__article {@|item-classes} general" data-item-id="{id}">
