@@ -1,15 +1,15 @@
 <template>
   <div>
     <h2 class="collection-list-heading">Topics</h2>
-    <div class="resources">
-      <article class="resource" v-for="category in categories">
-        <div class="resource__image">
-          <img :src="firstImage" alt="" />
+    <div class="resources-list-container">
+      <article class="resources-list" v-for="category in categories">
+        <div class="resources-list__header-image" :style="{backgroundImage: `url(${category.items[0].assetUrl})`}">
+          <img :src="category.items[0].assetUrl" alt="" />
         </div>
-        <h3 class="resource__title">{{category.title}}</h3>
-        <ul>
-          <li v-for="item in category.items">
-            <a data-item-id="id" :href="item.fullUrl">
+        <h3 class="resources-list__title">{{category.title}}</h3>
+        <ul class="resources-list__list">
+          <li v-for="item in category.items" class="resources-list-item">
+            <a data-item-id="id" :href="item.fullUrl" class="resources-list-item__link">
               {{item.title}}
             </a>
           </li>
@@ -37,16 +37,19 @@
         const filteredCategories = categories.filter((item, index) => categories.indexOf(item) >= index);
 
         return filteredCategories.map((category) => {
-          const categoryItems = this.items.filter((item) => item.category == category);
+          const categoryItems = this.items
+            .filter((item) => item.category == category)
+            .sort(function(a, b) {
+              if( a.title < b.title ) { return -1 }
+              if( a.title > b.title ) { return 1 }
+              return 0
+            });
 
           return {
             title: category,
             items: categoryItems,
           }
         })
-      },
-      firstImage: function() {
-        return this.items[0].assetUrl
       },
     },
     mounted: function() {
@@ -62,6 +65,7 @@
                   title: item.title,
                   fullUrl: item.fullUrl,
                   assetUrl: item.assetUrl,
+                  hasUploadedAsset: !!item.filename,
                   category: item.customContent.category1,
                 }
               })
@@ -75,6 +79,4 @@
 </script>
 
 <style scoped>
-  .resources {
-  }
 </styled>

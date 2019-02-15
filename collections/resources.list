@@ -7,17 +7,18 @@
 </div>
 
 <section class="layout-container">
-  <div class="resources" data-vue-container="resources" data-url="{collection.fullUrl}">
-    <article class="resource">
-      <ul>
+  <h2 class="collection-list-heading">All Resources</h2>
+  <div class="resources-list-container" data-vue-container="resources" data-url="{collection.fullUrl}">
+    <article class="resources-list">
+      <ul class="resources-list__list">
         {.repeated section items}
-          <li>
+          <li class="resources-list-item">
             {.passthrough?}
-              <a id="post-{id}" data-item-id="{id}" href="{sourceUrl}" target="_blank">
+              <a class="resources-list-item__link" id="post-{id}" data-item-id="{id}" href="{sourceUrl}" target="_blank">
                 {title}
               </a>
             {.or}
-              <a id="post-{id}" data-item-id="{id}" href="{fullUrl}">
+              <a class="resources-list-item__link" id="post-{id}" data-item-id="{id}" href="{fullUrl}">
                 {title}
               </a>
             {.end}

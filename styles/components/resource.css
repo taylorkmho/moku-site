@@ -1,42 +1,52 @@
-.resources {
+.resources-list-container {
   display: grid;
 
-  @media (min-width: 768px) {
+  @media (--medium) {
     grid-gap: 60px var(--d-padding);
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.resource {
-  display: grid;
-  grid-gap: var(--d-padding) 0;
-  align-content: flex-start;
-  align-items: flex-start;
-  justify-content: center;
-  justify-items: center;
+.resources-list {
   text-align: center;
 
   &__title {
     font: normal 28px var(--f-serif);
-    margin: 0;
+    margin: var(--d-space) 0;
+  }
 
-    a {
-      color: inherit;
+  &__header-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    border-radius: var(--d-border-radius);
+    background-color: var(--c-very-light-gray);
+    background-size: cover;
+    background-position: center;
+    img {
+      display: none;
     }
   }
 
-  &__description {
-    margin: 0;
-  }
-
-  ul {
+  &__list {
     @mixin clear-list;
     display: grid;
     grid-gap: 15px 0;
+  }
+}
 
-    li {
-      @mixin fancy-bullet;
-      text-align: left;
+.resources-list-item {
+  @mixin fancy-bullet;
+  @mixin fancy-bullet--blue;
+  text-align: left;
+  &__link {
+    width: 100%;
+    color: var(--c-default);
+    &:visited {
+      color: var(--c-medium-gray);
+    }
+    &:hover {
+      color: var(--c-gray);
     }
   }
 }
@@ -73,7 +83,7 @@
     margin-bottom: 0;
     padding-top: 40px;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       grid-template-areas: 'preheader .'
         'title .'
         'breadcrumbs .'
@@ -133,7 +143,7 @@
     align-items: flex-start;
     grid-gap: 15px 0;
 
-    grid-template-areas: 'video-area'
+    grid-template-areas: 'asset-area'
       'breadcrumbs'
       'title'
       'article'
@@ -142,12 +152,12 @@
       'video-links'
       'aside';
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       grid-gap: 15px var(--d-padding);
-      grid-template-areas: 'video-area breadcrumbs'
-        'video-area title'
-        'video-area article'
-        'video-area share'
+      grid-template-areas: 'asset-area breadcrumbs'
+        'asset-area title'
+        'asset-area article'
+        'asset-area share'
         'video-next video-next'
         'video-links video-links'
         'aside aside';
@@ -187,24 +197,48 @@
     grid-area: map;
   }
 
-  &__video-area {
-    grid-area: video-area;
+  &__asset-area {
+    grid-area: asset-area;
+    position: relative;
+    margin-left: -30px;
+    width: calc(100% + 60px);
+
+    @media (--medium) {
+      margin-left: auto;
+      width: 100%;
+    }
   }
 
   &__video {
     @mixin responsive-media 56.25%;
-    margin-left: -30px;
-    width: calc(100% + 60px);
-
-    iframe {
+    z-index: 200;
+    .inline-player {
       position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 100%;
     }
+    .play-button {
+      z-index: 210;
+      position: relative;
+    }
+  }
 
-    @media (min-width: 768px) {
-      margin-left: auto;
-      width: 100%;
+  &__thumbnail {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: url(#teal);
+    background-size: cover;
+
+    @media (--medium) {
+      box-shadow: var(--d-box-shadow);
+      border-radius: var(--d-border-radius);
     }
   }
 
@@ -213,7 +247,7 @@
     grid-gap: 15px;
     margin: 0 0 50px;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       grid-area: video-links;
       grid-auto-flow: column;
       grid-template-columns: repeat(auto-fit, minmax(auto, 286px));
@@ -236,7 +270,7 @@
   .swiper-container {
     margin: 30px 0 0;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       margin: 30px 0;
     }
   }
@@ -272,7 +306,7 @@
     .label {
       display: none;
 
-      @media (min-width: 768px) {
+      @media (--medium) {
         display: inline;
       }
     }
@@ -299,7 +333,7 @@
     justify-content: space-between;
     padding: 0 10px;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       height: 60px;
       padding: 0 var(--d-padding);
     }
@@ -310,7 +344,7 @@
     grid-auto-flow: column;
     grid-gap: 0 15px;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       grid-gap: 0 25px;
     }
   }
@@ -321,7 +355,7 @@
     position: relative;
     width: 8px;
 
-    @media (min-width: 768px) {
+    @media (--medium) {
       height: 16px;
       width: 16px;
     }
@@ -342,7 +376,7 @@
         width: 15px;
         z-index: -1;
 
-        @media (min-width: 768px) {
+        @media (--medium) {
           display: inline;
           height: 36px;
           width: 36px;
