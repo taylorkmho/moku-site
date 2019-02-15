@@ -23,6 +23,31 @@
                   0.0000 0.0000 0.0000 1 0 ">
         </feColorMatrix>
       </filter>
+      <filter id="mono" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+        <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+          values="0.25 0 0 0.3 0
+                  0.25 0 0 0.3 0
+                  0.25 0 0 0.3 0
+                  0   0 0 0.5   0">
+        </feColorMatrix>
+      </filter>
+      <filter id="teal-mono" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+        <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+          values="0.5 0 0 0.5 0
+                  0.5 0 0 0.5 0
+                  0.5 0 0 0.5 0
+                  0   0 0 1   0">
+        </feColorMatrix>
+        <feColorMatrix
+          color-interpolation-filters="sRGB"
+          in="A"
+          type="matrix"
+          values="0.0117 0.0000 0.0000 0.11 0
+                  0.0000 0.6431 0.0000 0.12 0
+                  0.0000 0.0000 0.6235 0.13 0
+                  0.0000 0.0000 0.0000 1 0 ">
+        </feColorMatrix>
+      </filter>
     </svg>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
