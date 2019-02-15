@@ -32,7 +32,7 @@
     methods: {
       fetchThumbnail: function() {
         if (this.videoSource === "youtube") {
-          this.thumbnail = `https://img.youtube.com/vi/${getYoutubeId(this.href)}/maxresdefault.jpg`
+          this.thumbnail = `url(https://img.youtube.com/vi/${getYoutubeId(this.href)}/maxresdefault.jpg)`
         } else if (this.videoSource === "vimeo") {
           axios.get(`https://vimeo.com/api/oembed.json?url=${this.href}`)
             .then((response) => {
