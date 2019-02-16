@@ -1,5 +1,11 @@
 <template>
-  <figure class="smart-thumbnail" :style="style"></figure>
+  <figure
+    :style="style"
+    :class="{
+      'smart-thumbnail': true,
+      'smart-thumbnail--has-tint': hasTint,
+    }"
+  ></figure>
 </template>
 
 <script>
@@ -9,6 +15,7 @@
   export default {
     props: {
       href: String,
+      hasTint: Boolean,
     },
     data() {
       return {
@@ -38,7 +45,7 @@
             .then((response) => {
               const vimeoId = response.data.video_id
 
-              axios.get(`http://vimeo.com/api/v2/video/${vimeoId}.json`)
+              axios.get(`https://vimeo.com/api/v2/video/${vimeoId}.json`)
                 .then((response) => {
                   this.thumbnail = `url(${response.data[0].thumbnail_large})`
                 })
@@ -55,7 +62,7 @@
   }
 </script>
 
-<style scoped>
+<style>
 .smart-thumbnail {
   margin: 0;
   position: absolute;
@@ -63,12 +70,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  filter: url(#teal-mono);
   background-size: cover;
 
-  @media (--medium) {
+  @media (min-width: 768px) {
     box-shadow: var(--d-box-shadow);
     border-radius: var(--d-border-radius);
+  }
+
+  &--has-tint {
+    filter: url(#teal-mono);
   }
 }
 </style>

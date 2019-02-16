@@ -116,12 +116,12 @@
       opacity: 1;
     }
 
-    @media (--small) {
+    @media (min-width: 480px) {
       padding-left: var(--d-padding-large);
       padding-right: var(--d-padding-large);
     }
 
-    @media (--large) {
+    @media (min-width: 960px) {
       padding-left: var(--d-padding-xlarge);
       padding-right: var(--d-padding-xlarge);
     }

@@ -20,6 +20,7 @@ export class smartThumbnailSetUp {
           return createElement(SmartThumbnailLoader, {
             props: {
               href: smartThumbnail.dataset.href,
+              hasTint: true,
             },
           })
         },
