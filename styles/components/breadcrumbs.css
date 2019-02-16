@@ -15,7 +15,7 @@
       content: '•';
       padding-left: 10px;
 
-      @media (min-width: 768px) {
+      @media (--medium) {
         padding-left: 20px;
       }
 
@@ -27,12 +27,7 @@
 
   &__link {
     color: var(--c-medium-light-gray);
-    font-size: 0.8rem;
-
-    @media (min-width: 768px) {
-      font-size: 1rem;
-    }
-
+    font-size: 18px;
     .feature & {
       color: #fff;
     }

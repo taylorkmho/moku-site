@@ -1,12 +1,25 @@
 .essay {
   @mixin layout-container;
   display: grid;
-  grid-gap: 0 50px;
-  grid-template-areas:  "banner banner banner"
-                        "breadcrumbs breadcrumbs ."
-                        "title title ."
-                        "share article aside";
+  grid-gap: var(--d-padding-small) 50px;
+  grid-template-columns: 8fr 4fr;
+  grid-template-areas:  "image"
+                        "breadcrumbs"
+                        "title"
+                        "article"
+                        "aside";
 
+  @media (--medium) {
+    grid-gap: var(--d-padding) 50px;
+    grid-template-areas:  "image image"
+                          "breadcrumbs breadcrumbs"
+                          "title ."
+                          "article aside";
+  }
+
+  &__article {
+    grid-area: article;
+  }
 
   &__title {
     grid-area: title;
@@ -20,9 +33,9 @@
     grid-area: breadcrumbs;
   }
 
-  &__banner {
+  &__image {
     display: block;
-    grid-area: banner;
+    grid-area: image;
     margin-bottom: 40px;
     object-fit: cover;
     width: 100%;
@@ -36,7 +49,8 @@
 
     @media (--medium) {
       position: sticky;
-      top: 20px;
+      top: 0;
+      padding-top: var(--d-space-large);
     }
   }
 }

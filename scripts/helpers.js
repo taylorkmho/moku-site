@@ -43,3 +43,19 @@ export function getYoutubeId(str) {
   const match = str.match(regExp)
   return match && match[7].length == 11 ? match[7] : false
 }
+
+export function mapResourceType(typeStr, plural) {
+  switch (typeStr) {
+    case 'resource-essay':
+      return plural ? 'Essays' : 'Essay'
+      break
+    case 'resource-video':
+      return plural ? 'Videos' : 'Video'
+      break
+    case 'resource-gallery':
+      return plural ? 'Galleries' : 'Gallery'
+      break
+    default:
+      return ''
+  }
+}

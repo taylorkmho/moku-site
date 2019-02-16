@@ -42,11 +42,12 @@
   &__link {
     width: 100%;
     color: var(--c-default);
+    transition: color 100ms ease-out;
     &:visited {
       color: var(--c-medium-gray);
     }
     &:hover {
-      color: var(--c-gray);
+      color: var(--c-teal);
     }
   }
 }

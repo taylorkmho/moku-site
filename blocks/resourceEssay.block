@@ -2,37 +2,26 @@
 
 <main class="main essay">
   {.main-image?}
-    <img class="essay__banner" src="{assetUrl}" alt="{title}" />
+    <img class="essay__image" src="{assetUrl}" alt="{title}" />
   {.end}
+
+  <div class="breadcrumbs essay__breadcrumbs">
+    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Lifestyle Through Language</a></span>
+    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Feature</a></span>
+  </div>
+
+  <h1 class="essay__title heading" data-content-field="title">{title}</h1>
+
   <article id="post-{id}" class="essay__article {@|item-classes}" data-item-id="{id}">
-
-    <!--POST TILE-->
-
-    <h1 class="heading" data-content-field="title">{title}</h1>
-
-    <!--MAIN CONTENT-->
-
     <div class="general">
       {body}
     </div>
-
   </article>
-  <aside class="essay__aside">
-    <div class="links">
-      <h3 class="links__subheading">On the Topic of</h3>
-      <h2 class="links__title">Lifestyle Through Language</h2>
-      <ol class="links__list">
-        <li class="links__item"><a class="links__link" href="#">Indigenous Legends and Teaching</a></li>
-        <li class="links__item"><a class="links__link" href="#">Discussions of Indiginous Literatures</a></li>
-      </ol>
-    </div>
 
-    <div class="links">
-      <h3 class="links__subheading">More Essays</h3>
-      <ol class="links__list">
-        <li class="links__item"><a class="links__link" href="#">Worldviews: Indiginous Knowledge and Oral Tradition</a></li>
-        <li class="links__item"><a class="links__link" href="#">Indigenous Language and Health</a></li>
-      </ol>
+  <aside class="essay__aside">
+    <div class="aside-links" data-vue-aside-links data-title="{title}" data-category="{customContent.category1}" data-type="{customContent.customType}">
+      <h3 class="aside-links__subheading">On the Topic of</h3>
+      <h2 class="aside-links__title">{customContent.category1}</h2>
     </div>
   </aside>
 </main>

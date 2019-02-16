@@ -1,6 +1,13 @@
-.links {
+.aside-links {
+  &__group {
+    &:not(:first-of-type) {
+      margin-top: var(--d-space-large);
+    }
+  }
+
   &__title {
-    font: normal 32px var(--f-serif);
+    font: normal 24px var(--f-serif);
+    color: var(--c-medium-gray);
     margin-bottom: 10px;
     margin-top: 0;
 
@@ -23,10 +30,11 @@
   &__link {
     @mixin link var(--c-nav-link);
 
+    transition: color 100ms ease-out;
+
     .feature & {
       color: #fff;
     }
-
     &:hover {
       color: var(--c-teal);
     }
@@ -34,33 +42,13 @@
 
   &__list {
     display: grid;
-    grid-gap: 20px 0;
+    grid-gap: var(--d-space) 0;
     list-style: none;
     padding-left: 10px;
-
-    &--horizontal {
-      grid-gap: 0;
-      padding-left: 0;
-
-      @media (--medium) {
-        grid-auto-flow: column;
-        grid-gap: 15px;
-        grid-template-areas: repeat(auto-fit, minmax(auto, 286px));
-        justify-content: flex-start;
-      }
-    }
   }
 
   &__item {
     @mixin fancy-bullet;
-
-    .links__list--horizontal & {
-      margin-top: 10px;
-
-      @media (--medium) {
-        margin-top: var(--d-padding);
-        width: calc(100% - var(--d-bullet-padding-start));
-      }
-    }
+    @mixin fancy-bullet--blue;
   }
 }
