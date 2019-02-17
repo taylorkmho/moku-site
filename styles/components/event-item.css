@@ -19,6 +19,7 @@
     background-color: var(--c-footer-cta-bg);
     background-image: url('/assets/bg-pattern.png');
     background-position: top left;
+    background-repeat: no-repeat;
     border-radius: var(--d-border-radius);
     padding: var(--d-padding);
     border: 1px solid var(--c-very-light-gray);

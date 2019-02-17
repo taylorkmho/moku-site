@@ -23,10 +23,13 @@
 @import 'components/hero.css';
 @import 'components/layout-container.css';
 @import 'components/aside-links.css';
+@import 'components/aside-abstract.css';
+@import 'components/aside-citation.css';
 @import 'components/links-header.css';
 @import 'components/nav.css';
 @import 'components/footer.css';
 @import 'components/footer-cta.css';
+@import 'components/footnotes.css';
 
 @import 'components/share.css';
 @import 'components/asset-header.css';

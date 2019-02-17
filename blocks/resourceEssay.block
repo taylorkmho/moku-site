@@ -10,7 +10,13 @@
     <span class="breadcrumb"><a class="breadcrumb__link" href="{collection.fullUrl}">{collection.title}</a></span>
   </div>
 
-  <h1 class="essay__title heading" data-content-field="title">{title}</h1>
+  <div class="essay__title">
+    <h1 class="heading" data-content-field="title">{title}</h1>
+
+    {.if customContent.author}
+      <h4 class="essay__author">{customContent.author}</h4>
+    {.end}
+  </div>
 
   <article id="post-{id}" class="essay__article {@|item-classes}" data-item-id="{id}">
     <div class="general">
@@ -19,11 +25,49 @@
   </article>
 
   <aside class="essay__aside">
+    {.if customContent.abstract.html}
+      <div class="aside-abstract">
+        {customContent.abstract.html|safe}
+      </div>
+    {.end}
+    {.if customContent.citation.html}
+      <div class="aside-citation">
+        <h4 class="aside-citation__headline">
+          Using for research? <span>APA citation</span>
+        </h4>
+        <div class="aside-citation__body">
+          <span>{customContent.citation.html|safe}</span>
+        </div>
+      </div>
+    {.end}
     <div class="aside-links" data-vue-aside-links data-title="{title}" data-collection-title="{collection.title}" data-collection-url="{collection.fullUrl}" data-type="{customContent.customType}">
       <div>
         <h3 class="links-header__subheading">On the Topic of</h3>
-        <h2 class="links-header__title">{customContent.category1}</h2>
+        <h2 class="links-header__title">{collection.title}</h2>
       </div>
     </div>
   </aside>
 </main>
+
+{.if customContent.footnotes.html || customContent.references.html}
+  <div class="layout-container">
+    <div class="footnotes">
+      {.if customContent.footnotes.html}
+        <div class="footnotes__group">
+          <h4 class="footnotes__title">Footnotes</h4>
+          <div class="footnotes__body">
+            {customContent.footnotes.html}
+          </div>
+        </div>
+      {.end}
+      {.if customContent.references.html}
+        <div class="footnotes__group">
+          <h4 class="footnotes__title">References</h4>
+          <div class="footnotes__body footnotes__body--columns footnotes__body--references">
+            {customContent.references.html}
+          </div>
+        </div>
+      {.end}
+    </div>
+  </div>
+{.end}

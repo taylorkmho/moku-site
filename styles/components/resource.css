@@ -36,6 +36,7 @@
     background-color: var(--c-very-light-gray);
     background-size: cover;
     background-position: center;
+    filter: url(#teal-mono);
     img {
       display: none;
     }
@@ -131,7 +132,7 @@
 
   &__breadcrumbs {
     grid-area: breadcrumbs;
-    margin-bottom: var(--d-padding);
+    /* margin-bottom: var(--d-padding); */
   }
 
   &__banner {
@@ -205,14 +206,6 @@
 
         @media (--medium) {
           position: relative;
-        }
-      }
-
-      &__article {
-        &.general {
-          p:first-of-type {
-            font-size: 18px;
-          }
         }
       }
     }

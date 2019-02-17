@@ -1,0 +1,29 @@
+.aside-citation {
+  &__headline {
+    font: 600 14px var(--f-sans);
+    text-transform: uppercase;
+    margin: 0 0 var(--d-space);
+    span {
+      color: var(--c-teal);
+    }
+  }
+
+  &__body {
+    padding: var(--d-padding-small);
+    background-color: var(--c-off-white);
+    background-image: url('/assets/bg-pattern.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    color: var(--c-medium-light-gray);
+    border-radius: var(--d-border-radius);
+    font-size: 11px;
+
+    span {
+      display: inline-block;
+      margin: 0 0 0 var(--d-padding-small);
+      text-indent: calc(-1 * var(--d-padding-small));
+      line-height: 1.75;
+      &:first-line { text-indent: 0; }
+    }
+  }
+}

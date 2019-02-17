@@ -1,10 +1,25 @@
 .general {
+  h1, h2, h3 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--c-gray);
+    line-height: 1.25;
+    margin-top: var(--d-space-large);
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
   p {
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.75;
 
     &:first-of-type {
-      font-size: 22px;
       margin-top: 0;
     }
 
@@ -14,6 +29,25 @@
 
     .feature & {
       color: #fff;
+    }
+  }
+  ul {
+    padding-left: var(--d-space);
+  }
+  ol li,
+  ul li {
+    margin-bottom: var(--d-space);
+  }
+  ul li {
+    @mixin fancy-bullet;
+  }
+  a {
+    color: var(--c-teal);
+    &:visited {
+      color: var(--c-medium-light-gray);
+    }
+    &:hover {
+      color: var(--c-gray);
     }
   }
 }

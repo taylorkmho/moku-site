@@ -69,10 +69,5 @@
 
   &__heading {
     font-family: var(--f-serif);
-
-    .general p&:first-of-type {
-      font-size: 30px;
-      line-height: 1.2;
-    }
   }
 }
