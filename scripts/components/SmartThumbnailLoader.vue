@@ -20,7 +20,7 @@
     data() {
       return {
         isVideoRendered: false,
-        thumbnail: "linear-gradient(to bottom, #aaa, #fff)",
+        thumbnail: "url(/assets/placeholder.png)",
       }
     },
     computed: {

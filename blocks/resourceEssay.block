@@ -20,8 +20,10 @@
 
   <aside class="essay__aside">
     <div class="aside-links" data-vue-aside-links data-title="{title}" data-category="{customContent.category1}" data-type="{customContent.customType}">
-      <h3 class="aside-links__subheading">On the Topic of</h3>
-      <h2 class="aside-links__title">{customContent.category1}</h2>
+      <div>
+        <h3 class="links-header__subheading">On the Topic of</h3>
+        <h2 class="links-header__title">{customContent.category1}</h2>
+      </div>
     </div>
   </aside>
 </main>

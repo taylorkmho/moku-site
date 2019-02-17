@@ -5,8 +5,10 @@
     }"
   >
     <div class="aside-links__group" v-if="matchedCategoryItems.length > 0">
-      <h3 class="aside-links__subheading">On the Topic of</h3>
-      <h2 class="aside-links__title">{{category}}</h2>
+      <div class="links-header">
+        <h3 class="links-header__subheading">On the Topic of</h3>
+        <h2 class="links-header__title">{{category}}</h2>
+      </div>
       <ol class="aside-links__list">
         <li class="aside-links__item" v-for="item in matchedCategoryItems">
           <a class="aside-links__link" :href="item.url">{{item.title}}</a>

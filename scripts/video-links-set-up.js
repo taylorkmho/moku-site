@@ -14,8 +14,12 @@ export class videoLinksSetUp {
       render: function(createElement) {
         return createElement(VideoLinks, {
           props: {
+            id: this.$el.dataset.id,
             type: this.$el.dataset.type,
-            category: this.$el.dataset.category,
+            collection: {
+              title: this.$el.dataset.collectionTitle,
+              url: this.$el.dataset.collectionUrl,
+            },
             title: this.$el.dataset.title,
           },
         })

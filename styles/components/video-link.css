@@ -1,7 +1,7 @@
 .video-links {
   display: grid;
   grid-gap: var(--d-space);
-  margin: var(--d-space-large) 0 var(--d-space);
+  margin: var(--d-space) 0 0;
   grid-template-columns: repeat(4, 3fr);
 
   @media (--x-large) {
@@ -47,5 +47,24 @@
     .video-link__title {
       color: var(--c-teal);
     }
+  }
+}
+
+.video-placeholder {
+  &:before {
+    content: "";
+    @mixin responsive-media 56.25%;
+    display: block;
+    border-radius: var(--d-border-radius);
+    background: var(--c-very-light-gray);
+  }
+  &:after {
+    content: "";
+    display: block;
+    background: var(--c-very-light-gray);
+    border-radius: var(--d-border-radius-small);
+    height: var(--d-space);
+    width: calc(100% - var(--d-space-large));
+    margin-top: var(--d-space-small);
   }
 }
