@@ -3,13 +3,8 @@
   <h2>{collection.title}</h2>
 </div>
 
-<div class="layout-container layout-container--intro">
-  <squarespace:block-field id="resources-intro" label="Introduction" columns="1" />
-</div>
-
 <section class="layout-container">
-  <div class="resources-list-container" data-vue-container="resources" data-url="{collection.fullUrl}">
-    <h2 class="collection-list-heading">All Resources</h2>
+  <div class="resources-list-container resources-list-container--horizontal">
     <article class="resources-list">
       <ul class="resources-list__list">
         {.repeated section items}

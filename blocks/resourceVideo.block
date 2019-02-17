@@ -12,7 +12,7 @@
   </div>
 
   <div class="breadcrumbs resource-article__breadcrumbs">
-    <span class="breadcrumb"><a class="breadcrumb__link" href="#">{item.customContent.category1}</a></span>
+    <span class="breadcrumb"><a class="breadcrumb__link" href="{collection.fullUrl}">{collection.title}</a></span>
     <span class="breadcrumb"><a class="breadcrumb__link" href="#">Video</a></span>
   </div>
 

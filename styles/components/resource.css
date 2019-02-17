@@ -1,9 +1,14 @@
 .resources-list-container {
   display: grid;
+  margin-bottom: var(--d-padding-large);
 
   @media (--medium) {
     grid-gap: 60px var(--d-padding);
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--horizontal {
+    grid-template-columns: initial;
   }
 }
 
@@ -31,7 +36,16 @@
   &__list {
     @mixin clear-list;
     display: grid;
-    grid-gap: 15px 0;
+    grid-gap: var(--d-space);
+
+    .resources-list-container--horizontal & {
+      @media (--small) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (--large) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 }
 
