@@ -1,22 +1,20 @@
 <template>
-  <div
-    :class="{
-      'aside-links': true,
-    }"
-  >
-    <div class="aside-links__group" v-if="matchedCategoryItems.length > 0">
+  <div class="aside-links">
+    <div class="aside-links__group" v-if="matchedCollectionItems.length > 0">
       <div class="links-header">
         <h3 class="links-header__subheading">On the Topic of</h3>
-        <h2 class="links-header__title">{{category}}</h2>
+        <h2 class="links-header__title">{{collection.title}}</h2>
       </div>
       <ol class="aside-links__list">
-        <li class="aside-links__item" v-for="item in matchedCategoryItems">
+        <li class="aside-links__item" v-for="item in matchedCollectionItems">
           <a class="aside-links__link" :href="item.url">{{item.title}}</a>
         </li>
       </ol>
     </div>
     <div class="aside-links__group" v-if="matchedTypeItems.length > 0">
-      <h3 class="aside-links__subheading">More {{typeFormatted}}</h3>
+      <div class="links-header">
+        <h3 class="links-header__subheading">More {{typeFormatted}}</h3>
+      </div>
       <ol class="aside-links__list">
         <li class="aside-links__item" v-for="item in matchedTypeItems">
           <a class="aside-links__link" :href="item.url">{{item.title}}</a>
@@ -30,17 +28,15 @@
   import axios from 'axios'
   import { mapResourceType } from '../helpers'
 
-  const RESOURCES_URL = '/resources?format=json'
-
   export default {
     props: {
-      category: String,
+      collection: Object,
       title: String,
       type: String,
     },
     data() {
       return {
-        matchedCategoryItems: [],
+        matchedCollectionItems: [],
         matchedTypeItems: [],
       }
     },
@@ -54,13 +50,12 @@
     },
     methods: {
       fetchSimilar: function() {
-        axios.get(RESOURCES_URL)
+        axios.get(`${this.collection.url}?format=json`)
           .then((response) => {
             const items = response.data.items
               .filter((item) => this.title !== item.title)
 
-            this.matchedCategoryItems = items
-              .filter((item) => this.category === item.customContent.category1)
+            this.matchedCollectionItems = items
               .map((item) => {
                 return {
                   assetUrl: item.assetUrl,
@@ -69,8 +64,8 @@
                   url: item.fullUrl,
                 }
               })
+
             this.matchedTypeItems = items
-              .filter((item) => item.customContent.customType !== 'resource-video')
               .filter((item) => this.type === item.customContent.customType)
               .map((item) => {
                 return {

@@ -19,7 +19,7 @@
   </article>
 
   <aside class="essay__aside">
-    <div class="aside-links" data-vue-aside-links data-title="{title}" data-category="{customContent.category1}" data-type="{customContent.customType}">
+    <div class="aside-links" data-vue-aside-links data-title="{title}" data-collection-title="{collection.title}" data-collection-url="{collection.fullUrl}" data-type="{customContent.customType}">
       <div>
         <h3 class="links-header__subheading">On the Topic of</h3>
         <h2 class="links-header__title">{customContent.category1}</h2>

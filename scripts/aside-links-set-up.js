@@ -14,7 +14,10 @@ export class asideLinksSetUp {
       render: function(createElement) {
         return createElement(AsideLinks, {
           props: {
-            category: this.$el.dataset.category,
+            collection: {
+              title: this.$el.dataset.collectionTitle,
+              url: this.$el.dataset.collectionUrl,
+            },
             title: this.$el.dataset.title,
             type: this.$el.dataset.type,
           },
