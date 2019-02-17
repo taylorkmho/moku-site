@@ -12,8 +12,8 @@
   </div>
 
   <div class="breadcrumbs resource-article__breadcrumbs">
+    <span class="breadcrumb"><a class="breadcrumb__link" href="/resources">Resources</a></span>
     <span class="breadcrumb"><a class="breadcrumb__link" href="{collection.fullUrl}">{collection.title}</a></span>
-    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Video</a></span>
   </div>
 
   <h1 class="heading resource-article__title" data-content-field="title">{title}</h1>

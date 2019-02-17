@@ -5,9 +5,9 @@
     <img class="essay__image" src="{assetUrl}" alt="{title}" />
   {.end}
 
-  <div class="breadcrumbs essay__breadcrumbs">
-    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Lifestyle Through Language</a></span>
-    <span class="breadcrumb"><a class="breadcrumb__link" href="#">Feature</a></span>
+  <div class="breadcrumbs resource-article__breadcrumbs">
+    <span class="breadcrumb"><a class="breadcrumb__link" href="/resources">Resources</a></span>
+    <span class="breadcrumb"><a class="breadcrumb__link" href="{collection.fullUrl}">{collection.title}</a></span>
   </div>
 
   <h1 class="essay__title heading" data-content-field="title">{title}</h1>

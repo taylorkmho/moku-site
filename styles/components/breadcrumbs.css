@@ -12,8 +12,9 @@
 .breadcrumb {
   &:not(:last-of-type) {
     &::after {
-      content: '•';
+      content: '/';
       padding-left: 10px;
+      font-weight: 600;
 
       @media (--medium) {
         padding-left: 20px;
@@ -28,6 +29,9 @@
   &__link {
     color: var(--c-medium-light-gray);
     font-size: 18px;
+    &:hover {
+      color: var(--c-teal);
+    }
     .feature & {
       color: #fff;
     }
