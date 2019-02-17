@@ -13,14 +13,22 @@
 }
 
 .resources-list {
-  text-align: center;
+  display: grid;
+  grid-template-areas: 'header-image'
+    'title'
+    'list';
+  align-content: start;
+  grid-gap: var(--d-space);
 
   &__title {
+    grid-area: title;
     font: normal 28px var(--f-serif);
-    margin: var(--d-space) 0;
+    margin: 0;
+    text-align: center;
   }
 
   &__header-image {
+    grid-area: header-image;
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
@@ -35,6 +43,7 @@
 
   &__list {
     @mixin clear-list;
+    grid-area: list;
     display: grid;
     grid-gap: var(--d-space);
 
