@@ -27,7 +27,6 @@
   import axios from 'axios'
   import SmartThumbnailLoader from './SmartThumbnailLoader.vue'
 
-  const RESOURCES_URL = '/resources?format=json'
   const VIDEO_TYPE = 'resource-video'
 
   export default {
@@ -42,22 +41,31 @@
     },
     data() {
       return {
+        hasMoreToLoad: true,
         items: [],
         loaded: false,
+        nextLoadUrl: undefined,
       }
     },
-    computed: {},
+    computed: {
+      loadUrl: function() {
+        return this.nextLoadUrl ? `${this.nextLoadUrl}&format=json-pretty` : `${this.collection.url}?format=json-pretty`
+      },
+    },
     mounted: function() {
       this.fetchSimilar()
     },
     methods: {
       fetchSimilar: function() {
-        axios.get(`${this.collection.url}?format=json-pretty`)
-          .then((response) => {
-            this.loaded = true
-            console.log(response.data.items)
+        if (!this.hasMoreToLoad) return
 
-            const matchedItems = response.data.items
+        axios.get(`${this.loadUrl}`)
+          .then((response) => {
+            if (response.data.items === undefined) return
+            this.hasMoreToLoad = response.data.pagination.nextPage
+            this.nextLoadUrl = response.data.pagination.nextPageUrl
+
+            const videoItems = response.data.items
               .filter((item) => item.customContent.customType === VIDEO_TYPE)
               .map((item) => {
                 return {
@@ -71,17 +79,29 @@
                 }
               })
 
-            const thisItem = matchedItems
-              .filter((item, index) => {
-                return item.id === this.id
-              })[0]
+            videoItems.forEach((item) => {
+              this.$set(this.items, this.items.length, item)
+            })
 
-            const indexMatch = matchedItems.indexOf(thisItem)
+          })
+          .then(() => {
+            if (this.hasMoreToLoad) {
+              this.fetchSimilar()
+            }
+          })
+          .then(() => {
+            if (this.hasMoreToLoad) return
+            this.loaded = true
 
-            const beforeItem = matchedItems
+            const thisItem = this.items
+              .filter((item, index) => item.id === this.id)[0]
+
+            const indexMatch = this.items.indexOf(thisItem)
+
+            const beforeItem = this.items
               .filter((item, index) => index < indexMatch)
 
-            const afterItem = matchedItems
+            const afterItem = this.items
               .filter((item, index) => index > indexMatch)
 
             this.items = [...afterItem, ...beforeItem]
