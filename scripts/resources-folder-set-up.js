@@ -3,9 +3,7 @@ import ResourcesFolder from './components/ResourcesFolder.vue'
 
 export class resourcesFolderSetUp {
   constructor() {
-    this.resourcesFolder = document.querySelector(
-      '[data-vue-container="resources-folder"]'
-    )
+    this.resourcesFolder = document.querySelector('[data-vue-resources-folder]')
 
     this.initVue()
   }
@@ -16,6 +14,7 @@ export class resourcesFolderSetUp {
       render: function(createElement) {
         return createElement(ResourcesFolder, {
           props: {
+            type: this.$el.dataset.type,
             url: this.$el.dataset.url,
           },
         })

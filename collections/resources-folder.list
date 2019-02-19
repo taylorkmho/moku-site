@@ -7,7 +7,7 @@
 </div> -->
 
 <section class="layout-container">
-  <div class="resources-list-container" data-vue-container="resources-folder" data-url="{collection.fullUrl}">
+  <div class="resources-list-container" data-vue-resources-folder data-url="{collection.fullUrl}">
     <h2 class="collection-list-heading">All Resources</h2>
     <article class="resources-list">
       <ul class="resources-list__list">

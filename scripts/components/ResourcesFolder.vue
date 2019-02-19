@@ -11,6 +11,9 @@
           <li v-for="item in category.items" class="resources-list-item">
             <a data-item-id="id" :href="item.fullUrl" class="resources-list-item__link">
               {{item.title}}
+              <div class="pills">
+                <span class="pills__pill">{{item.type}}</span>
+              </div>
             </a>
           </li>
         </ul>
@@ -21,6 +24,7 @@
 
 <script>
   import axios from 'axios'
+  import { mapResourceType } from '../helpers'
 
   export default {
     props: {
@@ -68,7 +72,8 @@
                         fullUrl: item.fullUrl,
                         assetUrl: item.assetUrl,
                         hasUploadedAsset: !!item.filename,
-                        category: item.customContent.category1,
+                        category: collection.title,
+                        type: mapResourceType(item.customContent.customType),
                       }
                     })
                     this.categories.push({
