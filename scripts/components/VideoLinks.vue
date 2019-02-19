@@ -5,20 +5,24 @@
       <h2 class="links-header__title">{{this.collection.title}}</h2>
     </div>
     <div class="video-links" v-if="loaded">
-      <a class="video-link" :href="item.url" v-for="item in items">
-        <div class="video-link__thumbnail-container" :href="item.url">
-          <img v-if="item.hasUploadedAsset" :src="item.assetUrl" alt="" />
-          <SmartThumbnailLoader v-if="!item.hasUploadedAsset" :href="item.videoHref" alt="" />
-        </div>
-        <h4 class="video-link__title">{{item.title}}</h4>
-        <span class="video-link__timestamp" v-if="item.runtime">{{item.runtime}}</span>
-      </a>
+      <div class="video-links__container">
+        <a class="video-link" :href="item.url" v-for="item in items">
+          <div class="video-link__thumbnail-container" :href="item.url">
+            <img v-if="item.hasUploadedAsset" :src="item.assetUrl" alt="" />
+            <SmartThumbnailLoader v-if="!item.hasUploadedAsset" :href="item.videoHref" alt="" />
+            <span class="video-link__timestamp" v-if="item.runtime">{{item.runtime}}</span>
+          </div>
+          <h4 class="video-link__title">{{item.title}}</h4>
+        </a>
+      </div>
     </div>
     <div class="video-links" v-else>
-      <div class="video-placeholder"></div>
-      <div class="video-placeholder"></div>
-      <div class="video-placeholder"></div>
-      <div class="video-placeholder"></div>
+      <div class="video-links__container">
+        <div class="video-placeholder"></div>
+        <div class="video-placeholder"></div>
+        <div class="video-placeholder"></div>
+        <div class="video-placeholder"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +32,8 @@
   import SmartThumbnailLoader from './SmartThumbnailLoader.vue'
 
   const VIDEO_TYPE = 'resource-video'
+  const MOBILE_VIEWPORT = 768
+  const MOBILE_VIDEO_WIDTH = 320
 
   export default {
     props: {
@@ -45,6 +51,7 @@
         items: [],
         loaded: false,
         nextLoadUrl: undefined,
+        videoStyle: undefined,
       }
     },
     computed: {
@@ -115,7 +122,16 @@
 </script>
 
 <style scoped>
-.aside-links {
-
+.video-links {}
+.video-link,
+.video-placeholder {
+  width: 200px;
+  margin-right: var(--d-space-small);
+  &:last-of-type {
+    margin-right: 0;
+  }
+  @media (min-width: 768px) {
+    width: initial;
+  }
 }
 </style>

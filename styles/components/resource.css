@@ -100,7 +100,7 @@
     'article'
     'aside';
   margin-bottom: var(--d-padding);
-  padding-bottom: 100px;
+  padding-bottom: var(--d-padding-large);
 
   @media (--medium) {
     grid-gap: var(--d-padding) 50px;
@@ -178,6 +178,13 @@
     align-content: flex-start;
     align-items: flex-start;
     grid-gap: var(--d-padding-small) 0;
+    padding-bottom: 0;
+    margin-bottom: calc(-1 * var(--d-padding-small));
+
+    @media (--medium) {
+      padding-bottom: var(--d-padding-large);
+      margin-bottom: var(--d-padding);
+    }
 
     grid-template-areas: 'asset-area'
       'breadcrumbs'
@@ -228,8 +235,8 @@
   &__asset-area {
     grid-area: asset-area;
     position: relative;
-    margin-left: -30px;
-    width: calc(100% + 60px);
+    margin-left: calc(-1 * var(--d-padding-small));
+    width: calc(100% + var(--d-padding));
 
     @media (--medium) {
       margin-left: auto;
