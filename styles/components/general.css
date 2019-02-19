@@ -38,9 +38,6 @@
   ul li {
     margin-bottom: var(--d-space);
   }
-  ul li {
-    @mixin fancy-bullet;
-  }
   a {
     color: var(--c-teal);
     &:visited {
@@ -48,6 +45,34 @@
     }
     &:hover {
       color: var(--c-gray);
+    }
+  }
+  blockquote {
+    position: relative;
+    margin: 0;
+    padding: var(--d-space-small) 0;
+    margin: var(--d-space) 0;
+    color: var(--c-black);
+    &:after {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: calc(-1 * var(--d-padding-small));
+      background: var(--c-teal);
+      border-radius: 2px;
+      @media (--medium) {
+        left: calc(-1 * var(--d-padding));
+      }
+    }
+    p, h1, h2, h3 {
+      font-family: var(--f-serif);
+      font-style: italic;
+      border-radius: 2px;
+      font-size: 20px;
+      margin: var(--d-space-small) 0;
     }
   }
 }

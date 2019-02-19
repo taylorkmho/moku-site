@@ -2,8 +2,7 @@
   @mixin layout-container;
   margin-bottom: var(--d-padding-large);
   display: grid;
-  grid-gap: var(--d-padding-small) 50px;
-  grid-template-columns: 8fr 4fr;
+  grid-gap: var(--d-padding-small) var(--d-padding);
   grid-template-areas:  "image"
                         "breadcrumbs"
                         "title"
@@ -11,10 +10,11 @@
                         "aside";
 
   @media (--medium) {
-    grid-gap: var(--d-padding) 50px;
-    grid-template-areas:  "breadcrumbs breadcrumbs"
+    grid-template-columns: 8fr 4fr;
+    grid-gap: var(--d-padding) var(--d-padding-large);
+    grid-template-areas:  "image image"
+                          "breadcrumbs breadcrumbs"
                           "title ."
-                          "image image"
                           "article aside";
   }
 

@@ -89,7 +89,7 @@
   margin-bottom: var(--d-padding);
   padding-bottom: 100px;
 
-  @media (min-width: 760px) {
+  @media (--medium) {
     grid-gap: var(--d-padding) 50px;
     grid-template-areas: 'banner banner banner'
       'breadcrumbs breadcrumbs .'
@@ -99,8 +99,7 @@
   }
 
   .feature & {
-    grid-template-areas: 'preheader'
-      'title'
+    grid-template-areas: 'title'
       'breadcrumbs'
       'map'
       'article'
@@ -109,8 +108,7 @@
     padding-top: 40px;
 
     @media (--medium) {
-      grid-template-areas: 'preheader .'
-        'title .'
+      grid-template-areas: 'title .'
         'breadcrumbs .'
         'map map'
         'article aside';
@@ -132,7 +130,6 @@
 
   &__breadcrumbs {
     grid-area: breadcrumbs;
-    /* margin-bottom: var(--d-padding); */
   }
 
   &__banner {

@@ -1,7 +1,11 @@
 @define-mixin layout-container {
   margin: 0 auto;
   max-width: var(--d-max-layout-width);
-  padding: 0 30px;
+  padding: 0 var(--d-padding-small);
+  @media (--medium) {
+    padding-left: var(--d-padding);
+    padding-right: var(--d-padding);
+  }
 }
 
 @define-mixin grid-column-vertical-center {

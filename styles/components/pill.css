@@ -1,0 +1,11 @@
+.pills {
+  margin-top: calc(var(--d-space-small) / 2);
+  &__pill {
+    background: var(--c-off-white);
+    display: inline-flex;
+    padding: calc(var(--d-space-small) / 2) var(--d-space-small);
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: var(--d-border-radius-small)
+  }
+}
