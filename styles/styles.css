@@ -39,6 +39,7 @@
 @import 'components/options.css';
 @import 'components/promos.css';
 @import 'components/resource.css';
+@import 'components/loading-spinner.css';
 @import 'components/video-link.css';
 @import 'components/pill.css';
 @import 'components/visitation-map.css';

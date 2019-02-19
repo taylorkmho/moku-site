@@ -50,29 +50,17 @@
   blockquote {
     position: relative;
     margin: 0;
-    padding: var(--d-space-small) 0;
+    padding: var(--d-space-small);
     margin: var(--d-space) 0;
-    color: var(--c-black);
-    &:after {
-      content: "";
-      display: block;
-      width: 4px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: calc(-1 * var(--d-padding-small));
-      background: var(--c-teal);
-      border-radius: 2px;
-      @media (--medium) {
-        left: calc(-1 * var(--d-padding));
-      }
-    }
+    color: var(--c-medium-light-gray);
     p, h1, h2, h3 {
       font-family: var(--f-serif);
-      font-style: italic;
       border-radius: 2px;
-      font-size: 20px;
+      font-size: 24px;
       margin: var(--d-space-small) 0;
+    }
+    @media (--medium) {
+      padding: var(--d-space);
     }
   }
 }

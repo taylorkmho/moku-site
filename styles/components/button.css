@@ -38,6 +38,20 @@
     border-radius: var(--d-border-radius-small);
   }
 
+  &--light {
+    background: var(--c-off-white) !important;
+    border-color: var(--c-off-white) !important;
+    color: var(--c-gray);
+  }
+
+  &--dark {
+    background: var(--c-blue) !important;
+    border-color: var(--c-blue) !important;
+    &:focus {
+      box-shadow: 0 0 10px var(--c-blue);
+    }
+  }
+
   &--disabled {
     background: var(--c-very-light-gray);
     border-color: var(--c-very-light-gray);

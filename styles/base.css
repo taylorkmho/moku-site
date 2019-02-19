@@ -34,6 +34,7 @@
 
   --d-space-base: 20px;
   --d-space: var(--d-space-base);
+  --d-space-xsmall: calc(var(--d-space-base) / 4);
   --d-space-small: calc(var(--d-space-base) / 2);
   --d-space-large: calc(var(--d-space-base) * 2);
 
