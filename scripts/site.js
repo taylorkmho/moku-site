@@ -9,6 +9,7 @@ import { asideLinksSetUp } from './aside-links-set-up'
 import { videoLinksSetUp } from './video-links-set-up'
 import { categoriesListSetUp } from './categories-list-set-up'
 import { smartCategoryLinkSetUp } from './smart-category-link-set-up'
+import { resourcesMiniListSetUp } from './resources-mini-list-set-up'
 
 new modalSetUp()
 new mapSetUp()
@@ -20,3 +21,4 @@ new asideLinksSetUp()
 new videoLinksSetUp()
 new categoriesListSetUp()
 new smartCategoryLinkSetUp()
+new resourcesMiniListSetUp()

@@ -67,4 +67,15 @@ export function getUrlParameter(name) {
   return results === null
     ? ''
     : decodeURIComponent(results[1].replace(/\+/g, ' '))
-};
+}
+
+export function stripHTML(html) {
+  let tmp = document.createElement('div')
+  tmp.innerHTML = html
+  return tmp.textContent || tmp.innerText || ''
+}
+
+export function shorten(str, maxLen, separator = ' ') {
+  if (str.length <= maxLen) return str
+  return str.substr(0, str.lastIndexOf(separator, maxLen))
+}
