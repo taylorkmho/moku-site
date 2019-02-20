@@ -69,8 +69,8 @@
         axios.get(`${this.loadUrl}`)
           .then((response) => {
             if (response.data.items === undefined) return
-            this.hasMoreToLoad = response.data.pagination.nextPage
-            this.nextLoadUrl = response.data.pagination.nextPageUrl
+            this.hasMoreToLoad = response.data.pagination ? response.data.pagination.nextPage : false
+            this.nextLoadUrl = response.data.pagination ? response.data.pagination.nextPageUrl : undefined
 
             const videoItems = response.data.items
               .filter((item) => item.customContent.customType === VIDEO_TYPE)
