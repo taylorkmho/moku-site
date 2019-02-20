@@ -19,7 +19,7 @@
           </li>
         </ul>
         <div class="loading-spinner" v-if="category.loading"></div>
-        <button class="button button--small button--dark" v-if="category.loadMore.show" @click="loadMore(category.loadMore.url, category.title)">Show More</button>
+        <button class="button button--small button--light" v-if="category.loadMore.show" @click="loadMore(category.loadMore.url, category.title)">Show More</button>
       </article>
     </div>
   </div>

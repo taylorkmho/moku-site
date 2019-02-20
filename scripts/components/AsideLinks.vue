@@ -2,12 +2,17 @@
   <div class="aside-links">
     <div class="aside-links__group" v-if="matchedCollectionItems.length > 0">
       <div class="links-header">
-        <h3 class="links-header__subheading">On the Topic of</h3>
+        <h3 class="links-header__subheading">More On the Topic of</h3>
         <h2 class="links-header__title">{{collection.title}}</h2>
       </div>
       <ol class="aside-links__list">
         <li class="aside-links__item" v-for="item in matchedCollectionItems">
-          <a class="aside-links__link" :href="item.url">{{item.title}}</a>
+          <a class="aside-links__link" :href="item.url">
+            {{item.title}}
+            <div class="pills">
+              <span class="pills__pill">{{item.type}}</span>
+            </div>
+          </a>
         </li>
       </ol>
     </div>
@@ -62,19 +67,21 @@
                   hasUploadedAsset: !!item.filename,
                   title: item.title,
                   url: item.fullUrl,
+                  type: mapResourceType(item.customContent.customType),
                 }
               })
 
-            this.matchedTypeItems = items
-              .filter((item) => this.type === item.customContent.customType)
-              .map((item) => {
-                return {
-                  assetUrl: item.assetUrl,
-                  hasUploadedAsset: !!item.filename,
-                  title: item.title,
-                  url: item.fullUrl,
-                }
-              })
+            // this.matchedTypeItems = items
+            //   .filter((item) => this.type === item.customContent.customType)
+            //   .map((item) => {
+            //     return {
+            //       assetUrl: item.assetUrl,
+            //       hasUploadedAsset: !!item.filename,
+            //       title: item.title,
+            //       url: item.fullUrl,
+            //       type: mapResourceType(item.customContent.customType),
+            //     }
+            //   })
           })
           .catch((error) => {
             throw error;
