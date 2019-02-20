@@ -8,6 +8,7 @@ import { smartThumbnailSetUp } from './smart-thumbnail-set-up'
 import { asideLinksSetUp } from './aside-links-set-up'
 import { videoLinksSetUp } from './video-links-set-up'
 import { categoriesListSetUp } from './categories-list-set-up'
+import { smartCategoryLinkSetUp } from './smart-category-link-set-up'
 
 new modalSetUp()
 new mapSetUp()
@@ -18,3 +19,4 @@ new smartThumbnailSetUp()
 new asideLinksSetUp()
 new videoLinksSetUp()
 new categoriesListSetUp()
+new smartCategoryLinkSetUp()

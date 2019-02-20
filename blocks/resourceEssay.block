@@ -6,8 +6,12 @@
   {.end}
 
   <div class="breadcrumbs resource-article__breadcrumbs">
-    <span class="breadcrumb"><a class="breadcrumb__link" href="/resources">Resources</a></span>
-    <span class="breadcrumb"><a class="breadcrumb__link" href="{collection.fullUrl}">{collection.title}</a></span>
+    <span class="breadcrumb">
+      <a class="breadcrumb__link" href="/resources">Resources</a>
+    </span>
+    <span class="breadcrumb">
+      <a class="breadcrumb__link" href="{collection.fullUrl}" data-vue-smart-category-link data-collection-id="{collection.id}">{collection.title}</a>
+    </span>
   </div>
 
   <div class="essay__title">

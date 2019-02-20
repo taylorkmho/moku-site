@@ -13,7 +13,9 @@
 
   <div class="breadcrumbs resource-article__breadcrumbs">
     <span class="breadcrumb"><a class="breadcrumb__link" href="/resources">Resources</a></span>
-    <span class="breadcrumb"><a class="breadcrumb__link" href="{collection.fullUrl}">{collection.title}</a></span>
+    <span class="breadcrumb">
+      <a class="breadcrumb__link" href="{collection.fullUrl}" data-vue-smart-category-link data-collection-id="{collection.id}">{collection.title}</a>
+    </span>
   </div>
 
   <h1 class="heading resource-article__title" data-content-field="title">{title}</h1>
