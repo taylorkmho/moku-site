@@ -7,6 +7,7 @@ import { resourcesFolderSetUp } from './resources-folder-set-up'
 import { smartThumbnailSetUp } from './smart-thumbnail-set-up'
 import { asideLinksSetUp } from './aside-links-set-up'
 import { videoLinksSetUp } from './video-links-set-up'
+import { categoriesListSetUp } from './categories-list-set-up'
 
 new modalSetUp()
 new mapSetUp()
@@ -16,3 +17,4 @@ new resourcesFolderSetUp()
 new smartThumbnailSetUp()
 new asideLinksSetUp()
 new videoLinksSetUp()
+new categoriesListSetUp()

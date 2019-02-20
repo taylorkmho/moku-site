@@ -22,15 +22,7 @@
       </div>
       <div class="categories">
         <p class="categories__title">Categories</p>
-        <ul class="categories__list">
-          <li class="categories__item"><a class="categories__link" href="#">Policy</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Movement</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Immersion: Curriculum</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Immersion: T. Education</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Immersion: H. Education</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Immersion: Parent</a></li>
-          <li class="categories__item"><a class="categories__link" href="#">Immersion: Elder</a></li>
-        </ul>
+        <ul class="categories__list" data-vue-categories-list></ul>
       </div>
     </aside>
     <section class="featured-resources__collection">

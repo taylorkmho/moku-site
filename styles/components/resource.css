@@ -3,7 +3,7 @@
   margin-bottom: var(--d-padding-large);
 
   @media (--medium) {
-    grid-gap: 60px var(--d-padding);
+    grid-gap: var(--d-padding) 0;
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -20,6 +20,8 @@
     'list';
   align-content: start;
   grid-gap: var(--d-space);
+  padding: var(--d-padding-small);
+  transition: background ease-out 250ms;
 
   &__title {
     grid-area: title;
@@ -69,6 +71,12 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+  }
+  &--highlighted {
+    background-image: linear-gradient(to bottom, var(--c-teal), #fff);
+    background-size: 100% 200px;
+    background-repeat: no-repeat;
+    border-radius: var(--d-border-radius-large);
   }
 }
 

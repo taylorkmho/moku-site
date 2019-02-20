@@ -1,8 +1,8 @@
 <template>
   <div>
     <h2 class="collection-list-heading">Topics</h2>
-    <div class="resources-list-container">
-      <article class="resources-list" v-for="category in orderedCategories">
+    <div class="resources-list-container" v-if="isReady">
+      <article class="resources-list" :id="category.id" v-for="category in orderedCategories">
         <span class="resources-list__count-badge">{{category.itemCount.niceValue}}</span>
         <div class="resources-list__header-image" :style="{backgroundImage: `url(${category.coverImage})`}">
           <img :src="category.coverImage" alt="" />
@@ -22,12 +22,26 @@
         <button class="button button--small button--light" v-if="category.loadMore.show" @click="loadMore(category.loadMore.url, category.title)">Show More</button>
       </article>
     </div>
+    <div class="resources-list-container" v-else>
+      <div class="collection-placeholder">
+        <div class="collection-placeholder__child"></div>
+      </div>
+      <div class="collection-placeholder">
+        <div class="collection-placeholder__child"></div>
+      </div>
+      <div class="collection-placeholder">
+        <div class="collection-placeholder__child"></div>
+      </div>
+      <div></div>
+      <div class="loading-spinner"></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
-  import { mapResourceType } from '../helpers'
+  import { mapResourceType, getUrlParameter } from '../helpers'
 
   export default {
     props: {
@@ -36,6 +50,10 @@
     data() {
       return {
         categories: [],
+        count: {
+          expected: undefined,
+          successful: 0,
+        },
       }
     },
     computed: {
@@ -47,10 +65,17 @@
             }
             return a.title.localeCompare(b.title)
           });
+      },
+      isReady: function() {
+        return this.count.successful === this.count.expected
       }
     },
     mounted: function() {
       this.fetchItems();
+    },
+    updated: function() {
+      if (!this.isReady) return
+      this.handleHighlight()
     },
     methods: {
       fetchItems: function() {
@@ -61,6 +86,7 @@
             const collections = response.data.collection.collections
               .map((collection) => {
                 return {
+                  id: collection.id,
                   url: collection.fullUrl,
                   title: collection.title,
                   itemCount: {
@@ -70,10 +96,13 @@
                 }
               })
 
-            collections.forEach((collection) => {
-              axios.get(`${collection.url}?format=json`)
+            this.count.expected = collections.length
+
+            collections.forEach((category, index) => {
+              axios.get(`${category.url}?format=json`)
                 .then((response) => {
                   if (response.data.items === undefined) return
+
                   const items = response.data.items
                     .map((item) => {
                       return {
@@ -85,23 +114,34 @@
                       }
                     })
 
-                  this.categories.push({
-                    title: collection.title,
+                  const categoryData = {
+                    id: category.id,
+                    title: category.title,
                     coverImage: response.data.collection.mainImage ? response.data.collection.mainImage.assetUrl : undefined,
                     items: items,
-                    itemCount: collection.itemCount,
+                    itemCount: category.itemCount,
                     loadMore: {
                       show: response.data.pagination ? response.data.pagination.nextPage : false,
                       url: response.data.pagination ? response.data.pagination.nextPageUrl : undefined,
                     },
                     loading: false,
-                  })
+                  }
+
+                  this.$set(this.categories, this.categories.length, categoryData)
+                  this.count.successful++
                 })
             })
           })
           .catch((error) => {
             throw error;
           })
+      },
+      handleHighlight: function() {
+        const el = document.getElementById(`${getUrlParameter('c')}`)
+        if (el === null || el.classList.contains('resources-list--highlighted')) return
+
+        el.scrollIntoView({behavior: 'smooth', block: 'start'})
+        el.classList.add('resources-list--highlighted')
       },
       loadMore: function(url, title) {
         const matchingCategory = this.categories.find(category => category.title === title)
@@ -141,5 +181,15 @@
 <style scoped>
   .loading-spinner {
     margin: 0 auto;
+  }
+  .collection-placeholder {
+    padding: var(--d-padding-small);
+  }
+  .collection-placeholder__child {
+    height: 0;
+    padding-bottom: 56.25%;
+    width: 100%;
+    border-radius: var(--d-border-radius);
+    background-color: var(--c-off-white);
   }
 </styled>

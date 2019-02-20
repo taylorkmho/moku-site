@@ -59,3 +59,12 @@ export function mapResourceType(typeStr, plural) {
       return ''
   }
 }
+
+export function getUrlParameter(name) {
+  let url = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
+  const regex = new RegExp('[\\?&]' + url + '=([^&#]*)')
+  const results = regex.exec(location.search)
+  return results === null
+    ? ''
+    : decodeURIComponent(results[1].replace(/\+/g, ' '))
+};
