@@ -13,19 +13,26 @@ const JSLoader = {
 }
 
 const CSSLoader = {
-  test: /\.css$/,
+  test: /\.scss$/,
   use: [
-    !IS_PRODUCTION
-      ? 'style-loader'
-      : {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            // you can specify a publicPath here
-            // by default it use publicPath in webpackOptions.output
-            publicPath: '../',
-          },
-        },
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        // you can specify a publicPath here
+        // by default it use publicPath in webpackOptions.output
+        publicPath: '../',
+      },
+    },
     'css-loader',
+    {
+      loader: 'sass-loader',
+      options: {
+        data: `
+          @import 'styles/base.scss';
+          @import 'styles/mixins.scss';
+        `,
+      },
+    },
     'postcss-loader',
   ],
 }

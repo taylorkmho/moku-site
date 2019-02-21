@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../styles/styles.scss'
 import { modalSetUp } from './modal-set-up'
 import { mapSetUp } from './map-set-up'
 import { inlineVideoSetUp } from './inline-video-set-up'
