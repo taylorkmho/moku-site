@@ -46,7 +46,7 @@
   }
 
   &__thumbnail-container {
-    @mixin responsive-media 56.25%;
+    @include responsive-media(56.25%);
     grid-area: thumbnail;
     overflow: hidden;
     border-radius: var(--d-border-radius-small);
@@ -81,7 +81,7 @@
 .video-placeholder {
   &:before {
     content: "";
-    @mixin responsive-media 56.25%;
+    @include responsive-media(56.25%);
     display: block;
     border-radius: var(--d-border-radius);
     background: var(--c-gray);

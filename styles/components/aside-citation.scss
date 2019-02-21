@@ -4,17 +4,17 @@
     text-transform: uppercase;
     margin: 0 0 var(--d-space);
     span {
-      color: var(--c-teal);
+      color: $c-teal;
     }
   }
 
   &__body {
     padding: var(--d-padding-small);
-    background-color: var(--c-off-white);
+    background-color: $c-off-white;
     background-image: url('/assets/bg-pattern.png');
     background-position: top left;
     background-repeat: no-repeat;
-    color: var(--c-medium-light-gray);
+    color: $c-medium-light-gray;
     border-radius: var(--d-border-radius);
     font-size: 11px;
 

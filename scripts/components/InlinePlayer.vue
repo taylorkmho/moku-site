@@ -43,7 +43,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .inline-player {
   &__button {
     transition: opacity 150ms ease-out;
@@ -61,7 +61,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--c-black);
+    background: $c-black;
   }
 }
 </style>

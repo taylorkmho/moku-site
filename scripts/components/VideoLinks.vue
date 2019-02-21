@@ -121,7 +121,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .video-links {}
 .video-link,
 .video-placeholder {

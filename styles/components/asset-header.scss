@@ -1,10 +1,10 @@
 .asset-header {
-  background: var(--c-black);
+  background: $c-black;
 }
 
 .asset {
-  @mixin responsive-media 56.25%;
-  background-color: var(--c-blue);
+  @include responsive-media(56.25%);
+  background-color: $c-blue;
   text-align: center;
 
   &__bg {

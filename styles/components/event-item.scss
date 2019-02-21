@@ -7,7 +7,7 @@
     grid-template-columns: 5.5fr 4.5fr;
   }
 
-  && {
+  & {
     margin: 25px auto;
 
     @media (--medium) {

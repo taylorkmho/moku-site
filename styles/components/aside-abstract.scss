@@ -2,9 +2,9 @@
   line-height: 200%;
   font-family: var(--f-serif);
   font-style: italic;
-  color: var(--c-medium-light-gray);
+  color: $c-medium-light-gray;
   padding-left: var(--d-space);
-  border-left: 2px solid var(--c-off-white);
+  border-left: 2px solid $c-off-white;
   margin-bottom: var(--d-space-large);
 
   h1, h2, h3, p {

@@ -62,7 +62,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 .smart-thumbnail {
   margin: 0;
   position: absolute;

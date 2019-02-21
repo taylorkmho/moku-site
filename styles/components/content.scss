@@ -26,12 +26,12 @@
   }
 
   ul {
-    @mixin clear-list;
+    @extend %clear-list;
     display: grid;
     grid-gap: 1rem 0;
 
     li {
-      @mixin fancy-bullet;
+      @extend %fancy-bullet;
     }
   }
 

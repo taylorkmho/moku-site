@@ -45,7 +45,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .categories-list {
 
 }

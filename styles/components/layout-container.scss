@@ -1,5 +1,5 @@
 .layout-container {
-  @mixin layout-container;
+  @extend %layout-container;
 
   &--intro {
     margin: var(--d-padding) auto;

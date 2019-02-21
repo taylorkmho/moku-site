@@ -98,22 +98,22 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .featured-resource--placeholder {
     .featured-resource__category {
       height: 14px;
       width: 80%;
-      background: var(--c-very-light-gray);
+      background: $c-very-light-gray;
     }
     .featured-resource__title {
       height: 20px;
       width: 100%;
-      background: var(--c-very-light-gray);
+      background: $c-very-light-gray;
     }
     .featured-resource__excerpt {
       height: 14px;
       width: 100%;
-      background: var(--c-very-light-gray);
+      background: $c-very-light-gray;
     }
   }
 </styled>

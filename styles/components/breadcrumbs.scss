@@ -27,10 +27,10 @@
   }
 
   &__link {
-    color: var(--c-medium-light-gray);
+    color: $c-medium-light-gray;
     font-size: 18px;
     &:hover {
-      color: var(--c-teal);
+      color: $c-teal;
     }
     .feature & {
       color: #fff;

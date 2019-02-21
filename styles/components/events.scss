@@ -56,7 +56,7 @@
   }
 
   &__image-container {
-    @mixin responsive-media 66.67%;
+    @include responsive-media(66.67%);
     filter: url(#teal);
     margin: 0;
     background-size: cover;

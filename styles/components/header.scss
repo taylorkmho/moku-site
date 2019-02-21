@@ -1,5 +1,5 @@
 .header {
-  @mixin layout-container;
+  @extend %layout-container;
   padding: 20px var(--d-padding) var(--d-padding);
 
   @media (min-width: 760px) {

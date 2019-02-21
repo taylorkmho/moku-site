@@ -38,7 +38,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .video-iframe {
     position: absolute;
     top: 0;

@@ -178,7 +178,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .loading-spinner {
     margin: 0 auto;
   }
@@ -190,6 +190,6 @@
     padding-bottom: 56.25%;
     width: 100%;
     border-radius: var(--d-border-radius);
-    background-color: var(--c-off-white);
+    background-color: $c-off-white;
   }
 </styled>

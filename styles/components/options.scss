@@ -1,5 +1,6 @@
 .options {
-  @mixin layout-container;
+  @extend %layout-container;
+
   margin-bottom: var(--d-padding);
 
   @media (--small) {

@@ -1,5 +1,5 @@
 .nav {
-  @mixin grid-column-vertical-center;
+  @extend %grid-column-vertical-center;
   align-items: center;
   display: grid;
   grid-area: nav;
@@ -13,6 +13,6 @@
   }
 
   &__link {
-    @mixin link var(--c-nav-link);
+    @include link($c-nav-link);
   }
 }

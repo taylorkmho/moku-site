@@ -26,7 +26,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .modal-video {
     border-radius: var(--d-border-radius);
     background: #000;

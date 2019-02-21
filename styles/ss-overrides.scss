@@ -1,5 +1,5 @@
 ul[data-rte-list] li {
-  > * {
+  & > * {
     margin: 0;
     &:first-child:before {
       content: "";

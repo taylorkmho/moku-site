@@ -79,7 +79,7 @@
   }
 </script>
 
-<style type="text/css">
+<style lang="scss" type="text/css">
 .mailchimp-balloon-wrapper {
   position: relative;
   z-index: 300;
@@ -125,13 +125,13 @@
     }
     h2 {
       margin: var(--d-space-small) 0;
-      color: var(--c-medium-gray);
+      color: $c-medium-gray;
       font-size: 14px;
     }
     p {
       margin: 0;
       font-size: 12px;
-      color: var(--c-medium-light-gray);
+      color: $c-medium-light-gray;
     }
   }
   &__form {

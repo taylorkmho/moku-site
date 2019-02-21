@@ -1,5 +1,6 @@
 .essay {
-  @mixin layout-container;
+  @extend %layout-container;
+
   margin-bottom: var(--d-padding-large);
   display: grid;
   grid-gap: var(--d-padding-small) var(--d-padding);

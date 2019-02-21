@@ -49,7 +49,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .modal-request-a-visit {
     position: relative;
     margin: 0 auto;
@@ -71,7 +71,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: var(--c-off-white);
+      background: $c-off-white;
       opacity: 0.8;
     }
 
@@ -82,19 +82,19 @@
     }
 
     &__heading {
-      color: var(--c-black);
+      color: $c-black;
       font: 500 28px var(--f-serif);
       margin-bottom: 0;
       margin-top: 0;
       em {
-        color: var(--c-teal);
+        color: $c-teal;
         font-style: inherit;
       }
     }
 
     &__primary {
       grid-template: primary;
-      background: var(--c-off-white);
+      background: $c-off-white;
     }
 
     &__form {

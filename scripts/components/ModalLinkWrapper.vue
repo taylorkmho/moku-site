@@ -85,7 +85,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .modal-wrapper {
     position: fixed;
     display: flex;
@@ -107,7 +107,7 @@
       height: 100%;
       z-index: 910;
       display: block;
-      background-color: var(--c-modal-bg);
+      background-color: $c-modal-bg;
       opacity: 0;
       transition: opacity 300ms ease-out;
     }

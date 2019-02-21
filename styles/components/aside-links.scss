@@ -6,7 +6,7 @@
   }
 
   &__link {
-    @mixin link var(--c-nav-link);
+    @include link($c-nav-link);
 
     transition: color 100ms ease-out;
 
@@ -14,7 +14,7 @@
       color: #fff;
     }
     &:hover {
-      color: var(--c-teal);
+      color: $c-teal;
     }
   }
 
@@ -26,7 +26,7 @@
   }
 
   &__item {
-    @mixin fancy-bullet;
-    @mixin fancy-bullet--blue;
+    @extend %fancy-bullet;
+    @extend %fancy-bullet--blue;
   }
 }

@@ -3,7 +3,7 @@
 
   &__map {
     &-container {
-      @mixin responsive-media 53%;
+      @include responsive-media(53%);
     }
 
     img {

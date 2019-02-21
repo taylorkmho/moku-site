@@ -1,10 +1,10 @@
 .footer {
-  background: var(--c-footer-bg);
+  background: $c-footer-bg;
   color: #fff;
   padding-bottom: var(--d-padding);
 
   &__container {
-    @mixin layout-container;
+    @extend %layout-container;
     display: grid;
     justify-content: center;
 
@@ -18,7 +18,7 @@
 
   &__logo-container {
     @media (min-width: 760px) {
-      @mixin grid-column-vertical-center;
+      @extend %grid-column-vertical-center;
       grid-area: footer__logo-container;
     }
   }
@@ -37,7 +37,7 @@
 
   &__credits {
     @media (min-width: 760px) {
-      @mixin grid-column-vertical-center;
+      @extend %grid-column-vertical-center;
       grid-area: footer__credits;
       justify-content: flex-end;
     }

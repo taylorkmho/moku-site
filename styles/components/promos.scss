@@ -26,7 +26,7 @@
   text-align: center;
 
   &__media-container {
-    @mixin responsive-media 70%;
+    @include responsive-media(70%);
   }
 
   p a {

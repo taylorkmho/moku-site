@@ -1,4 +1,4 @@
-@define-mixin layout-container {
+%layout-container {
   margin: 0 auto;
   max-width: var(--d-max-layout-width);
   padding: 0 var(--d-padding-small);
@@ -8,21 +8,21 @@
   }
 }
 
-@define-mixin grid-column-vertical-center {
+%grid-column-vertical-center {
   align-items: center;
   display: grid;
   grid-auto-flow: column dense;
 }
 
-@define-mixin link $color {
+@mixin link($color) {
   color: $color;
 
   &:hover {
-    color: color-mod($color lightness(10%));
+    color: lighten($color, 10%);
   }
 }
 
-@define-mixin clear-list {
+%clear-list {
   list-style: none;
   padding-left: 0;
 }
@@ -38,11 +38,28 @@
     padding-left: var(--d-bullet-padding-start);
   }
 }
+
+%fancy-bullet {
+  background: url('/assets/bullet.svg') left 2px no-repeat;
+  background-size: 12px;
+  line-height: 1.4;
+  padding-left: 20px;
+
+  @media (--medium) {
+    background-size: 16px;
+    padding-left: var(--d-bullet-padding-start);
+  }
+}
+
 @define-mixin fancy-bullet--blue {
   background-image: url('/assets/bullet-blue.svg');
 }
 
-@define-mixin responsive-media $ratio {
+%fancy-bullet--blue {
+  background-image: url('/assets/bullet-blue.svg');
+}
+
+@mixin responsive-media($ratio) {
   height: 0;
   padding-bottom: $ratio;
   position: relative;

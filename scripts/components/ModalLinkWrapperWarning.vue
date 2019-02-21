@@ -25,12 +25,12 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .modal-warning {
     position: absolute;
     border-radius: var(--d-border-radius);
     background: #fff;
-    color: var(--c-black);
+    color: $c-black;
     z-index: 920;
     white-space: normal;
     padding: var(--d-padding);

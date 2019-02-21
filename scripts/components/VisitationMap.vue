@@ -237,7 +237,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .visitation-map-app-container,
   .visitation-map-app,
   .mapboxgl-map {
@@ -287,7 +287,7 @@
       &.mapboxgl-popup-anchor-top-left,
       &.mapboxgl-popup-anchor-top-right {
         .mapboxgl-popup-tip {
-          border-bottom-color: var(--c-teal);
+          border-bottom-color: $c-teal;
         }
       }
       .mapboxgl-popup-content {
@@ -309,7 +309,7 @@
           background-image: url('/assets/logo-base.png');
           background-size: cover;
           border-radius: var(--d-border-radius-small);
-          border: 1px solid var(--c-teal--very-light);
+          border: 1px solid $c-teal--very-light;
 
           &:last-of-type {
             margin-right: 0;
@@ -329,18 +329,18 @@
           line-height: 120%;
         }
         h3 {
-          color: var(--c-medium-gray);
+          color: $c-medium-gray;
           font-size: 12px;
           font-weight: 400;
           line-height: 100%;
         }
         p {
-          color: var(--c-medium-gray);
+          color: $c-medium-gray;
           font-size: 11px;
           line-height: 100%;
           padding-top: var(--d-space-small);
           margin-top: var(--d-space-small);
-          border-top: 1px solid var(--c-very-light-gray);
+          border-top: 1px solid $c-very-light-gray;
         }
       }
     }

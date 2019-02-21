@@ -51,7 +51,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .modal-link {
     display: inline-block;
   }

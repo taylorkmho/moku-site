@@ -58,7 +58,7 @@
   }
 
   &__list {
-    @mixin clear-list;
+    @extend %clear-list;
     grid-area: list;
     display: grid;
     grid-gap: var(--d-space);
@@ -81,8 +81,8 @@
 }
 
 .resources-list-item {
-  @mixin fancy-bullet;
-  @mixin fancy-bullet--blue;
+  @extend %fancy-bullet;
+  @extend %fancy-bullet--blue;
   text-align: left;
   &__link {
     width: 100%;
@@ -98,7 +98,7 @@
 }
 
 .resource-article {
-  @mixin layout-container;
+  @extend %layout-container;
   display: grid;
   grid-gap: var(--d-padding) 0;
   grid-template-areas: 'banner'
@@ -253,7 +253,7 @@
   }
 
   &__video {
-    @mixin responsive-media 56.25%;
+    @include responsive-media(56.25%);
     z-index: 200;
     .inline-player {
       position: absolute;
@@ -311,7 +311,7 @@
   }
 
   .swiper-slide {
-    @mixin responsive-media 62.2%;
+    @include responsive-media(62.25%)
   }
 
   .swiper-button-next,
