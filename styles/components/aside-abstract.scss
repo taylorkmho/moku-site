@@ -1,11 +1,11 @@
 .aside-abstract {
   line-height: 200%;
-  font-family: var(--f-serif);
+  font-family: $f-serif;
   font-style: italic;
   color: $c-medium-light-gray;
-  padding-left: var(--d-space);
+  padding-left: $d-space;
   border-left: 2px solid $c-off-white;
-  margin-bottom: var(--d-space-large);
+  margin-bottom: $d-space-large;
 
   h1, h2, h3, p {
     font-size: 16px;

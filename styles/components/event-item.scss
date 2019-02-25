@@ -1,35 +1,35 @@
 .event-item-header {
   display: grid;
-  grid-gap: var(--d-padding) 0;
+  grid-gap: $d-padding 0;
 
-  @media (min-width: 768px) {
+  @include md {
     grid-gap: 0 50px;
-    grid-template-columns: 5.5fr 4.5fr;
+    grid-template-columns: #{'~"5.5fr 4.5fr"'};
   }
 
   & {
     margin: 25px auto;
 
-    @media (--medium) {
-      margin: 25px auto var(--d-padding);
+    @include md {
+      margin: 25px auto $d-padding;
     }
   }
 
   &__cta {
-    background-color: var(--c-footer-cta-bg);
+    background-color: $c-footer-cta-bg;
     background-image: url('/assets/bg-pattern.png');
     background-position: top left;
     background-repeat: no-repeat;
-    border-radius: var(--d-border-radius);
-    padding: var(--d-padding);
-    border: 1px solid var(--c-very-light-gray);
+    border-radius: $d-border-radius;
+    padding: $d-padding;
+    border: 1px solid $c-very-light-gray;
 
-    @media (--medium) {
-      padding: var(--d-space) var(--d-padding);
+    @include md {
+      padding: $d-space $d-padding;
     }
 
     strong:first-child {
-      font: 400 28px var(--f-serif);
+      font: 400 28px $f-serif;
     }
 
     a {
@@ -43,7 +43,7 @@
     justify-content: center;
     p {
       font-size: 18px;
-      color: var(--c-medium-gray);
+      color: $c-medium-gray;
     }
   }
 }

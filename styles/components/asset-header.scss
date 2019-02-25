@@ -32,19 +32,19 @@
   }
 
   &__quote {
-    padding: 0 var(--d-padding);
+    padding: 0 $d-padding;
     margin: 2vw 0 0;
     color: #fff;
-    font-family: var(--f-serif);
+    font-family: $f-serif;
     font-size: 20px;
     font-weight: 400;
 
-    @media (--small) {
-      margin-bottom: var(--d-space);
+    @include sm {
+      margin-bottom: $d-space;
       font-size: 32px;
     }
 
-    @media (--large) {
+    @include large {
       font-size: 48px;
     }
   }

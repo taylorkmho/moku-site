@@ -1,10 +1,10 @@
 .resources-list-container {
   display: grid;
-  margin-bottom: var(--d-padding-large);
+  margin-bottom: $d-padding-large;
 
-  @media (--medium) {
-    grid-gap: var(--d-padding) 0;
-    grid-template-columns: repeat(3, 1fr);
+  @include md {
+    grid-gap: $d-padding 0;
+    grid-template-columns: #{'~"repeat(3, 1fr)"'};
   }
 
   &--horizontal {
@@ -19,27 +19,27 @@
     'title'
     'list';
   align-content: start;
-  grid-gap: var(--d-space);
-  padding: var(--d-padding-small);
+  grid-gap: $d-space;
+  padding: $d-padding-small;
   transition: background ease-out 250ms;
 
   &__title {
     grid-area: title;
-    font: normal 28px var(--f-serif);
+    font: normal 28px $f-serif;
     margin: 0;
     text-align: center;
   }
 
   &__count-badge {
     position: absolute;
-    top: var(--d-space);
-    right: var(--d-space);
+    top: $d-space;
+    right: $d-space;
     z-index: 100;
     color: #fff;
     font-size: 12px;
-    background-color: rgba(30, 109, 125, 0.75); /* var(--c-blue) */
-    padding: var(--d-space-xsmall) var(--d-space-small);
-    border-radius: var(--d-border-radius-small);
+    background-color: rgba(30, 109, 125, 0.75); /* $c-blue */
+    padding: $d-space-xsmall $d-space-small;
+    border-radius: $d-border-radius-small;
   }
 
   &__header-image {
@@ -47,8 +47,8 @@
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
-    border-radius: var(--d-border-radius);
-    background-color: var(--c-very-light-gray);
+    border-radius: $d-border-radius;
+    background-color: $c-very-light-gray;
     background-size: cover;
     background-position: center;
     filter: url(#teal-mono);
@@ -61,22 +61,22 @@
     @extend %clear-list;
     grid-area: list;
     display: grid;
-    grid-gap: var(--d-space);
+    grid-gap: $d-space;
 
     .resources-list-container--horizontal & {
-      @media (--small) {
-        grid-template-columns: repeat(2, 1fr);
+      @include sm {
+        grid-template-columns: #{'~"repeat(2, 1fr)"'};
       }
-      @media (--large) {
-        grid-template-columns: repeat(3, 1fr);
+      @include large {
+        grid-template-columns: #{'~"repeat(3, 1fr)"'};
       }
     }
   }
   &--highlighted {
-    background-image: linear-gradient(to bottom, var(--c-teal), #fff);
+    background-image: linear-gradient(to bottom, $c-teal, #fff);
     background-size: 100% 200px;
     background-repeat: no-repeat;
-    border-radius: var(--d-border-radius-large);
+    border-radius: $d-border-radius-large;
   }
 }
 
@@ -86,13 +86,13 @@
   text-align: left;
   &__link {
     width: 100%;
-    color: var(--c-default);
+    color: $c-default;
     transition: color 100ms ease-out;
     &:visited {
-      color: var(--c-medium-gray);
+      color: $c-medium-gray;
     }
     &:hover {
-      color: var(--c-teal);
+      color: $c-teal;
     }
   }
 }
@@ -100,18 +100,18 @@
 .resource-article {
   @extend %layout-container;
   display: grid;
-  grid-gap: var(--d-padding) 0;
+  grid-gap: $d-padding 0;
   grid-template-areas: 'banner'
     'breadcrumbs'
     'title'
     'share'
     'article'
     'aside';
-  margin-bottom: var(--d-padding);
-  padding-bottom: var(--d-padding-large);
+  margin-bottom: $d-padding;
+  padding-bottom: $d-padding-large;
 
-  @media (--medium) {
-    grid-gap: var(--d-padding) 50px;
+  @include md {
+    grid-gap: $d-padding 50px;
     grid-template-areas: 'banner banner banner'
       'breadcrumbs breadcrumbs .'
       'title title .'
@@ -128,7 +128,7 @@
     margin-bottom: 0;
     padding-top: 40px;
 
-    @media (--medium) {
+    @include md {
       grid-template-areas: 'title .'
         'breadcrumbs .'
         'map map'
@@ -169,14 +169,14 @@
     align-self: flex-start;
     display: grid;
     grid-area: aside;
-    grid-gap: var(--d-padding) 0;
+    grid-gap: $d-padding 0;
 
     img {
       display: block;
       width: 100%;
     }
 
-    @media (--medium) {
+    @include md {
       position: sticky;
       top: 20px;
     }
@@ -185,13 +185,13 @@
   &--video {
     align-content: flex-start;
     align-items: flex-start;
-    grid-gap: var(--d-padding-small) 0;
+    grid-gap: $d-padding-small 0;
     padding-bottom: 0;
-    margin-bottom: calc(-1 * var(--d-padding-small));
+    margin-bottom: (-$d-padding-small);
 
-    @media (--medium) {
-      padding-bottom: var(--d-padding-large);
-      margin-bottom: var(--d-padding);
+    @include md {
+      padding-bottom: $d-padding-large;
+      margin-bottom: $d-padding;
     }
 
     grid-template-areas: 'asset-area'
@@ -203,8 +203,8 @@
       'video-links'
       'aside';
 
-    @media (--medium) {
-      grid-gap: 15px var(--d-padding);
+    @include md {
+      grid-gap: 15px $d-padding;
       grid-template-areas: 'breadcrumbs breadcrumbs'
         'asset-area title'
         'asset-area article'
@@ -212,7 +212,7 @@
         'video-next video-next'
         'video-links video-links'
         'aside aside';
-      grid-template-columns: 6.5fr 3.5fr;
+      grid-template-columns: #{'~"6.5fr 3.5fr"'};
     }
 
     .resource-article {
@@ -227,9 +227,9 @@
         align-self: flex-start;
         display: grid;
         grid-area: aside;
-        grid-gap: var(--d-padding) 0;
+        grid-gap: $d-padding 0;
 
-        @media (--medium) {
+        @include md {
           position: relative;
         }
       }
@@ -243,10 +243,11 @@
   &__asset-area {
     grid-area: asset-area;
     position: relative;
-    margin-left: calc(-1 * var(--d-padding-small));
-    width: calc(100% + var(--d-padding));
+    // TODO (CSS) Fix this for smaller viewports
+    margin-left: -15px;
+    width: #{'~"calc(100% + 30px)"'}; // $d-padding = 30px
 
-    @media (--medium) {
+    @include md {
       margin-left: auto;
       width: 100%;
     }
@@ -279,9 +280,9 @@
     filter: url(#teal-mono);
     background-size: cover;
 
-    @media (--medium) {
-      box-shadow: var(--d-box-shadow);
-      border-radius: var(--d-border-radius);
+    @include md {
+      box-shadow: $d-box-shadow;
+      border-radius: $d-border-radius;
     }
   }
 
@@ -293,7 +294,7 @@
     grid-area: video-next;
 
     a {
-      color: var(--c-medium-light-gray);
+      color: $c-medium-light-gray;
       font-style: italic;
       padding: 20px 0;
       text-decoration: underline;
@@ -305,7 +306,7 @@
   .swiper-container {
     margin: 30px 0 0;
 
-    @media (--medium) {
+    @include md {
       margin: 30px 0;
     }
   }
@@ -318,7 +319,7 @@
   .swiper-button-prev {
     align-items: center;
     background: none;
-    color: var(--c-cyan);
+    color: $c-cyan;
     display: flex;
     font-size: 12px;
     font-weight: bold;
@@ -341,7 +342,7 @@
     .label {
       display: none;
 
-      @media (--medium) {
+      @include md {
         display: inline;
       }
     }
@@ -361,16 +362,16 @@
 
   .swiper-navigation {
     align-items: center;
-    background: var(--c-very-light-gray);
+    background: $c-very-light-gray;
     display: flex;
     grid-auto-flow: column;
     height: 40px;
     justify-content: space-between;
     padding: 0 10px;
 
-    @media (--medium) {
+    @include md {
       height: 60px;
-      padding: 0 var(--d-padding);
+      padding: 0 $d-padding;
     }
   }
 
@@ -379,7 +380,7 @@
     grid-auto-flow: column;
     grid-gap: 0 15px;
 
-    @media (--medium) {
+    @include md {
       grid-gap: 0 25px;
     }
   }
@@ -390,16 +391,16 @@
     position: relative;
     width: 8px;
 
-    @media (--medium) {
+    @include md {
       height: 16px;
       width: 16px;
     }
 
     &-active {
-      background: var(--c-cyan);
+      background: $c-cyan;
 
       &::before {
-        border: solid 2px var(--c-cyan);
+        border: solid 2px $c-cyan;
         border-radius: 50%;
         content: '';
         display: block;
@@ -411,7 +412,7 @@
         width: 15px;
         z-index: -1;
 
-        @media (--medium) {
+        @include md {
           display: inline;
           height: 36px;
           width: 36px;

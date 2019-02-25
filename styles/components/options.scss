@@ -1,10 +1,10 @@
 .options {
   @extend %layout-container;
 
-  margin-bottom: var(--d-padding);
+  margin-bottom: $d-padding;
 
-  @media (--small) {
-    margin-bottom: var(--d-padding-large);
+  @include sm {
+    margin-bottom: $d-padding-large;
   }
 
   a {
@@ -14,11 +14,11 @@
   a,
   .modal-link {
     width: 100%;
-    margin-bottom: var(--d-space);
+    margin-bottom: $d-space;
 
-    @media (--medium) {
+    @include md {
       margin-bottom: 0;
-      margin-right: var(--d-padding);
+      margin-right: $d-padding;
       width: auto;
 
       &:last-of-type {

@@ -1,10 +1,46 @@
+$mq-small: 480px;
+$mq-medium-max: 767px;
+$mq-medium: 768px;
+$mq-large: 960px;
+$mq-x-large: 1260px;
+
+@mixin sm {
+ @media (min-width: #{$mq-small}) {
+   @content;
+ }
+}
+
+@mixin md {
+ @media (min-width: #{$mq-medium}) {
+   @content;
+ }
+}
+
+@mixin md-max {
+ @media (max-width: #{$mq-medium-max}) {
+   @content;
+ }
+}
+
+@mixin large {
+ @media (min-width: #{$mq-large}) {
+   @content;
+ }
+}
+
+@mixin x-large {
+ @media (min-width: #{$mq-x-large}) {
+   @content;
+ }
+}
+
 %layout-container {
   margin: 0 auto;
-  max-width: var(--d-max-layout-width);
-  padding: 0 var(--d-padding-small);
-  @media (--medium) {
-    padding-left: var(--d-padding);
-    padding-right: var(--d-padding);
+  max-width: $d-max-layout-width;
+  padding: 0 $d-padding-small;
+  @include md {
+    padding-left: $d-padding;
+    padding-right: $d-padding;
   }
 }
 
@@ -27,32 +63,16 @@
   padding-left: 0;
 }
 
-@define-mixin fancy-bullet {
-  background: url('/assets/bullet.svg') left 2px no-repeat;
-  background-size: 12px;
-  line-height: 1.4;
-  padding-left: 20px;
-
-  @media (--medium) {
-    background-size: 16px;
-    padding-left: var(--d-bullet-padding-start);
-  }
-}
-
 %fancy-bullet {
   background: url('/assets/bullet.svg') left 2px no-repeat;
   background-size: 12px;
   line-height: 1.4;
   padding-left: 20px;
 
-  @media (--medium) {
+  @include md {
     background-size: 16px;
-    padding-left: var(--d-bullet-padding-start);
+    padding-left: $d-bullet-padding-start;
   }
-}
-
-@define-mixin fancy-bullet--blue {
-  background-image: url('/assets/bullet-blue.svg');
 }
 
 %fancy-bullet--blue {

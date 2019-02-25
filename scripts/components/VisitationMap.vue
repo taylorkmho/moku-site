@@ -238,6 +238,8 @@
 </script>
 
 <style lang="scss">
+  @import '../../styles/base.scss';
+
   .visitation-map-app-container,
   .visitation-map-app,
   .mapboxgl-map {
@@ -252,7 +254,7 @@
       left: 50%;
       z-index: 230;
       transform: translateX(-50%);
-      margin-bottom: var(--d-space);
+      margin-bottom: $d-space;
       transition: all 150ms ease-out 300ms;
       &--hidden {
         opacity: 0;
@@ -296,19 +298,19 @@
         background-size: 100% 50px;
         background-repeat: no-repeat;
         background-position: top center;
-        border-radius: var(--d-border-radius);
-        padding: var(--d-space-small) var(--d-padding-small) var(--d-padding-small);
+        border-radius: $d-border-radius;
+        padding: $d-space-small $d-padding-small $d-padding-small;
         text-align: center;
-        box-shadow: var(--d-box-shadow-large);
+        box-shadow: $d-box-shadow-large;
         header {
-          margin: 0 0 var(--d-space-small);
+          margin: 0 0 $d-space-small;
         }
         figure {
           display: inline-block;
-          margin: 0 var(--d-space) 0 0;
+          margin: 0 $d-space 0 0;
           background-image: url('/assets/logo-base.png');
           background-size: cover;
-          border-radius: var(--d-border-radius-small);
+          border-radius: $d-border-radius-small;
           border: 1px solid $c-teal--very-light;
 
           &:last-of-type {
@@ -325,7 +327,7 @@
         h2 {
           font-size: 14px;
           font-weight: 600;
-          margin-bottom: var(--d-space-small);
+          margin-bottom: $d-space-small;
           line-height: 120%;
         }
         h3 {
@@ -338,8 +340,8 @@
           color: $c-medium-gray;
           font-size: 11px;
           line-height: 100%;
-          padding-top: var(--d-space-small);
-          margin-top: var(--d-space-small);
+          padding-top: $d-space-small;
+          margin-top: $d-space-small;
           border-top: 1px solid $c-very-light-gray;
         }
       }

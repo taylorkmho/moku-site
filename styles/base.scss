@@ -17,64 +17,37 @@ $c-footer-bg: #1f6d7d;
 $c-footer-cta-bg: #f0f1f2;
 $c-modal-bg: rgba(0, 0, 0, 0.75);
 
-:root {
-  --c-default: #414042;
-  --c-cyan: #3ac8c1;
-  --c-gray: #414042;
-  --c-medium-gray: #7c7c7c;
-  --c-medium-light-gray: #909090;
-  --c-very-light-gray: #ebebeb;
-  --c-light-gray: #adaeae;
-  --c-off-white: #f4f4f5;
-  --c-black: #050505;
-  --c-teal: #64c3bf;
-  --c-teal--alt: #98e0dc;
-  --c-teal--very-light: #B1E9E6;
-  --c-blue: #1f6d7d;
-  --c-nav-link: #050505;
-  --c-footer-bg: #1f6d7d;
-  --c-footer-cta-bg: #f0f1f2;
-  --c-modal-bg: rgba(0, 0, 0, 0.75);
+$f-sans: 'Noto Sans', Helvetica, Arial, sans-serif;
+$f-serif: 'Noto Serif', Georgia, serif;
 
-  /* Fonts */
-  --f-sans: 'Noto Sans', Helvetica, Arial, sans-serif;
-  --f-serif: 'Noto Serif', Georgia, serif;
+$d-max-layout-width: 1260px;
+$d-max-layout-width--slim: 800px;
+$d-header-height: 150px;
+$d-header-height-neg-mobile: -170px;
+$d-header-height-neg: -150px;
+$d-footer-height: 160px;
+$d-hero-max-height: 720px;
+$d-bullet-padding-start: 32px;
 
-  /* Dimensions */
-  --d-max-layout-width: 1260px;
-  --d-max-layout-width--slim: 800px;
-  --d-header-height: 150px;
-  --d-header-height-neg-mobile: -170px;
-  --d-header-height-neg: -150px;
-  --d-footer-height: 160px;
-  --d-hero-max-height: 720px;
-  --d-bullet-padding-start: 32px;
+$d-space-base: 20px;
+$d-space: $d-space-base;
+$d-space-xsmall: ($d-space-base / 4);
+$d-space-small: ($d-space-base / 2);
+$d-space-large: ($d-space-base * 2);
 
-  --d-space-base: 20px;
-  --d-space: var(--d-space-base);
-  --d-space-xsmall: calc(var(--d-space-base) / 4);
-  --d-space-small: calc(var(--d-space-base) / 2);
-  --d-space-large: calc(var(--d-space-base) * 2);
+$d-padding-base: 30px;
+$d-padding: $d-padding-base;
+$d-padding-xsmall: ($d-padding-base / 4);
+$d-padding-small: ($d-padding-base / 2);
+$d-padding-large: ($d-padding-base * 2);
+$d-padding-xlarge: ($d-padding-base * 4);
 
-  --d-padding-base: 30px;
-  --d-padding: var(--d-padding-base);
-  --d-padding-small: calc(var(--d-padding-base) / 2);
-  --d-padding-large: calc(var(--d-padding-base) * 2);
-  --d-padding-xlarge: calc(var(--d-padding-base) * 4);
+$d-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.125);
+$d-box-shadow-small: 0 5px 10px -5px rgba(0, 0, 0, 0.0625);
+$d-box-shadow-large: 0 15px 30px -15px rgba(0, 0, 0, 0.25);
+$d-box-shadow-angled-up: 0 0 30px -15px rgba(0, 0, 0, 0.5);
 
-  /* Styles */
-  --d-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.125);
-  --d-box-shadow-small: 0 5px 10px -5px rgba(0, 0, 0, 0.0625);
-  --d-box-shadow-large: 0 15px 30px -15px rgba(0, 0, 0, 0.25);
-  --d-box-shadow-angled-up: 0 0 30px -15px rgba(0, 0, 0, 0.5);
-  --d-border-radius-base: 8px;
-  --d-border-radius: var(--d-border-radius-base);
-  --d-border-radius-small: calc(var(--d-border-radius-base) / 2);
-  --d-border-radius-large: calc(var(--d-border-radius-base) * 2);
-}
-
-@custom-media --small (min-width: 480px);
-@custom-media --medium-max (max-width: 767px);
-@custom-media --medium (min-width: 768px);
-@custom-media --large (min-width: 960px);
-@custom-media --x-large (min-width: 1260px);
+$d-border-radius-base: 8px;
+$d-border-radius: $d-border-radius-base;
+$d-border-radius-small: ($d-border-radius-base / 2);
+$d-border-radius-large: ($d-border-radius-base * 2);

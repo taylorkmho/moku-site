@@ -7,7 +7,7 @@
 html {
   font-size: 12px;
 
-  @media (min-width: 768px) {
+  @include md {
     font-size: 16px;
   }
 }
@@ -20,8 +20,8 @@ body {
 
 body {
   background: #fff;
-  color: var(--c-gray);
-  font-family: var(--f-sans);
+  color: $c-gray;
+  font-family: $f-sans;
 }
 
 a {
@@ -32,13 +32,13 @@ input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="select"] {
-  border: 1px solid var(--c-medium-light-gray);
+  border: 1px solid $c-medium-light-gray;
   font-size: 14px;
-  padding: var(--d-space-small);
-  border-radius: var(--d-border-radius-small);
+  padding: $d-space-small;
+  border-radius: $d-border-radius-small;
   &:focus {
-    border: 1px solid var(--c-teal);
-    box-shadow: 0 0 4px 0 var(--c-teal);
+    border: 1px solid $c-teal;
+    box-shadow: 0 0 4px 0 $c-teal;
     outline: none;
   }
 }

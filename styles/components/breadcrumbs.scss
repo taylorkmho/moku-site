@@ -4,7 +4,7 @@
   grid-gap: 0 10px;
   justify-content: flex-start;
 
-  @media (min-width: 768px) {
+  @include md {
     grid-gap: 0 20px;
   }
 }
@@ -16,7 +16,7 @@
       padding-left: 10px;
       font-weight: 600;
 
-      @media (--medium) {
+      @include md {
         padding-left: 20px;
       }
 

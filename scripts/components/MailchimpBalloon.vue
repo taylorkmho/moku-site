@@ -79,7 +79,9 @@
   }
 </script>
 
-<style lang="scss" type="text/css">
+<style lang="scss">
+@import '../../styles/base.scss';
+
 .mailchimp-balloon-wrapper {
   position: relative;
   z-index: 300;
@@ -89,20 +91,20 @@
   display: none;
   position: absolute;
   top: -20px;
-  left: calc(50% - 150px);
-  transform: translateY(-100%);
+  left: #{'~"calc(50% - 150px)"'};
+  transform: #{'~"translateY(-100%)"'};
   width: 300px;
-  padding: var(--d-padding);
+  padding: $d-padding;
   background-color: #fff;
   background-size: 100% 100px;
   background-repeat: no-repeat;
-  border-radius: var(--d-border-radius);
+  border-radius: $d-border-radius;
   text-align: center;
-  box-shadow: var(--d-box-shadow-angled-up);
+  box-shadow: $d-box-shadow-angled-up;
   &:after {
     content: "";
     position: absolute;
-    left: calc(50% - 10px);
+    left: #{'~"calc(50% - 10px)"'};
     bottom: 0;
     transform: translateY(100%);
     width: 0;
@@ -124,7 +126,7 @@
       width: 72px;
     }
     h2 {
-      margin: var(--d-space-small) 0;
+      margin: $d-space-small 0;
       color: $c-medium-gray;
       font-size: 14px;
     }
@@ -139,7 +141,7 @@
       width: 100%;
     }
     button {
-      margin-top: var(--d-space-small);
+      margin-top: $d-space-small;
       float: right;
     }
   }

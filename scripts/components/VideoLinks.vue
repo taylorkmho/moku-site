@@ -122,11 +122,13 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/base.scss';
+
 .video-links {}
 .video-link,
 .video-placeholder {
   width: 200px;
-  margin-right: var(--d-space-small);
+  margin-right: $d-space-small;
   &:last-of-type {
     margin-right: 0;
   }

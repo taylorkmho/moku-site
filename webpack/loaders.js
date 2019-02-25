@@ -17,23 +17,16 @@ const CSSLoader = {
   use: [
     {
       loader: MiniCssExtractPlugin.loader,
-      options: {
-        // you can specify a publicPath here
-        // by default it use publicPath in webpackOptions.output
-        publicPath: '../',
-      },
+      options: {},
     },
-    'css-loader',
+    'postcss-loader',
     {
       loader: 'sass-loader',
       options: {
-        data: `
-          @import 'styles/base.scss';
-          @import 'styles/mixins.scss';
-        `,
+        sourceMap: true,
       },
     },
-    'postcss-loader',
+    'css-loader',
   ],
 }
 

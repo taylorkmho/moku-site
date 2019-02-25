@@ -1,7 +1,7 @@
 .aside-links {
   &__group {
     &:not(:first-of-type) {
-      margin-top: var(--d-space-large);
+      margin-top: $d-space-large;
     }
   }
 
@@ -20,7 +20,7 @@
 
   &__list {
     display: grid;
-    grid-gap: var(--d-space) 0;
+    grid-gap: $d-space 0;
     list-style: none;
     padding-left: 10px;
   }

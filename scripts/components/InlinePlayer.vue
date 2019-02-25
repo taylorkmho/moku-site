@@ -44,6 +44,8 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../styles/base.scss';
+
 .inline-player {
   &__button {
     transition: opacity 150ms ease-out;

@@ -1,14 +1,14 @@
 .links-header {
   &__title {
-    font: normal 24px var(--f-serif);
-    color: var(--c-medium-gray);
-    margin-bottom: var(--d-space-small);
+    font: normal 24px $f-serif;
+    color: $c-medium-gray;
+    margin-bottom: $d-space-small;
     margin-top: 0;
   }
 
   &__subheading {
-    font: 600 14px var(--f-sans);
-    margin-bottom: var(--d-space-small);
+    font: 600 14px $f-sans;
+    margin-bottom: $d-space-small;
     margin-top: 0;
     text-transform: uppercase;
   }

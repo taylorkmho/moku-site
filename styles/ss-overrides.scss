@@ -8,8 +8,7 @@ ul[data-rte-list] li {
   }
 }
 
-
-@media (--medium-max) {
+@include md-max {
   .sqs-col-6 {
     margin-left: 0 !important;
     margin-right: 0 !important;

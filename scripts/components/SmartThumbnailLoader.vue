@@ -63,6 +63,8 @@
 </script>
 
 <style lang="scss">
+@import '../../styles/base.scss';
+
 .smart-thumbnail {
   margin: 0;
   position: absolute;
@@ -73,8 +75,8 @@
   background-size: cover;
 
   @media (min-width: 768px) {
-    box-shadow: var(--d-box-shadow);
-    border-radius: var(--d-border-radius);
+    box-shadow: $d-box-shadow;
+    border-radius: $d-border-radius;
   }
 
   &--has-tint {

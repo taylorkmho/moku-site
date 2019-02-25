@@ -1,17 +1,17 @@
 .promos {
-  margin-bottom: var(--d-padding);
-  margin-top: var(--d-padding);
+  margin-bottom: $d-padding;
+  margin-top: $d-padding;
 
   &__container {
     display: grid;
     grid-auto-flow: row;
     grid-gap: 60px 0;
-    margin-bottom: var(--d-padding);
-    margin-top: var(--d-padding);
+    margin-bottom: $d-padding;
+    margin-top: $d-padding;
 
-    @media (min-width: 768px) {
-      grid-gap: 0 var(--d-padding);
-      grid-template-columns: repeat(3, 1fr);
+    @include md {
+      grid-gap: 0 $d-padding;
+      grid-template-columns: #{'~"repeat(3, 1fr)"'};
       margin-bottom: 100px;
       margin-top: 100px;
     }
@@ -30,8 +30,8 @@
   }
 
   p a {
-    border-bottom: 2px solid var(--c-teal);
-    font: normal 24px var(--f-serif);
+    border-bottom: 2px solid $c-teal;
+    font: normal 24px $f-serif;
     line-height: 175%;
     justify-self: center;
     margin: 0;
@@ -39,7 +39,7 @@
     color: inherit;
     transition: border 100ms ease-in;
     &:hover {
-      border-bottom: 2px solid var(--c-off-white);
+      border-bottom: 2px solid $c-off-white;
     }
   }
 
@@ -47,7 +47,7 @@
     &:hover {
       & + .sqs-block {
         p a {
-          border-bottom: 2px solid var(--c-off-white);
+          border-bottom: 2px solid $c-off-white;
         }
       }
     }

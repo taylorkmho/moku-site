@@ -13,12 +13,12 @@
   }
 
   h1, h2, h3 {
-    font-family: var(--f-serif);
+    font-family: $f-serif;
     font-weight: 400;
   }
 
   h3 {
-    font: normal 28px var(--f-serif);
+    font: normal 28px $f-serif;
 
     &:first-of-type {
       margin-top: 0;

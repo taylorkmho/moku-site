@@ -1,26 +1,26 @@
 .featured-resources {
-  background-color: var(--c-off-white);
+  background-color: $c-off-white;
   background-image: url('/assets/bg-pattern.png');
   background-repeat: no-repeat;
   background-position: top left;
-  padding: var(--d-padding) 0;
+  padding: $d-padding 0;
 
-  @media (min-width: 768px) {
+  @include md {
     padding: 130px 0;
   }
 
   &__container {
-    @media (min-width: 768px) {
+    @include md {
       align-items: flex-start;
       display: grid;
       grid-gap: 0 60px;
       grid-template-areas: 'frs-aside frs-collection';
-      grid-template-columns: 4fr 11fr;
+      grid-template-columns: #{'~"4fr 11fr"'};
     }
   }
 
   &__aside {
-    @media (min-width: 768px) {
+    @include md {
       align-items: flex-start;
       display: flex;
       flex-direction: column;
@@ -29,28 +29,27 @@
 
   &__description {
     h1, h2, h3 {
-      color: var(--c-gray);
-      font: 500 36px var(--f-serif);
+      color: $c-gray;
+      font: 500 36px $f-serif;
       margin: 0;
     }
     p {
-      color: var(--c-gray);
-      font: normal 15px var(--f-sans);
+      color: $c-gray;
+      font: normal 15px $f-sans;
     }
     a {
       @extend .button;
-      @extend .button--solid;
     }
   }
 
   &__collection {
     display: grid;
-    grid-gap: var(--d-padding) 0;
+    grid-gap: $d-padding 0;
 
-    @media (min-width: 768px) {
+    @include md {
       grid-area: frs-collection;
       grid-gap: 80px 60px;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: #{'~"1fr 1fr"'};
     }
   }
 
@@ -68,12 +67,12 @@
   display: grid;
   grid-gap: 0 20px;
   grid-template-areas: 'image category' 'image title' 'excerpt excerpt';
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: #{'~"100px 1fr"'};
   justify-content: flex-start;
   justify-items: flex-start;
   pointer-events: none;
 
-  @media (min-width: 768px) {
+  @include md {
     align-content: flex-start;
     align-items: flex-start;
     grid-gap: 0 30px;
@@ -108,8 +107,8 @@
   }
 
   &__category {
-    color: var(--c-medium-gray);
-    font: 600 14px var(--f-sans);
+    color: $c-medium-gray;
+    font: 600 14px $f-sans;
     grid-area: category;
     letter-spacing: .5px;
     margin: 0 0 5px;
@@ -118,25 +117,25 @@
   }
 
   &__title {
-    font: 500 22px var(--f-serif);
+    font: 500 22px $f-serif;
     grid-area: title;
     line-height: 1.25;
     margin: 0 0 10px;
     pointer-events: initial;
-    color: var(--c-gray);
+    color: $c-gray;
     .featured-resource:hover & {
-      color: var(--c-teal);
+      color: $c-teal;
     }
   }
 
   &__excerpt {
-    color: var(--c-gray);
-    font: 500 14px var(--f-sans);
+    color: $c-gray;
+    font: 500 14px $f-sans;
     grid-area: excerpt;
     line-height: 1.5;
     margin: 10px 0 0;
 
-    @media (min-width: 768px) {
+    @include md {
       margin: 0;
     }
   }

@@ -1,8 +1,8 @@
 .visitation-map {
   position: relative;
-  background: var(--c-blue);
+  background: $c-blue;
   height: 320px;
-  @media (--medium) {
+  @include md {
     height: 640px;
   }
   &:after {
@@ -12,8 +12,8 @@
     height: 50px;
     position: absolute;
     z-index: 200;
-    top: calc(50% - 25px);
-    left: calc(50% - 25px);
+    top: #{'~"calc(50% - 25px)"'};
+    left: #{'~"calc(50% - 25px)"'};
     border: 5px solid rgba(255, 255, 255, 0.75);
     border-bottom-color: rgba(255, 255, 255, 0.25);
     border-radius: 50%;

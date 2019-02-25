@@ -179,17 +179,19 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../styles/base.scss';
+
   .loading-spinner {
     margin: 0 auto;
   }
   .collection-placeholder {
-    padding: var(--d-padding-small);
+    padding: $d-padding-small;
   }
   .collection-placeholder__child {
     height: 0;
     padding-bottom: 56.25%;
     width: 100%;
-    border-radius: var(--d-border-radius);
+    border-radius: $d-border-radius;
     background-color: $c-off-white;
   }
 </styled>

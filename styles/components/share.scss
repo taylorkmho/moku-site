@@ -4,7 +4,7 @@
   grid-gap: 0 16px;
   justify-content: flex-start;
 
-  @media (min-width: 768px) {
+  @include md {
     grid-auto-flow: row;
     grid-gap: 15px 0;
     align-content: flex-start;
@@ -14,7 +14,7 @@
 .share {
   width: 35px;
   height: 35px;
-  background: var(--c-cyan);
+  background: $c-cyan;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
     height: 100%;
     display: block;
     object-fit: contain;
-    max-width: calc(100% - 15px);
-    max-height: calc(100% - 15px);
+    max-width: #{'~"calc(100% - 15px)"'};
+    max-height: #{'~"calc(100% - 15px)"'};
   }
 }

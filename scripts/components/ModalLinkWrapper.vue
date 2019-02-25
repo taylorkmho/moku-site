@@ -86,6 +86,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../styles/base.scss';
+
   .modal-wrapper {
     position: fixed;
     display: flex;
@@ -96,8 +98,8 @@
     width: 100vw;
     height: 100vh;
     z-index: 900;
-    padding-left: var(--d-padding);
-    padding-right: var(--d-padding);
+    padding-left: $d-padding;
+    padding-right: $d-padding;
 
     &__backdrop {
       position: absolute;
@@ -117,13 +119,13 @@
     }
 
     @media (min-width: 480px) {
-      padding-left: var(--d-padding-large);
-      padding-right: var(--d-padding-large);
+      padding-left: $d-padding-large;
+      padding-right: $d-padding-large;
     }
 
     @media (min-width: 960px) {
-      padding-left: var(--d-padding-xlarge);
-      padding-right: var(--d-padding-xlarge);
+      padding-left: $d-padding-xlarge;
+      padding-right: $d-padding-xlarge;
     }
 
     &__window {

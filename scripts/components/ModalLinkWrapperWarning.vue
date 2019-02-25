@@ -26,30 +26,32 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../styles/base.scss';
+
   .modal-warning {
     position: absolute;
-    border-radius: var(--d-border-radius);
+    border-radius: $d-border-radius;
     background: #fff;
     color: $c-black;
     z-index: 920;
     white-space: normal;
-    padding: var(--d-padding);
-    box-shadow: var(--d-box-shadow);
+    padding: $d-padding;
+    box-shadow: $d-box-shadow;
     &__message {
       text-align: left;
       & > *:first-child {
         margin-top: 0;
       }
       & > *:last-child {
-        margin-bottom: var(--d-space);
+        margin-bottom: $d-space;
       }
     }
     &__actions {
       display: flex;
       justify-content: flex-end;
-      margin-top: var(--d-space);
+      margin-top: $d-space;
       > * {
-        margin-right: var(--d-space);
+        margin-right: $d-space;
         &:last-of-type {
           margin-right: 0;
         }

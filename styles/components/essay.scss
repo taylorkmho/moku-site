@@ -1,18 +1,18 @@
 .essay {
   @extend %layout-container;
 
-  margin-bottom: var(--d-padding-large);
+  margin-bottom: $d-padding-large;
   display: grid;
-  grid-gap: var(--d-padding-small) var(--d-padding);
+  grid-gap: $d-padding-small $d-padding;
   grid-template-areas:  "image"
                         "breadcrumbs"
                         "title"
                         "article"
                         "aside";
 
-  @media (--medium) {
-    grid-template-columns: 8fr 4fr;
-    grid-gap: var(--d-padding) var(--d-padding-large);
+  @include md {
+    grid-template-columns: #{'~"8fr 4fr"'};
+    grid-gap: $d-padding $d-padding-large;
     grid-template-areas:  "image image"
                           "breadcrumbs breadcrumbs"
                           "title ."
@@ -38,16 +38,16 @@
   &__image {
     display: block;
     grid-area: image;
-    margin-bottom: var(--d-space);
+    margin-bottom: $d-space;
     object-fit: cover;
     width: 100%;
   }
 
   &__author {
-    font: 400 24px var(--f-serif);
-    color: var(--c-medium-gray);
+    font: 400 24px $f-serif;
+    color: $c-medium-gray;
     font-weight: 400;
-    margin: var(--d-space-small) 0 0;
+    margin: $d-space-small 0 0;
   }
 
   &__aside {
@@ -61,7 +61,7 @@
     }
 
     .aside-links {
-      padding-bottom: var(--d-padding-large);
+      padding-bottom: $d-padding-large;
       flex-grow: 1;
       display: flex;
       flex-direction: column;

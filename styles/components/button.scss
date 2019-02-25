@@ -2,65 +2,68 @@
   display: inline-block;
   appearance: none;
   outline: none;
-  padding: calc(var(--d-padding) / 2) var(--d-padding);
-  background: var(--c-teal);
-  border: solid 2px var(--c-teal);
+  padding: $d-padding-small $d-padding;
+  background: $c-teal;
+  border: solid 2px $c-teal;
   color: #fff;
-  border-radius: var(--d-border-radius);
-  font: 600 14px var(--f-sans);
+  border-radius: $d-border-radius;
+  font: 600 14px $f-sans;
   letter-spacing: .05rem;
   text-transform: uppercase;
   text-align: center;
   transition: all 100ms ease-out;
   cursor: pointer;
 
-  @media (--medium) {
-    font: 600 12px var(--f-sans);
+  @include md {
+    font: 600 12px $f-sans;
   }
 
   &:hover {
-    background: var(--c-teal--alt);
-    border-color: var(--c-teal--alt);
+    background: $c-teal--alt;
+    border-color: $c-teal--alt;
   }
 
   &:focus {
-    border-color: var(--c-teal--alt);
-    box-shadow: 0 0 10px var(--c-teal);
+    border-color: $c-teal--alt;
+    box-shadow: 0 0 10px $c-teal;
   }
 
   &:active {
-    background: var(--c-teal);
-    border-color: var(--c-teal);
+    background: $c-teal;
+    border-color: $c-teal;
   }
 
   &--small {
-    padding: calc(var(--d-padding-small) / 2);
-    border-radius: var(--d-border-radius-small);
+    padding: $d-padding-xsmall;
+    border-radius: $d-border-radius-small;
   }
 
   &--light {
-    background: var(--c-off-white) !important;
-    border-color: var(--c-off-white) !important;
-    color: var(--c-gray);
+    background: $c-off-white !important;
+    border-color: $c-off-white !important;
+    color: $c-gray;
   }
 
   &--dark {
-    background: var(--c-blue) !important;
-    border-color: var(--c-blue) !important;
+    background: $c-blue !important;
+    border-color: $c-blue !important;
     &:focus {
-      box-shadow: 0 0 10px var(--c-blue);
+      box-shadow: 0 0 10px $c-blue;
     }
   }
 
   &--disabled {
-    background: var(--c-very-light-gray);
-    border-color: var(--c-very-light-gray);
+    background: $c-very-light-gray;
+    border-color: $c-very-light-gray;
     pointer-events: none;
     box-shadow: none;
   }
 
-  &--video {
-    padding-left: calc(var(--d-padding) * 2);
+  &--video,
+  &[data-action="video"],
+  &[href*="youtube"],
+  &[href*="vimeo"] {
+    padding-left: $d-padding-large;
     background: transparent url('/assets/icon-play.png') 20px 50% no-repeat;
     color: inherit;
   }
@@ -73,24 +76,18 @@
     }
   }
 
-  &[data-action="video"],
-  &[href*="youtube"],
-  &[href*="vimeo"] {
-    @extend .button--video;
-  }
-
 }
 
 .play-button {
   background: transparent;
   border: 0;
-  border-radius: var(--d-border-radius);
+  border-radius: $d-border-radius;
   outline: none;
-  padding: var(--d-padding-small);
+  padding: $d-padding-small;
   cursor: pointer;
 
-  @media (--medium) {
-    padding: var(--d-padding);
+  @include md {
+    padding: $d-padding;
   }
 
   & > * {
@@ -104,18 +101,18 @@
     transform: translateY(2px);
   }
   &:focus {
-    box-shadow: 0 0 0 2px var(--c-teal--alt);
+    box-shadow: 0 0 0 2px $c-teal--alt;
   }
 
   &__icon {
     width: 15px;
     margin-bottom: 1.5vw;
 
-    @media (--small) {
+    @include sm {
       width: 30px;
     }
 
-    @media (--large) {
+    @include large {
       width: 50px;
     }
   }

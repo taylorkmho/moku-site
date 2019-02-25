@@ -1,12 +1,12 @@
 .header {
   @extend %layout-container;
-  padding: 20px var(--d-padding) var(--d-padding);
+  padding: 20px $d-padding $d-padding;
 
   @media (min-width: 760px) {
     display: grid;
     grid-gap: 0 30px;
     grid-template-areas: 'branding nav';
-    height: var(--d-header-height);
+    height: $d-header-height;
     position: relative;
     z-index: 1;
   }

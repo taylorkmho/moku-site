@@ -1,8 +1,8 @@
 .event-blocks {
   display: grid;
-  grid-gap: var(--d-padding) 0;
+  grid-gap: $d-padding 0;
 
-  @media (--medium) {
+  @include md {
     margin: 60px auto;
   }
 }
@@ -60,8 +60,8 @@
     filter: url(#teal);
     margin: 0;
     background-size: cover;
-    background-color: var(--c-blue);
-    border-radius: var(--d-border-radius);
-    box-shadow: var(--d-box-shadow);
+    background-color: $c-blue;
+    border-radius: $d-border-radius;
+    box-shadow: $d-box-shadow;
   }
 }

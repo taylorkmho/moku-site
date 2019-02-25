@@ -3,7 +3,7 @@
   background-position: center center;
   background-size: cover;
   color: #fff;
-  font: 400 36px var(--f-serif);
+  font: 400 36px $f-serif;
   line-height: 1.4;
   padding: 120px 0;
   text-align: center;
@@ -14,10 +14,10 @@
     justify-content: center;
 
     & {
-      padding-left: var(--d-padding);
-      padding-right: var(--d-padding);
+      padding-left: $d-padding;
+      padding-right: $d-padding;
 
-      @media (--medium) {
+      @include md {
         padding-left: 110px;
         padding-right: 110px;
       }

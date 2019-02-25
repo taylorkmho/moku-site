@@ -1,15 +1,16 @@
 .hero {
-  background-color: var(--c-very-light-gray);
+  background-color: $c-very-light-gray;
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
   grid-template-areas: 'hero';
-  margin-top: var(--d-header-height-neg-mobile);
-  min-height: calc(100vw / 16 * 9);
+  margin-top: $d-header-height-neg-mobile;
+  // TODO (CSS) Use another method for this image
+  min-height: #{'~"calc(100vw / 16 * 9)"'};
   padding: 200px 0;
 
   @media (min-width: 960px) {
-    margin-top: var(--d-header-height-neg);
+    margin-top: $d-header-height-neg;
     padding: 150px 0 30px;
     width: 100vw;
   }
@@ -17,8 +18,9 @@
   &__image {
     display: block;
     grid-area: hero;
-    height: calc(100vw / 16 * 9);
-    max-height: var(--d-hero-max-height);
+    // TODO (CSS) Use another method for this image
+    height: #{'~"calc(100vw / 16 * 9)"'};
+    max-height: $d-hero-max-height;
     min-height: 300px;
     object-fit: cover;
     width: 100%;

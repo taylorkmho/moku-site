@@ -1,6 +1,6 @@
 .footer-cta {
-  background: var(--c-footer-cta-bg);
-  padding: var(--d-padding-large) var(--d-padding);
+  background: $c-footer-cta-bg;
+  padding: $d-padding-large $d-padding;
 
   &__layout-container {
     padding: 0;
@@ -8,10 +8,10 @@
     display: grid;
     grid-gap: 5px 10px;
     grid-template-areas: 'icon copy' 'description description' 'button button';
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: #{"~'30px 1fr'"};
 
     @media (min-width: 960px) {
-      grid-template-columns: 70px 1fr;
+      grid-template-columns: #{"~'70px 1fr'"};
       align-content: center;
       align-items: center;
       grid-auto-flow: column;
@@ -28,9 +28,9 @@
     grid-area: copy;
 
     h1, h2, h3 {
-      font: 600 24px var(--f-serif);
+      font: 600 24px $f-serif;
       margin: 0;
-      @media (--large) {
+      @include large {
         font-size: 36px;
       }
     }

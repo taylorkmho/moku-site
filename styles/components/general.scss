@@ -1,10 +1,10 @@
 .general {
   h1, h2, h3 {
-    font-family: var(--f-serif);
+    font-family: $f-serif;
     font-weight: 400;
-    color: var(--c-gray);
+    color: $c-gray;
     line-height: 1.25;
-    margin-top: var(--d-space-large);
+    margin-top: $d-space-large;
   }
   h1 {
     font-size: 28px;
@@ -32,35 +32,35 @@
     }
   }
   ul {
-    padding-left: var(--d-space);
+    padding-left: $d-space;
   }
   ol li,
   ul li {
-    margin-bottom: var(--d-space);
+    margin-bottom: $d-space;
   }
   a {
-    color: var(--c-teal);
+    color: $c-teal;
     &:visited {
-      color: var(--c-medium-light-gray);
+      color: $c-medium-light-gray;
     }
     &:hover {
-      color: var(--c-gray);
+      color: $c-gray;
     }
   }
   blockquote {
     position: relative;
     margin: 0;
-    padding: var(--d-space-small);
-    margin: var(--d-space) 0;
-    color: var(--c-medium-light-gray);
+    padding: $d-space-small;
+    margin: $d-space 0;
+    color: $c-medium-light-gray;
     p, h1, h2, h3 {
-      font-family: var(--f-serif);
+      font-family: $f-serif;
       border-radius: 2px;
       font-size: 24px;
-      margin: var(--d-space-small) 0;
+      margin: $d-space-small 0;
     }
-    @media (--medium) {
-      padding: var(--d-space);
+    @include md {
+      padding: $d-space;
     }
   }
 }
@@ -75,17 +75,17 @@
   text-align: center;
 
   h1 {
-    font: 500 40px var(--f-serif);
-    margin: 0 0 var(--d-padding);
+    font: 500 40px $f-serif;
+    margin: 0 0 $d-padding;
 
-    @media (--small) {
+    @include sm {
       font-size: 48px;
-      margin-bottom: var(--d-space);
+      margin-bottom: $d-space;
     }
 
-    @media (--large) {
+    @include large {
       font-size: 58px;
-      margin-bottom: var(--d-space-large);
+      margin-bottom: $d-space-large;
     }
 
     + h2,
@@ -94,19 +94,19 @@
       margin-top: -15px;
 
 
-      @media (--small) {
-        margin-top: calc(-1 * var(--d-space));
+      @include sm {
+        margin-top: (-$d-space);
       }
 
-      @media (--large) {
-        margin-top: calc(-1 * var(--d-space-large));
+      @include large {
+        margin-top: (-$d-space-large);
       }
     }
   }
 
   h2, h3 {
-    color: var(--c-medium-gray);
-    font: normal 36px var(--f-sans);
+    color: $c-medium-gray;
+    font: normal 36px $f-sans;
     margin: 60px 0;
   }
 
@@ -123,23 +123,23 @@
 
 .section-subheading {
   text-align: center;
-  color: var(--c-medium-gray);
+  color: $c-medium-gray;
 
   h1, h2, h3, p {
-    font: 500 24px var(--f-sans);
-    margin: 0 0 var(--d-padding);
+    font: 500 24px $f-sans;
+    margin: 0 0 $d-padding;
 
-    @media (min-width: 768px) {
+    @include md {
       font-size: 36px;
       margin: 0 0 60px;
     }
   }
 
   .section-heading ~ & {
-    margin-top: var(--d-space-small);
+    margin-top: $d-space-small;
 
-    @media (--medium) {
-      margin-top: var(--d-space);
+    @include md {
+      margin-top: $d-space;
     }
   }
 }
@@ -157,8 +157,8 @@
 }
 
 .heading {
-  color: var(--c-black);
-  font: 500 35px var(--f-serif);
+  color: $c-black;
+  font: 500 35px $f-serif;
   margin-bottom: 0;
   margin-top: 0;
 
@@ -168,14 +168,14 @@
 }
 
 .subheading {
-  color: var(--c-medium-gray);
-  font: 600 14px var(--f-sans);
+  color: $c-medium-gray;
+  font: 600 14px $f-sans;
   margin: 0;
   text-transform: uppercase;
 }
 
 .title {
-  font: 600 28px var(--f-serif);
+  font: 600 28px $f-serif;
   margin: 0;
 
   &--splash {
@@ -192,11 +192,11 @@
 
 .intro {
   font-size: 22px;
-  margin: var(--d-padding) auto;
+  margin: $d-padding auto;
   max-width: 975px;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @include md {
     margin: 60px auto;
   }
 }
@@ -207,7 +207,7 @@ img {
     margin: 15px 0;
 
     &--right {
-      @media (min-width: 768px) {
+      @include md {
         float: right;
         margin: 0 0 10px 10px;
       }

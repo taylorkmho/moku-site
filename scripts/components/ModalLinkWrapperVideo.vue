@@ -27,8 +27,10 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../styles/base.scss';
+
   .modal-video {
-    border-radius: var(--d-border-radius);
+    border-radius: $d-border-radius;
     background: #000;
     overflow: hidden;
   }

@@ -50,6 +50,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../styles/base.scss';
+
   .modal-request-a-visit {
     position: relative;
     margin: 0 auto;
@@ -60,7 +62,7 @@
     grid-gap: 0;
     grid-template-areas: 'aside primary';
     grid-template-columns: 1fr 2fr;
-    border-radius: var(--d-border-radius);
+    border-radius: $d-border-radius;
     background: #fff;
     overflow: hidden;
 
@@ -78,12 +80,12 @@
     &__aside {
       grid-template: aside;
       text-align: left;
-      padding: var(--d-padding-large) var(--d-padding) var(--d-padding);
+      padding: $d-padding-large $d-padding $d-padding;
     }
 
     &__heading {
       color: $c-black;
-      font: 500 28px var(--f-serif);
+      font: 500 28px $f-serif;
       margin-bottom: 0;
       margin-top: 0;
       em {

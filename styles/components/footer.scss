@@ -1,43 +1,47 @@
 .footer {
   background: $c-footer-bg;
   color: #fff;
-  padding-bottom: var(--d-padding);
+  padding-bottom: $d-padding;
 
   &__container {
     @extend %layout-container;
     display: grid;
     justify-content: center;
 
-    @media (min-width: 760px) {
-      grid-gap: 0 var(--d-padding);
+    @include md {
+      grid-gap: 0 $d-padding;
       grid-template-areas: 'footer__logo-container footer__credits';
       justify-content: space-between;
-      min-height: var(--d-footer-height);
+      min-height: $d-footer-height;
     }
   }
 
   &__logo-container {
-    @media (min-width: 760px) {
-      @extend %grid-column-vertical-center;
+    @include md {
+      align-items: center;
+      display: grid;
+      grid-auto-flow: column dense;
       grid-area: footer__logo-container;
     }
   }
 
   &__logo {
     display: block;
-    margin: var(--d-padding) auto;
-    max-width: calc(100% - 60px);
+    margin: $d-padding auto;
+    max-width: #{'~"calc(100% - 60px)"'};
     object-fit: contain;
     width: 327px;
 
-    @media (min-width: 760px) {
+    @include md {
       margin: initial;
     }
   }
 
   &__credits {
-    @media (min-width: 760px) {
-      @extend %grid-column-vertical-center;
+    @include md {
+      align-items: center;
+      display: grid;
+      grid-auto-flow: column dense;
       grid-area: footer__credits;
       justify-content: flex-end;
     }

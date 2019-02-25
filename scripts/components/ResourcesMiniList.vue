@@ -99,6 +99,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../styles/base.scss';
+
   .featured-resource--placeholder {
     .featured-resource__category {
       height: 14px;
