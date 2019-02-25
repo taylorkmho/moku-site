@@ -49,8 +49,17 @@
         </feColorMatrix>
       </filter>
     </svg>
+    <!-- TODO Find a more elegant way to handle FOUC -->
+    <style type="text/css">
+      body {
+        transition: opacity 250ms ease-out;
+      }
+      body.not-loaded {
+        opacity: 0;
+      }
+    </style>
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} not-loaded">
 
     <header class="header">
       {.section website}

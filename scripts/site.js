@@ -1,4 +1,3 @@
-import '../styles/styles.scss'
 import { modalSetUp } from './modal-set-up'
 import { mapSetUp } from './map-set-up'
 import { inlineVideoSetUp } from './inline-video-set-up'
@@ -10,6 +9,11 @@ import { videoLinksSetUp } from './video-links-set-up'
 import { categoriesListSetUp } from './categories-list-set-up'
 import { smartCategoryLinkSetUp } from './smart-category-link-set-up'
 import { resourcesMiniListSetUp } from './resources-mini-list-set-up'
+console.log(document.body.classList)
+
+if (document.body.classList.contains('not-loaded')) {
+  document.body.classList.remove('not-loaded')
+}
 
 new modalSetUp()
 new mapSetUp()
