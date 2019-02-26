@@ -2,8 +2,12 @@
   display: grid;
   margin-bottom: $d-padding-large;
 
-  @include md {
+  @include sm {
     grid-gap: $d-padding 0;
+    grid-template-columns: #{'~"repeat(2, 1fr)"'};
+  }
+
+  @include md {
     grid-template-columns: #{'~"repeat(3, 1fr)"'};
   }
 
@@ -44,16 +48,21 @@
 
   &__header-image {
     grid-area: header-image;
-    width: 100%;
+    width: #{'~"calc(100% + 60px)"'};
     height: 0;
     padding-bottom: 56.25%;
-    border-radius: $d-border-radius;
+    margin: 0 0 0 (-$d-padding);
     background-color: $c-very-light-gray;
     background-size: cover;
     background-position: center;
     filter: url(#blue);
     img {
       display: none;
+    }
+    @include sm {
+      width: 100%;
+      border-radius: $d-border-radius;
+      margin: 0;
     }
   }
 
