@@ -34,8 +34,8 @@
     grid-area: title;
     margin: $d-space-small 0 0;
     transition: 150ms ease-out color;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @extend %antialiased;
+
     @include md-max {
       color: $c-very-light-gray;
       max-width: 100%;

@@ -106,13 +106,12 @@
   &__image {
     position: relative;
     grid-area: image;
-    height: 0;
-    padding-bottom: 50%;
-    width: #{'~"calc(100% + 60px)"'};
-    margin: 0 0 0 (-$d-padding);
+    height: 50vw;
+    width: #{'~"calc(100% + 30px)"'};
+    margin-left: (-$d-padding-small);
     pointer-events: initial;
     background-image: url('/assets/thumbnail-placeholder.png');
-    background-size: 100% 100%;
+    background-size: cover;
     img {
       object-fit: cover;
       width: 100%;
@@ -123,7 +122,9 @@
       right: 0;
       bottom: 0;
     }
+
     @include sm {
+      height: 0;
       padding-bottom: 100%;
       width: 100%;
       margin: 0;

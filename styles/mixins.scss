@@ -88,3 +88,8 @@ $mq-x-large: 1260px;
   padding-bottom: $ratio;
   position: relative;
 }
+
+%antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

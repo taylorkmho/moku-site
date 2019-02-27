@@ -3,24 +3,22 @@
   background-position: center center;
   background-size: cover;
   color: #fff;
-  font: 400 36px $f-serif;
   line-height: 1.4;
-  padding: 120px 0;
   text-align: center;
+  padding: $d-space-large 0 $d-space-xlarge;
+
+  @include md {
+    padding: $d-space-xlarge 0;
+  }
 
   &__content {
     display: grid;
-    grid-gap: 50px 0;
+    grid-gap: $d-padding-large 0;
     justify-content: center;
+    font: 400 24px $f-serif;
 
-    & {
-      padding-left: $d-padding;
-      padding-right: $d-padding;
-
-      @include md {
-        padding-left: 110px;
-        padding-right: 110px;
-      }
+    @include md {
+      font-size: 36px;
     }
   }
 
@@ -30,6 +28,8 @@
   }
 
   p, h1, h2, h3 {
+    font-family: inherit;
+    font-size: inherit;
     margin: 0;
     font-weight: 400;
   }

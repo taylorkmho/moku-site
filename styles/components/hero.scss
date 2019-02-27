@@ -2,40 +2,40 @@
   background-color: $c-very-light-gray;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   display: grid;
   grid-template-areas: 'hero';
-  margin-top: $d-header-height-neg-mobile;
-  // TODO (CSS) Use another method for this image
-  min-height: #{'~"calc(100vw / 16 * 9)"'};
-  padding: 200px 0;
+  margin-top: $d-header-height-offset-mobile;
+  padding-top: (-$d-header-height-offset-mobile);
+  padding-bottom: $d-padding-large;
 
-  @media (min-width: 960px) {
-    margin-top: $d-header-height-neg;
-    padding: 150px 0 30px;
-    width: 100vw;
-  }
-
-  &__image {
-    display: block;
-    grid-area: hero;
-    // TODO (CSS) Use another method for this image
-    height: #{'~"calc(100vw / 16 * 9)"'};
-    max-height: $d-hero-max-height;
-    min-height: 300px;
-    object-fit: cover;
+  @include large {
+    margin-top: $d-header-height-offset;
+    padding-top: (-$d-header-height-offset);
+    padding-bottom: 0;
     width: 100%;
+    min-height: 800px;
   }
+
+  // &__image {
+  //   display: block;
+  //   grid-area: hero;
+  //   max-height: $d-hero-max-height;
+  //   min-height: 300px;
+  //   object-fit: cover;
+  //   width: 100%;
+  // }
 
   &__content-container {
     align-items: center;
     display: flex;
     flex-direction: column;
     grid-area: hero;
-    justify-content: center;
     text-align: center;
     width: 100%;
 
-    @media (min-width: 960px) {
+    @include large {
+      padding-top: $d-padding-large;
       align-items: flex-start;
       text-align: left;
     }

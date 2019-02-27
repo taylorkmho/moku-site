@@ -23,8 +23,8 @@ $f-serif: 'Noto Serif', Georgia, serif;
 $d-max-layout-width: 1260px;
 $d-max-layout-width--slim: 800px;
 $d-header-height: 150px;
-$d-header-height-neg-mobile: -170px;
-$d-header-height-neg: -150px;
+$d-header-height-offset-mobile: -170px;
+$d-header-height-offset: -150px;
 $d-footer-height: 160px;
 $d-hero-max-height: 720px;
 $d-bullet-padding-start: 32px;
@@ -34,6 +34,7 @@ $d-space: $d-space-base;
 $d-space-xsmall: ($d-space-base / 4);
 $d-space-small: ($d-space-base / 2);
 $d-space-large: ($d-space-base * 2);
+$d-space-xlarge: ($d-space-base * 4);
 
 $d-padding-base: 30px;
 $d-padding: $d-padding-base;
@@ -41,6 +42,7 @@ $d-padding-xsmall: ($d-padding-base / 4);
 $d-padding-small: ($d-padding-base / 2);
 $d-padding-large: ($d-padding-base * 2);
 $d-padding-xlarge: ($d-padding-base * 4);
+$d-padding-xxlarge: ($d-padding-base * 6);
 
 $d-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.125);
 $d-box-shadow-small: 0 5px 10px -5px rgba(0, 0, 0, 0.0625);
