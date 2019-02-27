@@ -7,8 +7,6 @@ const { DefinePlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const pkg = require(__dirname + '/package.json')
-// const loaders = require('./webpack/loaders')
-// const plugins = require('./webpack/plugins')
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const siteJs = path.resolve(__dirname, 'scripts', 'site.js')
 const siteCss = path.resolve(__dirname, 'styles', 'styles.scss')
