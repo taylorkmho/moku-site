@@ -1,30 +1,32 @@
 .hero {
+  position: relative;
   background-color: $c-very-light-gray;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   display: grid;
   grid-template-areas: 'hero';
-  margin-top: $d-header-height-offset-mobile;
-  padding-top: (-$d-header-height-offset-mobile);
-  padding-bottom: $d-padding-large;
+  padding: $d-padding-large 0;
 
-  @include large {
-    margin-top: $d-header-height-offset;
-    padding-top: (-$d-header-height-offset);
-    padding-bottom: 0;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    height: 100%;
     width: 100%;
-    min-height: 800px;
+    background-color: rgba(#bada55, .5);
   }
 
-  // &__image {
-  //   display: block;
-  //   grid-area: hero;
-  //   max-height: $d-hero-max-height;
-  //   min-height: 300px;
-  //   object-fit: cover;
-  //   width: 100%;
-  // }
+  @include md {
+    margin-top: $d-header-height-offset;
+    padding-top: (-$d-header-height-offset);
+    width: 100%;
+  }
+
+  @include large {
+    min-height: 800px;
+  }
 
   &__content-container {
     align-items: center;

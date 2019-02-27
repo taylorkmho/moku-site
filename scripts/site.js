@@ -9,7 +9,7 @@ import { videoLinksSetUp } from './video-links-set-up'
 import { categoriesListSetUp } from './categories-list-set-up'
 import { smartCategoryLinkSetUp } from './smart-category-link-set-up'
 import { resourcesMiniListSetUp } from './resources-mini-list-set-up'
-console.log(document.body.classList)
+import { siteHeaderSetUp } from './site-header-set-up'
 
 if (document.body.classList.contains('not-loaded')) {
   document.body.classList.remove('not-loaded')
@@ -26,3 +26,4 @@ new videoLinksSetUp()
 new categoriesListSetUp()
 new smartCategoryLinkSetUp()
 new resourcesMiniListSetUp()
+new siteHeaderSetUp()

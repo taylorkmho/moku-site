@@ -1,4 +1,4 @@
-<nav class="nav" data-content-field="navigation-primary-nav">
+<nav class="nav" data-content-field="navigation-primary-nav" data-vue-site-header-nav>
   {.repeated section items}
       {.folder?}
         <a class="nav__link" href="{collection.fullUrl}">Site {collection.navigationTitle}</a>

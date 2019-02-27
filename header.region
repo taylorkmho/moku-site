@@ -95,10 +95,10 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} not-loaded">
 
-    <header class="header">
+    <header class="header" data-vue-site-header>
       {.section website}
         <div class="branding">
-          <a class="branding__link" href="/" data-content-field="site-title">
+          <a class="branding__link" href="/" data-content-field="site-title" data-vue-site-header-branding>
             <!-- TODO USE CONDITIONAL
               {.if logoImageUrl}
                 <img class="branding__image" src="{logoImageUrl}?format=original" alt="{siteTitle}" />

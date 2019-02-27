@@ -3,10 +3,8 @@
   display: flex;
   grid-area: branding;
   justify-content: center;
-  margin-bottom: 20px;
 
   @include md {
     justify-content: flex-start;
-    margin-bottom: 0;
   }
 }

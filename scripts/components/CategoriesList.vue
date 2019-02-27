@@ -25,7 +25,6 @@
           .then((response) => {
             this.categories = response.data.collection.collections
               .map((category) => {
-                console.log(`${RESOURCES_URL}?c=${category.id}`);
                 return {
                   url: `${RESOURCES_URL}?c=${category.id}`,
                   title: category.title,
