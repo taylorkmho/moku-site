@@ -28,7 +28,7 @@ $mq-x-large: 1260px;
  }
 }
 
-@mixin x-large {
+@mixin xlarge {
  @media (min-width: #{$mq-x-large}) {
    @content;
  }
@@ -41,6 +41,10 @@ $mq-x-large: 1260px;
   @include md {
     padding-left: $d-padding;
     padding-right: $d-padding;
+  }
+  @include large {
+    padding-left: $d-padding-large;
+    padding-right: $d-padding-large;
   }
 }
 

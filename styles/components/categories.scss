@@ -1,23 +1,37 @@
 .categories {
+  margin-bottom: $d-space-large;
+
+  @include md {
+    background: transparent;
+    padding: 0;
+  }
+
   &__title {
-    color: $c-black;
+    color: $c-gray;
     font: 600 18px $f-sans;
-    margin: 0 0 10px;
+    margin: 0;
     text-transform: uppercase;
   }
 
   &__list {
     list-style: none;
     padding: 0;
+    margin: $d-space-small $d-space-xsmall 0;
+    display: grid;
+    grid-gap: $d-space-xsmall 0;
+
+    @include large {
+      margin: $d-space-small 0 0;
+    }
   }
 
   &__item {
     @extend %fancy-bullet;
-    margin: 5px 0;
+    @extend %fancy-bullet--blue;
   }
 
   &__link {
-    @include link($c-nav-link);
+    @include link($c-gray);
 
     font: 400 14px $f-sans;
     line-height: 1.4;

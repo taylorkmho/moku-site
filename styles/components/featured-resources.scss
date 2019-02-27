@@ -3,19 +3,22 @@
   background-image: url('/assets/bg-pattern.png');
   background-repeat: no-repeat;
   background-position: top left;
-  padding: $d-padding 0;
+  padding: $d-padding-large 0;
 
   @include md {
-    padding: 130px 0;
+    padding: $d-padding-xlarge 0;
   }
 
   &__container {
     @include md {
-      align-items: flex-start;
       display: grid;
-      grid-gap: 0 60px;
-      grid-template-areas: 'frs-aside frs-collection';
       grid-template-columns: #{'~"4fr 11fr"'};
+      grid-gap: 0 $d-padding;
+      grid-template-areas: 'frs-aside frs-collection';
+    }
+    @include xlarge {
+      grid-gap: 0 $d-padding-large;
+      align-items: flex-start;
     }
   }
 
@@ -28,6 +31,12 @@
   }
 
   &__description {
+    margin-bottom: $d-space-small;
+
+    @include md {
+      margin-bottom: $d-space-large;
+    }
+
     h1, h2, h3 {
       color: $c-gray;
       font: 500 36px $f-serif;
@@ -47,8 +56,12 @@
     grid-gap: $d-padding 0;
 
     @include md {
+      grid-gap: $d-padding 0;
+    }
+
+    @include xlarge {
       grid-area: frs-collection;
-      grid-gap: 80px 60px;
+      grid-gap: $d-padding-large $d-padding-large;
       grid-template-columns: #{'~"1fr 1fr"'};
     }
   }
@@ -57,35 +70,46 @@
     grid-area: frs-cta;
   }
 
-  .categories {
+  &__categories {
     grid-area: frs-categories;
-    margin-top: 50px;
   }
 }
 
 .featured-resource {
   display: grid;
-  grid-gap: 0 20px;
-  grid-template-areas: 'image category' 'image title' 'excerpt excerpt';
-  grid-template-columns: #{'~"100px 1fr"'};
+  grid-template-areas: 'image'
+                       'title'
+                       'category'
+                       'excerpt';
+  grid-gap: $d-padding-xsmall $d-padding-small;
   justify-content: flex-start;
   justify-items: flex-start;
   pointer-events: none;
 
-  @include md {
+  @include sm {
     align-content: flex-start;
     align-items: flex-start;
-    grid-gap: 0 30px;
-    grid-template-areas: 'image category' 'image title' 'image excerpt';
+    grid-template-columns: #{'~"80px 1fr"'};
+    grid-template-areas: 'image category'
+                         'image title'
+                         'image excerpt';
+  }
+
+  @include xlarge {
+    grid-gap: $d-padding-xsmall $d-padding;
+    grid-template-columns: #{'~"100px 1fr"'};
+    grid-template-areas: 'image category'
+                         'image title'
+                         'image excerpt';
   }
 
   &__image {
     position: relative;
     grid-area: image;
     height: 0;
-    padding-bottom: 100%;
-    width: 100%;
-    border: solid 2px #fff;
+    padding-bottom: 50%;
+    width: #{'~"calc(100% + 60px)"'};
+    margin: 0 0 0 (-$d-padding);
     pointer-events: initial;
     background-image: url('/assets/thumbnail-placeholder.png');
     background-size: 100% 100%;
@@ -99,6 +123,12 @@
       right: 0;
       bottom: 0;
     }
+    @include sm {
+      padding-bottom: 100%;
+      width: 100%;
+      margin: 0;
+      border: solid 2px #fff;
+    }
   }
 
   &__copy {
@@ -111,7 +141,7 @@
     font: 600 14px $f-sans;
     grid-area: category;
     letter-spacing: .5px;
-    margin: 0 0 5px;
+    margin: 0;
     text-transform: uppercase;
     pointer-events: initial;
   }
@@ -120,7 +150,7 @@
     font: 500 22px $f-serif;
     grid-area: title;
     line-height: 1.25;
-    margin: 0 0 10px;
+    margin: 0;
     pointer-events: initial;
     color: $c-gray;
     .featured-resource:hover & {
@@ -133,7 +163,7 @@
     font: 500 14px $f-sans;
     grid-area: excerpt;
     line-height: 1.5;
-    margin: 10px 0 0;
+    margin: 0;
 
     @include md {
       margin: 0;

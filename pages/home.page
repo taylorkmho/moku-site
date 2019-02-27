@@ -20,9 +20,11 @@
       <div class="featured-resources__description">
         <squarespace:block-field id="home-resources" label="Resources" columns="1" lock-layout="true" />
       </div>
-      <div class="categories">
-        <p class="categories__title">Categories</p>
-        <ul class="categories__list" data-vue-categories-list></ul>
+      <div class="features-resources__categories">
+        <div class="categories">
+          <p class="categories__title">Categories</p>
+          <ul class="categories__list" data-vue-categories-list></ul>
+        </div>
       </div>
     </aside>
     <section class="featured-resources__collection" data-vue-resources-mini-list></section>

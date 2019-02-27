@@ -25,7 +25,7 @@
   &--inset {
     padding: 0;
 
-    @include x-large {
+    @include xlarge {
       padding-left: $d-padding;
       padding-right: $d-padding;
     }
