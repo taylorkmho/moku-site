@@ -7,17 +7,27 @@
     margin-top: $d-space-large;
   }
   h1 {
-    font-size: 28px;
+    font-size: 24px;
+    @include md {
+      font-size: 28px;
+    }
   }
   h2 {
-    font-size: 24px;
+    font-size: 22px;
+    @include md {
+      font-size: 24px;
+    }
   }
   h3 {
     font-size: 20px;
+
+    @include md {
+      font-size: 22px;
+    }
   }
   p {
-    font-size: 18px;
-    line-height: 1.75;
+    font-size: 16px;
+    line-height: 2;
 
     &:first-of-type {
       margin-top: 0;
@@ -29,6 +39,11 @@
 
     .feature & {
       color: #fff;
+    }
+
+    @include md {
+      font-size: 18px;
+      line-height: 1.75;
     }
   }
   ul {
@@ -49,18 +64,26 @@
   }
   blockquote {
     position: relative;
-    margin: 0;
-    padding: $d-space-small;
-    margin: $d-space 0;
     color: $c-medium-light-gray;
+    margin: $d-space-large 0;
+
+    @include md-max {
+      padding-left: ($d-padding-small - 4px);
+      margin-left: (-$d-padding-small);
+      border-left: 4px solid $c-very-light-gray;
+    }
+    @include md {
+      margin: $d-space 0;
+      padding: $d-space;
+    }
     p, h1, h2, h3 {
       font-family: $f-serif;
       border-radius: 2px;
-      font-size: 24px;
+      font-size: 18px;
       margin: $d-space-small 0;
-    }
-    @include md {
-      padding: $d-space;
+      @include md {
+        font-size: 24px;
+      }
     }
   }
 }
@@ -171,12 +194,16 @@
 
 .heading {
   color: $c-black;
-  font: 500 35px $f-serif;
+  font: 500 24px $f-serif;
   margin-bottom: 0;
   margin-top: 0;
 
   .feature & {
     color: #fff;
+  }
+
+  @include md {
+    font-size: 32px;
   }
 }
 

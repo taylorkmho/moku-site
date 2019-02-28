@@ -1,12 +1,13 @@
 .essay {
   @extend %layout-container;
 
+  margin-top: $d-padding-large;
   margin-bottom: $d-padding-large;
   display: grid;
   grid-gap: $d-padding-small $d-padding;
-  grid-template-areas:  "image"
+  grid-template-areas:  "title"
+                        "image"
                         "breadcrumbs"
-                        "title"
                         "article"
                         "aside";
 
@@ -44,10 +45,13 @@
   }
 
   &__author {
-    font: 400 24px $f-serif;
+    font: 400 20px $f-serif;
     color: $c-medium-gray;
     font-weight: 400;
     margin: $d-space-small 0 0;
+    @include md {
+      font-size: 24px;
+    }
   }
 
   &__aside {
