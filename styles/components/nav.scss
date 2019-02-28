@@ -1,18 +1,16 @@
 .nav {
-  @extend %grid-column-vertical-center;
-  align-items: center;
-  display: grid;
-  grid-area: nav;
-  grid-auto-flow: column dense;
-  justify-content: center;
-  grid-gap: 0 30px;
-
   @include md {
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
-    grid-gap: 0 40px;
+    flex-wrap: wrap;
   }
 
   &__link {
     @include link($c-nav-link);
+    margin-left: $d-space-large;
+    &:first-of-type {
+      margin-right: 0;
+    }
   }
 }

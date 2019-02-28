@@ -16,7 +16,7 @@ export class siteHeaderSetUp {
       render: function(createElement) {
         return createElement(SiteHeader, {
           props: {
-            innerHTML: this.$el.innerHTML,
+            defaultHeader: this.$el.innerHTML,
           },
         })
       },

@@ -1,23 +1,29 @@
 <template>
-  <div class="site-header">
+  <div class="site-header" v-if="showMenu">
     <div class="site-header__container">
       <a class="site-header__logo" v-if="branding.url" :href="branding.url" v-html="branding.logo" />
-      <button class="site-header__button" @click="toggleMenu" />
+      <button class="site-header__button" @click="toggleDropdown" />
     </div>
-    <div v-if="showMenu" class="site-header__menu-items">
-      <!-- <h4>Go to</h4> -->
+    <div v-if="showMenuDropdown" class="site-header__menu-items">
       <a v-for="item in navItems" :href="item.url">
         {{item.title}}
       </a>
     </div>
-    <div class="site-header__hidden-content" v-html="innerHTML" />
   </div>
+  <header
+    v-else
+    class="header"
+    v-html="defaultHeader"
+  />
 </template>
 
 <script>
+  const MEDIUM_MEDIA_QUERY = "(max-width: 767px)"
+  const THROTTLE_DELAY = 250
+
   export default {
     props: {
-      innerHTML: String,
+      defaultHeader: String,
     },
     data() {
       return {
@@ -26,12 +32,21 @@
           url: undefined,
         },
         navItems: [],
-        showMenu: false,
+        resizeThrottled: false,
+        showMenu: undefined,
+        showMenuDropdown: false,
       }
     },
     mounted: function() {
+      console.log('🔥 mounted');
       this.getBranding();
       this.getNavLinks();
+      this.updateViewportSize();
+      window.addEventListener('resize', this.updateViewportSize);
+    },
+    beforeDestroy: function () {
+      console.log('🔥 beforeDestroy');
+      window.removeEventListener('resize', this.updateViewportSize)
     },
     methods: {
       getBranding: function() {
@@ -56,8 +71,19 @@
             }
           })
       },
-      toggleMenu() {
-        this.showMenu = !this.showMenu;
+      updateViewportSize() {
+        if (this.resizeThrottled) return
+
+        this.showMenu = window.matchMedia( MEDIUM_MEDIA_QUERY ).matches;
+
+        this.resizeThrottled = true;
+        setTimeout(() => {
+          this.resizeThrottled = false;
+        }, THROTTLE_DELAY);
+
+      },
+      toggleDropdown() {
+        this.showMenuDropdown = !this.showMenuDropdown;
       }
     }
   }
@@ -65,6 +91,13 @@
 
 <style lang="scss">
   @import '../../styles/base.scss';
+  @import '../../styles/mixins.scss';
+
+  .header {
+    @include md-max {
+      opacity: 0;
+    }
+  }
 
   .site-header {
     position: relative;
@@ -136,10 +169,6 @@
         font-size: 14px;
         margin: 0 0 0 $d-space;
       }
-    }
-
-    &__hidden-content {
-      display: none;
     }
   }
 

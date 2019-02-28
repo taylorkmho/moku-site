@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {squarespace-headers}
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- TODO Find a more elegant way to handle FOUC -->
+    <style type="text/css">
+      body {
+        transition: opacity 250ms ease-out;
+      }
+      body.not-loaded {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} not-loaded">
     <svg id="css-filters">
       <filter id="teal" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
         <feColorMatrix type="matrix" result="grayscale"
@@ -83,17 +94,6 @@
         </feColorMatrix>
       </filter>
     </svg>
-    <!-- TODO Find a more elegant way to handle FOUC -->
-    <style type="text/css">
-      body {
-        transition: opacity 250ms ease-out;
-      }
-      body.not-loaded {
-        opacity: 0;
-      }
-    </style>
-  </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} not-loaded">
 
     <header class="header" data-vue-site-header>
       {.section website}
