@@ -47,6 +47,7 @@
   }
 
   &__header-image {
+    @include filter(#blue-mono);
     grid-area: header-image;
     width: #{'~"calc(100% + 60px)"'};
     height: 0;
@@ -55,7 +56,6 @@
     background-color: $c-very-light-gray;
     background-size: cover;
     background-position: center;
-    filter: url(#blue-mono);
     img {
       display: none;
     }
@@ -274,13 +274,13 @@
   }
 
   &__thumbnail {
+    @include filter(#teal-mono);
     margin: 0;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    filter: url(#teal-mono);
     background-size: cover;
 
     @include md {

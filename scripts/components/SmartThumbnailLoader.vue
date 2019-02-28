@@ -64,6 +64,7 @@
 
 <style lang="scss">
 @import '../../styles/base.scss';
+@import '../../styles/mixins.scss';
 
 .smart-thumbnail {
   margin: 0;
@@ -80,7 +81,7 @@
   }
 
   &--has-tint {
-    filter: url(#teal-mono);
+    @include filter(#teal-mono);
   }
 }
 </style>

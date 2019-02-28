@@ -57,7 +57,7 @@
 
   &__image-container {
     @include responsive-media(66.67%);
-    filter: url(#blue-mono);
+    @include filter(#blue-mono);
     margin: 0;
     background-size: cover;
     background-color: $c-blue;

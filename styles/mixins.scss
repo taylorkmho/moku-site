@@ -113,3 +113,11 @@ $mq-x-large: 1260px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@mixin filter($id) {
+  filter: url($id);
+  -webkit-filter: url($id);
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
