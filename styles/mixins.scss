@@ -60,6 +60,26 @@ $mq-x-large: 1260px;
   &:hover {
     color: lighten($color, 10%);
   }
+  &:focus {
+    color: darken($color, 5%);
+  }
+  &:active {
+    color: darken($color, 10%);
+  }
+}
+
+%gray-teal-link {
+  color: $c-medium-light-gray;
+  transition: color 100ms ease-out;
+  &:hover {
+    color: $c-teal !important;
+  }
+  &:focus {
+    color: darken($c-teal, 5%) !important;
+  }
+  &:active {
+    color: darken($c-teal, 10%) !important;
+  }
 }
 
 %clear-list {

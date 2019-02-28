@@ -27,11 +27,8 @@
   }
 
   &__link {
-    color: $c-medium-light-gray;
+    @extend %gray-teal-link;
     font-size: 18px;
-    &:hover {
-      color: $c-teal;
-    }
     .feature & {
       color: #fff;
     }

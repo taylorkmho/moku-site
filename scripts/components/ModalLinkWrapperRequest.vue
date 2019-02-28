@@ -61,7 +61,7 @@
     display: grid;
     grid-gap: 0;
     grid-template-areas: 'aside primary';
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: #{'~"1fr 2fr"'};
     border-radius: $d-border-radius;
     background: #fff;
     overflow: hidden;

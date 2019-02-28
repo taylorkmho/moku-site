@@ -1,20 +1,20 @@
 <nav class="nav" data-content-field="navigation-primary-nav" data-vue-site-header-nav>
   {.repeated section items}
-      {.folder?}
-        <a class="nav__link" href="{collection.fullUrl}">{collection.navigationTitle}</a>
-      {.or}
+    {.folder?}
+      <a class="nav__link {.if active}nav__link--active{.end} {.if folderActive}nav__link--active{.end}" href="{collection.fullUrl}">{collection.navigationTitle}</a>
+    {.or}
 
-        {.section collection}
-          <a class="nav__link" href="{fullUrl}">{navigationTitle}</a>
-        {.end}
-
-        {.section externalLink}
-          <a class="nav__link" href="{url}"{.section newWindow} target="_blank"{.end}>
-            {title}
-          </a>
-        {.end}
-
+      {.section collection}
+        <a class="nav__link {.if active}nav__link--active{.end}" href="{fullUrl}">{navigationTitle}</a>
       {.end}
+
+      {.section externalLink}
+        <a class="nav__link {.if active}nav__link--active{.end}" href="{url}"{.section newWindow} target="_blank"{.end}>
+          {title}
+        </a>
+      {.end}
+
+    {.end}
 
   {.end}
 </nav>

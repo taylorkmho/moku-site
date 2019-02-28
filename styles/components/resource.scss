@@ -95,13 +95,9 @@
   text-align: left;
   &__link {
     width: 100%;
-    color: $c-default;
-    transition: color 100ms ease-out;
+    @extend %gray-teal-link;
     &:visited {
       color: $c-medium-gray;
-    }
-    &:hover {
-      color: $c-teal;
     }
   }
 }
@@ -208,7 +204,6 @@
       'title'
       'article'
       'share'
-      'video-next'
       'video-links'
       'aside';
 
@@ -218,7 +213,6 @@
         'asset-area title'
         'asset-area article'
         'asset-area share'
-        'video-next video-next'
         'video-links video-links'
         'aside aside';
       grid-template-columns: #{'~"6.5fr 3.5fr"'};
@@ -297,17 +291,6 @@
 
   &__video-links {
     grid-area: video-links;
-  }
-
-  &__video-next {
-    grid-area: video-next;
-
-    a {
-      color: $c-medium-light-gray;
-      font-style: italic;
-      padding: 20px 0;
-      text-decoration: underline;
-    }
   }
 }
 

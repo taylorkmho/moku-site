@@ -1,16 +1,24 @@
 .nav {
+  display: flex;
+  justify-content: center;
   @include md {
-    display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
 
   &__link {
-    @include link($c-nav-link);
+    color: $c-nav-link;
+    &:hover {
+      color: $c-teal;
+    }
     margin-left: $d-space-large;
     &:first-of-type {
       margin-right: 0;
+    }
+    &--active {
+      font-weight: bold;
+      @include link($c-teal);
     }
   }
 }
