@@ -1,11 +1,14 @@
 {.var @assetUrl collection.mainImage.assetUrl}
 
-<section class="hero js-convert-links-to-modal" style="{.if @assetUrl}background-image: url({@assetUrl};){.end}">
+<section class="hero js-convert-links-to-modal">
   <div class="layout-container hero__content-container">
     <div class="hero__content">
       <squarespace:block-field id="home-splash" label="Splash" columns="1" lock-layout="true" />
     </div>
   </div>
+  {.if @assetUrl}
+    <div class="hero__background" style="background-image: url({@assetUrl};)"></div>
+  {.end}
 </section>
 
 <section class="mission">

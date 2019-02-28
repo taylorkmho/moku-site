@@ -1,0 +1,95 @@
+<svg id="css-filters">
+  <filter id="teal" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix" result="grayscale"
+      values="1 0 0 0 0
+        1 0 0 0 0
+        1 0 0 0 0
+        0 0 0 1 0">
+    </feColorMatrix>
+    <feColorMatrix
+      color-interpolation-filters="sRGB"
+      in="A"
+      type="matrix"
+      values="0.0117 0.0000 0.0000 0.11 0
+              0.0000 0.6431 0.0000 0.12 0
+              0.0000 0.0000 0.6235 0.13 0
+              0.0000 0.0000 0.0000 1 0 ">
+    </feColorMatrix>
+  </filter>
+  <filter id="mono" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+      values="0.25 0 0 0.3 0
+              0.25 0 0 0.3 0
+              0.25 0 0 0.3 0
+              0   0 0 0.5   0">
+    </feColorMatrix>
+  </filter>
+  <filter id="teal-mono" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+      values="0.5 0 0 0.5 0
+              0.5 0 0 0.5 0
+              0.5 0 0 0.5 0
+              0   0 0 1   0">
+    </feColorMatrix>
+    <feColorMatrix
+      color-interpolation-filters="sRGB"
+      in="A"
+      type="matrix"
+      values="0.0117 0.0000 0.0000 0.11 0
+              0.0000 0.6431 0.0000 0.12 0
+              0.0000 0.0000 0.6235 0.13 0
+              0.0000 0.0000 0.0000 1 0 ">
+    </feColorMatrix>
+  </filter>
+  <filter id="teal-mono" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+      values="0.5 0 0 0.5 0
+              0.5 0 0 0.5 0
+              0.5 0 0 0.5 0
+              0   0 0 1   0">
+    </feColorMatrix>
+    <feColorMatrix
+      color-interpolation-filters="sRGB"
+      in="A"
+      type="matrix"
+      values="0.0117 0.0000 0.0000 0.11 0
+              0.0000 0.6431 0.0000 0.12 0
+              0.0000 0.0000 0.6235 0.13 0
+              0.0000 0.0000 0.0000 1 0 ">
+    </feColorMatrix>
+  </filter>
+  <filter id="blue" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+      values="0.5 0 0 0.1 0
+              0.5 0 0 0.1 0
+              0.5 0 0 0.1 0
+              0   0 0 1   0">
+    </feColorMatrix>
+    <feColorMatrix
+      color-interpolation-filters="sRGB"
+      in="A"
+      type="matrix"
+      values="0.1843 0.0000 0.0000 0.17 0
+              0.0000 0.3529 0.0000 0.19 0
+              0.0000 0.0000 0.3922 0.21 0
+              0.0000 0.0000 0.0000 1.00 0 ">
+    </feColorMatrix>
+  </filter>
+  <filter id="blue-mono" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix" color-interpolation-filters="sRGB"
+      values="0.5 0 0 0.5 0
+              0.5 0 0 0.5 0
+              0.5 0 0 0.5 0
+              0   0 0 1   0">
+    </feColorMatrix>
+    <feColorMatrix
+      color-interpolation-filters="sRGB"
+      in="A"
+      type="matrix"
+      values="0.0100 0.0000 0.0000 0.10 0
+              0.0000 0.4800 0.0000 0.10 0
+              0.0000 0.0000 0.5400 0.10 0
+              0.0000 0.0000 0.0000 1.00 0 ">
+    </feColorMatrix>
+  </filter>
+</svg>
