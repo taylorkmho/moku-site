@@ -10,16 +10,12 @@
       </a>
     </div>
   </div>
-  <header
-    v-else
-    class="header"
-    v-html="defaultHeader"
-  />
+  <header v-else class="header" v-html="defaultHeader" />
 </template>
 
 <script>
   const MEDIUM_MEDIA_QUERY = "(max-width: 767px)"
-  const THROTTLE_DELAY = 250
+  const RESIZE_DELAY = 250
 
   export default {
     props: {
@@ -32,20 +28,18 @@
           url: undefined,
         },
         navItems: [],
-        resizeThrottled: false,
+        resizeTimer: false,
         showMenu: undefined,
         showMenuDropdown: false,
       }
     },
     mounted: function() {
-      console.log('🔥 mounted');
       this.getBranding();
       this.getNavLinks();
       this.updateViewportSize();
       window.addEventListener('resize', this.updateViewportSize);
     },
     beforeDestroy: function () {
-      console.log('🔥 beforeDestroy');
       window.removeEventListener('resize', this.updateViewportSize)
     },
     methods: {
@@ -71,19 +65,14 @@
             }
           })
       },
-      updateViewportSize() {
-        if (this.resizeThrottled) return
-
-        this.showMenu = window.matchMedia( MEDIUM_MEDIA_QUERY ).matches;
-
-        this.resizeThrottled = true;
-        setTimeout(() => {
-          this.resizeThrottled = false;
-        }, THROTTLE_DELAY);
-
-      },
       toggleDropdown() {
         this.showMenuDropdown = !this.showMenuDropdown;
+      },
+      updateViewportSize() {
+        clearTimeout(this.resizeTimer);
+        this.resizeTimer = setTimeout(() => {
+          this.showMenu = window.matchMedia( MEDIUM_MEDIA_QUERY ).matches;
+        }, RESIZE_DELAY);
       }
     }
   }
@@ -95,7 +84,7 @@
 
   .header {
     @include md-max {
-      opacity: 0;
+      opacity: 0.25;
     }
   }
 
