@@ -2,7 +2,6 @@
   <div class="staff-list-container">
     <div :class="{
       'staff-list': true,
-      'staff-list--open': isOpen,
     }">
       <button
         :class="{
@@ -20,13 +19,11 @@
       </button>
     </div>
     <div
-      v-if="isOpen"
       v-html="expandedCopy"
       :class="{
         'staff-copy': true,
         'layout-container': true,
         'layout-container--slim': true,
-        'staff-copy--open': isAnimated,
       }"
     ></div>
   </div>
@@ -59,15 +56,16 @@
 
             this.loading = false
 
-            this.staff = response.data.items.map((member, index) => {
-              return {
+            response.data.items.forEach((member, index) => {
+              this.staff.push({
                 assetUrl: member.assetUrl,
                 hasUploadedAsset: !!member.filename,
                 title: member.title,
                 body: member.body,
                 position: member.customContent.position,
-                active: false,
-              }
+                active: index === 0 ? true : false,
+              })
+              this.expandedCopy = member.body
             })
           })
           .catch((error) => {
@@ -75,15 +73,6 @@
           })
       },
       handleClick: function(body, index) {
-        if (this.staff[index].active) {
-          this.isAnimated = false
-          setTimeout(()=>{
-            this.isOpen = false
-          }, 500)
-          this.staff.forEach((member, i) => this.$set(this.staff[i], 'active', false))
-          return
-        }
-
         this.staff.forEach((member, i) => {
           if (index === i) {
             this.$set(this.staff[i], 'active', true)
@@ -91,8 +80,6 @@
             this.$set(this.staff[i], 'active', false)
           }
         })
-
-        this.isOpen = true
         this.expandedCopy = this.staff[index].body
         setTimeout(()=>{
           this.isAnimated = true
@@ -167,11 +154,18 @@
       margin-bottom: 0;
     }
 
-    &--active,
-    &:hover {
+    &--active {
       .staff-list-item {
         &__image-wrapper:after {
           border-color: $c-teal;
+        }
+      }
+    }
+
+    &:hover {
+      .staff-list-item {
+        &__image-wrapper:after {
+          border-color: $c-cyan;
         }
       }
     }
@@ -192,7 +186,7 @@
       }
     }
 
-    .staff-list--open &__image-wrapper {
+    .staff-list &__image-wrapper {
       filter: url(#blue-mono);
     }
 
@@ -209,11 +203,6 @@
   }
 
   .staff-copy {
-    opacity: 0;
-    transition: opacity 500ms ease-in;
-    &--open {
-      opacity: 1;
-    }
     strong {
       color: $c-teal;
     }
