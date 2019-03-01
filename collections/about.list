@@ -1,0 +1,38 @@
+<div class="section-heading">
+  <h1>{collection.title}</h1>
+</div>
+
+<div class="layout-container layout-container--intro">
+  <squarespace:block-field id="about-intro" label="Introduction" columns="1" />
+</div>
+
+<section class="layout-container layout--about">
+  <aside class="layout--about__aside">
+    <squarespace:block-field id="about-aside" label="Aside content" columns="1" lock-layout="true" />
+  </aside>
+  <div class="layout--about__main">
+    <squarespace:block-field id="about-main" label="Main content" columns="1" lock-layout="true" />
+  </div>
+</section>
+
+<div class="layout-container">
+  <div class="section-heading">
+    <squarespace:block-field id="about-promos" label="Title" columns="1" lock-layout="true" />
+  </div>
+</div>
+
+<section class="layout-container layout--about">
+  <aside class="layout--about__aside layout--about__aside--secondary">
+    <squarespace:block-field id="about-secondary-aside" label="Secondary Aside Content" columns="1" lock-layout="true" />
+  </aside>
+  <div class="layout--about__main">
+    <squarespace:block-field id="about-secondary-main" label="Secondary Main Content" columns="1" lock-layout="true" />
+  </div>
+</section>
+
+<section class="layout-container">
+  <div class="section-heading">
+    <squarespace:block-field id="staff-title" label="Title" columns="1" lock-layout="true" />
+  </div>
+  <div data-vue-staff data-url="{collection.fullUrl}"></div>
+</section>

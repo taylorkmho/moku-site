@@ -123,18 +123,19 @@
 
     + h2,
     + h3 {
-      margin-bottom: 15px;
-      margin-top: -15px;
+      margin-bottom: $d-space !important;
+      margin-top: (-$d-space);
       font-size: 26px;
 
 
       @include sm {
-        margin-top: (-$d-space);
+        margin-top: (-$d-space) !important;
         font-size: 40px;
       }
 
       @include large {
-        margin-top: (-$d-space-large);
+        margin-bottom: $d-space-large !important;
+        margin-top: (-$d-space-large) !important;
         font-size: 48px;
       }
     }

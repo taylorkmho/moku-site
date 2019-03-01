@@ -1,3 +1,4 @@
+// import Vue from 'vue'
 import { modalSetUp } from './modal-set-up'
 import { mapSetUp } from './map-set-up'
 import { inlineVideoSetUp } from './inline-video-set-up'
@@ -10,6 +11,7 @@ import { categoriesListSetUp } from './categories-list-set-up'
 import { smartCategoryLinkSetUp } from './smart-category-link-set-up'
 import { resourcesMiniListSetUp } from './resources-mini-list-set-up'
 import { siteHeaderSetUp } from './site-header-set-up'
+import { staffSetUp } from './staff-set-up'
 
 if (document.body.classList.contains('not-loaded')) {
   document.body.classList.remove('not-loaded')
@@ -27,3 +29,6 @@ new categoriesListSetUp()
 new smartCategoryLinkSetUp()
 new resourcesMiniListSetUp()
 new siteHeaderSetUp()
+new staffSetUp()
+
+// Vue.config.devtools = true

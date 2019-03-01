@@ -1,0 +1,221 @@
+<template>
+  <div class="staff-list-container">
+    <div :class="{
+      'staff-list': true,
+      'staff-list--open': isOpen,
+    }">
+      <button
+        :class="{
+          'staff-list-item': true,
+          'staff-list-item--active': member.active,
+        }"
+        @click.prevent="handleClick(member.body, index)"
+        v-for="(member, index) in staff"
+      >
+        <div class="staff-list-item__image-wrapper">
+          <img :src="member.assetUrl" />
+        </div>
+        <h4 class="staff-list-item__name" v-html="member.title"></h4>
+        <h5 class="staff-list-item__position" v-html="member.position"></h5>
+      </button>
+    </div>
+    <div
+      v-if="isOpen"
+      v-html="expandedCopy"
+      :class="{
+        'staff-copy': true,
+        'layout-container': true,
+        'layout-container--slim': true,
+        'staff-copy--open': isAnimated,
+      }"
+    ></div>
+  </div>
+</template>
+
+<script>
+  import axios from 'axios'
+  import { stripHTML } from '../helpers'
+
+  export default {
+    props: {
+      url: String,
+    },
+    data() {
+      return {
+        expandedCopy: '',
+        isAnimated: false,
+        isOpen: false,
+        staff: [],
+      }
+    },
+    mounted: function() {
+      this.fetchItems();
+    },
+    methods: {
+      fetchItems: function() {
+        axios.get(`${this.url}?format=json`)
+          .then((response) => {
+            if (response.data.items === undefined) return
+
+            this.loading = false
+
+            this.staff = response.data.items.map((member, index) => {
+              return {
+                assetUrl: member.assetUrl,
+                hasUploadedAsset: !!member.filename,
+                title: member.title,
+                body: member.body,
+                position: member.customContent.position,
+                active: false,
+              }
+            })
+          })
+          .catch((error) => {
+            throw error;
+          })
+      },
+      handleClick: function(body, index) {
+        if (this.staff[index].active) {
+          this.isAnimated = false
+          setTimeout(()=>{
+            this.isOpen = false
+          }, 500)
+          this.staff.forEach((member, i) => this.$set(this.staff[i], 'active', false))
+          return
+        }
+
+        this.staff.forEach((member, i) => {
+          if (index === i) {
+            this.$set(this.staff[i], 'active', true)
+          } else {
+            this.$set(this.staff[i], 'active', false)
+          }
+        })
+
+        this.isOpen = true
+        this.expandedCopy = this.staff[index].body
+        setTimeout(()=>{
+          this.isAnimated = true
+        }, 200)
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import '../../styles/base.scss';
+  @import '../../styles/mixins.scss';
+
+  .staff-list-container {
+    margin-bottom: $d-space-xlarge;
+  }
+
+  .staff-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: $d-space-large;
+  }
+
+  .staff-list-item {
+    width: 196px;
+    max-width: 100%;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-size: 16px;
+    text-align: left;
+    margin: 0 $d-space-small $d-space-large;
+    outline: none;
+    cursor: pointer;
+
+    &__image-wrapper {
+      position: relative;
+      margin-bottom: $d-space;
+      &:after {
+        content: "";
+        position: absolute;
+        top: (-$d-space-xsmall);
+        left: (-$d-space-xsmall);
+        bottom: (-$d-space-xsmall);
+        right: (-$d-space-xsmall);
+        border: 1px solid $c-very-light-gray;
+        border-radius: $d-border-radius;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: $d-border-radius-small;
+      }
+    }
+    &__name,
+    &__position {
+      margin: 0;
+    }
+    &__name {
+      color: $c-gray;
+      margin-bottom: $d-space-xsmall;
+    }
+    &__position {
+      color: $c-medium-gray;
+      font-weight: 400;
+    }
+
+    @include xlarge {
+      margin-bottom: 0;
+    }
+
+    &--active,
+    &:hover {
+      .staff-list-item {
+        &__image-wrapper:after {
+          border-color: $c-teal;
+        }
+      }
+    }
+
+    &:active {
+      .staff-list-item {
+        &__image-wrapper:after {
+          border-color: darken($c-teal, 10%);
+        }
+      }
+    }
+
+    &:focus {
+      .staff-list-item {
+        &__image-wrapper:after {
+          border-color: darken($c-teal, 5%);
+        }
+      }
+    }
+
+    .staff-list--open &__image-wrapper {
+      filter: url(#blue-mono);
+    }
+
+    &--active {
+      .staff-list-item {
+        &__image-wrapper {
+          filter: initial;
+          &:after {
+            border-width: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .staff-copy {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    &--open {
+      opacity: 1;
+    }
+    strong {
+      color: $c-teal;
+    }
+  }
+</styled>
