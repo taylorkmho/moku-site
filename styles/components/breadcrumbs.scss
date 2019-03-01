@@ -3,7 +3,6 @@
   grid-gap: $d-space-xsmall 0;
   justify-content: flex-start;
   @include md-max {
-    margin-bottom: $d-space-small;
     padding: $d-space-small 0;
     border-top: 1px solid $c-very-light-gray;
     border-bottom: 1px solid $c-very-light-gray;

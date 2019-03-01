@@ -116,7 +116,7 @@
   padding-bottom: $d-padding-large;
 
   @include md {
-    grid-gap: $d-padding 50px;
+    grid-gap: $d-padding $d-padding-large;
     grid-template-areas: 'banner banner banner'
       'breadcrumbs breadcrumbs .'
       'title title .'
@@ -194,21 +194,16 @@
     padding-bottom: 0;
     margin-bottom: (-$d-padding-small);
 
-    @include md {
-      padding-bottom: $d-padding-large;
-      margin-bottom: $d-padding;
-    }
-
     grid-template-areas: 'asset-area'
-      'breadcrumbs'
       'title'
+      'breadcrumbs'
       'article'
       'share'
       'video-links'
       'aside';
 
     @include md {
-      grid-gap: 15px $d-padding;
+      grid-gap: $d-padding;
       grid-template-areas: 'breadcrumbs breadcrumbs'
         'asset-area title'
         'asset-area article'
@@ -216,6 +211,8 @@
         'video-links video-links'
         'aside aside';
       grid-template-columns: #{'~"6.5fr 3.5fr"'};
+      padding-bottom: $d-padding-large;
+      margin-bottom: $d-padding;
     }
 
     .resource-article {
