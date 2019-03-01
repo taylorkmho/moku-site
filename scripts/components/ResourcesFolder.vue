@@ -2,14 +2,14 @@
   <div>
     <h2 class="collection-list-heading">Topics</h2>
     <div class="resources-list-container" v-if="isReady">
-      <article class="resources-list" :id="category.id" v-for="category in orderedCategories">
-        <span class="resources-list__count-badge">{{category.itemCount.niceValue}}</span>
-        <div class="resources-list__header-image" :style="{backgroundImage: `url(${category.coverImage})`}">
-          <img :src="category.coverImage" alt="" />
+      <article class="resources-list" :id="collection.id" v-for="(collection, index) in collections">
+        <span class="resources-list__count-badge">{{collection.itemCount.niceValue}}</span>
+        <div class="resources-list__header-image" :style="{backgroundImage: `url(${collection.coverImage})`}">
+          <img :src="collection.coverImage" alt="" />
         </div>
-        <h3 class="resources-list__title">{{category.title}}</h3>
+        <h3 class="resources-list__title">{{collection.title}}</h3>
         <ul class="resources-list__list">
-          <li v-for="item in category.items" class="resources-list-item">
+          <li v-for="item in collection.items" class="resources-list-item">
             <a data-item-id="id" :href="item.fullUrl" class="resources-list-item__link">
               {{item.title}}
               <div class="pills">
@@ -18,8 +18,14 @@
             </a>
           </li>
         </ul>
-        <div class="loading-spinner" v-if="category.loading"></div>
-        <button class="button button--small button--light" v-if="category.loadMore.show" @click="loadMore(category.loadMore.url, category.title)">Show More</button>
+        <div class="loading-spinner" v-if="collection.loading"></div>
+        <button
+          class="button button--small button--light"
+          v-if="collection.loadMore.show"
+          @click="loadMore(collection.loadMore.url, index)"
+        >
+          Show More
+        </button>
       </article>
     </div>
     <div class="resources-list-container" v-else>
@@ -49,7 +55,7 @@
     },
     data() {
       return {
-        categories: [],
+        collections: [],
         count: {
           expected: undefined,
           successful: 0,
@@ -57,18 +63,9 @@
       }
     },
     computed: {
-      orderedCategories: function() {
-        return this.categories
-          .sort(function(a, b) {
-            if (b.itemCount.value - a.itemCount.value !== 0) {
-              return b.itemCount.value - a.itemCount.value
-            }
-            return a.title.localeCompare(b.title)
-          });
-      },
       isReady: function() {
         return this.count.successful === this.count.expected
-      }
+      },
     },
     mounted: function() {
       this.fetchItems();
@@ -84,27 +81,24 @@
             if (response.data.collection.collections === undefined) return
 
             const collections = response.data.collection.collections
-              .map((collection) => {
-                return {
-                  id: collection.id,
-                  url: collection.fullUrl,
-                  title: collection.title,
-                  itemCount: {
-                    value: collection.itemCount,
-                    niceValue: `${collection.itemCount} RESOURCE${collection.itemCount > 1 ? 'S' : ''}`,
-                  }
-                }
-              })
 
             this.count.expected = collections.length
 
-            collections.forEach((category, index) => {
-              axios.get(`${category.url}?format=json`)
+            collections.forEach((collection, index) => {
+              axios.get(`${collection.fullUrl}?format=json`)
                 .then((response) => {
                   if (response.data.items === undefined) return
 
-                  const items = response.data.items
-                    .map((item) => {
+                  const collectionData = {
+                    id: collection.id,
+                    url: collection.fullUrl,
+                    title: collection.title,
+                    itemCount: {
+                      value: collection.itemCount,
+                      niceValue: `${collection.itemCount} RESOURCE${collection.itemCount > 1 ? 'S' : ''}`,
+                    },
+                    coverImage: response.data.collection.mainImage ? response.data.collection.mainImage.assetUrl : undefined,
+                    items: response.data.items.map((item) => {
                       return {
                         title: item.title,
                         fullUrl: item.fullUrl,
@@ -112,14 +106,7 @@
                         hasUploadedAsset: !!item.filename,
                         type: mapResourceType(item.customContent.customType),
                       }
-                    })
-
-                  const categoryData = {
-                    id: category.id,
-                    title: category.title,
-                    coverImage: response.data.collection.mainImage ? response.data.collection.mainImage.assetUrl : undefined,
-                    items: items,
-                    itemCount: category.itemCount,
+                    }),
                     loadMore: {
                       show: response.data.pagination ? response.data.pagination.nextPage : false,
                       url: response.data.pagination ? response.data.pagination.nextPageUrl : undefined,
@@ -127,7 +114,7 @@
                     loading: false,
                   }
 
-                  this.$set(this.categories, this.categories.length, categoryData)
+                  this.$set(this.collections, index, collectionData)
                   this.count.successful++
                 })
             })
@@ -143,13 +130,24 @@
         el.scrollIntoView({behavior: 'smooth', block: 'start'})
         el.classList.add('resources-list--highlighted')
       },
-      loadMore: function(url, title) {
-        const matchingCategory = this.categories.find(category => category.title === title)
-        this.$set(matchingCategory, 'loading', true)
+      loadMore: function(url, index) {
+        const match = this.collections[index]
+        this.$set(match, 'loading', true)
 
         axios.get(`${url}&format=json`)
           .then((response) => {
             if (response.data.items === undefined) return
+
+            const collectionItems = match.items
+
+            // unset loading
+            this.$set(match, 'loading', false)
+            // update next url to fetch
+            this.$set(match, 'loadMore', {
+              show: response.data.pagination ? response.data.pagination.nextPage : false,
+              url: response.data.pagination ? response.data.pagination.nextPageUrl : undefined,
+            })
+
             const newItems = response.data.items
               .map((item) => {
                 return {
@@ -161,14 +159,9 @@
                 }
               })
 
-            this.$set(matchingCategory, 'loading', false)
-            this.$set(matchingCategory, 'loadMore', {
-              show: response.data.pagination ? response.data.pagination.nextPage : false,
-              url: response.data.pagination ? response.data.pagination.nextPageUrl : undefined,
-            })
             newItems.forEach((item) => {
-              this.$set(matchingCategory['items'], matchingCategory['items'].length, item)
-            })
+                this.$set(collectionItems, collectionItems.length, item)
+              })
           })
           .catch((error) => {
             throw error;
