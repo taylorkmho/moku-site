@@ -157,6 +157,15 @@
   }
 }
 
+.aside-heading {
+  font: 600 14px $f-sans;
+  text-transform: uppercase;
+  margin: 0 0 $d-space;
+  span {
+    color: $c-teal;
+  }
+}
+
 .section-subheading {
   text-align: center;
   color: $c-medium-gray;

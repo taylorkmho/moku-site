@@ -56,20 +56,5 @@
 
   &__aside {
     grid-area: aside;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-
-    .aside-abstract {
-      align-self: flex-start;
-    }
-
-    .aside-links {
-      padding-bottom: $d-padding-large;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
   }
 }

@@ -26,25 +26,27 @@
   </article>
 
   <aside class="essay__aside">
+
     {.if customContent.abstract.html}
+      <h4 class="aside-heading">Synopsis</h4>
       <div class="aside-abstract">
         {customContent.abstract.html|safe}
       </div>
     {.end}
     {.if customContent.citation.html}
+      <h4 class="aside-heading">Using for research? <span>APA citation</span></h4>
       <div class="aside-citation">
-        <h4 class="aside-citation__headline">
-          Using for research? <span>APA citation</span>
-        </h4>
         <div class="aside-citation__body">
           <span>{customContent.citation.html|safe}</span>
         </div>
       </div>
     {.end}
-    <div class="aside-links" data-vue-aside-links data-title="{title}" data-collection-title="{collection.title}" data-collection-url="{collection.fullUrl}" data-type="{customContent.customType}">
-      <div>
-        <h3 class="links-header__subheading">On the Topic of</h3>
-        <h2 class="links-header__title">{collection.title}</h2>
+    <div class="sticky sticky--top">
+      <div class="aside-links" data-vue-aside-links data-title="{title}" data-collection-title="{collection.title}" data-collection-url="{collection.fullUrl}" data-type="{customContent.customType}">
+        <div>
+          <h3 class="links-header__subheading">On the Topic of</h3>
+          <h2 class="links-header__title">{collection.title}</h2>
+        </div>
       </div>
     </div>
   </aside>

@@ -1,13 +1,5 @@
 .aside-citation {
-  &__headline {
-    font: 600 14px $f-sans;
-    text-transform: uppercase;
-    margin: 0 0 $d-space;
-    span {
-      color: $c-teal;
-    }
-  }
-
+  margin-bottom: $d-space-xlarge;
   &__body {
     padding: $d-padding-small;
     background-color: $c-off-white;
