@@ -15,6 +15,25 @@
   </div>
 </section>
 
+<div class="callout">
+  <div class="layout-container">
+    <aside class="callout__image">
+      <squarespace:block-field id="about-promo-image" label="Image" columns="1" />
+    </aside>
+    <div class="callout__main">
+      <squarespace:block-field id="about-promo-main" label="Body" columns="1" />
+    </div>
+    <div class="callout__subtext">
+      <div class="callout__subtext-container">
+        <squarespace:block-field id="about-promo-subtext" label="Subtext" columns="1" />
+      </div>
+    </div>
+    <div class="callout__ctas">
+      <squarespace:block-field id="about-promo-ctas" label="CTAs" columns="1" />
+    </div>
+  </div>
+</div>
+
 <div class="layout-container">
   <div class="section-heading">
     <squarespace:block-field id="about-promos" label="Title" columns="1" lock-layout="true" />

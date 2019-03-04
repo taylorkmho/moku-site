@@ -1,0 +1,54 @@
+.callout {
+  background: $c-blue;
+  color: #dff3f7;
+  background-image: url('/assets/bg-pattern-dark.png');
+  background-repeat: no-repeat;
+  line-height: 2;
+  padding: $d-padding 0;
+  @extend %antialiased;
+
+  @include md {
+    padding: $d-padding-large 0;
+  }
+
+  &__image {
+    max-width: 320px;
+  }
+
+  &__main {
+    h1, h2, h3 {
+      color: #fff;
+      font-family: $f-serif;
+      line-height: 1.25;
+    }
+    p {
+      font-size: 14px;
+      @include md {
+        font-size: 20px;
+      }
+    }
+  }
+  &__subtext {
+    font-size: 12px;
+    @include md {
+      margin-top: $d-space-small;
+      font-size: 14px;
+    }
+
+    &-container {
+      background-color: #1b5f6d;
+      padding: $d-padding-small;
+      border-radius: $d-border-radius;
+      .sqs-block:last-of-type {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+  &__ctas {
+    margin-top: $d-space;
+    a {
+      @extend .button;
+      @extend .button--white;
+    }
+  }
+}

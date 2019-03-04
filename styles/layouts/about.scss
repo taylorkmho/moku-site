@@ -8,10 +8,10 @@
   }
 
   & {
-    margin-bottom: 50px;
+    margin-bottom: $d-padding;
 
     @include md {
-      margin-bottom: 100px;
+      margin-bottom: $d-padding-large;
     }
   }
 

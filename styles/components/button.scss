@@ -52,6 +52,15 @@
     }
   }
 
+  &--white {
+    background: #fff !important;
+    border-color: #fff !important;
+    color: $c-blue;
+    &:focus {
+      box-shadow: 0 0 10px $c-off-white;
+    }
+  }
+
   &--disabled {
     background: $c-very-light-gray;
     border-color: $c-very-light-gray;
