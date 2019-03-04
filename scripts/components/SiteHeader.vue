@@ -1,5 +1,11 @@
 <template>
-  <div class="site-header" v-if="showMenu">
+  <div
+    :class="{
+      'site-header': true,
+      'site-header--fixed': showMenuDropdown,
+    }"
+    v-if="showMenu"
+  >
     <div class="site-header__container">
       <a class="site-header__logo" v-if="branding.url" :href="branding.url" v-html="branding.logo" />
       <button class="site-header__button" @click="toggleDropdown" />
@@ -91,7 +97,7 @@
   .site-header {
     position: relative;
     background-color: #fff;
-    border-bottom: 2px solid $c-very-light-gray;
+    border-bottom: 1px solid $c-very-light-gray;
 
     &__container {
       display: flex;
@@ -139,25 +145,36 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      z-index: 1000;
+      height: #{'~"calc(100vh - 60px)"'};
+      width: 100%;
       transform: translateY(100%);
       background: $c-off-white;
       padding: $d-padding-small;
-      text-align: right;
       background-image: url('/assets/bg-pattern.png');
+      background-repeat: no-repeat;
+      text-align: center;
+      overflow: scroll;
+
       h4 {
         margin: 0 0 $d-space-small;
       }
       a {
-        display: inline-block;
+        display: block;
         color: inherit;
         padding: $d-padding-xsmall 0;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
-        font-size: 14px;
+        font-size: 18px;
         margin: 0 0 0 $d-space;
       }
+    }
+    &--fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
   }
 
