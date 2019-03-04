@@ -115,7 +115,7 @@
     font: 500 32px $f-serif;
     margin: 0 0 $d-padding;
 
-    @include sm {
+    @include md {
       font-size: 48px;
       margin-bottom: $d-space;
     }
