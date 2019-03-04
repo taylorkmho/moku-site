@@ -63,10 +63,14 @@
     }
     h3 {
       @extend .subheading;
-      margin-top: $d-space !important;
+    }
+    p {
+      + h3 {
+        margin-top: $d-space !important;
 
-      @include md {
-        margin-top: $d-space-large !important;
+        @include md {
+          margin-top: $d-space-large !important;
+        }
       }
     }
   }

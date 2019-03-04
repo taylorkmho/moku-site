@@ -38,6 +38,7 @@ $mq-x-large: 1260px;
   margin: 0 auto;
   max-width: $d-max-layout-width;
   padding: 0 $d-padding-small;
+  line-height: 1.75;
   @include md {
     padding-left: $d-padding;
     padding-right: $d-padding;
