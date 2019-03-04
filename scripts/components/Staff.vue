@@ -1,8 +1,6 @@
 <template>
   <div class="staff-list-container">
-    <div :class="{
-      'staff-list': true,
-    }">
+    <div class="staff-list">
       <button
         :class="{
           'staff-list-item': true,
@@ -10,6 +8,7 @@
         }"
         @click.prevent="handleClick(member.body, index)"
         v-for="(member, index) in staff"
+        :style="itemStyle"
       >
         <div class="staff-list-item__image-wrapper">
           <img :src="member.assetUrl" />
@@ -20,11 +19,7 @@
     </div>
     <div
       v-html="expandedCopy"
-      :class="{
-        'staff-copy': true,
-        'layout-container': true,
-        'layout-container--slim': true,
-      }"
+      class="staff-copy layout-container layout-container--slim"
     ></div>
   </div>
 </template>
@@ -40,9 +35,15 @@
     data() {
       return {
         expandedCopy: '',
-        isAnimated: false,
         isOpen: false,
         staff: [],
+      }
+    },
+    computed: {
+      itemStyle: function() {
+        return {
+          width: `calc(100% / ${this.staff.length} - 20px)`,
+        }
       }
     },
     mounted: function() {
@@ -81,9 +82,6 @@
           }
         })
         this.expandedCopy = this.staff[index].body
-        setTimeout(()=>{
-          this.isAnimated = true
-        }, 200)
       }
     }
   }
@@ -102,7 +100,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-bottom: $d-space-large;
   }
 
   .staff-list-item {
@@ -116,6 +113,10 @@
     margin: 0 $d-space-small $d-space-large;
     outline: none;
     cursor: pointer;
+
+    @include md-max {
+      width: #{'~"calc(100% / 3 - 20px)"'} !important;
+    }
 
     &__image-wrapper {
       position: relative;
@@ -150,10 +151,6 @@
       font-weight: 400;
     }
 
-    @include xlarge {
-      margin-bottom: 0;
-    }
-
     &--active {
       .staff-list-item {
         &__image-wrapper:after {
@@ -186,14 +183,16 @@
       }
     }
 
-    .staff-list &__image-wrapper {
+    .staff-list &__image-wrapper img {
       filter: url(#blue-mono);
     }
 
     &--active {
       .staff-list-item {
         &__image-wrapper {
-          filter: initial;
+          img {
+            filter: initial;
+          }
           &:after {
             border-width: 2px;
           }
