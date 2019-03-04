@@ -35,7 +35,7 @@
 </div>
 
 <div class="layout-container">
-  <div class="section-heading">
+  <div class="section-heading section-heading--small">
     <squarespace:block-field id="about-promos" label="Title" columns="1" lock-layout="true" />
   </div>
 </div>
@@ -50,7 +50,7 @@
 </section>
 
 <section class="layout-container">
-  <div class="section-heading">
+  <div class="section-heading section-heading--small">
     <squarespace:block-field id="staff-title" label="Title" columns="1" lock-layout="true" />
   </div>
   <div data-vue-staff data-url="{collection.fullUrl}"></div>

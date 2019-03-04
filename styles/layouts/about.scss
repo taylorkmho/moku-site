@@ -3,7 +3,7 @@
   grid-gap: $d-padding 0;
 
   @include md {
-    grid-gap: 0 $d-space;
+    grid-gap: 0 $d-padding;
     grid-template-columns: #{'~"2fr 3fr"'};
   }
 
@@ -18,24 +18,25 @@
   &__aside {
     align-content: flex-start;
     display: grid;
-    font: 500 36px $f-sans;
+    font: 500 20px $f-sans;
     grid-gap: $d-padding;
 
     @include md {
-      grid-gap: 100px 0;
-      padding: 0 30px 0 20px;
+      grid-gap: $d-space-xlarge 0;
+      font-size: 28px;
+    }
+
+    @include xlarge {
+      font-size: 32px;
     }
 
     &--secondary {
-      img {
-        max-width: 240px;
-        justify-self: center;
-      }
-    }
+      padding: 0 $d-padding-large;
 
-    img {
-      display: block;
-      width: 100%;
+      @include sm {
+        padding-left: $d-padding-large;
+        padding-right: $d-padding-large;
+      }
     }
 
     em,
@@ -62,6 +63,11 @@
     }
     h3 {
       @extend .subheading;
+      margin-top: $d-space !important;
+
+      @include md {
+        margin-top: $d-space-large !important;
+      }
     }
   }
 }

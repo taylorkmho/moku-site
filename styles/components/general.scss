@@ -107,6 +107,10 @@
   text-align: center;
   margin-top: $d-padding;
 
+  @include md {
+    margin-top: $d-padding-large;
+  }
+
   h1 {
     font: 500 32px $f-serif;
     margin: 0 0 $d-padding;
@@ -145,6 +149,33 @@
     color: $c-medium-gray;
     font: normal 36px $f-sans;
     margin: $d-space 0;
+  }
+
+
+  &--small {
+    h1 {
+      font-size: 24px;
+
+      @include sm {
+        font-size: 32px;
+      }
+      @include large {
+        font-size: 36px;
+      }
+      + h2,
+      + h3 {
+        font-size: 20px;
+        @include sm {
+          font-size: 24px;
+        }
+        @include large {
+          font-size: 28px;
+        }
+      }
+    }
+    h2, h3 {
+      font: normal 32px $f-sans;
+    }
   }
 
   .promos & {
