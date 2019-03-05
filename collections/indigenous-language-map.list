@@ -1,0 +1,29 @@
+<div class="section-heading">
+  <h1>Resources</h1>
+  <h2>{collection.title}</h2>
+</div>
+
+<section class="layout-container">
+  <div class="resources-list-container resources-list-container--horizontal">
+    <article class="resources-list">
+      <ul class="resources-list__list">
+        {.repeated section items}
+          <li class="resources-list-item">
+            {.passthrough?}
+              <a class="resources-list-item__link" id="post-{id}" data-item-id="{id}" href="{sourceUrl}" target="_blank">
+                {title}
+              </a>
+            {.or}
+              <a class="resources-list-item__link" id="post-{id}" data-item-id="{id}" href="{fullUrl}">
+                {title}
+              </a>
+            {.end}
+          </li>
+        {.or}
+          No content
+        {.end}
+    </article>
+  </div>
+</section>
+
+{@|apply footer-cta.block}
