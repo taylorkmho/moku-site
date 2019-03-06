@@ -21,11 +21,13 @@
   <div class="layout-container featured-resources__container">
     <aside class="featured-resources__aside">
       <div class="featured-resources__description">
-        <squarespace:block-field id="home-resources" label="Resources" columns="1" lock-layout="true" />
+        <squarespace:block-field id="home-resources" label="Body" columns="1" lock-layout="true" />
       </div>
       <div class="features-resources__categories">
         <div class="categories">
-          <p class="categories__title">Categories</p>
+          <div class="categories__title">
+            <squarespace:block-field id="home-categories-title" label="List title" columns="1" lock-layout="true" />
+          </div>
           <ul class="categories__list" data-vue-categories-list></ul>
         </div>
       </div>
@@ -36,17 +38,17 @@
 
 <section class="layout-container promos">
   <div class="section-heading">
-    <squarespace:block-field id="home-promos-title" label="Title" columns="1" />
+    <squarespace:block-field id="home-promos-title" label="Title" columns="1" lock-layout="true" />
   </div>
   <div class="promos__container">
     <article class="promo">
-      <squarespace:block-field id="home-promo-1" label="Column 1" columns="1" />
+      <squarespace:block-field id="home-promo-1" label="Column 1" columns="1" lock-layout="true" />
     </article>
     <article class="promo">
-      <squarespace:block-field id="home-promo-2" label="Column 2" columns="1" />
+      <squarespace:block-field id="home-promo-2" label="Column 2" columns="1" lock-layout="true" />
     </article>
     <article class="promo">
-      <squarespace:block-field id="home-promo-3" label="Column 3" columns="1" />
+      <squarespace:block-field id="home-promo-3" label="Column 3" columns="1" lock-layout="true" />
     </article>
   </div>
 </section>
