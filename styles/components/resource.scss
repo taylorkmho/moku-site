@@ -216,13 +216,6 @@
     }
 
     .resource-article {
-      &__share {
-        display: grid;
-        grid-auto-flow: column;
-        grid-gap: 0 16px;
-        justify-content: flex-start;
-      }
-
       &__aside {
         align-self: flex-start;
         display: grid;

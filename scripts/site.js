@@ -12,6 +12,7 @@ import { smartCategoryLinkSetUp } from './smart-category-link-set-up'
 import { resourcesMiniListSetUp } from './resources-mini-list-set-up'
 import { siteHeaderSetUp } from './site-header-set-up'
 import { staffSetUp } from './staff-set-up'
+import { shareLinksSetUp } from './share-links-set-up'
 
 if (document.body.classList.contains('not-loaded')) {
   document.body.classList.remove('not-loaded')
@@ -30,5 +31,6 @@ new smartCategoryLinkSetUp()
 new resourcesMiniListSetUp()
 new siteHeaderSetUp()
 new staffSetUp()
+new shareLinksSetUp()
 
 // Vue.config.devtools = true
