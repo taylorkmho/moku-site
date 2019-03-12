@@ -33,6 +33,8 @@
   import axios from 'axios'
   import { mapResourceType } from '../helpers'
 
+  const LOAD_LIMIT = 3
+
   export default {
     props: {
       collection: Object,
@@ -61,6 +63,9 @@
               .filter((item) => this.title !== item.title)
 
             this.matchedCollectionItems = items
+              .filter((item, index) => {
+                return index < LOAD_LIMIT
+              })
               .map((item) => {
                 return {
                   assetUrl: item.assetUrl,
@@ -70,18 +75,6 @@
                   type: mapResourceType(item.customContent.customType),
                 }
               })
-
-            // this.matchedTypeItems = items
-            //   .filter((item) => this.type === item.customContent.customType)
-            //   .map((item) => {
-            //     return {
-            //       assetUrl: item.assetUrl,
-            //       hasUploadedAsset: !!item.filename,
-            //       title: item.title,
-            //       url: item.fullUrl,
-            //       type: mapResourceType(item.customContent.customType),
-            //     }
-            //   })
           })
           .catch((error) => {
             throw error;
