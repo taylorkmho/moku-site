@@ -9,7 +9,7 @@
         </div>
         <h3 class="resources-list__title">{{collection.title}}</h3>
         <ul class="resources-list__list">
-          <li v-for="item in collection.items" class="resources-list-item">
+          <li v-for="item in collection.items" class="resources-list-item" v-if="item.visible">
             <a data-item-id="id" :href="item.fullUrl" class="resources-list-item__link">
               {{item.title}}
               <div class="pills">
@@ -18,11 +18,10 @@
             </a>
           </li>
         </ul>
-        <div class="loading-spinner" v-if="collection.loading"></div>
         <button
           class="button button--small button--light"
-          v-if="collection.loadMore.show"
-          @click="loadMore(collection.loadMore.url, index)"
+          v-if="collection.loadMore"
+          @click="loadMore(index)"
         >
           Show More
         </button>
@@ -48,6 +47,8 @@
 <script>
   import axios from 'axios'
   import { mapResourceType, getUrlParameter } from '../helpers'
+
+  const PAGINATION_COUNT = 5
 
   export default {
     props: {
@@ -84,7 +85,7 @@
 
             this.count.expected = collections.length
 
-            collections.forEach((collection, index) => {
+            collections.forEach((collection, collectionIndex) => {
               axios.get(`${collection.fullUrl}?format=json`)
                 .then((response) => {
                   if (response.data.items === undefined) return
@@ -98,24 +99,34 @@
                       niceValue: `${collection.itemCount} RESOURCE${collection.itemCount > 1 ? 'S' : ''}`,
                     },
                     coverImage: response.data.collection.mainImage ? response.data.collection.mainImage.assetUrl : undefined,
-                    items: response.data.items.map((item) => {
+                    items: response.data.items.map((item, itemIndex) => {
                       return {
                         title: item.title,
                         fullUrl: item.fullUrl,
                         assetUrl: item.assetUrl,
                         hasUploadedAsset: !!item.filename,
                         type: mapResourceType(item.customContent.customType),
+                        visible: itemIndex < 5,
                       }
                     }),
-                    loadMore: {
-                      show: response.data.pagination ? response.data.pagination.nextPage : false,
-                      url: response.data.pagination ? response.data.pagination.nextPageUrl : undefined,
-                    },
-                    loading: false,
                   }
 
-                  this.$set(this.collections, index, collectionData)
+                  this.$set(this.collections, collectionIndex, collectionData)
                   this.count.successful++
+
+                  return {
+                    isPaginated: collectionData.items.length > 5,
+                    collectionIndex: collectionIndex,
+                  }
+                })
+                .then((options) => {
+                  if (!options.isPaginated) return
+
+                  const updatedItems = Object.assign(
+                    this.collections[options.collectionIndex],
+                    {loadMore: true}
+                  );
+                  this.$set(this.collections, options.collectionIndex, updatedItems)
                 })
             })
           })
@@ -130,42 +141,33 @@
         el.scrollIntoView({behavior: 'smooth', block: 'start'})
         el.classList.add('resources-list--highlighted')
       },
-      loadMore: function(url, index) {
-        const match = this.collections[index]
-        this.$set(match, 'loading', true)
+      loadMore: function(collectionIndex) {
+        const match = this.collections[collectionIndex]
 
-        axios.get(`${url}&format=json`)
-          .then((response) => {
-            if (response.data.items === undefined) return
+        const countOnUpdate = match.items.filter((item) => {
+          return item.visible
+        }).length
 
-            const collectionItems = match.items
+        const items = match.items.map((item, itemIndex) => {
+          return {
+            ...item,
+            visible: itemIndex < countOnUpdate + PAGINATION_COUNT
+          }
+        })
 
-            // unset loading
-            this.$set(match, 'loading', false)
-            // update next url to fetch
-            this.$set(match, 'loadMore', {
-              show: response.data.pagination ? response.data.pagination.nextPage : false,
-              url: response.data.pagination ? response.data.pagination.nextPageUrl : undefined,
-            })
+        const countAfterUpdate = items.filter((item) => {
+          return item.visible
+        }).length
 
-            const newItems = response.data.items
-              .map((item) => {
-                return {
-                  title: item.title,
-                  fullUrl: item.fullUrl,
-                  assetUrl: item.assetUrl,
-                  hasUploadedAsset: !!item.filename,
-                  type: mapResourceType(item.customContent.customType),
-                }
-              })
+        const updatedItems = Object.assign(
+          this.collections[collectionIndex],
+          {
+            items: items,
+            loadMore: countAfterUpdate < match.items.length,
+          }
+        );
 
-            newItems.forEach((item) => {
-                this.$set(collectionItems, collectionItems.length, item)
-              })
-          })
-          .catch((error) => {
-            throw error;
-          })
+        this.$set(this.collections, collectionIndex, updatedItems)
       }
     }
   }
