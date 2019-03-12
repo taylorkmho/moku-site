@@ -18,7 +18,7 @@
         <h2>What&rsquo;s your email?</h2>
         <p>Enter it here to sign up to the Mokuola Honua newsletter.</p>
       </header>
-      <form @submit="onSubmit" class="mailchimp-balloon__form" action="https://taylorkmho.us20.list-manage.com/subscribe/post?u=51c28ecf88357bd5504961c86&amp;id=cf8f7fba7a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <form @submit="onSubmit" class="mailchimp-balloon__form" action="https://mokuolahonua.us20.list-manage.com/subscribe/post?u=13266da7d20b1aa96018cd579&amp;id=ecc8898e44" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
         <input ref="emailInput" v-on:keyup="handleKeyUp" type="email" value="" name="EMAIL" required>
         <div style="position: absolute; left: -5000px;" aria-hidden="true">
           <input type="text" name="b_51c28ecf88357bd5504961c86_cf8f7fba7a" tabindex="-1" value="">
