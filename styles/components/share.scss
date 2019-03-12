@@ -6,11 +6,11 @@
 }
 
 .share {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   background: $c-cyan;
-  border-radius: 50%;
+  border-radius: 18px;
   border: none;
   display: flex;
   align-items: center;
@@ -34,11 +34,33 @@
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain;
-    max-width: #{'~"calc(100% - 15px)"'};
-    max-height: #{'~"calc(100% - 15px)"'};
+    width: 22px;
+    height: 22px;
+  }
+
+  &--external {
+    background: $c-gray;
+    padding: 0 $d-space-small;
+    color: #fff;
+    border-color: $c-gray;
+    width: auto;
+    font-size: 14px;
+    box-shadow: none;
+
+    img {
+      margin-right: $d-space-small;
+    }
+
+    &:hover {
+      background: lighten($c-gray, 5%);
+    }
+
+    &:focus {
+      border-color: darken($c-gray, 4%);
+    }
+
+    &:active {
+      background: darken($c-gray, 2%);
+    }
   }
 }

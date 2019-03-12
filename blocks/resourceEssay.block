@@ -23,7 +23,7 @@
     <div class="general">
       {body}
     </div>
-    <div class="shares" data-vue-share-links data-title="{item.title}" data-url="{website.baseUrl}{fullUrl}"></div>
+    <div class="shares" data-vue-share-links data-custom-source="{customContent.source}" data-title="{item.title}" data-url="{website.baseUrl}{fullUrl}"></div>
   </article>
 
   <aside class="essay__aside">

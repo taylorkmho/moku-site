@@ -23,7 +23,7 @@
     {body}
   </article>
 
-  <div class="resource-article__share shares" data-vue-share-links data-title="{item.title}" data-url="{website.baseUrl}{fullUrl}"></div>
+  <div class="resource-article__share shares" data-vue-share-links data-custom-source="{customContent.source}" data-title="{item.title}" data-url="{website.baseUrl}{fullUrl}"></div>
 
   <div class="resource-article__video-links">
     <div

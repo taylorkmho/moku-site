@@ -17,6 +17,7 @@ export class shareLinksSetUp {
         return createElement(ShareLinks, {
           props: {
             classList: this.$el.classList,
+            customSource: this.$el.dataset.customSource,
             title: this.$el.dataset.title,
             url: this.$el.dataset.url,
           },
