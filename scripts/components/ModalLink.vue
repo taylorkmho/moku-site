@@ -4,7 +4,7 @@
       class="button"
       v-html="innerHTML"
       :data-action="action"
-      @click.prevent="openModal"
+      @click.prevent="onOpenModal"
     />
     <ModalLinkWrapper
       v-if="isModalVisible"
@@ -17,6 +17,9 @@
 </template>
 
 <script>
+  const MEDIUM_MEDIA_QUERY = "(max-width: 767px)"
+  const RESIZE_DELAY = 250
+
   import ModalLinkWrapper from './ModalLinkWrapper.vue'
 
   export default {
@@ -31,21 +34,37 @@
     },
     data() {
       return {
+        disableModal: undefined,
         isModalVisible: false,
+        resizeTimer: false,
       }
     },
+    mounted: function() {
+      this.updateViewportSize();
+      window.addEventListener('resize', this.updateViewportSize);
+    },
+    beforeDestroy: function () {
+      window.removeEventListener('resize', this.updateViewportSize)
+    },
     methods: {
-      openModal: function() {
-        if (!this.isModalVisible) {
+      onOpenModal: function() {
+        if (this.action === "video"  || !this.disableModal) {
           this.isModalVisible = true
+          document.body.style.overflow = 'hidden'
+          return
         }
-        document.body.style.overflow = 'hidden'
+
+        window.location.href = this.href;
       },
       onCloseModal: function() {
-        if (this.isModalVisible) {
-          this.isModalVisible = false
-        }
+        this.isModalVisible = false
         document.body.style.overflow = ''
+      },
+      updateViewportSize: function() {
+        clearTimeout(this.resizeTimer);
+        this.resizeTimer = setTimeout(() => {
+          this.disableModal = window.matchMedia( MEDIUM_MEDIA_QUERY ).matches;
+        }, RESIZE_DELAY);
       }
     }
   }

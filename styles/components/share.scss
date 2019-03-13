@@ -3,30 +3,64 @@
   grid-auto-flow: column;
   grid-gap: 0 16px;
   justify-content: flex-start;
-
-  @include md {
-    grid-auto-flow: row;
-    grid-gap: 15px 0;
-    align-content: flex-start;
-  }
 }
 
 .share {
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
   background: $c-cyan;
-  border-radius: 50%;
+  border-radius: 18px;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: 2px solid $c-cyan;
+  outline: none;
+  transition: background 100ms ease-out;
+
+  &:hover {
+    background: lighten($c-cyan, 5%);
+  }
+
+  &:focus {
+    border-color: darken($c-cyan, 4%);
+  }
+
+  &:active {
+    background: darken($c-cyan, 2%);
+  }
 
   img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: contain;
-    max-width: #{'~"calc(100% - 15px)"'};
-    max-height: #{'~"calc(100% - 15px)"'};
+    width: 22px;
+    height: 22px;
+  }
+
+  &--external {
+    background: $c-gray;
+    padding: 0 $d-space-small;
+    color: #fff;
+    border-color: $c-gray;
+    width: auto;
+    font-size: 14px;
+    box-shadow: none;
+
+    img {
+      margin-right: $d-space-small;
+    }
+
+    &:hover {
+      background: lighten($c-gray, 5%);
+    }
+
+    &:focus {
+      border-color: darken($c-gray, 4%);
+    }
+
+    &:active {
+      background: darken($c-gray, 2%);
+    }
   }
 }
