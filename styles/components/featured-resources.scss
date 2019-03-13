@@ -60,8 +60,9 @@
     }
 
     @include xlarge {
+      padding-top: $d-padding-large;
       grid-area: frs-collection;
-      grid-gap: $d-padding-large $d-padding-large;
+      grid-gap: $d-padding-large;
       grid-template-columns: #{'~"1fr 1fr"'};
     }
   }
@@ -96,11 +97,9 @@
   }
 
   @include xlarge {
-    grid-gap: $d-padding-xsmall $d-padding;
-    grid-template-columns: #{'~"100px 1fr"'};
-    grid-template-areas: 'image category'
-                         'image title'
-                         'image excerpt';
+    grid-gap: $d-space;
+    grid-template-columns: #{'~"80px 1fr"'};
+    grid-template-areas: '. category' 'image title' 'image excerpt';
   }
 
   &__image {
@@ -129,6 +128,8 @@
       width: 100%;
       margin: 0;
       border: solid 2px #fff;
+      border-radius: $d-border-radius;
+      overflow: hidden;
     }
   }
 
