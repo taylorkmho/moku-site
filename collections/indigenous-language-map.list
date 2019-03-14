@@ -1,29 +1,70 @@
-<div class="section-heading">
-  <h1>Resources</h1>
-  <h2>{collection.title}</h2>
-</div>
-
-<section class="layout-container">
-  <div class="resources-list-container resources-list-container--horizontal">
-    <article class="resources-list">
-      <ul class="resources-list__list">
-        {.repeated section items}
-          <li class="resources-list-item">
-            {.passthrough?}
-              <a class="resources-list-item__link" id="post-{id}" data-item-id="{id}" href="{sourceUrl}" target="_blank">
-                {title}
-              </a>
-            {.or}
-              <a class="resources-list-item__link" id="post-{id}" data-item-id="{id}" href="{fullUrl}">
-                {title}
-              </a>
-            {.end}
-          </li>
-        {.or}
-          No content
-        {.end}
-    </article>
+<article class="feature">
+  <div class="layout-container">
+    <div class="section-heading section-heading--left">
+      <h1>{collection.title}</h1>
+    </div>
   </div>
-</section>
 
-{@|apply footer-cta.block}
+  <div class="map-content layout-container">
+    <ol class="language-list">
+      {.repeated section items}
+        <li class="language-list__item language-list-item">
+          <h2 class="language-list-item__title">{title}</h2>
+          <div class="language-list-item__body">
+            {body}
+          </div>
+          <div class="language-list-item__accordion language-list-accordion">
+            {.if customContent.educationInitiatives.html}
+              <div class="language-list-accordion__item language-list-accordion-item">
+                <input type="radio" name="{id}" id="item-{id}-1" value="1" class="language-list-accordion-item__input" />
+                <label for="item-{id}-1" class="language-list-accordion-item__label">
+                  <span>EDUCATION INITIATIVES</span>
+                </label>
+                <div class="language-list-accordion-item__content">
+                  {customContent.educationInitiatives.html}
+                </div>
+              </div>
+            {.end}
+            {.if customContent.policyGovernmentSupport.html}
+              <div class="language-list-accordion__item language-list-accordion-item">
+                <input type="radio" name="{id}" id="item-{id}-2" value="1" class="language-list-accordion-item__input" />
+                <label for="item-{id}-2" class="language-list-accordion-item__label">
+                  <span>POLICY/GOVERNMENT SUPPORT</span>
+                </label>
+                <div class="language-list-accordion-item__content">
+                  {customContent.policyGovernmentSupport.html}
+                </div>
+              </div>
+            {.end}
+            {.if customContent.broadcastMediaInitiatives.html}
+              <div class="language-list-accordion__item language-list-accordion-item">
+                <input type="radio" name="{id}" id="item-{id}-3" value="1" class="language-list-accordion-item__input" />
+                <label for="item-{id}-3" class="language-list-accordion-item__label">
+                  <span>BROADCAST MEDIA INITIATIVES</span>
+                </label>
+                <div class="language-list-accordion-item__content">
+                  {customContent.broadcastMediaInitiatives.html}
+                </div>
+              </div>
+            {.end}
+            {.if customContent.additionalResources.html}
+              <div class="language-list-accordion__item language-list-accordion-item">
+                <input type="radio" name="{id}" id="item-{id}-4" value="1" class="language-list-accordion-item__input" />
+                <label for="item-{id}-4" class="language-list-accordion-item__label">
+                  <span>ADDITIONAL RESOURCES</span>
+                </label>
+                <div class="language-list-accordion-item__content">
+                  {customContent.additionalResources.html}
+                </div>
+              </div>
+            {.end}
+          </div>
+        </li>
+      {.or}
+        <script type="text/javascript">
+          window.location.replace('/resources');
+        </script>
+      {.end}
+    </ol>
+  </div>
+</article

@@ -6,7 +6,6 @@
     display: grid;
     grid-gap: 0 30px;
     grid-template-areas: 'branding nav';
-    height: $d-header-height;
     position: relative;
     z-index: 205;
   }

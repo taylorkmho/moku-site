@@ -2,9 +2,9 @@
   <h1>{collection.title}</h1>
 </div>
 
-<!-- <div class="layout-container layout-container--intro">
+<div class="layout-container layout-container--intro">
   <squarespace:block-field id="resources-intro" label="Introduction" columns="1" />
-</div> -->
+</div>
 
 <section class="layout-container">
   <div class="resources-list-container" data-vue-resources-folder data-url="{collection.fullUrl}">
@@ -26,6 +26,7 @@
         {.or}
           No content
         {.end}
+      </ul>
     </article>
   </div>
 </section>

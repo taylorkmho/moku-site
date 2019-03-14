@@ -1,0 +1,125 @@
+.map-content {
+  display: grid;
+  grid-gap: $d-space-xlarge;
+  @include md {
+    grid-template-columns: #{'~"8fr 4fr"'};
+  }
+}
+
+.language-list {
+  @extend %clear-list;
+  display: grid;
+  grid-gap: $d-space-xlarge;
+  counter-reset: language-list-counter;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__item {
+    counter-increment: language-list-counter;
+    &:before {
+      content: counter(language-list-counter) ". ";
+      font: 400 32px $f-serif;
+      display: inline-block;
+    }
+  }
+}
+
+.language-list-item {
+  @extend %antialiased;
+
+  &__title {
+    display: inline-block;
+    font: 400 42px $f-serif;
+    margin: 0 0 $d-space;
+  }
+  &__body {
+    margin-bottom: $d-space;
+    p {
+      font-size: 16px;
+      margin: $d-space 0 0;
+
+      &:first-of-type {
+        font-size: 20px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.language-list-accordion {
+  display: grid;
+  grid-gap: $d-padding-small;
+  @include md {
+    grid-template-columns: #{'~"1fr 1fr"'};
+  }
+  &__item {
+    align-self: flex-start;
+  }
+}
+
+.language-list-accordion-item {
+  box-shadow: $d-box-shadow-angled-up;
+  border-radius: $d-border-radius-small;
+  overflow: hidden;
+
+  &__content {
+    display: none;
+    padding: 0 $d-space $d-space;
+    a {
+      color: $c-gray;
+      &:hover {
+        color: $c-teal;
+      }
+    }
+    p, h1, h2, h3 {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    padding: $d-space $d-space-large $d-space $d-space;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    background: lighten($c-blue, 2.5%);
+    cursor: pointer;
+
+    &:hover {
+      background: lighten($c-blue, 3.5%);
+    }
+  }
+
+  &__input {
+     position: absolute;
+     top: -9999px;
+     left: -9999px;
+     visibility: hidden;
+     &:checked {
+       & ~ .language-list-accordion-item {
+          &__content,
+          &__label {
+            background: $c-off-white;
+          }
+
+         &__content {
+           display: block;
+           color: $c-gray;
+         }
+
+         &__label {
+          color: $c-blue;
+          cursor: initial;
+         }
+       }
+     }
+  }
+}
