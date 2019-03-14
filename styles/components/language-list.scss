@@ -1,15 +1,9 @@
-.map-content {
-  display: grid;
-  grid-gap: $d-space-xlarge;
-  @include md {
-    grid-template-columns: #{'~"8fr 4fr"'};
-  }
-}
-
 .language-list {
   @extend %clear-list;
   display: grid;
-  grid-gap: $d-space-xlarge;
+  grid-gap: $d-space-large;
+  margin: $d-space 0;
+  max-width: $d-max-layout-width--slim;
   counter-reset: language-list-counter;
 
   &:last-of-type {
@@ -20,31 +14,51 @@
     counter-increment: language-list-counter;
     &:before {
       content: counter(language-list-counter) ". ";
-      font: 400 32px $f-serif;
+      font: 400 16px $f-serif;
       display: inline-block;
+      @include md {
+        font-size: 32px;
+      }
     }
   }
 }
 
 .language-list-item {
-  @extend %antialiased;
-
+  padding: $d-space;
+  transition: background 500ms ease-out 500ms;
   &__title {
     display: inline-block;
-    font: 400 42px $f-serif;
+    font: 400 24px $f-serif;
     margin: 0 0 $d-space;
+
+    @include md {
+      font-size: 42px;
+    }
   }
   &__body {
     margin-bottom: $d-space;
     p {
-      font-size: 16px;
+      font-size: 14px;
       margin: $d-space 0 0;
-
       &:first-of-type {
-        font-size: 20px;
+        font-size: 16px;
         margin-top: 0;
       }
+
+      @include md {
+        font-size: 16px;
+
+        &:first-of-type {
+          font-size: 20px;
+        }
+      }
     }
+  }
+  &:target {
+    margin-top: $d-space;
+    background: lighten($c-blue, 1%);
+    border: 2px solid lighten($c-blue, 5%);
+    border-radius: $d-border-radius;
   }
 }
 

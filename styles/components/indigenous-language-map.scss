@@ -1,0 +1,12 @@
+.indigenous-language-map-app {
+  position: relative;
+  height: 480px;
+
+  @include md {
+    height: 640px;
+  }
+
+  @include large {
+    height: 800px;
+  }
+}

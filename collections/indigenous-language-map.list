@@ -5,10 +5,12 @@
     </div>
   </div>
 
+  <div data-vue-indigenous-language-map data-url="{collection.fullUrl}"></div>
+
   <div class="map-content layout-container">
     <ol class="language-list">
       {.repeated section items}
-        <li class="language-list__item language-list-item">
+        <li class="language-list__item language-list-item" id="language-{id}">
           <h2 class="language-list-item__title">{title}</h2>
           <div class="language-list-item__body">
             {body}
@@ -67,4 +69,6 @@
       {.end}
     </ol>
   </div>
-</article
+</article>
+
+{@|apply footer-cta.block}

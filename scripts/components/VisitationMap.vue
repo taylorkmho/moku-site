@@ -292,6 +292,9 @@
           border-bottom-color: $c-teal;
         }
       }
+      .mapboxgl-canvas {
+        outline: none;
+      }
       .mapboxgl-popup-content {
         background: #fff;
         background-image: url('/assets/bg-popup.png');

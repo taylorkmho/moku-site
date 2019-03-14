@@ -1,4 +1,5 @@
 .feature {
+  @extend %antialiased;
   padding-top: $d-padding-large;
   background: $c-blue;
   color: #fff;
@@ -20,57 +21,3 @@
     }
   }
 }
-
-// .feature-list {
-//   count-reset: counter;
-//   display: grid;
-//   grid-gap: 15px 0;
-//   list-style: none;
-//   margin: $d-padding 0;
-//   padding-left: 2rem;
-//
-//   @include md {
-//     margin: 60px 0;
-//     padding-left: initial;
-//   }
-//
-//   &.cols {
-//     grid-gap: $d-padding;
-//
-//     @include md {
-//       grid-auto-flow: initial;
-//       grid-gap: 60px;
-//       grid-template-columns: #{'~"repeat(2, 1fr)"'};
-//     }
-//   }
-//
-//   &__item {
-//     counter-increment: counter;
-//     position: relative;
-//
-//     &::before {
-//       content: counter(counter) '. ';
-//       display: block;
-//       font: bold 18px $f-serif;
-//       left: -2.2rem;
-//       position: absolute;
-//       text-align: right;
-//       top: 8px;
-//       width: 2rem;
-//
-//       @include md {
-//         top: 10px;
-//       }
-//     }
-//
-//     .feature & {
-//       &::before {
-//         color: #fff;
-//       }
-//     }
-//   }
-//
-//   &__heading {
-//     font-family: $f-serif;
-//   }
-// }
