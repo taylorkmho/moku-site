@@ -1,5 +1,14 @@
 <template>
   <div>
+    <h2 class="collection-list-heading" v-if="featured && isReady">Featured</h2>
+    <a v-if="featured && isReady" class="collection-featured-banner" :href="featured.href">
+      <div class="collection-featured-banner__content">
+        <h5>FEATURED</h5>
+        <h3>{{featured.title}}</h3>
+        <button class="button button--light">Explore Now</button>
+      </div>
+      <div v-if="featured.hasUploadedAsset" class="collection-featured-banner__image" :style="{backgroundImage: `url(${featured.assetUrl})`}"></div>
+    </a>
     <h2 class="collection-list-heading">Topics</h2>
     <div class="resources-list-container" v-if="isReady">
       <article class="resources-list" :id="collection.id" v-for="(collection, index) in collections">
@@ -49,6 +58,7 @@
   import { mapResourceType, getUrlParameter } from '../helpers'
 
   const PAGINATION_COUNT = 5
+  const INDIGENOUS_MAP_URL = 'resources/indigenous-languages-around-the-world'
 
   export default {
     props: {
@@ -61,6 +71,7 @@
           expected: undefined,
           successful: 0,
         },
+        featured: undefined
       }
     },
     computed: {
@@ -77,6 +88,15 @@
     },
     methods: {
       fetchItems: function() {
+        axios.get(`${INDIGENOUS_MAP_URL}?format=json`)
+          .then((response) => {
+            this.featured = {
+              title: response.data.collection.title,
+              href: response.data.collection.fullUrl,
+              hasUploadedAsset: !!response.data.collection.mainImage.filename,
+              assetUrl: response.data.collection.mainImage.assetUrl,
+            }
+          })
         axios.get(`${this.url}?format=json`)
           .then((response) => {
             if (response.data.collection.collections === undefined) return
@@ -175,6 +195,7 @@
 
 <style lang="scss" scoped>
   @import '../../styles/base.scss';
+  @import '../../styles/mixins.scss';
 
   .loading-spinner {
     margin: 0 auto;
@@ -188,5 +209,44 @@
     width: 100%;
     border-radius: $d-border-radius;
     background-color: $c-off-white;
+  }
+
+  .collection-featured-banner {
+    position: relative;
+    padding: $d-padding;
+    display: block;
+    margin: 0 $d-padding-small $d-space-large;
+
+    &__content {
+      @extend %antialiased;
+      position: relative;
+      z-index: 110;
+      color: $c-off-white;
+      h5 {
+        margin: 0;
+      }
+      h3 {
+        margin: $d-space 0 $d-space-large;
+        font: 400 24px $f-serif;
+        @include md {
+          font-size: 32px;
+        }
+      }
+    }
+
+    &__image {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center center;
+      background-color: $c-blue;
+      border-radius: $d-border-radius;
+      overflow: hidden;
+      filter: url(#blue-mono);
+    }
   }
 </styled>

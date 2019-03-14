@@ -81,7 +81,7 @@
   }
 
   &--has-tint {
-    @include filter(#teal-mono);
+    @include filter(#blue-mono);
   }
 }
 </style>
