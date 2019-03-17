@@ -8,7 +8,7 @@
   <squarespace:block-field id="events-intro" label="Introduction" columns="1" />
 </div>
 
-<section class="layout-container layout-container--slim">
+<section class="layout-container">
   <div class="event-blocks">
     {.repeated section items}
       <a href="/events/{urlId}" class="event-block">

@@ -1,16 +1,13 @@
 .event-blocks {
+  @extend %antialiased;
   display: grid;
   grid-gap: $d-padding 0;
-
-  @include md {
-    margin: 60px auto;
-  }
+  margin: 0 auto $d-padding-large;
 }
 
 .event-block {
   position: relative;
   width: 100%;
-  color: #fff;
   transition: transform 150ms ease-out;
   &:hover {
     transform: translateY(-0.125rem);
@@ -43,6 +40,7 @@
   }
 
   &__preheader {
+    color: $c-off-white;
     font-size: 14px;
     font-weight: 600;
     margin: 0;
@@ -50,18 +48,24 @@
   }
 
   &__title {
-    font-size: 35px;
-    font-weight: 600;
+    font: 400 24px $f-serif;
+    color: #fff;
     margin: 0;
+    @include md {
+      font-size: 32px;
+    }
   }
 
   &__image-container {
-    @include responsive-media(66.67%);
+    @include responsive-media(66%);
     @include filter(#blue-mono);
     margin: 0;
     background-size: cover;
     background-color: $c-blue;
     border-radius: $d-border-radius;
     box-shadow: $d-box-shadow;
+    @include md {
+      @include responsive-media(50%);
+    }
   }
 }
