@@ -1,9 +1,3 @@
-<div class="layout-container">
-  <div class="section-heading">
-    <h1>{collection.title}</h1>
-  </div>
-</div>
-
 <div class="layout-container layout-container--intro">
   <squarespace:block-field id="events-intro" label="Introduction" columns="1" />
 </div>

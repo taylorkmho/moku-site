@@ -403,3 +403,9 @@
     }
   }
 }
+
+.collection-type-resources.view-item {
+  main > .layout-container--main {
+    display: none;
+  }
+}

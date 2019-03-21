@@ -1,3 +1,9 @@
+.collection-type-events-moku.view-item {
+  main > .layout-container--main {
+    display: none;
+  }
+}
+
 .event-item-header {
   display: grid;
   grid-gap: $d-padding 0;

@@ -1,3 +1,8 @@
 <main data-content-field="main-content">
+  <div class="layout-container layout-container--main">
+    <div class="section-heading">
+      <h1>{collection.title}</h1>
+    </div>
+  </div>
   {squarespace.main-content}
 </main>
