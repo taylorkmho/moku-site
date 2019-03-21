@@ -15,3 +15,41 @@ ul[data-rte-list] li {
     width: 100% !important;
   }
 }
+
+.sqs-block-button {
+  .sqs-block-button-element {
+    @extend .button;
+    @extend .button--dark;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      color: $c-off-white;
+    }
+
+    &--small {
+      @extend .button--small;
+    }
+  }
+}
+
+.collection-layout-default .sqs-block-image .design-layout-card {
+  .image-title-wrapper {
+    font-family: $f-serif;
+    p {
+      font-family: inherit;
+    }
+  }
+  .image-subtitle {
+    font-family: $f-sans;
+    p {
+      font-family: inherit;
+    }
+  }
+}
+
+
+.collection-layout-default .sqs-block-image .image-block-outer-wrapper.design-layout-card a {
+  @extend .button;
+}
