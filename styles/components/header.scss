@@ -9,4 +9,11 @@
     position: relative;
     z-index: 205;
   }
+
+  .homepage.collection-layout-default & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }

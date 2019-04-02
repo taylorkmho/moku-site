@@ -16,9 +16,8 @@
   }
 
   @include md {
-    margin-top: $d-header-height-offset;
-    padding-top: (-$d-header-height-offset);
     width: 100%;
+    padding-top: $d-padding-xxlarge;
   }
 
   @include large {
@@ -81,5 +80,11 @@
         background-image: linear-gradient(to bottom, rgba(#fff, 0.25), rgba(#fff, 0.85));
       }
     }
+  }
+}
+
+.homepage.collection-layout-default {
+  main > .layout-container--main {
+    display: none;
   }
 }
