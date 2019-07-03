@@ -14,6 +14,7 @@ import { siteHeaderSetUp } from './site-header-set-up'
 import { staffSetUp } from './staff-set-up'
 import { shareLinksSetUp } from './share-links-set-up'
 import { indigenousLanguageMapSetUp } from './indigenous-language-map-set-up'
+import { aboutNavSetUp } from './about-nav-set-up'
 
 if (document.body.classList.contains('not-loaded')) {
   document.body.classList.remove('not-loaded')
@@ -34,4 +35,5 @@ new siteHeaderSetUp()
 new staffSetUp()
 new shareLinksSetUp()
 new indigenousLanguageMapSetUp()
+new aboutNavSetUp()
 // Vue.config.devtools = true

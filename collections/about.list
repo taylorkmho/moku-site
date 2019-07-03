@@ -1,6 +1,6 @@
-<div class="layout-container layout-container--intro">
-  <squarespace:block-field id="about-intro" label="Introduction" columns="1" />
-</div>
+<nav data-vue-about-nav></nav>
+
+<a class="about-anchor" id="summary"></a>
 
 <section class="layout-container layout--about">
   <aside class="layout--about__aside">
@@ -11,6 +11,7 @@
   </div>
 </section>
 
+<a class="about-anchor" id="unesco-partner"></a>
 <div class="callout">
   <div class="layout-container">
     <aside class="callout__image">
@@ -30,6 +31,7 @@
   </div>
 </div>
 
+<a class="about-anchor" id="our-inoa"></a>
 <div class="layout-container">
   <div class="section-heading section-heading--small">
     <squarespace:block-field id="about-promos" label="Title" columns="1" lock-layout="true" />
@@ -45,8 +47,9 @@
   </div>
 </section>
 
+<a class="about-anchor" id="our-ohana"></a>
 <section class="layout-container">
-  <div class="section-heading section-heading--small">
+  <div class="section-heading section-heading--small section-heading--forehead">
     <squarespace:block-field id="staff-title" label="Title" columns="1" lock-layout="true" />
   </div>
   <div data-vue-staff data-url="{collection.fullUrl}"></div>

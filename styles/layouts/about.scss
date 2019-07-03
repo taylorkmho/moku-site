@@ -3,6 +3,7 @@
   grid-gap: $d-padding 0;
 
   @include md {
+    padding-top: $d-space-large;
     grid-gap: 0 $d-padding;
     grid-template-columns: #{'~"2fr 3fr"'};
   }
