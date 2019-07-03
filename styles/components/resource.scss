@@ -96,9 +96,6 @@
   &__link {
     width: 100%;
     @extend %gray-teal-link;
-    &:visited {
-      color: $c-medium-gray;
-    }
   }
 }
 

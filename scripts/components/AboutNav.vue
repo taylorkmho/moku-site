@@ -1,11 +1,11 @@
 <template>
-  <nav class="about-nav">
+  <nav class="about-nav" v-if="showMenu">
     <div class="layout-container">
       <ul class="about-nav__list">
-        <li class="about-nav__item" v-for="link in links">
+        <li class="about-nav__item" v-for="link, linkIndex in links">
           <a
             :class="{'about-nav__link': true, 'about-nav__link--active': link.active}"
-            @click="navigate($event, link.anchor)"
+            @click="navigate($event, linkIndex)"
             :href="link.anchor"
           >{{link.title}}</a>
         </li>
@@ -16,12 +16,15 @@
 
 <script>
 require('waypoints/lib/noframework.waypoints.min')
+const MEDIUM_MEDIA_QUERY = '(min-width: 768px)'
+const RESIZE_DELAY = 250
 
 export default {
   props: {},
   data() {
     return {
-      active: undefined,
+      showMenu: false,
+      isScrolling: false,
       links: [
         {
           active: false,
@@ -58,8 +61,14 @@ export default {
         handler: direction => {
           this.updateNav(anchorEl.id, direction)
         },
+        offset: 10,
       })
     })
+    this.updateViewportSize()
+    window.addEventListener('resize', this.updateViewportSize)
+  },
+  beforeDestroy: function() {
+    window.removeEventListener('resize', this.updateViewportSize)
   },
   methods: {
     updateNav: function(name, direction) {
@@ -77,11 +86,14 @@ export default {
         this.links[waypointIndex - 1].active = true
       }
     },
-    navigate: function(event, anchor) {
-      event.preventDefault()
-      const el = document.querySelector(anchor)
-
-      el.scrollIntoView({ behavior: 'smooth' })
+    navigate: function(event, linkIndex) {
+      // this.links[linkIndex].active = true
+    },
+    updateViewportSize() {
+      clearTimeout(this.resizeTimer)
+      this.resizeTimer = setTimeout(() => {
+        this.showMenu = window.matchMedia(MEDIUM_MEDIA_QUERY).matches
+      }, RESIZE_DELAY)
     },
   },
 }
@@ -118,7 +130,7 @@ export default {
     background-color: rgba($c-teal, 0);
     color: $c-default;
     border-radius: $d-border-radius;
-    transition: all ease-out 100ms;
+    transition: all ease-out 150ms;
 
     &--active,
     &:hover {

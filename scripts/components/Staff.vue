@@ -94,7 +94,7 @@ export default {
 @import '../../styles/mixins.scss';
 
 .staff-list-container {
-  margin-bottom: $d-space-xlarge;
+  margin-bottom: $d-space-xxxlarge;
 }
 
 .staff-list {
