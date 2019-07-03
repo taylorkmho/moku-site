@@ -15,7 +15,7 @@
 <script>
 import axios from 'axios'
 import * as typeformEmbed from '@typeform/embed'
-const SIDEBAR_URL = '/visitation-pr1ogram-sidebar'
+const SIDEBAR_URL = '/visitation-program-sidebar'
 
 export default {
   name: 'ModalLinkWrapperRequest',
