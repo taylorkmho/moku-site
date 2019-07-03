@@ -72,6 +72,8 @@ export default {
   },
   methods: {
     updateNav: function(name, direction) {
+      if (this.isScrolling) return
+
       const waypointIndex = this.links.findIndex(x => x.id === name)
 
       this.links.forEach((link, linkIndex) => {
@@ -86,8 +88,16 @@ export default {
         this.links[waypointIndex - 1].active = true
       }
     },
-    navigate: function(event, linkIndex) {
-      // this.links[linkIndex].active = true
+    navigate: function(event, selectedLinkIndex) {
+      this.links.forEach((link, linkIndex) => {
+        this.links[linkIndex].active = false
+      })
+      this.links[selectedLinkIndex].active = true
+
+      this.isScrolling = true
+      setTimeout(() => {
+        this.isScrolling = false
+      }, 150)
     },
     updateViewportSize() {
       clearTimeout(this.resizeTimer)
