@@ -1,5 +1,5 @@
 <template>
-  <nav class="about-nav" v-if="showMenu">
+  <nav class="about-nav">
     <div class="layout-container">
       <ul class="about-nav__list">
         <li class="about-nav__item" v-for="link, linkIndex in links">
@@ -104,16 +104,20 @@ export default {
 @import '../../styles/mixins.scss';
 
 .about-nav {
-  position: sticky;
-  top: -1px;
-  z-index: 500;
-  // margin-bottom: $d-space-large;
   background: #fff;
+
+  @include md {
+    position: sticky;
+    top: -1px;
+    z-index: 500;
+    &__list {
+      display: flex;
+      justify-content: center;
+    }
+  }
 
   &__list {
     @extend %clear-list;
-    display: flex;
-    justify-content: center;
     border-top: 1px solid $c-very-light-gray;
     border-bottom: 1px solid $c-very-light-gray;
     padding-top: $d-padding-small;
