@@ -2,10 +2,10 @@
   <nav class="about-nav">
     <div class="layout-container">
       <ul class="about-nav__list">
-        <li class="about-nav__item" v-for="link, linkIndex in links">
+        <li class="about-nav__item" v-for="(link, linkIndex) in links" v-bind:key="link.id">
           <a
             :class="{'about-nav__link': true, 'about-nav__link--active': link.active}"
-            @click="navigate($event, linkIndex)"
+            @click="handleNavClick($event, linkIndex)"
             :href="link.anchor"
           >{{link.title}}</a>
         </li>
@@ -64,6 +64,7 @@ export default {
         offset: 10,
       })
     })
+
     this.updateViewportSize()
     window.addEventListener('resize', this.updateViewportSize)
   },
@@ -71,28 +72,30 @@ export default {
     window.removeEventListener('resize', this.updateViewportSize)
   },
   methods: {
+    removeAllActive: function() {
+      this.links.forEach((link, linkIndex) => {
+        this.links[linkIndex].active = false
+      })
+    },
+    setActiveTo: function(index) {
+      this.links[index].active = true
+    },
     updateNav: function(name, direction) {
       if (this.isScrolling) return
 
       const waypointIndex = this.links.findIndex(x => x.id === name)
 
-      this.links.forEach((link, linkIndex) => {
-        this.links[linkIndex].active = false
-      })
-
+      this.removeAllActive()
       if (direction === 'down') {
-        this.links[waypointIndex].active = true
+        this.setActiveTo(waypointIndex)
       } else {
         if (waypointIndex === 0) return
-
-        this.links[waypointIndex - 1].active = true
+        this.setActiveTo(waypointIndex - 1)
       }
     },
-    navigate: function(event, selectedLinkIndex) {
-      this.links.forEach((link, linkIndex) => {
-        this.links[linkIndex].active = false
-      })
-      this.links[selectedLinkIndex].active = true
+    handleNavClick: function(event, selectedLinkIndex) {
+      this.removeAllActive()
+      this.setActiveTo(selectedLinkIndex)
 
       this.isScrolling = true
       setTimeout(() => {
