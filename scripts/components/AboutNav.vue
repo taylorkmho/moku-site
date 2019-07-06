@@ -59,11 +59,13 @@ export default {
       new Waypoint({
         element: anchorEl,
         handler: direction => {
-          this.updateNav(anchorEl.id, direction)
+          this.addWaypointListener(anchorEl.id, direction)
         },
         offset: 10,
       })
     })
+
+    this.initCheckUrlHash()
 
     this.updateViewportSize()
     window.addEventListener('resize', this.updateViewportSize)
@@ -72,6 +74,34 @@ export default {
     window.removeEventListener('resize', this.updateViewportSize)
   },
   methods: {
+    addWaypointListener: function(name, direction) {
+      if (this.isScrolling) return
+
+      this.removeAllActive()
+
+      const indexByName = this.links.findIndex(x => x.id === name)
+      if (direction === 'down') {
+        this.setActiveTo(indexByName)
+      } else if (direction === 'up') {
+        if (indexByName === 0) return
+        this.setActiveTo(indexByName - 1)
+      }
+    },
+    initCheckUrlHash: function() {
+      if (!window.location.hash) return
+      const hashStr = window.location.hash.substring(1)
+      const indexByHash = this.links.findIndex(x => x.id === hashStr)
+
+      this.setActiveTo(indexByHash)
+    },
+    handleNavClick: function(event, selectedLinkIndex) {
+      this.isScrolling = true
+      setTimeout(() => {
+        this.isScrolling = false
+      }, 150)
+      this.removeAllActive()
+      this.setActiveTo(selectedLinkIndex)
+    },
     removeAllActive: function() {
       this.links.forEach((link, linkIndex) => {
         this.links[linkIndex].active = false
@@ -79,28 +109,6 @@ export default {
     },
     setActiveTo: function(index) {
       this.links[index].active = true
-    },
-    updateNav: function(name, direction) {
-      if (this.isScrolling) return
-
-      const waypointIndex = this.links.findIndex(x => x.id === name)
-
-      this.removeAllActive()
-      if (direction === 'down') {
-        this.setActiveTo(waypointIndex)
-      } else {
-        if (waypointIndex === 0) return
-        this.setActiveTo(waypointIndex - 1)
-      }
-    },
-    handleNavClick: function(event, selectedLinkIndex) {
-      this.removeAllActive()
-      this.setActiveTo(selectedLinkIndex)
-
-      this.isScrolling = true
-      setTimeout(() => {
-        this.isScrolling = false
-      }, 150)
     },
     updateViewportSize() {
       clearTimeout(this.resizeTimer)
@@ -163,7 +171,9 @@ export default {
 .about-anchor {
   display: block;
   position: relative;
-  top: -58px; /* height of nav */
   visibility: hidden;
+  @include md {
+    top: -58px; /* height of nav */
+  }
 }
 </style>

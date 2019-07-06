@@ -4,7 +4,6 @@ import AboutNav from './components/AboutNav.vue'
 export class aboutNavSetUp {
   constructor() {
     this.aboutNav = document.querySelector('[data-vue-about-nav]')
-    console.log('wfas')
 
     this.initVue()
   }
