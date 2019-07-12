@@ -126,45 +126,64 @@ export default {
 
 .about-nav {
   background: #fff;
+  text-align: center;
+  line-height: 1;
 
   @include md {
     position: sticky;
     top: -1px;
     z-index: 500;
-    &__list {
-      display: flex;
-      justify-content: center;
-    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__list {
     @extend %clear-list;
     border-top: 1px solid $c-very-light-gray;
     border-bottom: 1px solid $c-very-light-gray;
-    padding-top: $d-padding-small;
-    padding-bottom: $d-padding-small;
+    padding-top: $d-padding-xsmall;
+    padding-bottom: $d-padding-xsmall;
+    @include md {
+      padding-top: $d-padding-small;
+      padding-bottom: $d-padding-small;
+    }
   }
   &__item {
     margin-right: $d-space;
+    @include sm-max {
+      font-size: 11px;
+    }
+    @include md-max {
+      margin-right: $d-space-xsmall;
+      font-size: 12px;
+    }
     &:last-of-type {
-      margin-right: 0;
+      margin-right: 00;
     }
   }
   &__link {
-    padding: $d-padding-xsmall $d-padding-small;
-    background-color: rgba($c-teal, 0);
     color: $c-default;
+    padding: $d-padding-xsmall;
+    background-color: rgba($c-teal, 0);
     border-radius: $d-border-radius;
     transition: all ease-out 150ms;
 
-    &--active,
-    &:hover {
-      background-color: rgba($c-teal, 0.125);
-      color: $c-teal;
-    }
+    @include md {
+      padding-left: $d-padding-small;
+      padding-right: $d-padding-small;
 
-    &--active {
-      font-weight: 600;
+      &--active,
+      &:hover {
+        background-color: rgba($c-teal, 0.125);
+        color: $c-teal;
+      }
+      &--active {
+        font-weight: 600;
+      }
     }
   }
 }

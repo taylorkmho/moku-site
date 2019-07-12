@@ -1,14 +1,21 @@
 $mq-small: 480px;
+$mq-small-max: 479px;
 $mq-medium-max: 767px;
 $mq-medium: 768px;
 $mq-large: 960px;
 $mq-x-large: 1260px;
 
 @mixin sm {
- @media (min-width: #{$mq-small}) {
-   @content;
+  @media (min-width: #{$mq-small}) {
+    @content;
+  }
  }
-}
+
+ @mixin sm-max {
+  @media (max-width: #{$mq-small-max}) {
+    @content;
+  }
+ }
 
 @mixin md {
  @media (min-width: #{$mq-medium}) {
