@@ -65,7 +65,7 @@ export default {
       })
     })
 
-    this.initCheckUrlHash()
+    // this.initCheckUrlHash()
 
     this.updateViewportSize()
     window.addEventListener('resize', this.updateViewportSize)
@@ -87,13 +87,13 @@ export default {
         this.setActiveTo(indexByName - 1)
       }
     },
-    initCheckUrlHash: function() {
-      if (!window.location.hash) return
-      const hashStr = window.location.hash.substring(1)
-      const indexByHash = this.links.findIndex(x => x.id === hashStr)
+    // initCheckUrlHash: function() {
+    //   if (!window.location.hash) return
+    //   const hashStr = window.location.hash.substring(1)
+    //   const indexByHash = this.links.findIndex(x => x.id === hashStr)
 
-      this.setActiveTo(indexByHash)
-    },
+    //   this.setActiveTo(indexByHash)
+    // },
     handleNavClick: function(event, selectedLinkIndex) {
       this.isScrolling = true
       setTimeout(() => {
